@@ -10,22 +10,25 @@
     "dist/**"
   ],
   "scripts": {
-    "build": "tsup ./index.tsx --format esm,cjs --dts --external react",
-    "dev": "tsup ./index.tsx --format esm,cjs --watch --dts --external react",
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
+    "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
     "lint": "TIMING=1 eslint ./**/*.ts* --fix",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "devDependencies": {
-    "tsconfig": "*",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "eslint": "^8.19.0",
     "eslint-config-acme": "*",
     "react": "^18.2.0",
+    "tsconfig": "*",
     "tsup": "^6.1.3",
     "typescript": "^4.7.4"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "@stitches/react": "^1.2.8"
   }
 }
