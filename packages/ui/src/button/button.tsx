@@ -4,7 +4,7 @@ import { Spinner } from "../spinner";
 import { styled } from "../stitches.conf";
 
 export const StyledButton = styled("button", {
-  padding: "$2 $3",
+  padding: "$4 $6",
   borderRadius: "$2",
   fontWeight: "bold",
   fontSize: "$2",
@@ -17,6 +17,7 @@ export const StyledButton = styled("button", {
   justifyContent: "center",
   alignItems: "center",
   gap: "$2",
+  lineHeight: "1",
 
   "&:focus:not([disabled])": {
     outline: "$black thin dotted",
@@ -99,11 +100,11 @@ export const Button = ({
     <StyledButton {...rest} type={type} disabled={disabled || loading}>
       {loading && (
         <Spinner
-          css={{ height: "13px", width: "13px" }}
+          css={{ height: "10px", width: "10px" }}
           inverted={type !== "default"}
         />
       )}
-      {children}
+      <span>{children}</span>
     </StyledButton>
   );
 };
