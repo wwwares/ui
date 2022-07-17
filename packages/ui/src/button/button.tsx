@@ -9,7 +9,7 @@ export const StyledButton = styled("button", {
   fontWeight: "bold",
   fontSize: "$2",
   cursor: "pointer",
-  transition: "60ms ease-in all",
+  transition: "60ms ease-in box-shadow",
   border: "1px solid",
   color: "$white",
   position: "relative",
@@ -23,11 +23,6 @@ export const StyledButton = styled("button", {
     outline: "$black thin dotted",
   },
 
-  "&:active:not([disabled])": {
-    boxShadow:
-      "rgba(24, 25, 29, 0.45) 0px 3px 3px -2px inset,rgba(24, 25, 29, 0.45) 0px -1px 3px -2px inset",
-  },
-
   "&[disabled]": {
     opacity: "0.5",
     cursor: "auto",
@@ -36,44 +31,68 @@ export const StyledButton = styled("button", {
   variants: {
     type: {
       default: {
-        background:
-          "linear-gradient(180deg, $white 5%, $gray-50 50%, white 95%)",
-        borderColor: "$gray-200",
-        color: "black",
+        background: "linear-gradient(180deg, $white, $gray-50)",
+        borderColor: "$gray-300",
+        color: "$black",
+        boxShadow: "#D7DCE1 0px 0px 1px 0px inset",
 
-        "&:hover:not([disabled])": {
-          borderColor: "$gray-300",
-          background: "$gray-50",
-        },
-
-        "&:active:not([disabled])": {
-          // boxShadow: "inset 0 2px 3px 0 rgba(24,25,29,0.3)",
-          boxShadow:
-            "rgba(24, 25, 29, 0.3) 0px 1px 3px -2px inset,rgba(24, 25, 29, 0.3) 0px -1px 3px -2px inset",
+        "&:not([disabled])": {
+          "&:hover": {
+            boxShadow: "#F2F5F8 1.25px 1.25px 1px -1px inset",
+          },
+          "&:active": {
+            background: "linear-gradient(180deg,$gray-50, $gray-50)",
+            boxShadow:
+              "#A3ABB3 0px 0px 1px 0px inset, #A3ABB3 0px 0px 1px 0px inset",
+          },
         },
       },
       primary: {
         borderColor: "$blue-600",
         background: "linear-gradient(180deg,$blue-400, $blue-500)",
+        boxShadow: "#829FF5 0px 0px 1px 0px inset",
 
-        "&:hover:not([disabled])": {
-          background: "linear-gradient(180deg,$blue-500, $blue-500)",
+        "&:not([disabled])": {
+          "&:hover": {
+            boxShadow: "#F5F7FF 1.25px 1.25px 1px -1px inset",
+          },
+          "&:active": {
+            background: "linear-gradient(180deg,$blue-500, $blue-500)",
+            boxShadow:
+              "#829FF5 0px 0px 1px 0px inset, #829FF5 0px 0px 1px 0px inset",
+          },
         },
       },
       action: {
         borderColor: "$green-900",
         background: "linear-gradient(180deg,$green-700, $green-800)",
+        boxShadow: "#1FC641 0px 0px 1px 0px inset",
 
-        "&:hover:not([disabled])": {
-          background: "linear-gradient(180deg,$green-800, $green-800)",
+        "&:not([disabled])": {
+          "&:hover": {
+            boxShadow: "#F5FFF6 1.25px 1.25px 1px -1px inset",
+          },
+          "&:active": {
+            background: "linear-gradient(180deg,$green-800, $green-800)",
+            boxShadow:
+              "#5BE873 0px 0px 1px 0px inset, #5BE873 0px 0px 1px 0px inset",
+          },
         },
       },
       danger: {
         borderColor: "$maple-700",
         background: "linear-gradient(180deg,$maple-400, $maple-500)",
+        boxShadow: "#F58286 0px 0px 1px 0px inset",
 
-        "&:hover:not([disabled])": {
-          background: "linear-gradient(180deg,$maple-500, $maple-500)",
+        "&:not([disabled])": {
+          "&:hover": {
+            boxShadow: "#FFF5F5 1.25px 1.25px 1px -1px inset",
+          },
+          "&:active": {
+            background: "linear-gradient(180deg,$maple-500, $maple-500)",
+            boxShadow:
+              "#F58286 0px 0px 1px 0px inset, #F58286 0px 0px 1px 0px inset",
+          },
         },
       },
     },
