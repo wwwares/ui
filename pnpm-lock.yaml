@@ -17,6 +17,9 @@ importers:
 
   apps/storybook:
     dependencies:
+      '@ui-ware/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -70,7 +73,7 @@ importers:
         specifier: ^5.2.11
         version: 5.2.11(@types/node@18.19.33)(lightningcss@1.23.0)(terser@5.31.0)
 
-  packages/preset:
+  packages/system:
     dependencies:
       '@radix-ui/colors':
         specifier: ^3.0.0
@@ -103,9 +106,9 @@ importers:
       '@types/react-dom':
         specifier: ^18.3.0
         version: 18.3.0
-      '@ui-ware/preset':
+      '@ui-ware/system':
         specifier: workspace:*
-        version: link:../preset
+        version: link:../system
       react:
         specifier: ^18.3.1
         version: 18.3.1
