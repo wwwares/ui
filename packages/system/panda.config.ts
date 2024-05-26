@@ -94,7 +94,7 @@ export default defineConfig({
 	// Whether to use css reset
 	preflight: true,
 
-	jsxFramework: "preact",
+	jsxFramework: "react",
 
 	presets: [warePreset],
 
