@@ -33,31 +33,24 @@ export const Default: Story = {
 		// label: "Select",
 		// isSelected: true,
 		placeholder: "@wwwares/ui",
+		options: [
+			{ value: "value 1", label: "Value 1" },
+			{ value: "value 2", label: "Value 2" },
+		],
 	},
 	render: (args) => {
-		const [value, setValue] = useState("option 1");
+		const [value, setValue] = useState("value 2");
 
 		return (
-			<Select
-				{...args}
-				value={value}
-				onChange={(v) => {
-					setValue(v.target.value);
-				}}
-			>
-				<option value="option1" style={{ transition: "none" }}>
-					option 1
-				</option>
-				<option value="option2" style={{ transition: "none" }}>
-					option 2
-				</option>
-				<option value="option3" style={{ transition: "none" }}>
-					option 3
-				</option>
-				<option value="option4" style={{ transition: "none" }}>
-					option 4
-				</option>
-			</Select>
+			<div style={{ display: "flex", width: "400px" }}>
+				<Select
+					{...args}
+					value={value}
+					onChange={(v) => {
+						setValue(v.target.value);
+					}}
+				/>
+			</div>
 		);
 	},
 };

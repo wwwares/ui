@@ -7,9 +7,9 @@
     "prepare": "panda codegen"
   },
   "devDependencies": {
-    "@pandacss/dev": "^0.39.1",
+    "@pandacss/dev": "^0.41.0",
 
-		"tsup": "^8.0.2"
+		"tsup": "^8.1.0"
   },
   "exports": {
     "./css": {

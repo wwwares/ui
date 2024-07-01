@@ -16,7 +16,9 @@ const CheckIcon = styled("div", {
 			_before: {
 				boxShadow: "{colors.slate.200} 1.25px 1.25px 1px -1px inset",
 				// background: "linear-gradient(180deg, white, {colors.slate.100})",
-				background: "{colors.slate.50}",
+				// background: "{colors.slate.50}",
+				background:
+					"linear-gradient(180deg, {colors.slate.50}, {colors.slate.50})",
 				borderColor: "{colors.slate.300}",
 			},
 		},
@@ -88,7 +90,8 @@ const CheckIcon = styled("div", {
 				_before: {
 					boxShadow:
 						"{colors.slate.300} 1.25px 1.25px 1px -1px inset !important",
-					background: "{colors.slate.100} !important",
+					background:
+						"linear-gradient(180deg, {colors.slate.100}, {colors.slate.100}) !important",
 					borderColor: "{colors.slate.400}",
 				},
 			},
