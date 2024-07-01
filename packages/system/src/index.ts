@@ -2,19 +2,18 @@ import { type Tokens, definePreset } from "@pandacss/dev";
 import {
 	// amber,
 	// amberDark,
-	// blue,
-	// blueDark,
+	blue,
+	blueDark,
 	// green,
 	// greenDark,
 	// purple,
 	// purpleDark,
 	red,
-	// redDark,
-	// slate,
-	// slateDark,
+	redDark,
+	slate,
+	slateDark,
 } from "@radix-ui/colors";
 
-// @ts-ignore
 function makePandaColor<T extends Record<string, string>>(
 	scale: T,
 	scaleDark: T,
@@ -24,13 +23,15 @@ function makePandaColor<T extends Record<string, string>>(
 	Object.keys(red).forEach((key) => {
 		color[key] = {
 			value: {
-				base: { value: scale[key as keyof T] },
-				_dark: { value: scaleDark[key as keyof T] },
+				base: { value: scale[key] },
+				_dark: { value: scaleDark[key] },
 			},
 		};
 	});
 	return color;
 }
+
+console.log(makePandaColor(red, redDark));
 
 export const warePreset = definePreset({
 	conditions: {
@@ -42,6 +43,13 @@ export const warePreset = definePreset({
 	presets: ["@pandacss/preset-base", "@pandacss/preset-panda"],
 	// Useful for theme customization
 	theme: {
+		tokens: {
+			colors: {
+				...makePandaColor(slate, slateDark),
+				...makePandaColor(blue, blueDark),
+				...makePandaColor(red, redDark),
+			},
+		},
 		semanticTokens: {
 			colors: {
 				danger: {

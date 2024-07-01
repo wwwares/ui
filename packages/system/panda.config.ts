@@ -13,6 +13,7 @@ import {
 	// purple,
 	// purpleDark,
 	red,
+	redDark,
 	// redDark,
 	// slate,
 	// slateDark,
@@ -35,6 +36,8 @@ function makePandaColor<T extends Record<string, string>>(
 	});
 	return color;
 }
+
+console.log(makePandaColor(red, redDark));
 
 const warePreset = definePreset({
 	conditions: {
