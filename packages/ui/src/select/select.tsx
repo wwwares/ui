@@ -12,7 +12,7 @@ export const SelectBackdrop = styled("div", {
 		left: 0,
 		borderRadius: "4px",
 		transition: "all 60ms ease-in",
-		border: "1px solid {colors.slate.200}",
+		border: "1px solid {colors.slate.400}",
 		background: "linear-gradient(180deg, white, {colors.slate.50})",
 		boxShadow: "{colors.slate.100} 0px 0px 1px 0px inset",
 
@@ -22,7 +22,7 @@ export const SelectBackdrop = styled("div", {
 			boxShadow: "{colors.slate.200} 1.25px 1.25px 1px -1px inset",
 			background:
 				"linear-gradient(180deg, {colors.slate.50}, {colors.slate.100})",
-			borderColor: "{colors.slate.300}",
+			borderColor: "{colors.slate.500}",
 		},
 
 		_peerActive: {
@@ -68,7 +68,6 @@ const SelectEl = styled("select", {
 		appearance: "none",
 		border: "none",
 		zIndex: 30,
-		// padding: "8px 2px 2px 6px",
 		position: "absolute",
 		top: 0,
 		left: 0,

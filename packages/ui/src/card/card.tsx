@@ -1,55 +1,16 @@
-import { ComponentPropsWithRef, ReactNode } from "react";
-import { styled } from "../stitches.conf";
+import { styled } from "@ui-ware/system/jsx";
 
-const StyledCard = styled("div", {
-  display: "flex",
-  flexDirection: "column",
-  // padding: "$4",
-  borderRadius: "$2",
-  // boxShadow: "0px 0px 1px 0px #A3ABB3",
-  border: "1px solid $gray-100",
+const PandaCard = styled("div", {
+	base: {
+		display: "flex",
+		position: "relative",
+		borderRadius: "lg",
+		backgroundColor: "white",
+		boxShadow:
+			"0px 0px 0px 1px rgba(9,9,11,0.08), 0px 2px 2px 0px rgba(9,9,11,0.05)",
+		paddingX: "6",
+		paddingY: "4",
+	},
 });
 
-const Wrapper = styled("div", {
-  padding: "$4",
-});
-
-const Header = styled("p", {
-  fontSize: "$5",
-  padding: "$3",
-  margin: 0,
-  background: "$gray-50",
-  borderBottom: "1px solid $gray-100",
-});
-
-export const CardFooter = styled("div", {
-  padding: "$3",
-  margin: "$4 -$4 -$4 -$4",
-  background: "$gray-50",
-  borderTop: "1px solid $gray-100",
-  display: "flex",
-});
-
-export const CardSection = styled("div", {
-  [`& + &`]: {
-    margin: "$4 -$4 -$4 -$4",
-    padding: "$4",
-    borderTop: "1px solid $gray-100",
-  },
-});
-
-export const Card = ({
-  title,
-  children,
-  ...rest
-}: {
-  title?: string;
-  children: ReactNode;
-} & ComponentPropsWithRef<typeof StyledCard>) => {
-  return (
-    <StyledCard {...rest}>
-      {title && <Header>{title}</Header>}
-      <Wrapper>{children}</Wrapper>
-    </StyledCard>
-  );
-};
+export { PandaCard };

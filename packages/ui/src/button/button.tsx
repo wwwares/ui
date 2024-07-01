@@ -1,129 +1,81 @@
-import { VariantProps } from "@stitches/react";
-import * as React from "react";
-import { Spinner } from "../spinner";
-import { styled } from "../stitches.conf";
+import { styled } from "@ui-ware/system/jsx";
 
-export const StyledButton = styled("button", {
-  padding: "$4 $6",
-  borderRadius: "$2",
-  fontWeight: "bold",
-  fontSize: "$2",
-  cursor: "pointer",
-  transition: "60ms ease-in box-shadow",
-  border: "1px solid",
-  color: "$white",
-  position: "relative",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  gap: "$2",
-  lineHeight: "1",
+const Button = styled("button", {
+	base: {
+		display: "inline-flex",
+		alignItems: "center",
+		position: "relative",
+		height: "32px",
+		borderRadius: "6px",
+		paddingX: "3",
+		paddingY: "1.5",
+		lineHeight: "1",
+		cursor: "pointer",
+		transition: "all 150ms cubic-bezier(0.4, 0, 0.2, 1)",
+		textDecoration: "none",
+		textAlign: "center",
+		_active: {
+			"& > *": {
+				transform: "translate3d(0, 0.0325rem, 0)",
+			},
+		},
+	},
+	variants: {
+		intent: {
+			danger: {},
+		},
+		variant: {
+			default: {
+				boxShadow:
+					"0px 0px 0px 1px rgba(18, 55, 105, 0.03), 0px 2px 1px 0px rgba(42, 59, 81, 0.07)",
+				border: "1px solid rgba(45, 45, 45, 0.17)",
+				background:
+					"linear-gradient(0deg, token(colors.gray.50), token(colors.white)),\
+					linear-gradient(180deg, rgba(223, 225, 231, 0) 0%, rgba(223, 225, 231, 0.05) 100%)",
 
-  "&:focus:not([disabled])": {
-    outline: "$black thin dotted",
-  },
+				_active: {
+					background:
+						"linear-gradient(0deg, token(colors.gray.100), token(colors.gray.50)),\
+					linear-gradient(180deg, rgba(223, 225, 231, 0) 0%, rgba(223, 225, 231, 0.05) 100%)",
+					boxShadow:
+						"0px 0px 0px 1px rgba(18, 55, 105, 0.03), 0px 2px 1px 0px rgba(42, 59, 81, 0.07) inset",
+				},
+			},
+			primary: {
+				color: "white",
 
-  "&[disabled]": {
-    opacity: "0.5",
-    cursor: "auto",
-  },
+				background:
+					"linear-gradient(0deg, token(colors.violet.600), token(colors.violet.500)),\
+					linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 100%)",
 
-  variants: {
-    type: {
-      default: {
-        background: "linear-gradient(180deg, $white, $gray-50)",
-        borderColor: "$gray-300",
-        color: "$black",
-        boxShadow: "#D7DCE1 0px 0px 1px 0px inset",
+				border: "1px solid rgba(255, 255, 255, 0.17)",
 
-        "&:not([disabled])": {
-          "&:hover": {
-            boxShadow: "#F2F5F8 1.25px 1.25px 1px -1px inset",
-          },
-          "&:active": {
-            background: "linear-gradient(180deg,$gray-50, $gray-50)",
-            boxShadow:
-              "#A3ABB3 0px 0px 1px 0px inset, #A3ABB3 0px 0px 1px 0px inset",
-          },
-        },
-      },
-      primary: {
-        borderColor: "$blue-600",
-        background: "linear-gradient(180deg,$blue-400, $blue-500)",
-        boxShadow: "#829FF5 0px 0px 1px 0px inset",
+				boxShadow:
+					"0px 0px 0px 1px rgba(72, 1, 228, 0.76), 0px 1px 2px 0px rgba(37, 17, 79, 0.4)",
 
-        "&:not([disabled])": {
-          "&:hover": {
-            boxShadow: "#F5F7FF 1.25px 1.25px 1px -1px inset",
-          },
-          "&:active": {
-            background: "linear-gradient(180deg,$blue-500, $blue-500)",
-            boxShadow:
-              "#829FF5 0px 0px 1px 0px inset, #829FF5 0px 0px 1px 0px inset",
-          },
-        },
-      },
-      action: {
-        borderColor: "$green-900",
-        background: "linear-gradient(180deg,$green-700, $green-800)",
-        boxShadow: "#1FC641 0px 0px 1px 0px inset",
+				_active: {
+					background:
+						"linear-gradient(0deg, token(colors.violet.700), token(colors.violet.600)),\
+					linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 100%)",
+					boxShadow:
+						"0px 0px 0px 1px rgba(72, 1, 228, 0.76), 0px 1px 2px 0px rgba(37, 17, 79, 0.4) inset",
 
-        "&:not([disabled])": {
-          "&:hover": {
-            boxShadow: "#F5FFF6 1.25px 1.25px 1px -1px inset",
-          },
-          "&:active": {
-            background: "linear-gradient(180deg,$green-800, $green-800)",
-            boxShadow:
-              "#5BE873 0px 0px 1px 0px inset, #5BE873 0px 0px 1px 0px inset",
-          },
-        },
-      },
-      danger: {
-        borderColor: "$maple-700",
-        background: "linear-gradient(180deg,$maple-400, $maple-500)",
-        boxShadow: "#F58286 0px 0px 1px 0px inset",
-
-        "&:not([disabled])": {
-          "&:hover": {
-            boxShadow: "#FFF5F5 1.25px 1.25px 1px -1px inset",
-          },
-          "&:active": {
-            background: "linear-gradient(180deg,$maple-500, $maple-500)",
-            boxShadow:
-              "#F58286 0px 0px 1px 0px inset, #F58286 0px 0px 1px 0px inset",
-          },
-        },
-      },
-    },
-  },
-  defaultVariants: {
-    type: "default",
-  },
+					border: "1px solid rgba(255, 255, 255, 0.07)",
+					// border: "1px solid rgba(255, 255, 255, 0.27)",
+				},
+			},
+		},
+	},
+	compoundVariants: [
+		{
+			intent: "danger",
+			variant: "default",
+			css: {},
+		},
+	],
+	defaultVariants: {
+		variant: "default",
+	},
 });
 
-type ButtonProps = React.SelectHTMLAttributes<HTMLButtonElement> &
-  VariantProps<typeof StyledButton> & {
-    children?: React.ReactNode;
-    loading?: boolean;
-  };
-
-export const Button = ({
-  children,
-  disabled,
-  type,
-  loading = false,
-  ...rest
-}: ButtonProps) => {
-  return (
-    <StyledButton {...rest} type={type} disabled={disabled || loading}>
-      {loading && (
-        <Spinner
-          css={{ height: "10px", width: "10px" }}
-          inverted={type !== "default"}
-        />
-      )}
-      <span>{children}</span>
-    </StyledButton>
-  );
-};
+export { Button };

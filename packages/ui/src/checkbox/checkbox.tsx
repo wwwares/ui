@@ -20,7 +20,7 @@ const CheckIcon = styled("div", {
 			display: "flex",
 			height: "18px",
 			width: "18px",
-			border: "1px solid {colors.slate.200}",
+			border: "1px solid {colors.slate.400}",
 			background: "linear-gradient(180deg, white, {colors.slate.50})",
 			boxShadow: "{colors.slate.100} 0px 0px 1px 0px inset",
 		},
@@ -80,7 +80,7 @@ const CheckIcon = styled("div", {
 						// background: "{colors.slate.50}",
 						background:
 							"linear-gradient(180deg, {colors.slate.50}, {colors.slate.50})",
-						borderColor: "{colors.slate.300}",
+						borderColor: "{colors.slate.500}",
 					},
 				},
 			},
