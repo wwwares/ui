@@ -37,6 +37,7 @@ export const SelectBackdrop = styled("div", {
 			background:
 				"linear-gradient(180deg, {colors.slate.100}, {colors.slate.100}) !important",
 			borderColor: "{colors.blue.600} !important",
+			// outline: "dotted thin",
 		},
 	},
 });

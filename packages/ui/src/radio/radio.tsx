@@ -64,6 +64,11 @@ const RadioCircle = styled("div", {
 				cursor: "not-allowed",
 			},
 		},
+		focused: {
+			true: {
+				outline: "dotted thin",
+			},
+		},
 	},
 	compoundVariants: [
 		{
@@ -104,12 +109,13 @@ type RadioProps = RACRadioProps;
 
 const Radio = (props: RadioProps) => (
 	<RACRadio {...props}>
-		{({ isDisabled, isSelected, isPressed }) => (
+		{({ isDisabled, isSelected, isPressed, isFocused }) => (
 			<>
 				<RadioCircle
 					checked={isSelected}
 					disabled={isDisabled}
 					pressed={isPressed}
+					focused={isFocused}
 				/>
 				{props.children}
 			</>

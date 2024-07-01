@@ -12,6 +12,10 @@ const CheckIcon = styled("div", {
 		height: "18px",
 		width: "18px",
 
+		_focus: {
+			outline: "dotted thin",
+		},
+
 		_before: {
 			transition: "all 60ms ease-in",
 			position: "absolute",
@@ -67,6 +71,11 @@ const CheckIcon = styled("div", {
 				cursor: "not-allowed",
 			},
 		},
+		focused: {
+			true: {
+				outline: "dotted thin",
+			},
+		},
 	},
 	compoundVariants: [
 		{
@@ -114,11 +123,12 @@ const CheckIcon = styled("div", {
 // @ts-expect-error
 const Checkbox = (props) => (
 	<RACCheckbox {...props} position="relative">
-		{({ isSelected, isDisabled, isPressed }) => (
+		{({ isSelected, isDisabled, isPressed, isFocused }) => (
 			<CheckIcon
 				checked={isSelected}
 				disabled={isDisabled}
 				pressed={isPressed}
+				focused={isFocused}
 			/>
 		)}
 	</RACCheckbox>
