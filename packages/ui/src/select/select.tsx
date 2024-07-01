@@ -21,21 +21,21 @@ export const SelectBackdrop = styled("div", {
 		_peerHover: {
 			boxShadow: "{colors.slate.200} 1.25px 1.25px 1px -1px inset",
 			background:
-				"linear-gradient(180deg, {colors.slate.50}, {colors.slate.50})",
+				"linear-gradient(180deg, {colors.slate.50}, {colors.slate.100})",
 			borderColor: "{colors.slate.300}",
 		},
 
 		_peerActive: {
 			boxShadow: "{colors.slate.300} 1.25px 1.25px 1px -1px inset !important",
 			background:
-				"linear-gradient(180deg, {colors.slate.50}, {colors.slate.100}) !important",
+				"linear-gradient(180deg, {colors.slate.100}, {colors.slate.100}) !important",
 			borderColor: "{colors.blue.600} !important",
 		},
 
 		_peerFocus: {
 			boxShadow: "{colors.slate.300} 1.25px 1.25px 1px -1px inset !important",
 			background:
-				"linear-gradient(180deg, {colors.slate.50}, {colors.slate.100}) !important",
+				"linear-gradient(180deg, {colors.slate.100}, {colors.slate.100}) !important",
 			borderColor: "{colors.blue.600} !important",
 		},
 	},
