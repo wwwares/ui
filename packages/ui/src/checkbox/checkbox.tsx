@@ -12,17 +12,6 @@ const CheckIcon = styled("div", {
 		height: "18px",
 		width: "18px",
 
-		_hover: {
-			_before: {
-				boxShadow: "{colors.slate.200} 1.25px 1.25px 1px -1px inset",
-				// background: "linear-gradient(180deg, white, {colors.slate.100})",
-				// background: "{colors.slate.50}",
-				background:
-					"linear-gradient(180deg, {colors.slate.50}, {colors.slate.50})",
-				borderColor: "{colors.slate.300}",
-			},
-		},
-
 		_before: {
 			transition: "all 60ms ease-in",
 			position: "absolute",
@@ -36,7 +25,6 @@ const CheckIcon = styled("div", {
 			boxShadow: "{colors.slate.100} 0px 0px 1px 0px inset",
 		},
 		_after: {
-			// transition: "all 60ms ease-in",
 			position: "absolute",
 			top: "4px",
 			content: "''",
@@ -51,9 +39,7 @@ const CheckIcon = styled("div", {
 		},
 	},
 	variants: {
-		pressed: {
-			true: {},
-		},
+		pressed: { true: {}, false: {} },
 		checked: {
 			true: {
 				_before: {
@@ -85,13 +71,28 @@ const CheckIcon = styled("div", {
 	compoundVariants: [
 		{
 			checked: false,
+			pressed: false,
+			css: {
+				_hover: {
+					_before: {
+						boxShadow: "{colors.slate.200} 1.25px 1.25px 1px -1px inset",
+						// background: "linear-gradient(180deg, white, {colors.slate.100})",
+						// background: "{colors.slate.50}",
+						background:
+							"linear-gradient(180deg, {colors.slate.50}, {colors.slate.50})",
+						borderColor: "{colors.slate.300}",
+					},
+				},
+			},
+		},
+		{
+			checked: false,
 			pressed: true,
 			css: {
 				_before: {
-					boxShadow:
-						"{colors.slate.300} 1.25px 1.25px 1px -1px inset !important",
+					boxShadow: "{colors.slate.300} 1.25px 1.25px 1px -1px inset",
 					background:
-						"linear-gradient(180deg, {colors.slate.100}, {colors.slate.100}) !important",
+						"linear-gradient(180deg, {colors.slate.100}, {colors.slate.100})",
 					borderColor: "{colors.slate.400}",
 				},
 			},
