@@ -16,15 +16,15 @@ const Spinner = styled("div", {
 		height: "28px",
 		display: "inline-block",
 		borderRadius: "50%",
-		border: "2px solid {colors.slate.200}",
-		borderTopColor: "{colors.slate.900}",
+		border: "2px solid {colors.zinc.200}",
+		borderTopColor: "{colors.zinc.900}",
 		animation: "spin .875s cubic-bezier(.57,.59,.59,.46) infinite",
 	},
 	variants: {
 		inverted: {
 			true: {
-				border: "2px solid {colors.slate.900}",
-				borderTopColor: "slate.200",
+				border: "2px solid {colors.zinc.900}",
+				borderTopColor: "zinc.200",
 			},
 		},
 	},

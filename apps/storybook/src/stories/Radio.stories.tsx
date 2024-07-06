@@ -19,7 +19,10 @@ const meta = {
 		// backgroundColor: { control: "color" },
 	},
 	// Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-	// args: { onClick: fn() },
+	args: {
+		isRequired: false,
+		label: "@wwware/ui",
+	},
 } satisfies Meta<typeof Radio>;
 
 export default meta;
@@ -34,26 +37,15 @@ export const Default: Story = {
 		return (
 			// <div style={{ display: "flex", width: "400px" }}>
 			<RadioGroup
+				{...args}
 				value={value}
 				onChange={(v) => {
-					console.log(v);
-
 					setValue(v);
 				}}
 				style={{ display: "flex", gap: "25px" }}
 			>
-				<Radio
-					value="one"
-					// {...args}
-				>
-					One
-				</Radio>
-				<Radio
-					value="two"
-					// {...args}
-				>
-					Twosadasdasd
-				</Radio>
+				<Radio value="one">One</Radio>
+				<Radio value="two">Twosadasdasd</Radio>
 			</RadioGroup>
 			// </div>
 		);

@@ -1,8 +1,9 @@
-import { styled } from "@ui-ware/system/jsx";
-import type { HTMLProps } from "react";
+import { Box, Flex, styled } from "@ui-ware/system/jsx";
+import { useId, type HTMLProps } from "react";
 import { cx } from "@ui-ware/system/css";
+import { Label } from "../label";
 
-export const SelectBackdrop = styled("div", {
+const SelectBackdrop = styled("div", {
 	base: {
 		position: "absolute",
 		zIndex: 10,
@@ -12,30 +13,29 @@ export const SelectBackdrop = styled("div", {
 		left: 0,
 		borderRadius: "4px",
 		transition: "all 60ms ease-in",
-		border: "1px solid {colors.slate.400}",
-		background: "linear-gradient(180deg, white, {colors.slate.50})",
-		boxShadow: "{colors.slate.100} 0px 0px 1px 0px inset",
+		border: "1px solid {colors.zinc.400}",
+		background: "linear-gradient(180deg, white, {colors.zinc.50})",
+		boxShadow: "{colors.zinc.100} 0px 0px 1px 0px inset",
 
 		// This sucks with !important
 
 		_peerHover: {
-			boxShadow: "{colors.slate.200} 1.25px 1.25px 1px -1px inset",
-			background:
-				"linear-gradient(180deg, {colors.slate.50}, {colors.slate.100})",
-			borderColor: "{colors.slate.500}",
+			boxShadow: "{colors.zinc.200} 1.25px 1.25px 1px -1px inset",
+			background: "linear-gradient(180deg, {colors.zinc.50}, {colors.zinc.50})",
+			borderColor: "{colors.zinc.500}",
 		},
 
 		_peerActive: {
-			boxShadow: "{colors.slate.300} 1.25px 1.25px 1px -1px inset !important",
+			boxShadow: "{colors.zinc.300} 1.25px 1.25px 1px -1px inset !important",
 			background:
-				"linear-gradient(180deg, {colors.slate.100}, {colors.slate.100}) !important",
+				"linear-gradient(180deg, {colors.zinc.100}, {colors.zinc.100}) !important",
 			borderColor: "{colors.blue.600} !important",
 		},
 
 		_peerFocus: {
-			boxShadow: "{colors.slate.300} 1.25px 1.25px 1px -1px inset !important",
+			boxShadow: "{colors.zinc.300} 1.25px 1.25px 1px -1px inset !important",
 			background:
-				"linear-gradient(180deg, {colors.slate.100}, {colors.slate.100}) !important",
+				"linear-gradient(180deg, {colors.zinc.100}, {colors.zinc.100}) !important",
 			borderColor: "{colors.blue.600} !important",
 			// outline: "dotted thin",
 		},
@@ -83,7 +83,7 @@ const SelectIcon = styled("div", {
 	base: {
 		height: "20px",
 		width: "20px",
-		fill: "slate.600",
+		fill: "zinc.600",
 	},
 });
 
@@ -95,27 +95,27 @@ const SelectOld = styled("select", {
 		transition: "all 60ms ease-in",
 		borderRadius: "4px",
 		display: "flex",
-		border: "1px solid {colors.slate.200}",
-		background: "linear-gradient(180deg, white, {colors.slate.50})",
-		boxShadow: "{colors.slate.100} 0px 0px 1px 0px inset",
+		border: "1px solid {colors.zinc.200}",
+		background: "linear-gradient(180deg, white, {colors.zinc.50})",
+		boxShadow: "{colors.zinc.100} 0px 0px 1px 0px inset",
 
 		_active: {
-			boxShadow: "{colors.slate.300} 1.25px 1.25px 1px -1px inset !important",
-			background: "{colors.slate.100} !important",
+			boxShadow: "{colors.zinc.300} 1.25px 1.25px 1px -1px inset !important",
+			background: "{colors.zinc.100} !important",
 			borderColor: "{colors.blue.600}",
 		},
 
 		_focus: {
-			boxShadow: "{colors.slate.300} 1.25px 1.25px 1px -1px inset !important",
-			background: "{colors.slate.100} !important",
+			boxShadow: "{colors.zinc.300} 1.25px 1.25px 1px -1px inset !important",
+			background: "{colors.zinc.100} !important",
 			borderColor: "{colors.blue.600}",
 		},
 
 		_hover: {
 			"&:not(:focus)": {
-				boxShadow: "{colors.slate.200} 1.25px 1.25px 1px -1px inset",
-				background: "{colors.slate.50}",
-				borderColor: "{colors.slate.300}",
+				boxShadow: "{colors.zinc.200} 1.25px 1.25px 1px -1px inset",
+				background: "{colors.zinc.50}",
+				borderColor: "{colors.zinc.300}",
 			},
 		},
 
@@ -127,9 +127,9 @@ const SelectOld = styled("select", {
 			display: "flex",
 			height: "18px",
 			width: "18px",
-			border: "1px solid {colors.slate.200}",
-			background: "linear-gradient(180deg, white, {colors.slate.50})",
-			boxShadow: "{colors.slate.100} 0px 0px 1px 0px inset",
+			border: "1px solid {colors.zinc.200}",
+			background: "linear-gradient(180deg, white, {colors.zinc.50})",
+			boxShadow: "{colors.zinc.100} 0px 0px 1px 0px inset",
 		},
 
 		_disabled: {
@@ -155,35 +155,43 @@ type SelectOption = {
 type SelectProps = HTMLProps<HTMLSelectElement> & {
 	children: never;
 	options: SelectOption[];
+	label: string;
+	isRequired?: boolean;
 };
 
 function Select(props: SelectProps) {
-	const { options, ...rest } = props;
+	const { options, isRequired, label, ...rest } = props;
+	const selectId = useId();
 
 	// @ts-ignore
 	const cn = cx(rest.className, "peer");
 
 	return (
 		// Full container width hack?
-		<div style={{ position: "relative", width: "100%" }}>
-			<SelectEl {...rest} className={"peer"}>
-				{options.map((option) => (
-					<option key={option.value} value={option.value}>
-						{option.label}
-					</option>
-				))}
-			</SelectEl>
-			<SelectContent>
-				<SelectOption>{props.value}</SelectOption>
-				<SelectIcon>
-					<svg viewBox="0 0 20 20" focusable={false} aria-hidden="true">
-						<path d="M10.884 4.323a1.25 1.25 0 0 0-1.768 0l-2.646 2.647a.75.75 0 0 0 1.06 1.06l2.47-2.47 2.47 2.47a.75.75 0 1 0 1.06-1.06l-2.646-2.647Z" />
-						<path d="m13.53 13.03-2.646 2.647a1.25 1.25 0 0 1-1.768 0l-2.646-2.647a.75.75 0 0 1 1.06-1.06l2.47 2.47 2.47-2.47a.75.75 0 0 1 1.06 1.06Z" />
-					</svg>
-				</SelectIcon>
-			</SelectContent>
-			<SelectBackdrop />
-		</div>
+		<Flex width="100%" flexDirection="column">
+			<Label isRequired={isRequired} htmlFor={selectId}>
+				{label}
+			</Label>
+			<Box position="relative">
+				<SelectEl {...rest} className={"peer"} id={selectId}>
+					{options.map((option) => (
+						<option key={option.value} value={option.value}>
+							{option.label}
+						</option>
+					))}
+				</SelectEl>
+				<SelectContent>
+					<SelectOption>{props.value}</SelectOption>
+					<SelectIcon>
+						<svg viewBox="0 0 20 20" focusable={false} aria-hidden="true">
+							<path d="M10.884 4.323a1.25 1.25 0 0 0-1.768 0l-2.646 2.647a.75.75 0 0 0 1.06 1.06l2.47-2.47 2.47 2.47a.75.75 0 1 0 1.06-1.06l-2.646-2.647Z" />
+							<path d="m13.53 13.03-2.646 2.647a1.25 1.25 0 0 1-1.768 0l-2.646-2.647a.75.75 0 0 1 1.06-1.06l2.47 2.47 2.47-2.47a.75.75 0 0 1 1.06 1.06Z" />
+						</svg>
+					</SelectIcon>
+				</SelectContent>
+				<SelectBackdrop />
+			</Box>
+		</Flex>
 	);
 }
 

@@ -19,7 +19,11 @@ const meta = {
 	// 	backgroundColor: { control: "color" },
 	// },
 	// Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-	// args: { onClick: fn() },
+	args: {
+		label: "@wwware/ui",
+		isRequired: false,
+		isSelected: false,
+	},
 } satisfies Meta<typeof Checkbox>;
 
 export default meta;
@@ -30,15 +34,15 @@ export const Default: Story = {
 	args: {
 		// primary: true,
 		// label: "Checkbox",
-		isSelected: true,
+		// isSelected: true,
 	},
 	render: (args) => {
 		const [value, setValue] = useState(false);
 
 		return (
 			<Checkbox
-				// {...args}
-				value={value}
+				{...args}
+				isSelected={value}
 				onChange={(v) => {
 					console.log(v);
 					setValue(v);

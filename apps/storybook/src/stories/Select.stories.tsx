@@ -15,6 +15,14 @@ const meta = {
 	tags: ["autodocs"],
 	// More on argTypes: https://storybook.js.org/docs/api/argtypes
 	argTypes: {},
+	args: {
+		options: [
+			{ value: "value 1", label: "Value 1" },
+			{ value: "value 2", label: "Value 2" },
+		],
+		isRequired: false,
+		label: "@wwware/ui",
+	},
 	// Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
 	// args: { onClick: fn() },
 } satisfies Meta<typeof Select>;
@@ -24,12 +32,7 @@ type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Default: Story = {
-	args: {
-		options: [
-			{ value: "value 1", label: "Value 1" },
-			{ value: "value 2", label: "Value 2" },
-		],
-	},
+	args: {},
 	render: (args) => {
 		const [value, setValue] = useState("value 2");
 

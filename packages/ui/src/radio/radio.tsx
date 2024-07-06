@@ -1,9 +1,11 @@
-import { styled } from "@ui-ware/system/jsx";
+import { Flex, styled } from "@ui-ware/system/jsx";
 import {
 	type RadioProps as RACRadioProps,
 	Radio as RACRadio,
 	RadioGroup as RACRadioGroup,
+	type RadioGroupProps as RACRadioGroupProps,
 } from "react-aria-components";
+import { Label } from "../label";
 
 const RadioCircle = styled("div", {
 	base: {
@@ -14,9 +16,9 @@ const RadioCircle = styled("div", {
 		borderRadius: "50%",
 		height: "18px",
 		width: "18px",
-		border: "1px solid {colors.slate.400}",
-		background: "linear-gradient(180deg, white, {colors.slate.50})",
-		boxShadow: "{colors.slate.100} 0px 0px 1px 0px inset",
+		border: "1px solid {colors.zinc.400}",
+		background: "linear-gradient(180deg, white, {colors.zinc.50})",
+		boxShadow: "{colors.zinc.100} 0px 0px 1px 0px inset",
 		justifyContent: "center",
 		alignItems: "center",
 		cursor: "pointer",
@@ -33,7 +35,7 @@ const RadioCircle = styled("div", {
 			width: "8px",
 			top: "4px",
 			left: "4px",
-			background: "linear-gradient(180deg, white, {colors.slate.50})",
+			background: "linear-gradient(180deg, white, {colors.zinc.50})",
 			opacity: 0,
 		},
 	},
@@ -76,10 +78,10 @@ const RadioCircle = styled("div", {
 			pressed: false,
 			css: {
 				_hover: {
-					boxShadow: "{colors.slate.200} 1.25px 1.25px 1px -1px inset",
+					boxShadow: "{colors.zinc.200} 1.25px 1.25px 1px -1px inset",
 					background:
-						"linear-gradient(180deg, {colors.slate.50}, {colors.slate.50})",
-					borderColor: "{colors.slate.500}",
+						"linear-gradient(180deg, {colors.zinc.50}, {colors.zinc.50})",
+					borderColor: "{colors.zinc.500}",
 				},
 			},
 		},
@@ -87,10 +89,10 @@ const RadioCircle = styled("div", {
 			checked: false,
 			pressed: true,
 			css: {
-				boxShadow: "{colors.slate.300} 1.25px 1.25px 1px -1px inset",
+				boxShadow: "{colors.zinc.300} 1.25px 1.25px 1px -1px inset",
 				background:
-					"linear-gradient(180deg, {colors.slate.100}, {colors.slate.100})",
-				borderColor: "{colors.slate.400}",
+					"linear-gradient(180deg, {colors.zinc.100}, {colors.zinc.100})",
+				borderColor: "{colors.blue.600}",
 			},
 		},
 		{
@@ -105,22 +107,38 @@ const RadioCircle = styled("div", {
 	],
 });
 
-type RadioProps = RACRadioProps;
+type RadioGroupProps = RACRadioGroupProps & { label: string };
+const RadioGroup = (props: RadioGroupProps) => {
+	const { children, label, isRequired, ...rest } = props;
+	return (
+		<RACRadioGroup {...rest} isRequired={isRequired}>
+			<Flex gap="4px" flexDirection="column" alignItems="flex-start">
+				<Label isRequired={isRequired}>{label}</Label>
+				{children}
+			</Flex>
+		</RACRadioGroup>
+	);
+};
 
-const Radio = (props: RadioProps) => (
-	<RACRadio {...props}>
-		{({ isDisabled, isSelected, isPressed, isFocused }) => (
-			<>
-				<RadioCircle
-					checked={isSelected}
-					disabled={isDisabled}
-					pressed={isPressed}
-					focused={isFocused}
-				/>
-				{props.children}
-			</>
-		)}
-	</RACRadio>
-);
+type RadioProps = RACRadioProps & { label: string };
+const Radio = (props: RadioProps) => {
+	const { label, children, ...rest } = props;
+	return (
+		<RACRadio {...rest}>
+			{({ isDisabled, isSelected, isPressed, isFocused }) => (
+				<Flex gap="4px" alignItems="flex-start">
+					<RadioCircle
+						checked={isSelected}
+						disabled={isDisabled}
+						pressed={isPressed}
+						focused={isFocused}
+					/>
+					{/* TODO: render props */}
+					<Label>{typeof children !== "function" && children}</Label>
+				</Flex>
+			)}
+		</RACRadio>
+	);
+};
 
-export { Radio, type RadioProps, RACRadioGroup as RadioGroup };
+export { Radio, type RadioProps, RadioGroup, type RadioGroupProps };

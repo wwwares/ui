@@ -10,8 +10,10 @@ import {
 	// purpleDark,
 	red,
 	redDark,
-	slate,
-	slateDark,
+	// zinc,
+	// zincDark,
+	// zinc, mauve
+	// zincDark, mauve
 } from "@radix-ui/colors";
 
 function makePandaColor<T extends Record<string, string>>(
@@ -39,17 +41,17 @@ export const warePreset = definePreset({
 		dark: "[data-color-mode=dark] &",
 	},
 
-	staticCss: {},
+	// staticCss: {},
 	presets: ["@pandacss/preset-base", "@pandacss/preset-panda"],
 	// Useful for theme customization
 	theme: {
-		tokens: {
-			colors: {
-				...makePandaColor(slate, slateDark),
-				...makePandaColor(blue, blueDark),
-				...makePandaColor(red, redDark),
-			},
-		},
+		// tokens: {
+		// 	colors: {
+		// 		// ...makePandaColor(zinc, zincDark),
+		// 		// ...makePandaColor(blue, blueDark),
+		// 		// ...makePandaColor(red, redDark),
+		// 	},
+		// },
 		semanticTokens: {
 			colors: {
 				danger: {

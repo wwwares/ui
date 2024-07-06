@@ -1,5 +1,9 @@
-import { Checkbox as RACCheckbox } from "react-aria-components";
-import { styled } from "@ui-ware/system/jsx";
+import {
+	Checkbox as RACCheckbox,
+	type CheckboxProps as RACCheckboxProps,
+} from "react-aria-components";
+import { Flex, styled } from "@ui-ware/system/jsx";
+import { Label } from "../label";
 
 const CheckIcon = styled("div", {
 	base: {
@@ -24,9 +28,9 @@ const CheckIcon = styled("div", {
 			display: "flex",
 			height: "18px",
 			width: "18px",
-			border: "1px solid {colors.slate.400}",
-			background: "linear-gradient(180deg, white, {colors.slate.50})",
-			boxShadow: "{colors.slate.100} 0px 0px 1px 0px inset",
+			border: "1px solid {colors.zinc.400}",
+			background: "linear-gradient(180deg, white, {colors.zinc.50})",
+			boxShadow: "{colors.zinc.100} 0px 0px 1px 0px inset",
 		},
 		_after: {
 			position: "absolute",
@@ -84,12 +88,12 @@ const CheckIcon = styled("div", {
 			css: {
 				_hover: {
 					_before: {
-						boxShadow: "{colors.slate.200} 1.25px 1.25px 1px -1px inset",
-						// background: "linear-gradient(180deg, white, {colors.slate.100})",
-						// background: "{colors.slate.50}",
+						boxShadow: "{colors.zinc.200} 1.25px 1.25px 1px -1px inset",
+						// background: "linear-gradient(180deg, white, {colors.zinc.100})",
+						// background: "{colors.zinc.50}",
 						background:
-							"linear-gradient(180deg, {colors.slate.50}, {colors.slate.50})",
-						borderColor: "{colors.slate.500}",
+							"linear-gradient(180deg, {colors.zinc.50}, {colors.zinc.50})",
+						borderColor: "{colors.zinc.500}",
 					},
 				},
 			},
@@ -99,10 +103,10 @@ const CheckIcon = styled("div", {
 			pressed: true,
 			css: {
 				_before: {
-					boxShadow: "{colors.slate.300} 1.25px 1.25px 1px -1px inset",
+					boxShadow: "{colors.zinc.300} 1.25px 1.25px 1px -1px inset",
 					background:
-						"linear-gradient(180deg, {colors.slate.100}, {colors.slate.100})",
-					borderColor: "{colors.slate.400}",
+						"linear-gradient(180deg, {colors.zinc.100}, {colors.zinc.100})",
+					borderColor: "{colors.blue.600}",
 				},
 			},
 		},
@@ -120,18 +124,25 @@ const CheckIcon = styled("div", {
 	],
 });
 
-// @ts-expect-error
-const Checkbox = (props) => (
-	<RACCheckbox {...props} position="relative">
-		{({ isSelected, isDisabled, isPressed, isFocused }) => (
-			<CheckIcon
-				checked={isSelected}
-				disabled={isDisabled}
-				pressed={isPressed}
-				focused={isFocused}
-			/>
-		)}
-	</RACCheckbox>
-);
+type CheckboxProps = RACCheckboxProps & { label: string };
+
+const Checkbox = (props: CheckboxProps) => {
+	const { label, isRequired } = props;
+	return (
+		<RACCheckbox {...props} isRequired={isRequired}>
+			{({ isSelected, isDisabled, isPressed, isFocused }) => (
+				<Flex gap="4px" flexDirection="row" alignItems="flex-start">
+					<CheckIcon
+						checked={isSelected}
+						disabled={isDisabled}
+						pressed={isPressed}
+						focused={isFocused}
+					/>
+					{label && <Label isRequired={isRequired}>{label}</Label>}
+				</Flex>
+			)}
+		</RACCheckbox>
+	);
+};
 
 export { Checkbox };
