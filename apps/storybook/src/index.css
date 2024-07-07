@@ -1,4 +1,5 @@
 @layer reset, base, tokens, recipes, utilities;
+/* @import url('@ui-ware/system/static.css'); */
 
 html,
 body {

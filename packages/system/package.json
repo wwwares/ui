@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "dev": "tsup src/index.ts --watch --dts",
-    "prepare": "panda codegen"
+		"dev:css": "pnpm panda cssgen --outfile dist/static.css --watch",
+    "ship": "panda ship --outfile dist/panda.buildinfo.json"
   },
   "devDependencies": {
     "@pandacss/dev": "^0.41.0",
@@ -12,6 +13,11 @@
 		"tsup": "^8.1.0"
   },
   "exports": {
+    "./preset": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.js"
+    },
     "./css": {
       "types": "./dist/css/index.d.ts",
       "require": "./dist/css/index.mjs",
@@ -32,12 +38,17 @@
       "require": "./dist/patterns/index.mjs",
       "import": "./dist/patterns/index.mjs"
     },
+    "./recipes": {
+      "types": "./dist/recipes/index.d.ts",
+      "require": "./dist/recipes/index.mjs",
+      "import": "./dist/recipes/index.mjs"
+    },
     "./jsx": {
       "types": "./dist/jsx/index.d.ts",
       "require": "./dist/jsx/index.mjs",
       "import": "./dist/jsx/index.mjs"
     },
-    "./styles.css": "./dist/styles.css"
+    "./static.css": "./dist/static.css"
   },
   "dependencies": {
     "@radix-ui/colors": "^3.0.0"

@@ -6,4 +6,4 @@ export * from "./radio";
 export * from "./card";
 export * from "./text-field";
 
-// import '../styled-system/css'
+import "@ui-ware/system/static.css";

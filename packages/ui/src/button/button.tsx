@@ -2,12 +2,15 @@ import {
 	Button as RACButton,
 	type ButtonProps as RACButtonProps,
 } from "react-aria-components";
-import { ButtonRecipe, type ButtonRecipeProps } from "./button.recipe";
+import {
+	buttonRecipe,
+	type ButtonRecipeVariantProps,
+} from "@ui-ware/system/recipes";
 
-type ButtonProps = RACButtonProps & ButtonRecipeProps;
+type ButtonProps = RACButtonProps & ButtonRecipeVariantProps;
 
 function Button(props: ButtonProps) {
-	const recipeClass = ButtonRecipe({
+	const recipeClass = buttonRecipe({
 		intent: props.intent,
 		variant: props.variant,
 	});

@@ -1,33 +1,26 @@
 import { defineConfig } from "@pandacss/dev";
-import { ButtonRecipe } from "./src/button/button.recipe";
+
+import { warePreset } from "@ui-ware/system/preset";
 
 export default defineConfig({
 	// Whether to use css reset
 	preflight: true,
 
 	staticCss: { recipes: "*" },
+	presets: [warePreset],
 	jsxFramework: "react",
 	// Where to look for your css declarations
 	include: [
 		"./src/**/*.{js,jsx,ts,tsx}",
 		"./pages/**/*.{js,jsx,ts,tsx}",
-		"./node_modules/@ui-ware/system/dist/panda.buildinfo.json",
+		// "./node_modules/@ui-ware/system/dist/panda.buildinfo.json",
 	],
 
 	// Files to exclude
 	exclude: [],
 
 	// Useful for theme customization
-	theme: {
-		extend: {
-			recipes: {
-				button: ButtonRecipe,
-			},
-			tokens: {
-				colors: {},
-			},
-		},
-	},
+	theme: {},
 
 	importMap: "@ui-ware/system",
 	// The output directory for your css system

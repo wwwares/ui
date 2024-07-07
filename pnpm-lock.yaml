@@ -17,6 +17,9 @@ importers:
 
   apps/storybook:
     dependencies:
+      '@ui-ware/system':
+        specifier: workspace:*
+        version: link:../../packages/system
       '@ui-ware/ui':
         specifier: workspace:*
         version: link:../../packages/ui

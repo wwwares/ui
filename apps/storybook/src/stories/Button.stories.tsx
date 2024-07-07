@@ -43,13 +43,13 @@ export const Secondary: Story = {
 export const Mix: Story = {
 	render() {
 		return (
-			<div style={{display: 'flex', gap: '5px'}}>
-			<Button>Hey!</Button>
-			<Button variant="primary">Hey 2!</Button>
+			<div style={{ display: "flex", gap: "5px" }}>
+				<Button>Hey!</Button>
+				<Button variant="primary">Hey 2!</Button>
 			</div>
-		)
-	}
-}
+		);
+	},
+};
 
 export const Large: Story = {
 	args: {
