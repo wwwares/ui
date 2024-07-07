@@ -28,9 +28,9 @@ const CheckIcon = styled("div", {
 			display: "flex",
 			height: "18px",
 			width: "18px",
-			border: "1px solid {colors.zinc.400}",
-			background: "linear-gradient(180deg, white, {colors.zinc.50})",
-			boxShadow: "{colors.zinc.100} 0px 0px 1px 0px inset",
+			border: "neutral.default",
+			boxShadow: "ridge.interactive.neutral.default",
+			background: "bg.neutral.default",
 		},
 		_after: {
 			position: "absolute",
@@ -51,17 +51,15 @@ const CheckIcon = styled("div", {
 		checked: {
 			true: {
 				_before: {
-					background:
-						"linear-gradient(180deg, {colors.blue.400}, {colors.blue.500})",
-					borderColor: "{colors.blue.600}",
-					boxShadow: "#829FF5 0px 0px 1px 0px inset",
+					border: "primary.default",
+					boxShadow: "ridge.interactive.primary.default",
+					background: "bg.primary.default",
 				},
 				_hover: {
 					_before: {
-						background:
-							"linear-gradient(180deg, {colors.blue.500}, {colors.blue.600})",
-						borderColor: "{colors.blue.700}",
-						boxShadow: "#829FF5 0px 0px 1px 0px inset",
+						border: "primary.hover",
+						boxShadow: "ridge.interactive.primary.hover",
+						background: "bg.primary.hover",
 					},
 				},
 				_after: {
@@ -88,12 +86,9 @@ const CheckIcon = styled("div", {
 			css: {
 				_hover: {
 					_before: {
-						boxShadow: "{colors.zinc.200} 1.25px 1.25px 1px -1px inset",
-						// background: "linear-gradient(180deg, white, {colors.zinc.100})",
-						// background: "{colors.zinc.50}",
-						background:
-							"linear-gradient(180deg, {colors.zinc.50}, {colors.zinc.50})",
-						borderColor: "{colors.zinc.500}",
+						boxShadow: "ridge.interactive.neutral.hover",
+						border: "neutral.hover",
+						background: "bg.neutral.hover",
 					},
 				},
 			},
@@ -103,10 +98,9 @@ const CheckIcon = styled("div", {
 			pressed: true,
 			css: {
 				_before: {
-					boxShadow: "{colors.zinc.300} 1.25px 1.25px 1px -1px inset",
-					background:
-						"linear-gradient(180deg, {colors.zinc.100}, {colors.zinc.100})",
-					borderColor: "{colors.blue.600}",
+					boxShadow: "ridge.interactive.neutral.pressed",
+					border: "primary.default",
+					background: "bg.neutral.pressed",
 				},
 			},
 		},
@@ -116,7 +110,7 @@ const CheckIcon = styled("div", {
 			css: {
 				_hover: {
 					_before: {
-						boxShadow: "{colors.blue.500} 0px 0px 1px 0px inset",
+						boxShadow: "ridge.interactive.primary.pressed",
 					},
 				},
 			},

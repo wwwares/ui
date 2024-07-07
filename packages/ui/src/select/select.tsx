@@ -13,30 +13,28 @@ const SelectBackdrop = styled("div", {
 		left: 0,
 		borderRadius: "4px",
 		transition: "all 60ms ease-in",
-		border: "1px solid {colors.zinc.400}",
-		background: "linear-gradient(180deg, white, {colors.zinc.50})",
-		boxShadow: "{colors.zinc.100} 0px 0px 1px 0px inset",
+		border: "neutral.default",
+		boxShadow: "ridge.interactive.neutral.default",
+		background: "bg.neutral.default",
 
 		// This sucks with !important
 
 		_peerHover: {
-			boxShadow: "{colors.zinc.200} 1.25px 1.25px 1px -1px inset",
-			background: "linear-gradient(180deg, {colors.zinc.50}, {colors.zinc.50})",
-			borderColor: "{colors.zinc.500}",
+			boxShadow: "ridge.interactive.neutral.hover",
+			border: "neutral.hover",
+			background: "bg.neutral.hover",
 		},
 
 		_peerActive: {
-			boxShadow: "{colors.zinc.300} 1.25px 1.25px 1px -1px inset !important",
-			background:
-				"linear-gradient(180deg, {colors.zinc.100}, {colors.zinc.100}) !important",
-			borderColor: "{colors.blue.600} !important",
+			boxShadow: "ridge.interactive.neutral.pressed",
+			border: "primary.default !important",
+			background: "bg.neutral.pressed !important",
 		},
 
 		_peerFocus: {
-			boxShadow: "{colors.zinc.300} 1.25px 1.25px 1px -1px inset !important",
-			background:
-				"linear-gradient(180deg, {colors.zinc.100}, {colors.zinc.100}) !important",
-			borderColor: "{colors.blue.600} !important",
+			boxShadow: "ridge.interactive.neutral.pressed",
+			border: "primary.default !important",
+			background: "bg.neutral.pressed !important",
 			// outline: "dotted thin",
 		},
 	},
@@ -87,66 +85,6 @@ const SelectIcon = styled("div", {
 	},
 });
 
-// @ts-ignore
-const SelectOld = styled("select", {
-	base: {
-		padding: "4px 8px",
-		appearance: "none",
-		transition: "all 60ms ease-in",
-		borderRadius: "4px",
-		display: "flex",
-		border: "1px solid {colors.zinc.200}",
-		background: "linear-gradient(180deg, white, {colors.zinc.50})",
-		boxShadow: "{colors.zinc.100} 0px 0px 1px 0px inset",
-
-		_active: {
-			boxShadow: "{colors.zinc.300} 1.25px 1.25px 1px -1px inset !important",
-			background: "{colors.zinc.100} !important",
-			borderColor: "{colors.blue.600}",
-		},
-
-		_focus: {
-			boxShadow: "{colors.zinc.300} 1.25px 1.25px 1px -1px inset !important",
-			background: "{colors.zinc.100} !important",
-			borderColor: "{colors.blue.600}",
-		},
-
-		_hover: {
-			"&:not(:focus)": {
-				boxShadow: "{colors.zinc.200} 1.25px 1.25px 1px -1px inset",
-				background: "{colors.zinc.50}",
-				borderColor: "{colors.zinc.300}",
-			},
-		},
-
-		_before: {
-			transition: "all 60ms ease-in",
-			position: "absolute",
-			content: "''",
-			borderRadius: "4px",
-			display: "flex",
-			height: "18px",
-			width: "18px",
-			border: "1px solid {colors.zinc.200}",
-			background: "linear-gradient(180deg, white, {colors.zinc.50})",
-			boxShadow: "{colors.zinc.100} 0px 0px 1px 0px inset",
-		},
-
-		_disabled: {
-			opacity: "0.5",
-			cursor: "auto",
-		},
-	},
-
-	variants: {
-		invalid: {
-			true: {
-				borderColor: "{colors.red.500}",
-			},
-		},
-	},
-});
-
 type SelectOption = {
 	value: string;
 	label: string;
@@ -163,7 +101,6 @@ function Select(props: SelectProps) {
 	const { options, isRequired, label, ...rest } = props;
 	const selectId = useId();
 
-	// @ts-ignore
 	const cn = cx(rest.className, "peer");
 
 	return (
@@ -173,7 +110,7 @@ function Select(props: SelectProps) {
 				{label}
 			</Label>
 			<Box position="relative">
-				<SelectEl {...rest} className={"peer"} id={selectId}>
+				<SelectEl {...rest} className={cn} id={selectId}>
 					{options.map((option) => (
 						<option key={option.value} value={option.value}>
 							{option.label}
