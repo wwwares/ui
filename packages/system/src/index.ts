@@ -1,5 +1,6 @@
 import { definePreset } from "@pandacss/dev";
 import { buttonRecipe } from "./recipes/button";
+import { cardRecipe } from "./recipes/card";
 
 export const warePreset = definePreset({
 	// Whether to use css reset
@@ -26,6 +27,7 @@ export const warePreset = definePreset({
 		extend: {
 			recipes: {
 				buttonRecipe,
+				cardRecipe,
 			},
 			semanticTokens: {
 				colors: {

@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "tsup src/index.ts --watch --dts",
+    "prepare": "panda codegen",
 		"dev:css": "pnpm panda cssgen --outfile dist/static.css --watch",
     "ship": "panda ship --outfile dist/panda.buildinfo.json"
   },
