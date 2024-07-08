@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 // import { Checkbox } from './Button';
 
-import { Checkbox } from "@ui-ware/ui";
+import { Card, Checkbox } from "@ui-ware/ui";
 import { useState } from "react";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -40,14 +40,16 @@ export const Default: Story = {
 		const [value, setValue] = useState(false);
 
 		return (
-			<Checkbox
-				{...args}
-				isSelected={value}
-				onChange={(v) => {
-					console.log(v);
-					setValue(v);
-				}}
-			/>
+			<Card>
+				<Checkbox
+					{...args}
+					isSelected={value}
+					onChange={(v) => {
+						console.log(v);
+						setValue(v);
+					}}
+				/>
+			</Card>
 		);
 	},
 };

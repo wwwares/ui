@@ -91,7 +91,7 @@ type SelectOption = {
 };
 
 type SelectProps = HTMLProps<HTMLSelectElement> & {
-	children: never;
+	children?: never;
 	options: SelectOption[];
 	label: string;
 	isRequired?: boolean;
@@ -102,6 +102,10 @@ function Select(props: SelectProps) {
 	const selectId = useId();
 
 	const cn = cx(rest.className, "peer");
+
+	const displayLabel = options.find(
+		(option) => option.value === props.value,
+	)?.label;
 
 	return (
 		// Full container width hack?
@@ -118,7 +122,7 @@ function Select(props: SelectProps) {
 					))}
 				</SelectEl>
 				<SelectContent>
-					<SelectOption>{props.value}</SelectOption>
+					<SelectOption>{displayLabel}</SelectOption>
 					<SelectIcon>
 						<svg viewBox="0 0 20 20" focusable={false} aria-hidden="true">
 							<path d="M10.884 4.323a1.25 1.25 0 0 0-1.768 0l-2.646 2.647a.75.75 0 0 0 1.06 1.06l2.47-2.47 2.47 2.47a.75.75 0 1 0 1.06-1.06l-2.646-2.647Z" />

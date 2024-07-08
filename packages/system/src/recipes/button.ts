@@ -16,6 +16,11 @@ export const buttonRecipe = defineRecipe({
 		textDecoration: "none",
 		textAlign: "center",
 
+		_disabled: {
+			cursor: "not-allowed",
+			opacity: 0.5,
+		},
+
 		_focus: {
 			outlineOffset: "-1px",
 			outline: "none",
@@ -31,7 +36,49 @@ export const buttonRecipe = defineRecipe({
 
 	variants: {
 		intent: {
-			danger: {},
+			danger: {
+				color: "white",
+
+				_focus: {
+					outlineColor: "red.600",
+				},
+
+				background:
+					"linear-gradient(0deg, {colors.red.600}, {colors.red.500}),\
+					linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 100%)",
+
+				border: "1px solid rgba(255, 255, 255, 0.17)",
+
+				boxShadow:
+					"0px 0px 0px 1px {colors.red.600}, 0px 1px 2px 0px {colors.red.700}",
+
+				_hover: {
+					base: {
+						background:
+							"linear-gradient(0deg, {colors.red.500}, {colors.red.500}),\
+						linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 100%)",
+					},
+					_pressed: {
+						background:
+							"linear-gradient(0deg, {colors.red.700}, {colors.red.600}),\
+					linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 100%)",
+						boxShadow:
+							"0px 0px 0px 1px {colors.red.600}, 0px 1px 2px 0px {colors.red.700} inset",
+
+						border: "1px solid rgba(255, 255, 255, 0.07)",
+					},
+				},
+
+				_pressed: {
+					background:
+						"linear-gradient(0deg, {colors.red.700}, {colors.red.600}),\
+					linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 100%)",
+					boxShadow:
+						"0px 0px 0px 1px {colors.red.600}, 0px 1px 2px 0px {colors.red.700} inset",
+
+					border: "1px solid rgba(255, 255, 255, 0.07)",
+				},
+			},
 		},
 		variant: {
 			default: {
@@ -115,7 +162,7 @@ export const buttonRecipe = defineRecipe({
 	compoundVariants: [
 		{
 			intent: "danger",
-			variant: "default",
+			variant: "primary",
 			css: {},
 		},
 	],

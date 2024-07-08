@@ -48,7 +48,7 @@ const RadioCircle = styled("div", {
 				boxShadow: "ridge.interactive.primary.default",
 				background: "bg.primary.default",
 
-				_hover: {
+				_groupHover: {
 					border: "primary.hover",
 					boxShadow: "ridge.interactive.primary.hover",
 					background: "bg.primary.hover",
@@ -75,7 +75,7 @@ const RadioCircle = styled("div", {
 			checked: false,
 			pressed: false,
 			css: {
-				_hover: {
+				_groupHover: {
 					boxShadow: "ridge.interactive.neutral.hover",
 					border: "neutral.hover",
 					background: "bg.neutral.hover",
@@ -95,7 +95,7 @@ const RadioCircle = styled("div", {
 			checked: true,
 			pressed: true,
 			css: {
-				_hover: {
+				_groupHover: {
 					boxShadow: "ridge.interactive.primary.pressed",
 				},
 			},
@@ -108,7 +108,7 @@ const RadioGroup = (props: RadioGroupProps) => {
 	const { children, label, isRequired, ...rest } = props;
 	return (
 		<RACRadioGroup {...rest} isRequired={isRequired}>
-			<Flex gap="4px" flexDirection="column" alignItems="flex-start">
+			<Flex gap="8px" flexDirection="column" alignItems="flex-start">
 				<Label isRequired={isRequired}>{label}</Label>
 				{children}
 			</Flex>
@@ -122,7 +122,7 @@ const Radio = (props: RadioProps) => {
 	return (
 		<RACRadio {...rest}>
 			{({ isDisabled, isSelected, isPressed, isFocused }) => (
-				<Flex gap="4px" alignItems="flex-start">
+				<Flex gap="8px" alignItems="flex-start" className="group">
 					<RadioCircle
 						checked={isSelected}
 						disabled={isDisabled}
@@ -130,7 +130,7 @@ const Radio = (props: RadioProps) => {
 						focused={isFocused}
 					/>
 					{/* TODO: render props */}
-					<Label>{typeof children !== "function" && children}</Label>
+					<Label isPlain>{typeof children !== "function" && children}</Label>
 				</Flex>
 			)}
 		</RACRadio>

@@ -14,7 +14,11 @@ function Button(props: ButtonProps) {
 		intent: props.intent,
 		variant: props.variant,
 	});
-	return <RACButton {...props} className={recipeClass} />;
+	return (
+		<RACButton {...props} className={recipeClass}>
+			<span>{props.children}</span>
+		</RACButton>
+	);
 }
 
 export { Button };

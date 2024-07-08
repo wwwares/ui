@@ -55,7 +55,8 @@ const CheckIcon = styled("div", {
 					boxShadow: "ridge.interactive.primary.default",
 					background: "bg.primary.default",
 				},
-				_hover: {
+
+				_groupHover: {
 					_before: {
 						border: "primary.hover",
 						boxShadow: "ridge.interactive.primary.hover",
@@ -84,7 +85,7 @@ const CheckIcon = styled("div", {
 			checked: false,
 			pressed: false,
 			css: {
-				_hover: {
+				_groupHover: {
 					_before: {
 						boxShadow: "ridge.interactive.neutral.hover",
 						border: "neutral.hover",
@@ -108,7 +109,7 @@ const CheckIcon = styled("div", {
 			checked: true,
 			pressed: true,
 			css: {
-				_hover: {
+				_groupHover: {
 					_before: {
 						boxShadow: "ridge.interactive.primary.pressed",
 					},
@@ -125,14 +126,20 @@ const Checkbox = (props: CheckboxProps) => {
 	return (
 		<RACCheckbox {...props} isRequired={isRequired}>
 			{({ isSelected, isDisabled, isPressed, isFocused }) => (
-				<Flex gap="4px" flexDirection="row" alignItems="flex-start">
+				// reverse and align to the end (start when reversed) to work around peer needing to be first in dom
+				// the <input /> is hidden and CheckIcon takes it's place so the checkbox obtains hover when the label is hovered
+				<Flex gap="8px" flexDirection="row" className="group">
 					<CheckIcon
 						checked={isSelected}
 						disabled={isDisabled}
 						pressed={isPressed}
 						focused={isFocused}
 					/>
-					{label && <Label isRequired={isRequired}>{label}</Label>}
+					{label && (
+						<Label isRequired={isRequired} isPlain>
+							{label}
+						</Label>
+					)}
 				</Flex>
 			)}
 		</RACCheckbox>

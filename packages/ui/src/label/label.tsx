@@ -5,17 +5,37 @@ import {
 } from "react-aria-components";
 
 const labelClass = css({
-	color: "zinc.900",
+	color: "text.label",
 	fontSize: "sm",
 });
 
 type LabelProps = RACLabelProps & {
 	isRequired?: boolean;
+	isPlain?: boolean;
+	isPeer?: boolean;
 };
 
 function Label(props: LabelProps) {
-	const { children, isRequired, className, ...rest } = props;
-	const clsn = cx(className, labelClass);
+	const { children, isRequired, className, isPlain, isPeer, ...rest } = props;
+	const clsn = cx(className, labelClass, isPeer && "peer");
+
+	if (isPlain) {
+		return (
+			<span {...rest} className={clsn}>
+				{children}
+				{isRequired && (
+					<span
+						className={css({
+							color: "red.700",
+							ml: "0.5",
+						})}
+					>
+						*
+					</span>
+				)}
+			</span>
+		);
+	}
 
 	return (
 		<RACLabel {...rest} className={clsn}>

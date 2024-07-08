@@ -5,6 +5,10 @@ import { warePreset } from "@ui-ware/system/preset";
 export default defineConfig({
 	// Whether to use css reset
 	preflight: true,
+	conditions: {
+		light: "[data-color-mode=light] &",
+		dark: "[data-color-mode=dark] &",
+	},
 
 	staticCss: { recipes: "*" },
 	presets: [warePreset],
