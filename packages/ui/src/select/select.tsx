@@ -1,6 +1,6 @@
-import { Box, Flex, styled } from "@ui-ware/system/jsx";
+import { Box, Flex, styled } from "@wwwares/system/jsx";
 import { useId, type HTMLProps } from "react";
-import { cx } from "@ui-ware/system/css";
+import { cx } from "@wwwares/system/css";
 import { Label } from "../label";
 
 const SelectBackdrop = styled("div", {

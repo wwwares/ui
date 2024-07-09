@@ -1,5 +1,5 @@
-import { styled } from "@ui-ware/system/jsx";
-import { cardRecipe } from "@ui-ware/system/recipes";
+import { styled } from "@wwwares/system/jsx";
+import { cardRecipe } from "@wwwares/system/recipes";
 
 const Card = styled("div", cardRecipe);
 

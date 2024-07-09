@@ -1,6 +1,6 @@
 import { defineConfig } from "@pandacss/dev";
 
-import { warePreset } from "@ui-ware/system/preset";
+import { warePreset } from "@wwwares/system/preset";
 
 export default defineConfig({
 	// Whether to use css reset
@@ -17,7 +17,7 @@ export default defineConfig({
 	include: [
 		"./src/**/*.{js,jsx,ts,tsx}",
 		"./pages/**/*.{js,jsx,ts,tsx}",
-		// "./node_modules/@ui-ware/system/dist/panda.buildinfo.json",
+		// "./node_modules/@wwwares/system/dist/panda.buildinfo.json",
 	],
 
 	// Files to exclude
@@ -26,7 +26,7 @@ export default defineConfig({
 	// Useful for theme customization
 	theme: {},
 
-	importMap: "@ui-ware/system",
+	importMap: "@wwwares/system",
 	// The output directory for your css system
 	outdir: "styled-system",
 });

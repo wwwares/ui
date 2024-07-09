@@ -13,8 +13,8 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@ui-ware/ui": "workspace:*",
-    "@ui-ware/system": "workspace:*",
+    "@wwwares/react": "workspace:*",
+    "@wwwares/system": "workspace:*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

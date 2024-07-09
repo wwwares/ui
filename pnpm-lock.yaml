@@ -17,12 +17,12 @@ importers:
 
   apps/storybook:
     dependencies:
-      '@ui-ware/system':
-        specifier: workspace:*
-        version: link:../../packages/system
-      '@ui-ware/ui':
+      '@wwwares/react':
         specifier: workspace:*
         version: link:../../packages/ui
+      '@wwwares/system':
+        specifier: workspace:*
+        version: link:../../packages/system
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -109,7 +109,7 @@ importers:
       '@types/react-dom':
         specifier: ^18.3.0
         version: 18.3.0
-      '@ui-ware/system':
+      '@wwwares/system':
         specifier: workspace:*
         version: link:../system
       react:

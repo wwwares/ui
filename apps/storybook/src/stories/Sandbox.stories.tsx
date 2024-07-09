@@ -8,7 +8,7 @@ import {
 	Select,
 	Spinner,
 	TextField,
-} from "@ui-ware/ui";
+} from "@wwwares/react";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {

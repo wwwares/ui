@@ -1,5 +1,5 @@
 import { defineKeyframes } from "@pandacss/dev";
-import { styled } from "@ui-ware/system/jsx";
+import { styled } from "@wwwares/system/jsx";
 
 // todo: move to theme config
 defineKeyframes({

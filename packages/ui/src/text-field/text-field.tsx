@@ -1,4 +1,4 @@
-import { Flex, styled } from "@ui-ware/system/jsx";
+import { Flex, styled } from "@wwwares/system/jsx";
 import {
 	TextField as RACTextField,
 	Input as RACInput,

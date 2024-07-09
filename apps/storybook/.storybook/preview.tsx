@@ -1,9 +1,9 @@
 import type { Preview } from "@storybook/react";
 
 import "../src/index.css";
-// import "@ui-ware/system/static.css";
-// import "@ui-ware/ui/dist/index.css";
-import "@ui-ware/ui/dist/static.css";
+// import "@wwwares/system/static.css";
+// import "@wwwares/react/dist/index.css";
+import "@wwwares/react/dist/static.css";
 
 import React, { useEffect } from "react";
 

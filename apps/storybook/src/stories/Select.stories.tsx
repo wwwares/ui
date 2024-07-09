@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Select } from "@ui-ware/ui";
+import { Select } from "@wwwares/react";
 import { useState } from "react";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -21,7 +21,7 @@ const meta = {
 			{ value: "value 2", label: "Value 2" },
 		],
 		isRequired: false,
-		label: "@wwware/ui",
+		label: "@wwwares/ui",
 	},
 	// Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
 	// args: { onClick: fn() },
