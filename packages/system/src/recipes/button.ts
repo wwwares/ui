@@ -43,75 +43,53 @@ export const buttonRecipe = defineRecipe({
 					outlineColor: "red.600",
 				},
 
-				background:
-					"linear-gradient(0deg, {colors.red.600}, {colors.red.500}),\
-					linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 100%)",
-
-				border: "1px solid rgba(255, 255, 255, 0.17)",
-
-				boxShadow:
-					"0px 0px 0px 1px {colors.red.600}, 0px 1px 2px 0px {colors.red.700}",
+				background: "bg.raised.interactive.danger.default",
+				border: "raised.interactive.primary.default",
+				boxShadow: "raised.interactive.danger.default",
 
 				_hover: {
 					base: {
-						background:
-							"linear-gradient(0deg, {colors.red.500}, {colors.red.500}),\
-						linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 100%)",
+						background: "bg.raised.interactive.danger.hover",
+						border: "raised.interactive.primary.hover",
+						boxShadow: "raised.interactive.danger.hover",
 					},
 					_pressed: {
-						background:
-							"linear-gradient(0deg, {colors.red.700}, {colors.red.600}),\
-					linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 100%)",
-						boxShadow:
-							"0px 0px 0px 1px {colors.red.600}, 0px 1px 2px 0px {colors.red.700} inset",
-
-						border: "1px solid rgba(255, 255, 255, 0.07)",
+						background: "bg.raised.interactive.danger.pressed",
+						border: "raised.interactive.primary.pressed",
+						boxShadow: "raised.interactive.danger.pressed",
 					},
 				},
 
 				_pressed: {
-					background:
-						"linear-gradient(0deg, {colors.red.700}, {colors.red.600}),\
-					linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 100%)",
-					boxShadow:
-						"0px 0px 0px 1px {colors.red.600}, 0px 1px 2px 0px {colors.red.700} inset",
-
-					border: "1px solid rgba(255, 255, 255, 0.07)",
+					background: "bg.raised.interactive.danger.pressed",
+					border: "raised.interactive.primary.pressed",
+					boxShadow: "raised.interactive.danger.pressed",
 				},
 			},
 		},
 		variant: {
 			default: {
-				background:
-					"linear-gradient(0deg, {colors.zinc.100}, {colors.zinc.50}),\
-						linear-gradient(180deg, rgba(223, 225, 231, 0) 0%, rgba(223, 225, 231, 0.05) 100%)",
-				border: "1px solid rgba(0,0,0, 0.05)",
-				boxShadow:
-					"0px 0px 0px 1px {colors.zinc.300}, 0px 1px 2px 0px {colors.zinc.500}",
+				background: "bg.raised.interactive.neutral.default",
+				border: "raised.interactive.neutral.default",
+				boxShadow: "raised.interactive.neutral.default",
 
 				_hover: {
 					base: {
-						background:
-							"linear-gradient(0deg, {colors.zinc.50}, {colors.zinc.50}),\
-						linear-gradient(180deg, rgba(223, 225, 231, 0) 0%, rgba(223, 225, 231, 0.05) 100%)",
+						background: "bg.raised.interactive.neutral.hover",
+						border: "raised.interactive.neutral.hover",
+						boxShadow: "raised.interactive.neutral.hover",
 					},
 					_pressed: {
-						background:
-							"linear-gradient(0deg, {colors.zinc.200}, {colors.zinc.100}),\
-						linear-gradient(180deg, rgba(223, 225, 231, 0) 0%, rgba(223, 225, 231, 0.05) 100%)",
-						border: "1px solid rgba(0,0,0, 0.05)",
-						boxShadow:
-							"0px 0px 0px 1px {colors.zinc.400}, 0px 1px 2px 0px {colors.zinc.300} inset",
+						background: "bg.raised.interactive.neutral.pressed",
+						border: "raised.interactive.neutral.pressed",
+						boxShadow: "raised.interactive.neutral.pressed",
 					},
 				},
 
 				_pressed: {
-					background:
-						"linear-gradient(0deg, {colors.zinc.200}, {colors.zinc.100}),\
-					linear-gradient(180deg, rgba(223, 225, 231, 0) 0%, rgba(223, 225, 231, 0.05) 100%)",
-					border: "1px solid rgba(0,0,0, 0.05)",
-					boxShadow:
-						"0px 0px 0px 1px {colors.zinc.400}, 0px 1px 2px 0px {colors.zinc.300} inset",
+					background: "bg.raised.interactive.neutral.pressed",
+					border: "raised.interactive.neutral.pressed",
+					boxShadow: "raised.interactive.neutral.pressed",
 				},
 			},
 			primary: {
@@ -121,40 +99,27 @@ export const buttonRecipe = defineRecipe({
 					outlineColor: "blue.600",
 				},
 
-				background:
-					"linear-gradient(0deg, {colors.blue.600}, {colors.blue.500}),\
-					linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 100%)",
-
-				border: "1px solid rgba(255, 255, 255, 0.17)",
-
-				boxShadow:
-					"0px 0px 0px 1px {colors.blue.600}, 0px 1px 2px 0px {colors.blue.700}",
+				background: "bg.raised.interactive.primary.default",
+				border: "raised.interactive.primary.default",
+				boxShadow: "raised.interactive.primary.default",
 
 				_hover: {
 					base: {
-						background:
-							"linear-gradient(0deg, {colors.blue.500}, {colors.blue.500}),\
-						linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 100%)",
+						background: "bg.raised.interactive.primary.hover",
+						border: "raised.interactive.primary.hover",
+						boxShadow: "raised.interactive.primary.hover",
 					},
 					_pressed: {
-						background:
-							"linear-gradient(0deg, {colors.blue.700}, {colors.blue.600}),\
-					linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 100%)",
-						boxShadow:
-							"0px 0px 0px 1px {colors.blue.600}, 0px 1px 2px 0px {colors.blue.700} inset",
-
-						border: "1px solid rgba(255, 255, 255, 0.07)",
+						background: "bg.raised.interactive.primary.pressed",
+						border: "raised.interactive.primary.pressed",
+						boxShadow: "raised.interactive.primary.pressed",
 					},
 				},
 
 				_pressed: {
-					background:
-						"linear-gradient(0deg, {colors.blue.700}, {colors.blue.600}),\
-					linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 100%)",
-					boxShadow:
-						"0px 0px 0px 1px {colors.blue.600}, 0px 1px 2px 0px {colors.blue.700} inset",
-
-					border: "1px solid rgba(255, 255, 255, 0.07)",
+					background: "bg.raised.interactive.primary.pressed",
+					border: "raised.interactive.primary.pressed",
+					boxShadow: "raised.interactive.primary.pressed",
 				},
 			},
 		},

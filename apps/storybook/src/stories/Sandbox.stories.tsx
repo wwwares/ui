@@ -1,7 +1,14 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Button, Card, Checkbox, Select, Spinner } from "@ui-ware/ui";
+import {
+	Button,
+	Card,
+	Checkbox,
+	Select,
+	Spinner,
+	TextField,
+} from "@ui-ware/ui";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -30,7 +37,11 @@ export const Default: Story = {
 	render: (args) => {
 		return (
 			<Card>
-				<div style={{ display: "flex", gap: "32px", flexDirection: "column" }}>
+				<div style={{ display: "flex", gap: "16px", flexDirection: "column" }}>
+					<div style={{ display: "flex", gap: "32px" }}>
+						<TextField label="First name" />
+						<TextField label="Last name" />
+					</div>
 					<Select
 						label="Preffered address"
 						value="cottage"
@@ -40,17 +51,38 @@ export const Default: Story = {
 							{ label: "Office :(", value: "office" },
 						]}
 					/>
-					<div style={{ display: "flex", gap: "8px", flexDirection: "column" }}>
+					<div
+						style={{
+							display: "flex",
+							gap: "8px",
+							flexDirection: "column",
+							marginTop: "8px",
+						}}
+					>
 						<Checkbox label="Allow us to collect a ton of metrics" />
 						<Checkbox label="Share your workspaces with colleiges" />
 						<Checkbox label="Automatically set your status as away" />
 						<Checkbox label="Use system theme" />
 					</div>
 					<div
-						style={{ display: "flex", gap: "16px", justifyContent: "flex-end" }}
+						style={{
+							display: "flex",
+							gap: "16px",
+							justifyContent: "space-between",
+							marginTop: "16px",
+						}}
 					>
-						<Button>Cancel</Button>
-						<Button variant="primary">Save</Button>
+						<Button intent="danger">Delete</Button>
+						<div
+							style={{
+								display: "flex",
+								gap: "16px",
+								justifyContent: "flex-end",
+							}}
+						>
+							<Button>Cancel</Button>
+							<Button variant="primary">Save</Button>
+						</div>
 					</div>
 				</div>
 			</Card>

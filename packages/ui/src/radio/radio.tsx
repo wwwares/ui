@@ -20,9 +20,9 @@ const RadioCircle = styled("div", {
 		alignItems: "center",
 		cursor: "pointer",
 		position: "relative",
-		border: "neutral.default",
+		border: "interactive.neutral.default",
 		boxShadow: "ridge.interactive.neutral.default",
-		background: "bg.neutral.default",
+		background: "bg.ridge.interactive.neutral.default",
 
 		// This is centered for 18px container with 8px dot
 		_before: {
@@ -35,7 +35,7 @@ const RadioCircle = styled("div", {
 			width: "8px",
 			top: "4px",
 			left: "4px",
-			background: "bg.neutral.default",
+			background: "bg.ridge.interactive.neutral.default",
 			opacity: 0,
 		},
 	},
@@ -44,14 +44,14 @@ const RadioCircle = styled("div", {
 		pressed: { true: {}, false: {} },
 		checked: {
 			true: {
-				border: "primary.default",
+				border: "interactive.primary.default",
 				boxShadow: "ridge.interactive.primary.default",
-				background: "bg.primary.default",
+				background: "bg.ridge.interactive.primary.default",
 
 				_groupHover: {
-					border: "primary.hover",
+					border: "interactive.primary.hover",
 					boxShadow: "ridge.interactive.primary.hover",
-					background: "bg.primary.hover",
+					background: "bg.ridge.interactive.primary.hover",
 				},
 				_before: {
 					opacity: 1,
@@ -77,8 +77,8 @@ const RadioCircle = styled("div", {
 			css: {
 				_groupHover: {
 					boxShadow: "ridge.interactive.neutral.hover",
-					border: "neutral.hover",
-					background: "bg.neutral.hover",
+					border: "interactive.neutral.hover",
+					background: "bg.ridge.interactive.neutral.hover",
 				},
 			},
 		},
@@ -87,8 +87,8 @@ const RadioCircle = styled("div", {
 			pressed: true,
 			css: {
 				boxShadow: "ridge.interactive.neutral.pressed",
-				border: "primary.default",
-				background: "bg.neutral.pressed",
+				border: "interactive.primary.default",
+				background: "bg.ridge.interactive.neutral.pressed",
 			},
 		},
 		{

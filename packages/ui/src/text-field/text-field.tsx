@@ -10,8 +10,8 @@ const StyledInput = styled(RACInput, {
 	base: {
 		borderRadius: "4px",
 		transition: "all 60ms ease-in",
-		border: "neutral.default",
-		background: "zinc.50",
+		border: "interactive.neutral.default",
+		background: "bg.well.interactive.neutral.default",
 		boxShadow: "well.interactive.neutral.default",
 		padding: "2px 4px 2px 12px",
 		minHeight: "32px",
@@ -20,20 +20,20 @@ const StyledInput = styled(RACInput, {
 		lineHeight: "1.25rem",
 
 		_hover: {
-			border: "neutral.hover",
+			border: "interactive.neutral.hover",
 			boxShadow: "well.interactive.neutral.hover",
 		},
 
 		_active: {
-			border: "primary.default !important",
+			border: "interactive.primary.default !important",
 			boxShadow: "well.interactive.neutral.pressed !important",
-			background: "white",
+			background: "bg.well.interactive.neutral.pressed",
 		},
 
 		_focus: {
-			background: "white",
+			background: "bg.well.interactive.neutral.pressed",
 			boxShadow: "well.interactive.neutral.pressed !important",
-			border: "primary.default !important",
+			border: "interactive.primary.default !important",
 		},
 	},
 });

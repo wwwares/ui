@@ -28,9 +28,9 @@ const CheckIcon = styled("div", {
 			display: "flex",
 			height: "18px",
 			width: "18px",
-			border: "neutral.default",
+			border: "interactive.neutral.default",
 			boxShadow: "ridge.interactive.neutral.default",
-			background: "bg.neutral.default",
+			background: "bg.ridge.interactive.neutral.default",
 		},
 		_after: {
 			position: "absolute",
@@ -51,16 +51,16 @@ const CheckIcon = styled("div", {
 		checked: {
 			true: {
 				_before: {
-					border: "primary.default",
+					border: "interactive.primary.default",
 					boxShadow: "ridge.interactive.primary.default",
-					background: "bg.primary.default",
+					background: "bg.ridge.interactive.primary.default",
 				},
 
 				_groupHover: {
 					_before: {
-						border: "primary.hover",
+						border: "interactive.primary.hover",
 						boxShadow: "ridge.interactive.primary.hover",
-						background: "bg.primary.hover",
+						background: "bg.ridge.interactive.primary.hover",
 					},
 				},
 				_after: {
@@ -88,8 +88,8 @@ const CheckIcon = styled("div", {
 				_groupHover: {
 					_before: {
 						boxShadow: "ridge.interactive.neutral.hover",
-						border: "neutral.hover",
-						background: "bg.neutral.hover",
+						border: "interactive.neutral.hover",
+						background: "bg.ridge.interactive.neutral.hover",
 					},
 				},
 			},
@@ -100,8 +100,8 @@ const CheckIcon = styled("div", {
 			css: {
 				_before: {
 					boxShadow: "ridge.interactive.neutral.pressed",
-					border: "primary.default",
-					background: "bg.neutral.pressed",
+					border: "interactive.primary.default",
+					background: "bg.ridge.interactive.neutral.pressed",
 				},
 			},
 		},
