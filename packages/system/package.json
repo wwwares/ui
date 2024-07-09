@@ -1,9 +1,11 @@
 {
   "name": "@wwwares/system",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "",
   "scripts": {
     "dev": "tsup src/index.ts --watch --dts",
+    "build": "pnpm ship && panda codegen && pnpm build:css && tsup src/index.ts --dts",
+		"build:css": "pnpm panda cssgen --outfile dist/static.css",
     "prepare": "panda codegen",
 		"dev:css": "pnpm panda cssgen --outfile dist/static.css --watch",
     "ship": "panda ship --outfile dist/panda.buildinfo.json"

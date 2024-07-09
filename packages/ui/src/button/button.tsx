@@ -16,7 +16,7 @@ function Button(props: ButtonProps) {
 	});
 	return (
 		<RACButton {...props} className={recipeClass}>
-			<span>{props.children}</span>
+			<span>{typeof props.children !== "function" && props.children}</span>
 		</RACButton>
 	);
 }
