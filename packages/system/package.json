@@ -2,6 +2,9 @@
   "name": "@wwwares/ui-system",
   "version": "0.0.1",
   "description": "",
+  "publishConfig": {
+		"access": "public"
+	},
   "scripts": {
     "dev": "tsup src/index.ts --watch --dts",
     "build": "pnpm ship && panda codegen && pnpm build:css && tsup src/index.ts --dts",
