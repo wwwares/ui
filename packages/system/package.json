@@ -1,19 +1,18 @@
 {
-  "name": "@wwwares/system",
+  "name": "@wwwares/ui-system",
   "version": "0.0.0",
   "description": "",
   "scripts": {
     "dev": "tsup src/index.ts --watch --dts",
     "build": "pnpm ship && panda codegen && pnpm build:css && tsup src/index.ts --dts",
-		"build:css": "pnpm panda cssgen --outfile dist/static.css",
+    "build:css": "pnpm panda cssgen --outfile dist/static.css",
     "prepare": "panda codegen",
-		"dev:css": "pnpm panda cssgen --outfile dist/static.css --watch",
+    "dev:css": "pnpm panda cssgen --outfile dist/static.css --watch",
     "ship": "panda ship --outfile dist/panda.buildinfo.json"
   },
   "devDependencies": {
     "@pandacss/dev": "^0.41.0",
-
-		"tsup": "^8.1.0"
+    "tsup": "^8.1.0"
   },
   "exports": {
     "./preset": {
@@ -53,7 +52,5 @@
     },
     "./static.css": "./dist/static.css"
   },
-  "dependencies": {
-    "@radix-ui/colors": "^3.0.0"
-  }
+  "dependencies": {}
 }

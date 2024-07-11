@@ -5,7 +5,7 @@ import {
 import {
 	buttonRecipe,
 	type ButtonRecipeVariantProps,
-} from "@wwwares/system/recipes";
+} from "@wwwares/ui-system/recipes";
 
 type ButtonProps = RACButtonProps & ButtonRecipeVariantProps;
 

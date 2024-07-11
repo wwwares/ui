@@ -1,4 +1,4 @@
-import { css, cx } from "@wwwares/system/css";
+import { css, cx } from "@wwwares/ui-system/css";
 import {
 	Label as RACLabel,
 	type LabelProps as RACLabelProps,

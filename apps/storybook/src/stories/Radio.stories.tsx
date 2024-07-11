@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 // import { Radio } from './Button';
 
-import { Radio, RadioGroup } from "@wwwares/react";
+import { Radio, RadioGroup } from "@wwwares/ui-react";
 import { useState } from "react";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export

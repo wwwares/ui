@@ -2,7 +2,7 @@ import {
 	Checkbox as RACCheckbox,
 	type CheckboxProps as RACCheckboxProps,
 } from "react-aria-components";
-import { Flex, styled } from "@wwwares/system/jsx";
+import { Flex, styled } from "@wwwares/ui-system/jsx";
 import { Label } from "../label";
 
 const CheckIcon = styled("div", {

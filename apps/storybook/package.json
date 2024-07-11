@@ -1,5 +1,5 @@
 {
-  "name": "storybook",
+  "name": "@wwwares/ui-storybook",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,8 +13,8 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@wwwares/react": "workspace:*",
-    "@wwwares/system": "workspace:*",
+    "@wwwares/ui-react": "workspace:*",
+    "@wwwares/ui-system": "workspace:*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

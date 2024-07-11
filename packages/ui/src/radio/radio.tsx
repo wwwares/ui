@@ -1,4 +1,4 @@
-import { Flex, styled } from "@wwwares/system/jsx";
+import { Flex, styled } from "@wwwares/ui-system/jsx";
 import {
 	type RadioProps as RACRadioProps,
 	Radio as RACRadio,
