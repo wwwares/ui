@@ -6,5 +6,6 @@ export default defineConfig({
 	jsxFramework: "react",
 	presets: [warePreset],
 	include: ["./src/**/*.{js,jsx,ts,tsx}"],
+	// outExtension:,
 	outdir: "./dist",
 });

@@ -7,7 +7,7 @@
 	},
   "scripts": {
     "dev": "tsup src/index.ts --watch --dts",
-    "build": "pnpm ship && panda codegen && pnpm build:css && tsup src/index.ts --dts",
+    "build": "pnpm ship && panda codegen && pnpm build:css && tsup src/index.ts --dts --format esm,cjs",
     "build:css": "pnpm panda cssgen --outfile dist/static.css",
     "prepare": "panda codegen",
     "dev:css": "pnpm panda cssgen --outfile dist/static.css --watch",
@@ -20,8 +20,8 @@
   "exports": {
     "./preset": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.js",
-      "import": "./dist/index.js"
+      "require": "./dist/index.mjs",
+      "import": "./dist/index.mjs"
     },
     "./css": {
       "types": "./dist/css/index.d.ts",
