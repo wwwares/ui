@@ -1,10 +1,10 @@
 {
   "name": "@wwwares/ui-system",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "publishConfig": {
-		"access": "public"
-	},
+    "access": "public"
+  },
   "scripts": {
     "dev": "tsup src/index.ts --watch --dts",
     "build": "pnpm ship && panda codegen && pnpm build:css && tsup src/index.ts --dts --format esm,cjs",
