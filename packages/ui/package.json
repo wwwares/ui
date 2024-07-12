@@ -1,6 +1,6 @@
 {
 	"name": "@wwwares/ui-react",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
