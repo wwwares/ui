@@ -1,17 +1,22 @@
 {
 	"name": "@wwwares/ui-react",
 	"version": "0.0.2",
-	"main": "./dist/index.js",
-	"module": "./dist/index.mjs",
-	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"module": "./dist/index.mjs",
+			"require": "./dist/index.mjs"
+		},
+		"./static.css": "./dist/static.css"
+	},
 	"sideEffects": false,
 	"license": "MIT",
 	"files": [
 		"dist/**"
 	],
 	"scripts": {
-		"build": "tsup src/index.tsx --format esm,cjs --dts --external react",
-		"dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react @wwwares/ui-system",
+		"build": "tsup src/index.tsx --format esm,cjs --dts --external react,@wwwares/ui-system",
+		"dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react,@wwwares/ui-system",
 		"dev:css": "pnpm panda cssgen --outfile dist/static.css --watch",
 		"lint": "TIMING=1 eslint ./**/*.ts* --fix",
 		"clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
