@@ -14,7 +14,7 @@
     "ship": "panda ship --outfile dist/panda.buildinfo.json"
   },
   "devDependencies": {
-    "@pandacss/dev": "^0.41.0",
+    "@pandacss/dev": "^0.42.0",
     "tsup": "^8.1.0"
   },
   "exports": {

@@ -15,6 +15,7 @@ export const buttonRecipe = defineRecipe({
 		transition: "all 150ms cubic-bezier(0.4, 0, 0.2, 1)",
 		textDecoration: "none",
 		textAlign: "center",
+		justifyContent: "center",
 
 		_disabled: {
 			cursor: "not-allowed",
