@@ -1,5 +1,13 @@
 # @wwwares/ui-react
 
+## 0.0.5
+
+### Patch Changes
+
+- b298483: chore: bump panda
+- Updated dependencies [b298483]
+  - @wwwares/ui-system@0.0.5
+
 ## 0.0.4
 
 ### Patch Changes

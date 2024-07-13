@@ -1,5 +1,11 @@
 # @wwwares/ui-system
 
+## 0.0.5
+
+### Patch Changes
+
+- b298483: chore: bump panda
+
 ## 0.0.4
 
 ### Patch Changes
