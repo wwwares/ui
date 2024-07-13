@@ -1,5 +1,11 @@
 # @wwwares/ui-system
 
+## 0.0.4
+
+### Patch Changes
+
+- cdeaae1: build: support all
+
 ## 0.0.3
 
 ### Patch Changes
