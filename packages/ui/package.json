@@ -1,11 +1,14 @@
 {
 	"name": "@wwwares/ui-react",
 	"version": "0.0.3",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
-			"module": "./dist/index.mjs",
-			"require": "./dist/index.mjs"
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.js"
 		},
 		"./static.css": "./dist/static.css"
 	},
@@ -15,9 +18,10 @@
 		"dist/**"
 	],
 	"scripts": {
-		"build": "tsup src/index.tsx --format esm,cjs --dts --external react,@wwwares/ui-system",
+		"build": "tsup src/index.tsx --format esm,cjs --dts --external react,@wwwares/ui-system && pnpm build:css",
 		"dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react,@wwwares/ui-system",
 		"dev:css": "pnpm panda cssgen --outfile dist/static.css --watch",
+		"build:css": "pnpm panda cssgen --outfile dist/static.css",
 		"lint": "TIMING=1 eslint ./**/*.ts* --fix",
 		"clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
 		"prepare": "panda codegen --silent"
