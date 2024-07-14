@@ -1,5 +1,11 @@
 # @wwwares/ui-system
 
+## 0.0.6
+
+### Patch Changes
+
+- d668968: feat(beta): Modal and Tabs
+
 ## 0.0.5
 
 ### Patch Changes
