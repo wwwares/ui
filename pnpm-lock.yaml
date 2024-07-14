@@ -98,6 +98,9 @@ importers:
       '@stitches/react':
         specifier: ^1.2.8
         version: 1.2.8(react@18.3.1)
+      '@tabler/icons-react':
+        specifier: ^3.10.0
+        version: 3.10.0(react@18.3.1)
       '@wwwares/ui-system':
         specifier: workspace:*
         version: link:../system
@@ -2439,6 +2442,14 @@ packages:
   '@szmarczak/http-timer@5.0.1':
     resolution: {integrity: sha512-+PmQX0PiAYPMeVYe237LJAYvOMYW1j2rH5YROyS3b4CTVJum34HfRvKvAzozHAQG0TnHNdUfY9nCeUyRAs//cw==}
     engines: {node: '>=14.16'}
+
+  '@tabler/icons-react@3.10.0':
+    resolution: {integrity: sha512-FTES0wJLIV+M9Ggng0j/6Kn/j43ZuBukR5n6DNV8Npk4woPCDcRjA+2KzKQyvSdwtPMAM6o1e8fQBPDS337Spg==}
+    peerDependencies:
+      react: '>= 16'
+
+  '@tabler/icons@3.10.0':
+    resolution: {integrity: sha512-jCMO+hDTw8Gn1CNb15zIENLQ9b0UplGXtjMnEUhDoKH+Q4fta8tBLUxZpPpFtpV+q+gzGqfM76xNAoD1GBpmnA==}
 
   '@testing-library/dom@10.1.0':
     resolution: {integrity: sha512-wdsYKy5zupPyLCW2Je5DLHSxSfbIp6h80WoHOQc+RPtmPGA52O9x5MJEkv92Sjonpq+poOAtUKhh1kBGAXBrNA==}
@@ -9514,6 +9525,13 @@ snapshots:
   '@szmarczak/http-timer@5.0.1':
     dependencies:
       defer-to-connect: 2.0.1
+
+  '@tabler/icons-react@3.10.0(react@18.3.1)':
+    dependencies:
+      '@tabler/icons': 3.10.0
+      react: 18.3.1
+
+  '@tabler/icons@3.10.0': {}
 
   '@testing-library/dom@10.1.0':
     dependencies:

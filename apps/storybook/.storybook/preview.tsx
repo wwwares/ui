@@ -1,7 +1,7 @@
 import type { Preview } from "@storybook/react";
 
 import "../src/index.css";
-// import "@wwwares/ui-system/static.css";
+import "@wwwares/ui-system/static.css";
 // import "@wwwares/ui-react/dist/index.css";
 import "@wwwares/ui-react/static.css";
 

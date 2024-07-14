@@ -38,8 +38,9 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"@wwwares/ui-system": "workspace:*",
 		"@stitches/react": "^1.2.8",
+		"@tabler/icons-react": "^3.10.0",
+		"@wwwares/ui-system": "workspace:*",
 		"react-aria-components": "^1.2.1"
 	}
 }

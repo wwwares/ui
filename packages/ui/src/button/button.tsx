@@ -16,7 +16,9 @@ function Button(props: ButtonProps) {
 	});
 	return (
 		<RACButton {...props} className={recipeClass}>
-			<span>{typeof props.children !== "function" && props.children}</span>
+			<span style={{ lineHeight: "1rem" }}>
+				{typeof props.children !== "function" && props.children}
+			</span>
 		</RACButton>
 	);
 }

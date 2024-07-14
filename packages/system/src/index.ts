@@ -1,7 +1,32 @@
-import { definePreset } from "@pandacss/dev";
+import {
+	definePreset,
+	type RecipeConfig,
+	type SlotRecipeConfig,
+} from "@pandacss/dev";
 import { buttonRecipe } from "./recipes/button";
 import { cardRecipe } from "./recipes/card";
 
+import type {
+	RecipeConfig as CodegenRecipeConfig,
+	SlotRecipeConfig as CodegenSlotRecipeConfig,
+	SlotRecipeVariantRecord,
+	RecipeVariantRecord,
+} from "../dist/types";
+import { modalSlotRecipe } from "./recipes/modal";
+import { tabsSlotRecipe } from "./recipes/tabs";
+
+export function themeRecipe<T extends RecipeVariantRecord>(
+	config: CodegenRecipeConfig<T>,
+): RecipeConfig {
+	return config as RecipeConfig;
+}
+
+export function themeSlotRecipe<
+	S extends string,
+	T extends SlotRecipeVariantRecord<S>,
+>(config: CodegenSlotRecipeConfig<S, T>): SlotRecipeConfig {
+	return config as SlotRecipeConfig;
+}
 export const warePreset = definePreset({
 	conditions: {
 		light: "[data-color-mode=light] &",
@@ -16,6 +41,10 @@ export const warePreset = definePreset({
 			recipes: {
 				buttonRecipe,
 				cardRecipe,
+			},
+			slotRecipes: {
+				modalSlotRecipe,
+				tabsSlotRecipe,
 			},
 			semanticTokens: {
 				colors: {
@@ -182,9 +211,43 @@ export const warePreset = definePreset({
 								},
 							},
 						},
+						overlay: {
+							value: {
+								base: "{colors.zinc.100/50}",
+							},
+						},
+						surface: {
+							"0": {
+								value: {
+									base: "white",
+								},
+							},
+							"1": {
+								value: {
+									base: "{colors.zinc.50}",
+								},
+							},
+							"2": {
+								value: {
+									base: "{colors.zinc.100}",
+								},
+							},
+							"3": {
+								value: {
+									base: "{colors.zinc.200}",
+								},
+							},
+						},
 					},
 				},
 				borders: {
+					surface: {
+						"0": {
+							value: {
+								base: "1px solid {colors.zinc.300}",
+							},
+						},
+					},
 					raised: {
 						interactive: {
 							neutral: {
@@ -361,6 +424,11 @@ export const warePreset = definePreset({
 									base: "0px 0px 0px 1px {colors.zinc.300}, 0px 2px 1px 0px {colors.zinc.400}",
 									_dark:
 										"0px 0px 0px 1px {colors.zinc.500}, 0px 2px 1px 0px {colors.zinc.600}",
+								},
+							},
+							overlay: {
+								value: {
+									base: "0px 0px 0px 1px {colors.zinc.300}, 0px 2px 1px 0px {colors.zinc.200}, 2px 0px 1px 0px {colors.zinc.200}, -2px 0px 1px 0px {colors.zinc.200}, 0px -2px 1px 0px {colors.zinc.200}",
 								},
 							},
 						},

@@ -29,8 +29,8 @@ export const buttonRecipe = defineRecipe({
 		},
 
 		_pressed: {
-			"& > *": {
-				transform: "translate3d(0, 0.0325rem, 0)",
+			"& > span": {
+				transform: "translateY(0.0125rem)",
 			},
 		},
 	},
