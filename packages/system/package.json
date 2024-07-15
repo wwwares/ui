@@ -5,6 +5,7 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": ["dist/**"],
   "scripts": {
     "dev": "tsup src/index.ts --watch --dts",
     "build": "pnpm ship && panda codegen && pnpm build:css && tsup src/index.ts --dts --format esm,cjs",
