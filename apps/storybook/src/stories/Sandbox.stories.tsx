@@ -81,7 +81,7 @@ export const Default: Story = {
 							}}
 						>
 							<Button>Cancel</Button>
-							<Button variant="primary">Save</Button>
+							<Button intent="primary">Save</Button>
 						</div>
 					</div>
 				</div>

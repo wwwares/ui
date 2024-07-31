@@ -100,7 +100,7 @@ const CheckIcon = styled("div", {
 			css: {
 				_before: {
 					boxShadow: "ridge.interactive.neutral.pressed",
-					border: "interactive.primary.default",
+					border: "interactive.neutral.pressed",
 					background: "bg.ridge.interactive.neutral.pressed",
 				},
 			},

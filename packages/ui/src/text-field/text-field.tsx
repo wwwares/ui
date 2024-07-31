@@ -25,7 +25,7 @@ const StyledInput = styled(RACInput, {
 		},
 
 		_active: {
-			border: "interactive.primary.default !important",
+			border: "interactive.neutral.pressed !important",
 			boxShadow: "well.interactive.neutral.pressed !important",
 			background: "bg.well.interactive.neutral.pressed",
 		},
@@ -33,7 +33,7 @@ const StyledInput = styled(RACInput, {
 		_focus: {
 			background: "bg.well.interactive.neutral.pressed",
 			boxShadow: "well.interactive.neutral.pressed !important",
-			border: "interactive.primary.default !important",
+			border: "interactive.primary.pressed !important",
 		},
 	},
 });

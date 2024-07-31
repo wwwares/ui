@@ -12,29 +12,22 @@ const SelectBackdrop = styled("div", {
 		bottom: 0,
 		left: 0,
 		borderRadius: "4px",
-		transition: "all 60ms ease-in",
+		transition: "all 150ms cubic-bezier(0.4, 0, 0.2, 1)",
 		border: "interactive.neutral.default",
 		boxShadow: "ridge.interactive.neutral.default",
 		background: "bg.ridge.interactive.neutral.default",
 
-		// This sucks with !important
-
 		_peerHover: {
 			boxShadow: "ridge.interactive.neutral.hover",
 			border: "interactive.neutral.hover",
-			background: "bg.ridge.interactive.neutral.hover",
 		},
 
-		_peerActive: {
-			boxShadow: "ridge.interactive.neutral.pressed",
-			border: "interactive.primary.default !important",
-			background: "bg.ridge.interactive.neutral.pressed !important",
-		},
+		// Don't see a need for this atm
+		_peerActive: {},
 
 		_peerFocus: {
-			boxShadow: "ridge.interactive.neutral.pressed",
-			border: "interactive.primary.default !important",
-			background: "bg.ridge.interactive.neutral.pressed !important",
+			boxShadow: "ridge.interactive.neutral.pressed !important",
+			border: "interactive.neutral.pressed",
 			// outline: "dotted thin",
 		},
 	},
