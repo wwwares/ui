@@ -1,5 +1,15 @@
 # @wwwares/ui-system
 
+## 0.1.0
+
+### Minor Changes
+
+- 4fc8852: feat: major token updates, change button variants
+
+### Patch Changes
+
+- ff82af0: build: add files property
+
 ## 0.0.6
 
 ### Patch Changes
