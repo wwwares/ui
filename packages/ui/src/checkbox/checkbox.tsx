@@ -1,88 +1,149 @@
-import { VariantProps } from "@stitches/react";
-import { styled } from "../stitches.conf";
+import {
+	Checkbox as RACCheckbox,
+	type CheckboxProps as RACCheckboxProps,
+} from "react-aria-components";
+import { Flex, styled } from "@wwwares/ui-system/jsx";
+import { Label } from "../label";
 
-const StyledCheckbox = styled("input", {
-  opacity: 0,
-  position: "absolute",
-  top: 0,
-  left: 0,
-  margin: 0,
+const CheckIcon = styled("div", {
+	base: {
+		position: "relative",
+		cursor: "pointer",
+		display: "flex",
+		justifyContent: "center",
+		alignItems: "center",
+		color: "black",
+		height: "18px",
+		width: "18px",
+
+		_focus: {
+			outline: "dotted thin",
+		},
+
+		_before: {
+			transition: "all 60ms ease-in",
+			position: "absolute",
+			content: "''",
+			borderRadius: "4px",
+			display: "flex",
+			height: "18px",
+			width: "18px",
+			border: "interactive.neutral.default",
+			boxShadow: "ridge.interactive.neutral.default",
+			background: "bg.ridge.interactive.neutral.default",
+		},
+		_after: {
+			position: "absolute",
+			top: "4px",
+			content: "''",
+			display: "flex",
+			transform: "rotate(-45deg) scale(.7)",
+			height: "8px",
+			width: "16px",
+			borderBottom: "white solid 4px",
+			borderLeft: "white solid 4px",
+			opacity: 0,
+			cursor: "inherit",
+		},
+	},
+	variants: {
+		pressed: { true: {}, false: {} },
+		checked: {
+			true: {
+				_before: {
+					border: "interactive.primary.default",
+					boxShadow: "ridge.interactive.primary.default",
+					background: "bg.ridge.interactive.primary.default",
+				},
+
+				_groupHover: {
+					_before: {
+						border: "interactive.primary.hover",
+						boxShadow: "ridge.interactive.primary.hover",
+						background: "bg.ridge.interactive.primary.hover",
+					},
+				},
+				_after: {
+					opacity: 1,
+				},
+			},
+		},
+		disabled: {
+			true: {
+				opacity: 0.5,
+				cursor: "not-allowed",
+			},
+		},
+		focused: {
+			true: {
+				outline: "dotted thin",
+			},
+		},
+	},
+	compoundVariants: [
+		{
+			checked: false,
+			pressed: false,
+			css: {
+				_groupHover: {
+					_before: {
+						boxShadow: "ridge.interactive.neutral.hover",
+						border: "interactive.neutral.hover",
+						background: "bg.ridge.interactive.neutral.hover",
+					},
+				},
+			},
+		},
+		{
+			checked: false,
+			pressed: true,
+			css: {
+				_before: {
+					boxShadow: "ridge.interactive.neutral.pressed",
+					border: "interactive.neutral.pressed",
+					background: "bg.ridge.interactive.neutral.pressed",
+				},
+			},
+		},
+		{
+			checked: true,
+			pressed: true,
+			css: {
+				_groupHover: {
+					_before: {
+						boxShadow: "ridge.interactive.primary.pressed",
+					},
+				},
+			},
+		},
+	],
 });
 
-const Check = styled("div", {
-  position: "relative",
-  cursor: "pointer",
-  display: "inline-flex",
-  justifyContent: "center",
-  alignItems: "center",
+type CheckboxProps = RACCheckboxProps & { label: string };
 
-  "&:hover": {
-    "&::before": {
-      boxShadow: "#F2F5F8 1.25px 1.25px 1px -1px inset",
-    },
-  },
+const Checkbox = (props: CheckboxProps) => {
+	const { label, isRequired } = props;
+	return (
+		<RACCheckbox {...props} isRequired={isRequired}>
+			{({ isSelected, isDisabled, isPressed, isFocused }) => (
+				// reverse and align to the end (start when reversed) to work around peer needing to be first in dom
+				// the <input /> is hidden and CheckIcon takes it's place so the checkbox obtains hover when the label is hovered
+				<Flex gap="8px" flexDirection="row" className="group">
+					<CheckIcon
+						checked={isSelected}
+						disabled={isDisabled}
+						pressed={isPressed}
+						focused={isFocused}
+					/>
+					{label && (
+						<Label isRequired={isRequired} isPlain>
+							{label}
+						</Label>
+					)}
+				</Flex>
+			)}
+		</RACCheckbox>
+	);
+};
 
-  "&::before": {
-    content: "",
-    borderRadius: "$2",
-    display: "flex",
-    height: "$5",
-    width: "$5",
-    border: "1px solid $gray-200",
-    background: "linear-gradient(180deg, $white, $gray-50)",
-    boxShadow: "#D7DCE1 0px 0px 1px 0px inset",
-  },
-  "&::after": {
-    position: "absolute",
-    top: "3px",
-    left: "3px",
-    content: "",
-    display: "flex",
-    transform: "rotate(-45deg) scale(.8)",
-    height: "4px",
-    width: "8px",
-    borderBottom: "$white solid 4px",
-    borderLeft: "$white solid 4px",
-    opacity: 0,
-    cursor: "inherit",
-  },
-  variants: {
-    checked: {
-      true: {
-        "&::before": {
-          background: "linear-gradient(180deg, $blue-400, $blue-500)",
-          borderColor: "$blue-600",
-          boxShadow: "#829FF5 0px 0px 1px 0px inset",
-        },
-        "&::after": {
-          opacity: 1,
-        },
-      },
-    },
-    disabled: {
-      true: {
-        opacity: 0.5,
-        cursor: "not-allowed",
-      },
-    },
-  },
-});
-
-type CheckboxProps = React.SelectHTMLAttributes<HTMLInputElement> &
-  VariantProps<typeof Check> & {};
-
-export const Checkbox = ({
-  checked = false,
-  disabled = false,
-  ...rest
-}: CheckboxProps) => (
-  <div style={{ position: "relative" }}>
-    <StyledCheckbox
-      type="checkbox"
-      checked={checked as boolean}
-      disabled={disabled as boolean}
-      {...rest}
-    />
-    <Check checked={checked} disabled={disabled} />
-  </div>
-);
+export { Checkbox };

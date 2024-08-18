@@ -1,0 +1,9 @@
+@layer reset, base, tokens, recipes, utilities;
+/* @import url('@wwwares/ui-system/static.css'); */
+
+html,
+body {
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 100vh;
+}

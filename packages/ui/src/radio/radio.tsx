@@ -1,80 +1,140 @@
-import { VariantProps } from "@stitches/react";
-import { styled } from "../stitches.conf";
+import { Flex, styled } from "@wwwares/ui-system/jsx";
+import {
+	type RadioProps as RACRadioProps,
+	Radio as RACRadio,
+	RadioGroup as RACRadioGroup,
+	type RadioGroupProps as RACRadioGroupProps,
+} from "react-aria-components";
+import { Label } from "../label";
 
-const StyledRadio = styled("input", {
-  opacity: 0,
-  position: "absolute",
-  top: 0,
-  left: 0,
-  border: "0px none",
-  height: "1px",
-  width: "1px",
-  margin: "-1px",
-  padding: 0,
+const RadioCircle = styled("div", {
+	base: {
+		transition: "all 60ms ease-in",
+		top: 0,
+		left: 0,
+		display: "block",
+		borderRadius: "50%",
+		height: "18px",
+		width: "18px",
+		justifyContent: "center",
+		alignItems: "center",
+		cursor: "pointer",
+		position: "relative",
+		border: "interactive.neutral.default",
+		boxShadow: "ridge.interactive.neutral.default",
+		background: "bg.ridge.interactive.neutral.default",
+
+		// This is centered for 18px container with 8px dot
+		_before: {
+			transition: "all 60ms ease-in",
+			position: "absolute",
+			content: "''",
+			borderRadius: "50%",
+			display: "flex",
+			height: "8px",
+			width: "8px",
+			top: "4px",
+			left: "4px",
+			background: "bg.ridge.interactive.neutral.default",
+			opacity: 0,
+		},
+	},
+
+	variants: {
+		pressed: { true: {}, false: {} },
+		checked: {
+			true: {
+				border: "interactive.primary.default",
+				boxShadow: "ridge.interactive.primary.default",
+				background: "bg.ridge.interactive.primary.default",
+
+				_groupHover: {
+					border: "interactive.primary.hover",
+					boxShadow: "ridge.interactive.primary.hover",
+					background: "bg.ridge.interactive.primary.hover",
+				},
+				_before: {
+					opacity: 1,
+				},
+			},
+		},
+		disabled: {
+			true: {
+				opacity: 0.5,
+				cursor: "not-allowed",
+			},
+		},
+		focused: {
+			true: {
+				outline: "dotted thin",
+			},
+		},
+	},
+	compoundVariants: [
+		{
+			checked: false,
+			pressed: false,
+			css: {
+				_groupHover: {
+					boxShadow: "ridge.interactive.neutral.hover",
+					border: "interactive.neutral.hover",
+					background: "bg.ridge.interactive.neutral.hover",
+				},
+			},
+		},
+		{
+			checked: false,
+			pressed: true,
+			css: {
+				boxShadow: "ridge.interactive.neutral.pressed",
+				border: "interactive.primary.default",
+				background: "bg.ridge.interactive.neutral.pressed",
+			},
+		},
+		{
+			checked: true,
+			pressed: true,
+			css: {
+				_groupHover: {
+					boxShadow: "ridge.interactive.primary.pressed",
+				},
+			},
+		},
+	],
 });
 
-const Circle = styled("div", {
-  display: "inline-flex",
-  borderRadius: "$round",
-  height: "$5",
-  width: "$5",
-  border: "1px solid $gray-200",
-  background: "linear-gradient(180deg, $white, $gray-50)",
-  boxShadow: "#D7DCE1 0px 0px 1px 0px inset",
-  justifyContent: "center",
-  alignItems: "center",
-  cursor: "pointer",
+type RadioGroupProps = RACRadioGroupProps & { label: string };
+const RadioGroup = (props: RadioGroupProps) => {
+	const { children, label, isRequired, ...rest } = props;
+	return (
+		<RACRadioGroup {...rest} isRequired={isRequired}>
+			<Flex gap="8px" flexDirection="column" alignItems="flex-start">
+				<Label isRequired={isRequired}>{label}</Label>
+				{children}
+			</Flex>
+		</RACRadioGroup>
+	);
+};
 
-  "&:hover": {
-    "&::before": {
-      boxShadow: "#F2F5F8 1.25px 1.25px 1px -1px inset",
-    },
-  },
+type RadioProps = RACRadioProps & { label: string };
+const Radio = (props: RadioProps) => {
+	const { label, children, ...rest } = props;
+	return (
+		<RACRadio {...rest}>
+			{({ isDisabled, isSelected, isPressed, isFocused }) => (
+				<Flex gap="8px" alignItems="flex-start" className="group">
+					<RadioCircle
+						checked={isSelected}
+						disabled={isDisabled}
+						pressed={isPressed}
+						focused={isFocused}
+					/>
+					{/* TODO: render props */}
+					<Label isPlain>{typeof children !== "function" && children}</Label>
+				</Flex>
+			)}
+		</RACRadio>
+	);
+};
 
-  "&::before": {
-    content: "",
-    borderRadius: "$round",
-    display: "inline-block",
-    height: "7px",
-    width: "7px",
-    background: "linear-gradient(180deg, $white, $gray-50)",
-    opacity: 0,
-  },
-  variants: {
-    checked: {
-      true: {
-        background: "linear-gradient(180deg, $blue-400, $blue-500)",
-        borderColor: "$blue-600",
-        boxShadow: "#829FF5 0px 0px 1px 0px inset",
-        "&::before": {
-          opacity: 1,
-        },
-      },
-    },
-    disabled: {
-      true: {
-        opacity: 0.5,
-        cursor: "not-allowed",
-      },
-    },
-  },
-});
-
-type RadioProps = React.SelectHTMLAttributes<HTMLInputElement> &
-  VariantProps<typeof Circle> & {};
-
-export const Radio = ({
-  checked = false,
-  disabled = false,
-  ...rest
-}: RadioProps) => (
-  <div style={{ position: "relative" }}>
-    <StyledRadio
-      type="radio"
-      checked={checked as boolean}
-      disabled={disabled as boolean}
-      {...rest}
-    />
-    <Circle checked={checked} disabled={disabled} />
-  </div>
-);
+export { Radio, type RadioProps, RadioGroup, type RadioGroupProps };
