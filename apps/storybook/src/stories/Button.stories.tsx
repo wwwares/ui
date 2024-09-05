@@ -17,7 +17,7 @@ const meta = {
 		// backgroundColor: { control: "color" },
 	},
 	// Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-	args: { isDisabled: false, intent: "", variant: "default" },
+	args: { isDisabled: false, intent: "neutral" },
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -35,25 +35,13 @@ export const Default: Story = {
 
 export const Primary: Story = {
 	args: {
-		variant: "primary",
+		intent: "primary",
 		children: <span>"Primary"</span>,
 	},
 };
 export const Danger: Story = {
 	args: {
 		intent: "danger",
-		variant: "default",
 		children: <span>"Danger"</span>,
-	},
-};
-
-export const Mix: Story = {
-	render() {
-		return (
-			<div style={{ display: "flex", gap: "5px" }}>
-				<Button>Hey!</Button>
-				<Button variant="primary">Hey 2!</Button>
-			</div>
-		);
 	},
 };

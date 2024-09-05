@@ -1,5 +1,21 @@
 # @wwwares/ui-react
 
+## 0.1.2
+
+### Patch Changes
+
+- build: try
+- Updated dependencies
+  - @wwwares/ui-system@0.1.2
+
+## 0.1.1
+
+### Patch Changes
+
+- build: fix wrong build
+- Updated dependencies
+  - @wwwares/ui-system@0.1.1
+
 ## 0.1.0
 
 ### Minor Changes

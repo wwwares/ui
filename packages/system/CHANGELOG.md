@@ -1,5 +1,17 @@
 # @wwwares/ui-system
 
+## 0.1.2
+
+### Patch Changes
+
+- build: try
+
+## 0.1.1
+
+### Patch Changes
+
+- build: fix wrong build
+
 ## 0.1.0
 
 ### Minor Changes
