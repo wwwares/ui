@@ -31,9 +31,9 @@ const StyledInput = styled(RACInput, {
 		},
 
 		_focus: {
+			border: "interactive.neutral.pressed !important",
 			background: "bg.well.interactive.neutral.pressed",
 			boxShadow: "well.interactive.neutral.pressed !important",
-			border: "interactive.primary.pressed !important",
 		},
 	},
 });
