@@ -14,6 +14,7 @@ import type {
 } from "../dist/types";
 import { modalSlotRecipe } from "./recipes/modal";
 import { tabsSlotRecipe } from "./recipes/tabs";
+import { segmentedControlSlotRecipe } from "./recipes/segmented-control";
 
 export function themeRecipe<T extends RecipeVariantRecord>(
 	config: CodegenRecipeConfig<T>,
@@ -45,6 +46,7 @@ export const warePreset = definePreset({
 			slotRecipes: {
 				modalSlotRecipe,
 				tabsSlotRecipe,
+				segmentedControlSlotRecipe,
 			},
 			semanticTokens: {
 				colors: {
@@ -323,6 +325,7 @@ export const warePreset = definePreset({
 						},
 					},
 					interactive: {
+						// Interactive components which are in a selected state- checkbox, radio
 						primary: {
 							default: {
 								value: { base: "1px solid {colors.blue.600}" },
@@ -334,6 +337,7 @@ export const warePreset = definePreset({
 								value: { base: "1px solid {colors.blue.700}" },
 							},
 						},
+						// interactive components that don't have a selected state- text field
 						neutral: {
 							default: {
 								value: {
@@ -348,7 +352,7 @@ export const warePreset = definePreset({
 								},
 							},
 							pressed: {
-								value: { base: "1px solid {colors.blue.700}" },
+								value: { base: "1px solid {colors.blue.600}" },
 							},
 						},
 					},

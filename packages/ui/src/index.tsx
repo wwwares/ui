@@ -5,5 +5,6 @@ export * from "./checkbox";
 export * from "./radio";
 export * from "./card";
 export * from "./text-field";
-export * from './modal'
-export * from './tabs'
+export * from "./modal";
+export * from "./tabs";
+export * from "./segmented-control";

@@ -8,6 +8,8 @@ import {
 	Select,
 	Spinner,
 	TextField,
+	SegmentedControlGroup,
+	SegmentedControlOption,
 } from "@wwwares/ui-react";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -64,6 +66,11 @@ export const Default: Story = {
 						<Checkbox label="Automatically set your status as away" />
 						<Checkbox label="Use system theme" />
 					</div>
+					<SegmentedControlGroup defaultValue="1">
+						<SegmentedControlOption title="Test1" value="1" />
+						<SegmentedControlOption title="test2" value="2" />
+						<SegmentedControlOption title="Test 3" value="3" />
+					</SegmentedControlGroup>
 					<div
 						style={{
 							display: "flex",
@@ -76,7 +83,7 @@ export const Default: Story = {
 						<div
 							style={{
 								display: "flex",
-								gap: "16px",
+								// gap: "16px",
 								justifyContent: "flex-end",
 							}}
 						>
