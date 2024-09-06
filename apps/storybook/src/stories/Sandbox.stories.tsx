@@ -83,7 +83,7 @@ export const Default: Story = {
 						<div
 							style={{
 								display: "flex",
-								// gap: "16px",
+								gap: "16px",
 								justifyContent: "flex-end",
 							}}
 						>
