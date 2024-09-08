@@ -11,33 +11,49 @@ import React, { useEffect } from "react";
 // Custom decorator to add a data attribute based on the selected theme
 const withThemeAttribute = (Story, context) => {
 	useEffect(() => {
-		const theme = context.globals.backgrounds.value;
+		const theme = context?.globals?.theme;
 
-		const themeValue = theme === "#fafafa" ? "light" : "dark";
-		document.documentElement.setAttribute("data-color-mode", themeValue);
-	}, [context.globals.backgrounds.value]);
+		document.body.setAttribute("data-color-mode", theme);
+	}, [context.globals.theme]);
 
 	return <Story {...context} />;
 };
 
-// addDecorator(withThemeAttribute);
+export const globalTypes = {
+	theme: {
+		name: "Theme",
+		description: "Global theme for components",
+		defaultValue: "light",
+		toolbar: {
+			// The icon for the toolbar item
+			icon: "circlehollow",
+			// Array of options
+			items: [
+				{ value: "light", icon: "circlehollow", title: "light" },
+				{ value: "dark", icon: "circle", title: "dark" },
+			],
+			// Property that specifies if the name of the item will be displayed
+			showName: true,
+		},
+	},
+};
 
 const preview: Preview = {
 	decorators: [withThemeAttribute],
 	parameters: {
-		backgrounds: {
-			default: "light",
-			values: [
-				{
-					name: "light",
-					value: "#fafafa",
-				},
-				{
-					name: "dark",
-					value: "#27272a", // zinc.800
-				},
-			],
-		},
+		// backgrounds: {
+		// default: "light",
+		// values: [
+		// {
+		// name: "light",
+		// value: "var(--colors-bg-surface-0)",
+		// },
+		// {
+		// name: "dark",
+		// value: "var(--colors-bg-surface-0)", // zinc.800
+		// },
+		// ],
+		// },
 		controls: {
 			matchers: {
 				color: /(background|color)$/i,
