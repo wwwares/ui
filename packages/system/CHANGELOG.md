@@ -1,5 +1,15 @@
 # @wwwares/ui-system
 
+## 0.2.0
+
+### Minor Changes
+
+- f62fb89: feat: segmented control
+
+### Patch Changes
+
+- 2f8bcd9: feat: theme & dark mode improvements
+
 ## 0.1.2
 
 ### Patch Changes

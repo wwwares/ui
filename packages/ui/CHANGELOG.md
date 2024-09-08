@@ -1,5 +1,19 @@
 # @wwwares/ui-react
 
+## 0.2.0
+
+### Minor Changes
+
+- f62fb89: feat: segmented control
+
+### Patch Changes
+
+- 2f8bcd9: feat: theme & dark mode improvements
+- 92115f8: style: adjust text field focus
+- Updated dependencies [2f8bcd9]
+- Updated dependencies [f62fb89]
+  - @wwwares/ui-system@0.2.0
+
 ## 0.1.2
 
 ### Patch Changes
