@@ -3,7 +3,7 @@ import { IconX } from "@tabler/icons-react";
 import {
 	Dialog,
 	DialogTrigger,
-	DialogTriggerProps,
+	type DialogTriggerProps,
 	Modal as RACModal,
 	ModalOverlay as RACModalOverlay,
 } from "react-aria-components";
@@ -21,7 +21,8 @@ type ModalProps = {
 	primaryAction?: ReactNode;
 	secondaryAction?: ReactNode;
 	tertiaryAction?: ReactNode;
-} & ModalSlotRecipeVariantProps & Omit<DialogTriggerProps, 'children'>;
+} & ModalSlotRecipeVariantProps &
+	Omit<DialogTriggerProps, "children">;
 
 function Modal(props: ModalProps) {
 	const {
@@ -44,7 +45,11 @@ function Modal(props: ModalProps) {
 	const hasFooter = !!primaryAction || !!secondaryAction || !!tertiaryAction;
 
 	return (
-		<DialogTrigger defaultOpen={defaultOpen} isOpen={isOpen} onOpenChange={onOpenChange}>
+		<DialogTrigger
+			defaultOpen={defaultOpen}
+			isOpen={isOpen}
+			onOpenChange={onOpenChange}
+		>
 			{activator}
 			<RACModalOverlay className={cls["modal-overlay"]}>
 				<RACModal

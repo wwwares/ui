@@ -171,12 +171,12 @@ export const warePreset = definePreset({
 							},
 						},
 						ridge: {
-							surface: {
-								value: {
-									base: "white",
-									_dark: "{colors.zinc.700}",
-								},
-							},
+							// surface: {
+							// 	value: {
+							// 		base: "white",
+							// 		_dark: "{colors.zinc.700}",
+							// 	},
+							// },
 							interactive: {
 								primary: {
 									default: {
@@ -226,29 +226,31 @@ export const warePreset = definePreset({
 						overlay: {
 							value: {
 								base: "{colors.zinc.100/50}",
-								_dark: "{colors.zinc.800}",
+								_dark: "{colors.zinc.800/50}",
 							},
 						},
 						surface: {
 							"0": {
 								value: {
-									base: "white",
+									base: "{colors.zinc.100}",
+									_dark: "{colors.zinc.700}",
 								},
 							},
 							"1": {
 								value: {
 									base: "{colors.zinc.50}",
+									_dark: "{colors.zinc.600}",
 								},
 							},
 							"2": {
 								value: {
-									base: "{colors.zinc.100}",
+									base: "{colors.zinc.200}",
 									_dark: "{colors.zinc.800}",
 								},
 							},
 							"3": {
 								value: {
-									base: "{colors.zinc.200}",
+									base: "{colors.zinc.300}",
 								},
 							},
 						},
@@ -425,6 +427,13 @@ export const warePreset = definePreset({
 							},
 						},
 					},
+					overlay: {
+						value: {
+							base: "0px 0px 0px 1px {colors.zinc.300}, 0px 2px 1px 0px {colors.zinc.200}, 2px 0px 1px 0px {colors.zinc.200}, -2px 0px 1px 0px {colors.zinc.200}, 0px -2px 1px 0px {colors.zinc.200}",
+							_dark:
+								"0px 0px 0px 1px {colors.zinc.600}, 0px 2px 1px 0px {colors.zinc.600}, 2px 0px 1px 0px {colors.zinc.600}, -2px 0px 1px 0px {colors.zinc.600}, 0px -2px 1px 0px {colors.zinc.600}",
+						},
+					},
 					// Components with a distinct 'bubbly' appearance
 					ridge: {
 						interactive: {
@@ -467,11 +476,6 @@ export const warePreset = definePreset({
 									base: "0px 0px 0px 1px {colors.zinc.300}, 0px 2px 1px 0px {colors.zinc.400}",
 									_dark:
 										"0px 0px 0px 1px {colors.zinc.500}, 0px 2px 1px 0px {colors.zinc.600}",
-								},
-							},
-							overlay: {
-								value: {
-									base: "0px 0px 0px 1px {colors.zinc.300}, 0px 2px 1px 0px {colors.zinc.200}, 2px 0px 1px 0px {colors.zinc.200}, -2px 0px 1px 0px {colors.zinc.200}, 0px -2px 1px 0px {colors.zinc.200}",
 								},
 							},
 						},

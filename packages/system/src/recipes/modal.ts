@@ -23,9 +23,10 @@ export const modalSlotRecipe = themeSlotRecipe({
 			zIndex: 100,
 		},
 		"modal-body": {
-			background: "bg.ridge.surface",
-			boxShadow: "ridge.surface.overlay",
+			background: "bg.surface.1",
+			boxShadow: "overlay",
 			borderRadius: "lg",
+			color: "text.default",
 		},
 		"modal-header": {
 			display: "flex",
@@ -56,26 +57,26 @@ export const modalSlotRecipe = themeSlotRecipe({
 			borderBottomRightRadius: "lg",
 		},
 	},
-  variants: {
-    size: {
-      default: {
-        "modal-body": {
-          width: '40vw'
-        }
-      },
-      wide: {
-        "modal-body": {
-          width: "60vw"
-        }
-      },
-      full: {
-        'modal-body': {
-          width: '80vw'
-        }
-      }
-    }
-  },
-  defaultVariants: {
-    size: 'default'
-  }
+	variants: {
+		size: {
+			default: {
+				"modal-body": {
+					width: "40vw",
+				},
+			},
+			wide: {
+				"modal-body": {
+					width: "60vw",
+				},
+			},
+			full: {
+				"modal-body": {
+					width: "80vw",
+				},
+			},
+		},
+	},
+	defaultVariants: {
+		size: "default",
+	},
 });
