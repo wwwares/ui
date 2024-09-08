@@ -6,6 +6,7 @@
     "apps/*",
     "packages/*"
   ],
+  "packageManager": "pnpm@9.4.0",
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
