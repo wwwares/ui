@@ -1,5 +1,11 @@
 # @wwwares/ui-system
 
+## 0.2.1
+
+### Patch Changes
+
+- fix: stale release build
+
 ## 0.2.0
 
 ### Minor Changes
