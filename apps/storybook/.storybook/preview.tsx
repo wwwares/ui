@@ -4,7 +4,6 @@ import "../src/index.css";
 // this is annoying idk why i need to change the order here now
 import "@wwwares/ui-react/static.css";
 import "@wwwares/ui-system/static.css";
-// import "@wwwares/ui-react/dist/index.css";
 
 import React, { useEffect } from "react";
 

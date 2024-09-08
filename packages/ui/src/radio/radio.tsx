@@ -35,7 +35,7 @@ const RadioCircle = styled("div", {
 			width: "8px",
 			top: "4px",
 			left: "4px",
-			background: "bg.ridge.interactive.neutral.default",
+			background: "bg.ridge.interactive.neutral.reversed",
 			opacity: 0,
 		},
 	},
