@@ -13,7 +13,8 @@
     "lint": "turbo run lint",
     "format": "biome format --write \"**/*.{ts,tsx,md}\"",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "publish": "pnpm build && changeset publish"
   },
   "devDependencies": {
     "@biomejs/biome": "1.7.2",
