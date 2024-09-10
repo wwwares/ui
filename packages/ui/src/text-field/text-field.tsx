@@ -42,7 +42,7 @@ type TextFieldProps = { label: string } & RACTextFieldProps;
 
 const TextField = (props: TextFieldProps) => {
 	return (
-		<RACTextField {...props}>
+		<RACTextField {...props} style={{width: '100%'}}>
 			<Flex gap="2px" flexDirection="column">
 				{props.label && (
 					<Label isRequired={props.isRequired}>{props.label}</Label>

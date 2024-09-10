@@ -12,13 +12,16 @@ export const segmentedControlSlotRecipe = themeSlotRecipe({
 			border: "interactive.neutral.default",
 			padding: "0.5",
 			borderRadius: "sm",
-			width: "fit-content",
+			width: "100%",
 		},
 		"sc-item": {
+			flex: 1,
 			paddingX: "2",
 			borderRadius: "xs",
 			border: "1px solid transparent",
 			cursor: "pointer",
+			justifyContent: "center",
+			display: "flex",
 			// background: "bg.ridge.interactive.neutral.default",
 			_focusVisible: {
 				outline: "{colors.black} dotted thin",
