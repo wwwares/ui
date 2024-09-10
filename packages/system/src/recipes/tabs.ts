@@ -19,7 +19,7 @@ export const tabsSlotRecipe = themeSlotRecipe({
 			fontWeight: "semibold",
 			position: "relative",
 			transition: "all 60ms ease-in",
-			color: "{colors.zinc.700}",
+			color: "text.default",
 
 			_before: {
 				position: "absolute",
@@ -27,14 +27,14 @@ export const tabsSlotRecipe = themeSlotRecipe({
 				width: "100%",
 				content: "''",
 				height: "2px",
-				bottom: -1,
+				bottom: 0,
 				left: 0,
 			},
 
 			_hover: {
-				background: "bg.surface.3",
+				background: "bg.surface.2",
 				_pressed: {
-					background: "bg.surface.2",
+					background: "bg.surface.3",
 				},
 				_selected: {
 					outline: "none",
@@ -42,6 +42,7 @@ export const tabsSlotRecipe = themeSlotRecipe({
 			},
 			_selected: {
 				outline: "none",
+				borderRadius: "{radii.md} {radii.md} 0 0",
 				_before: {
 					backgroundColor: "{colors.blue.600}",
 				},

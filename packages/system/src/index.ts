@@ -227,6 +227,7 @@ export const warePreset = definePreset({
 							"3": {
 								value: {
 									base: "{colors.zinc.300}",
+									_dark: "{colors.zinc.900}",
 								},
 							},
 						},
@@ -408,7 +409,7 @@ export const warePreset = definePreset({
 						value: {
 							base: "0px 0px 0px 1px {colors.zinc.300}, 0px 2px 1px 0px {colors.zinc.200}, 2px 0px 1px 0px {colors.zinc.200}, -2px 0px 1px 0px {colors.zinc.200}, 0px -2px 1px 0px {colors.zinc.200}",
 							_dark:
-								"0px 0px 0px 1px {colors.zinc.600}, 0px 2px 1px 0px {colors.zinc.600}, 2px 0px 1px 0px {colors.zinc.600}, -2px 0px 1px 0px {colors.zinc.600}, 0px -2px 1px 0px {colors.zinc.600}",
+								"0px 0px 0px 1px {colors.zinc.500}, 0px 2px 1px 0px {colors.zinc.500}, 2px 0px 1px 0px {colors.zinc.500}, -2px 0px 1px 0px {colors.zinc.500}, 0px -2px 1px 0px {colors.zinc.500}",
 						},
 					},
 					// Components with a distinct 'bubbly' appearance
@@ -463,7 +464,7 @@ export const warePreset = definePreset({
 								value: {
 									base: "0px 0px 0px 1px {colors.zinc.300}, 0px 2px 1px 0px {colors.zinc.400}",
 									_dark:
-										"0px 0px 0px 1px {colors.zinc.500}, 0px 2px 1px 0px {colors.zinc.600}",
+										"0px 0px 0px 1px {colors.zinc.500}, 0px 2px 1px 0px {colors.zinc.400}",
 								},
 							},
 						},
