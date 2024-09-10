@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment, useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import {
@@ -10,6 +10,10 @@ import {
 	TextField,
 	SegmentedControlGroup,
 	SegmentedControlOption,
+	Tabs,
+	TabPanel,
+	RadioGroup,
+	Radio,
 } from "@wwwares/ui-react";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -38,60 +42,84 @@ export const Default: Story = {
 	args: {},
 	render: (args) => {
 		return (
-			<Card>
-				<div style={{ display: "flex", gap: "16px", flexDirection: "column" }}>
-					<div style={{ display: "flex", gap: "32px" }}>
-						<TextField label="First name" />
-						<TextField label="Last name" />
-					</div>
-					<Select
-						label="Preffered address"
-						value="cottage"
-						options={[
-							{ label: "Home", value: "home" },
-							{ label: "Cottage", value: "cottage" },
-							{ label: "Office :(", value: "office" },
-						]}
-					/>
-					<div
-						style={{
-							display: "flex",
-							gap: "8px",
-							flexDirection: "column",
-							marginTop: "8px",
-						}}
-					>
-						<Checkbox label="Allow us to collect a ton of metrics" />
-						<Checkbox label="Share your workspaces with colleiges" />
-						<Checkbox label="Automatically set your status as away" />
-						<Checkbox label="Use system theme" />
-					</div>
-					<SegmentedControlGroup defaultValue="1">
-						<SegmentedControlOption title="Test1" value="1" />
-						<SegmentedControlOption title="test2" value="2" />
-						<SegmentedControlOption title="Test 3" value="3" />
-					</SegmentedControlGroup>
-					<div
-						style={{
-							display: "flex",
-							gap: "16px",
-							justifyContent: "space-between",
-							marginTop: "16px",
-						}}
-					>
-						<Button intent="danger">Delete</Button>
+			<Card style={{ width: "700px" }}>
+				<Tabs
+					tabs={[
+						{ id: "home", content: "Home" },
+						{ id: "other", content: "Other" },
+					]}
+					label="asd"
+				>
+					<TabPanel id="home">
 						<div
-							style={{
-								display: "flex",
-								gap: "16px",
-								justifyContent: "flex-end",
-							}}
+							style={{ display: "flex", gap: "16px", flexDirection: "column" }}
 						>
-							<Button>Cancel</Button>
-							<Button intent="primary">Save</Button>
+							<div style={{ display: "flex", gap: "32px" }}>
+								<TextField label="First name" />
+								<TextField label="Last name" />
+							</div>
+							<Select
+								label="Preffered address"
+								value="cottage"
+								options={[
+									{ label: "Home", value: "home" },
+									{ label: "Cottage", value: "cottage" },
+									{ label: "Office :(", value: "office" },
+								]}
+							/>
+							<div
+								style={{
+									display: "flex",
+									gap: "8px",
+									flexDirection: "column",
+									marginTop: "8px",
+								}}
+							>
+								<Checkbox label="Allow us to collect a ton of metrics" />
+								<Checkbox label="Share your workspaces with colleiges" />
+								<Checkbox label="Automatically set your status as away" />
+								<Checkbox label="Use system theme" />
+							</div>
+
+							<div
+								style={{
+									display: "flex",
+									gap: "16px",
+									justifyContent: "space-between",
+									marginTop: "16px",
+								}}
+							>
+								<Button intent="danger">Delete</Button>
+								<div
+									style={{
+										display: "flex",
+										gap: "16px",
+										justifyContent: "flex-end",
+									}}
+								>
+									<Button>Cancel</Button>
+									<Button intent="primary">Save</Button>
+								</div>
+							</div>
 						</div>
-					</div>
-				</div>
+					</TabPanel>
+					<TabPanel id="other">
+						<div style={{display: 'flex', gap: '32px', flexDirection: 'column'}}>
+
+						<SegmentedControlGroup defaultValue="1">
+							<SegmentedControlOption title="Test1" value="1" />
+							<SegmentedControlOption title="test2" value="2" />
+							<SegmentedControlOption title="Test 3" value="3" />
+						</SegmentedControlGroup>
+
+						<RadioGroup label="Select food">
+							<Radio label="Pizza" value="pizza">Pizza</Radio>
+							<Radio label="Wings" value="wings" >Wings</Radio>
+							<Radio label="Hoddogs" value="hotdogs">Hoddogs</Radio>
+						</RadioGroup>
+						</div>
+					</TabPanel>
+				</Tabs>
 			</Card>
 		);
 	},
