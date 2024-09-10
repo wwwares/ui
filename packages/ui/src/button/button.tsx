@@ -12,7 +12,7 @@ type ButtonProps = RACButtonProps & ButtonRecipeVariantProps;
 function Button(props: ButtonProps) {
 	const recipeClass = buttonRecipe({
 		intent: props.intent,
-		// variant: props.variant,
+		variant: props.variant,
 	});
 	return (
 		<RACButton {...props} className={recipeClass}>

@@ -141,7 +141,28 @@ export const buttonRecipe = defineRecipe({
 				},
 			},
 		},
-		variant: {},
+		variant: {
+			icon: {
+				padding: "1.5",
+				color: "text.default",
+				textShadow: "none",
+				background: "transparent",
+				boxShadow: "none",
+				border: "1px solid transparent",
+				_hover: {
+					base: {
+						boxShadow: "none",
+						border: "1px solid transparent",
+						background: "bg.surface.2",
+					},
+					_pressed: {
+						background: "bg.surface.3",
+						border: "1px solid transparent",
+						boxShadow: "none",
+					},
+				},
+			},
+		},
 	},
 	// compoundVariants: [
 	// 	{

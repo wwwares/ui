@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { Icon123, IconArtboard } from "@tabler/icons-react";
 
 import { Button } from "@wwwares/ui-react";
 
@@ -43,5 +44,12 @@ export const Danger: Story = {
 	args: {
 		intent: "danger",
 		children: <span>"Danger"</span>,
+	},
+};
+
+export const IconVariant: Story = {
+	args: {
+		variant: "icon",
+		children: <IconArtboard />,
 	},
 };
