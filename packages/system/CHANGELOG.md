@@ -1,5 +1,16 @@
 # @wwwares/ui-system
 
+## 0.3.0
+
+### Minor Changes
+
+- dfd0831: fix(breaking): TextField and SegmentedControlGroup now grow by default
+- bf60dd6: feat: add Icon variant to Button
+
+### Patch Changes
+
+- 90bc5fd: refactor: update Tabs styles
+
 ## 0.2.1
 
 ### Patch Changes
