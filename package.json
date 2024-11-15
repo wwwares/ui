@@ -17,9 +17,8 @@
     "publish": "pnpm build && changeset publish"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.7.2",
+    "@biomejs/biome": "1.9.4",
     "@changesets/cli": "^2.27.7",
-    "release-it": "^17.5.0",
     "turbo": "latest"
   },
   "engines": {

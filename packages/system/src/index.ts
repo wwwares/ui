@@ -29,6 +29,7 @@ export function themeSlotRecipe<
 	return config as SlotRecipeConfig;
 }
 export const warePreset = definePreset({
+	name: "ui-ware-preset",
 	conditions: {
 		light: "[data-color-mode=light] &",
 		dark: "[data-color-mode=dark] &",

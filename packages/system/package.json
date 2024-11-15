@@ -1,62 +1,62 @@
 {
-  "name": "@wwwares/ui-system",
-  "version": "0.3.0",
-  "description": "",
-  "publishConfig": {
-    "access": "public"
-  },
-  "files": [
-    "dist/**"
-  ],
-  "scripts": {
-    "dev": "tsup src/index.ts --watch --dts",
-    "build": "pnpm ship && panda codegen && pnpm build:css && tsup src/index.ts --dts --format esm,cjs",
-    "build:css": "pnpm panda cssgen --outfile dist/static.css",
-    "prepare": "panda codegen",
-    "dev:css": "pnpm panda cssgen --outfile dist/static.css --watch",
-    "ship": "panda ship --outfile dist/panda.buildinfo.json"
-  },
-  "devDependencies": {
-    "@pandacss/dev": "^0.42.0",
-    "tsup": "^8.1.0"
-  },
-  "exports": {
-    "./preset": {
-      "types": "./dist/index.d.ts",
-      "require": "./dist/index.mjs",
-      "import": "./dist/index.mjs"
-    },
-    "./css": {
-      "types": "./dist/css/index.d.ts",
-      "require": "./dist/css/index.mjs",
-      "import": "./dist/css/index.mjs"
-    },
-    "./tokens": {
-      "types": "./dist/tokens/index.d.ts",
-      "require": "./dist/tokens/index.mjs",
-      "import": "./dist/tokens/index.mjs"
-    },
-    "./types": {
-      "types": "./dist/types/index.d.ts",
-      "require": "./dist/types/index.mjs",
-      "import": "./dist/types/index.mjs"
-    },
-    "./patterns": {
-      "types": "./dist/patterns/index.d.ts",
-      "require": "./dist/patterns/index.mjs",
-      "import": "./dist/patterns/index.mjs"
-    },
-    "./recipes": {
-      "types": "./dist/recipes/index.d.ts",
-      "require": "./dist/recipes/index.mjs",
-      "import": "./dist/recipes/index.mjs"
-    },
-    "./jsx": {
-      "types": "./dist/jsx/index.d.ts",
-      "require": "./dist/jsx/index.mjs",
-      "import": "./dist/jsx/index.mjs"
-    },
-    "./static.css": "./dist/static.css"
-  },
-  "dependencies": {}
+	"name": "@wwwares/ui-system",
+	"version": "0.3.0",
+	"description": "",
+	"publishConfig": {
+		"access": "public"
+	},
+	"files": [
+		"dist/**"
+	],
+	"scripts": {
+		"dev": "tsup src/index.ts --watch --dts",
+		"build": "pnpm ship && panda codegen && pnpm build:css && tsup src/index.ts --dts --format esm,cjs",
+		"build:css": "pnpm panda cssgen --outfile dist/static.css",
+		"prepare": "panda codegen",
+		"dev:css": "pnpm panda cssgen --outfile dist/static.css --watch",
+		"ship": "panda ship --outfile dist/panda.buildinfo.json"
+	},
+	"devDependencies": {
+		"@pandacss/dev": "^0.48.0",
+		"postcss": "^8.4.49",
+		"tsup": "^8.3.5"
+	},
+	"exports": {
+		"./preset": {
+			"types": "./dist/index.d.ts",
+			"require": "./dist/index.mjs",
+			"import": "./dist/index.mjs"
+		},
+		"./css": {
+			"types": "./dist/css/index.d.ts",
+			"require": "./dist/css/index.mjs",
+			"import": "./dist/css/index.mjs"
+		},
+		"./tokens": {
+			"types": "./dist/tokens/index.d.ts",
+			"require": "./dist/tokens/index.mjs",
+			"import": "./dist/tokens/index.mjs"
+		},
+		"./types": {
+			"types": "./dist/types/index.d.ts",
+			"require": "./dist/types/index.mjs",
+			"import": "./dist/types/index.mjs"
+		},
+		"./patterns": {
+			"types": "./dist/patterns/index.d.ts",
+			"require": "./dist/patterns/index.mjs",
+			"import": "./dist/patterns/index.mjs"
+		},
+		"./recipes": {
+			"types": "./dist/recipes/index.d.ts",
+			"require": "./dist/recipes/index.mjs",
+			"import": "./dist/recipes/index.mjs"
+		},
+		"./jsx": {
+			"types": "./dist/jsx/index.d.ts",
+			"require": "./dist/jsx/index.mjs",
+			"import": "./dist/jsx/index.mjs"
+		},
+		"./static.css": "./dist/static.css"
+	}
 }
