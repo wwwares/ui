@@ -11,7 +11,7 @@ const SelectBackdrop = styled("div", {
 		right: 0,
 		bottom: 0,
 		left: 0,
-		borderRadius: "4px",
+		borderRadius: "sm",
 		transition: "all 150ms cubic-bezier(0.4, 0, 0.2, 1)",
 		border: "interactive.neutral.default",
 		boxShadow: "ridge.interactive.neutral.default",
@@ -52,6 +52,7 @@ const SelectOption = styled("span", {
 		whiteSpace: "nowrap",
 		overflow: "hidden",
 		textOverflow: "ellipsis",
+		fontSize: "sm",
 	},
 });
 

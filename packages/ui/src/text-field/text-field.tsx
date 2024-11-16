@@ -8,7 +8,7 @@ import { Label } from "../label";
 
 const StyledInput = styled(RACInput, {
 	base: {
-		borderRadius: "4px",
+		borderRadius: "sm",
 		transition: "all 60ms ease-in",
 		border: "interactive.neutral.default",
 		background: "bg.well.interactive.neutral.default",
@@ -42,7 +42,7 @@ type TextFieldProps = { label: string } & RACTextFieldProps;
 
 const TextField = (props: TextFieldProps) => {
 	return (
-		<RACTextField {...props} style={{width: '100%'}}>
+		<RACTextField {...props} style={{ width: "100%" }}>
 			<Flex gap="2px" flexDirection="column">
 				{props.label && (
 					<Label isRequired={props.isRequired}>{props.label}</Label>

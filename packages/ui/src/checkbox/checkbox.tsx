@@ -24,7 +24,7 @@ const CheckIcon = styled("div", {
 			transition: "all 60ms ease-in",
 			position: "absolute",
 			content: "''",
-			borderRadius: "4px",
+			borderRadius: "sm",
 			display: "flex",
 			height: "18px",
 			width: "18px",
