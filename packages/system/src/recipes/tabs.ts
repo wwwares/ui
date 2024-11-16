@@ -8,43 +8,41 @@ export const tabsSlotRecipe = themeSlotRecipe({
 			display: "flex",
 			flexDirection: "row",
 			gap: "3",
-			borderRadius: "md",
+			borderRadius: 0,
 			width: "100%",
+			borderBottom: "interactive.neutral.default",
 		},
 		tab: {
 			cursor: "pointer",
-			borderRadius: "md",
 			paddingX: "3",
 			paddingY: "0.5",
-			fontWeight: "semibold",
+			fontWeight: "normal",
 			position: "relative",
 			transition: "all 60ms ease-in",
 			color: "text.default",
 
 			_before: {
+				borderRadius: "{radii.md} {radii.md} 0 0",
 				position: "absolute",
 				display: "block",
-				width: "100%",
+				width: "80%",
+				// offset width by half,
+				left: "10%",
 				content: "''",
 				height: "2px",
-				bottom: 0,
-				left: 0,
+				zIndex: 5,
+				bottom: "-1px",
 			},
 
 			_hover: {
-				background: "bg.surface.2",
-				_pressed: {
-					background: "bg.surface.3",
-				},
 				_selected: {
 					outline: "none",
+					_before: {
+						backgroundColor: "{colors.blue.600}",
+					},
 				},
-			},
-			_selected: {
-				outline: "none",
-				borderRadius: "{radii.md} {radii.md} 0 0",
 				_before: {
-					backgroundColor: "{colors.blue.600}",
+					backgroundColor: "{colors.zinc.500}",
 				},
 			},
 		},
