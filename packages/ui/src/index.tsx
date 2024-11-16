@@ -8,3 +8,4 @@ export * from "./text-field";
 export * from "./modal";
 export * from "./tabs";
 export * from "./segmented-control";
+export * from "./tags";

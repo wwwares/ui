@@ -14,6 +14,8 @@ import {
 	TabPanel,
 	RadioGroup,
 	Radio,
+	Tag,
+	TagGroup,
 } from "@wwwares/ui-react";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -67,6 +69,15 @@ export const Default: Story = {
 									{ label: "Office :(", value: "office" },
 								]}
 							/>
+							<TagGroup
+								label="Filters"
+								selectionMode="single"
+								onRemove={console.log}
+							>
+								<Tag>Trending</Tag>
+								<Tag>Popular</Tag>
+								<Tag>Latest</Tag>
+							</TagGroup>
 							<div
 								style={{
 									display: "flex",
@@ -104,19 +115,26 @@ export const Default: Story = {
 						</div>
 					</TabPanel>
 					<TabPanel id="other">
-						<div style={{display: 'flex', gap: '32px', flexDirection: 'column'}}>
+						<div
+							style={{ display: "flex", gap: "32px", flexDirection: "column" }}
+						>
+							<SegmentedControlGroup defaultValue="1">
+								<SegmentedControlOption title="Test1" value="1" />
+								<SegmentedControlOption title="test2" value="2" />
+								<SegmentedControlOption title="Test 3" value="3" />
+							</SegmentedControlGroup>
 
-						<SegmentedControlGroup defaultValue="1">
-							<SegmentedControlOption title="Test1" value="1" />
-							<SegmentedControlOption title="test2" value="2" />
-							<SegmentedControlOption title="Test 3" value="3" />
-						</SegmentedControlGroup>
-
-						<RadioGroup label="Select food">
-							<Radio label="Pizza" value="pizza">Pizza</Radio>
-							<Radio label="Wings" value="wings" >Wings</Radio>
-							<Radio label="Hoddogs" value="hotdogs">Hoddogs</Radio>
-						</RadioGroup>
+							<RadioGroup label="Select food">
+								<Radio label="Pizza" value="pizza">
+									Pizza
+								</Radio>
+								<Radio label="Wings" value="wings">
+									Wings
+								</Radio>
+								<Radio label="Hoddogs" value="hotdogs">
+									Hoddogs
+								</Radio>
+							</RadioGroup>
 						</div>
 					</TabPanel>
 				</Tabs>
