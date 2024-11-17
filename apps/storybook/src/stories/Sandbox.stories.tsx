@@ -1,4 +1,3 @@
-import React, { Fragment, useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import {
@@ -16,6 +15,7 @@ import {
 	Radio,
 	Tag,
 	TagGroup,
+	MenuButton,
 } from "@wwwares/ui-react";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -123,6 +123,14 @@ export const Default: Story = {
 								<SegmentedControlOption title="test2" value="2" />
 								<SegmentedControlOption title="Test 3" value="3" />
 							</SegmentedControlGroup>
+							<MenuButton
+								items={[
+									{ content: "Duplicate", key: "1", icon: "🙌" },
+									{ content: "Edit", key: "2", icon: "✏" },
+									{ content: "Delete", key: "3", icon: "🚮" },
+								]}
+								label="Open menu"
+							/>
 
 							<RadioGroup label="Select food">
 								<Radio label="Pizza" value="pizza">

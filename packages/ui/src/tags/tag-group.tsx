@@ -3,9 +3,9 @@ import {
 	type TagGroupProps as RACTagGroupProps,
 	type TagListProps as RACTagListProps,
 	TagGroup as RACTagGroup,
-	Label,
 	TagList,
 } from "react-aria-components";
+import { Label } from "../label";
 
 interface TagGroupProps<T>
 	extends Omit<RACTagGroupProps, "children">,
