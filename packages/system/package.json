@@ -5,9 +5,7 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"files": [
-		"dist/**"
-	],
+	"files": ["dist/**"],
 	"scripts": {
 		"dev": "tsup src/index.ts --watch --dts",
 		"build": "pnpm ship && panda codegen && pnpm build:css && tsup src/index.ts --dts --format esm,cjs",
@@ -19,7 +17,7 @@
 	"devDependencies": {
 		"@pandacss/dev": "^0.48.0",
 		"postcss": "^8.4.49",
-		"tsup": "^8.3.5"
+		"tsup": "8.3.0"
 	},
 	"exports": {
 		"./preset": {

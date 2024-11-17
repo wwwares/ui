@@ -34,9 +34,14 @@ export const tabsSlotRecipe = themeSlotRecipe({
 				bottom: "-1px",
 			},
 
+			outline: "none",
+			_selected: {
+				_before: {
+					backgroundColor: "{colors.blue.600}",
+				},
+			},
 			_hover: {
 				_selected: {
-					outline: "none",
 					_before: {
 						backgroundColor: "{colors.blue.600}",
 					},

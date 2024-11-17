@@ -20,6 +20,7 @@ const SelectBackdrop = styled("div", {
 		_peerHover: {
 			boxShadow: "ridge.interactive.neutral.hover",
 			border: "interactive.neutral.hover",
+			background: "bg.ridge.interactive.neutral.hover",
 		},
 
 		// Don't see a need for this atm

@@ -16,7 +16,6 @@ export default defineConfig({
 	// Where to look for your css declarations
 	include: [
 		"./src/**/*.{js,jsx,ts,tsx}",
-		"./pages/**/*.{js,jsx,ts,tsx}",
 		// "./node_modules/@wwwares/ui-system/dist/panda.buildinfo.json",
 	],
 

@@ -39,16 +39,14 @@ export const tagsSlotRecipe = themeSlotRecipe({
 			},
 
 			_selected: {
-				background: "bg.ridge.interactive.primary.default",
-				boxShadow: "ridge.interactive.primary.default",
-				border: "interactive.primary.default",
-				color: "zinc.100",
+				boxShadow: "ridge.interactive.neutral.pressed !important",
+				border: "interactive.neutral.default",
 
 				_hover: {
 					base: {
 						border: "interactive.primary.hover",
 						boxShadow: "ridge.interactive.primary.hover",
-						background: "bg.ridge.interactive.primary.hover",
+						background: "bg.ridge.interactive.neutral.hover",
 					},
 				},
 			},

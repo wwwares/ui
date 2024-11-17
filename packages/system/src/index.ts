@@ -255,7 +255,7 @@ export const warePreset = definePreset({
 								},
 								hover: {
 									value: {
-										base: "1px solid {colors.zinc.200}",
+										base: "1px solid {colors.zinc.300}",
 										_dark: "1px solid {colors.zinc.500}",
 									},
 								},
@@ -357,12 +357,12 @@ export const warePreset = definePreset({
 							neutral: {
 								default: {
 									value: {
-										base: "1px 0px 0px rgba(0, 0, 0, 0.1) inset, -1px 0px 0px rgba(0, 0, 0, 0.1) inset, 0px 1px 0px {colors.zinc.300} inset, 0px -1px 0px {colors.zinc.200} inset",
+										base: "1px 0px 0px {colors.zinc.100} inset, -1px 0px 0px {colors.zinc.100} inset, 0px 1px 0px {colors.zinc.100} inset, 0px -1px 0px {colors.zinc.200} inset",
 									},
 								},
 								hover: {
 									value: {
-										base: "1px 0px 0px {colors.zinc.300} inset, -1px 0px 0px {colors.zinc.300} inset, 0px 1px 0px {colors.zinc.300} inset, 0px -1px 0px {colors.zinc.200} inset",
+										base: "1px 0px 0px {colors.zinc.100} inset, -1px 0px 0px {colors.zinc.100} inset, 0px 1px 0px {colors.zinc.100} inset, 0px -1px 0px {colors.zinc.100} inset",
 									},
 								},
 								pressed: {
