@@ -16,6 +16,7 @@ import { modalSlotRecipe } from "./recipes/modal";
 import { tabsSlotRecipe } from "./recipes/tabs";
 import { segmentedControlSlotRecipe } from "./recipes/segmented-control";
 import { tagsSlotRecipe } from "./recipes/tag";
+import { switchSlotRecipe } from "./recipes/switch";
 
 export function themeRecipe<T extends RecipeVariantRecord>(
 	config: CodegenRecipeConfig<T>,
@@ -50,6 +51,7 @@ export const warePreset = definePreset({
 				tabsSlotRecipe,
 				segmentedControlSlotRecipe,
 				tagsSlotRecipe,
+				switchSlotRecipe,
 			},
 			semanticTokens: {
 				colors: {
