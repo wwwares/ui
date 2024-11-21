@@ -7,6 +7,7 @@ import {
 const labelClass = css({
 	color: "text.label",
 	fontSize: "sm",
+	fontWeight: "semibold",
 });
 
 type LabelProps = RACLabelProps & {

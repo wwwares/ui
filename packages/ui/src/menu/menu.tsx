@@ -43,7 +43,7 @@ function MenuButton<T extends object>({
 						background: "bg.surface.1",
 						borderRadius: "md",
 						minWidth: "150px",
-						padding: "{spacing.1.5} {spacing.3}",
+						padding: "{spacing.1.5} {spacing.2}",
 						maxWidth: "250px",
 						border: "1px solid {colors.zinc.300}",
 						boxShadow: "0rem 0.25rem 0.375rem -0.125rem rgba(26,26,26,.2)",

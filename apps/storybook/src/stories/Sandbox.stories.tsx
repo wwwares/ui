@@ -16,6 +16,7 @@ import {
 	Tag,
 	TagGroup,
 	MenuButton,
+	Switch,
 } from "@wwwares/ui-react";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -57,9 +58,10 @@ export const Default: Story = {
 							style={{ display: "flex", gap: "16px", flexDirection: "column" }}
 						>
 							<div style={{ display: "flex", gap: "32px" }}>
-								<TextField label="First name" />
+								<TextField label="First name" isRequired />
 								<TextField label="Last name" />
 							</div>
+							<Switch label="Turn me on" />
 							<Select
 								label="Preffered address"
 								value="cottage"
