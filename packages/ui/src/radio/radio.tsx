@@ -9,7 +9,7 @@ import { Label } from "../label";
 
 const RadioCircle = styled("div", {
 	base: {
-		transition: "all 60ms ease-in",
+		transition: "all 150ms cubic-bezier(0.075, 0.82, 0.165, 1)",
 		top: 0,
 		left: 0,
 		display: "block",
@@ -26,7 +26,7 @@ const RadioCircle = styled("div", {
 
 		// This is centered for 18px container with 8px dot
 		_before: {
-			transition: "all 60ms ease-in",
+			transition: "all 150ms cubic-bezier(0.075, 0.82, 0.165, 1)",
 			position: "absolute",
 			content: "''",
 			borderRadius: "50%",
@@ -109,29 +109,31 @@ const RadioGroup = (props: RadioGroupProps) => {
 	return (
 		<RACRadioGroup {...rest} isRequired={isRequired}>
 			<Flex gap="8px" flexDirection="column" alignItems="flex-start">
-				<Label isRequired={isRequired}>{label}</Label>
+				<Label isRequired={isRequired} content={label}>
+					{null}
+				</Label>
 				{children}
 			</Flex>
 		</RACRadioGroup>
 	);
 };
 
-type RadioProps = RACRadioProps & { label: string };
+type RadioProps = Omit<RACRadioProps, "children"> & { label: string };
 const Radio = (props: RadioProps) => {
-	const { label, children, ...rest } = props;
+	const { label, ...rest } = props;
 	return (
 		<RACRadio {...rest}>
 			{({ isDisabled, isSelected, isPressed, isFocused }) => (
-				<Flex gap="8px" alignItems="flex-start" className="group">
-					<RadioCircle
-						checked={isSelected}
-						disabled={isDisabled}
-						pressed={isPressed}
-						focused={isFocused}
-					/>
-					{/* TODO: render props */}
-					<Label isPlain>{typeof children !== "function" && children}</Label>
-				</Flex>
+				<Label content={label} labelPosition="beside">
+					<Flex gap="8px" alignItems="flex-start" className="group">
+						<RadioCircle
+							checked={isSelected}
+							disabled={isDisabled}
+							pressed={isPressed}
+							focused={isFocused}
+						/>
+					</Flex>
+				</Label>
 			)}
 		</RACRadio>
 	);

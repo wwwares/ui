@@ -2,7 +2,7 @@ import {
 	Checkbox as RACCheckbox,
 	type CheckboxProps as RACCheckboxProps,
 } from "react-aria-components";
-import { Flex, styled } from "@wwwares/ui-system/jsx";
+import { styled } from "@wwwares/ui-system/jsx";
 import { Label } from "../label";
 
 const CheckIcon = styled("div", {
@@ -16,12 +16,12 @@ const CheckIcon = styled("div", {
 		height: "18px",
 		width: "18px",
 
-		_focus: {
+		_focusVisible: {
 			outline: "dotted thin",
 		},
 
 		_before: {
-			transition: "all 60ms ease-in",
+			transition: "all 150ms cubic-bezier(0.075, 0.82, 0.165, 1)",
 			position: "absolute",
 			content: "''",
 			borderRadius: "sm",
@@ -126,21 +126,21 @@ const Checkbox = (props: CheckboxProps) => {
 	return (
 		<RACCheckbox {...props} isRequired={isRequired}>
 			{({ isSelected, isDisabled, isPressed, isFocused }) => (
-				// reverse and align to the end (start when reversed) to work around peer needing to be first in dom
-				// the <input /> is hidden and CheckIcon takes it's place so the checkbox obtains hover when the label is hovered
-				<Flex gap="8px" flexDirection="row" className="group">
+				<Label
+					isRequired={isRequired}
+					content={label}
+					labelPosition="beside"
+					className="group"
+				>
+					{/* reverse and align to the end (start when reversed) to work around peer needing to be first in dom */}
+					{/* the <input /> is hidden and CheckIcon takes it's place so the checkbox obtains hover when the label is hovered */}
 					<CheckIcon
 						checked={isSelected}
 						disabled={isDisabled}
 						pressed={isPressed}
 						focused={isFocused}
 					/>
-					{label && (
-						<Label isRequired={isRequired} isPlain>
-							{label}
-						</Label>
-					)}
-				</Flex>
+				</Label>
 			)}
 		</RACCheckbox>
 	);

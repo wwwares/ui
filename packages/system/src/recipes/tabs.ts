@@ -18,7 +18,7 @@ export const tabsSlotRecipe = themeSlotRecipe({
 			paddingY: "0.5",
 			fontWeight: "normal",
 			position: "relative",
-			transition: "all 60ms ease-in",
+			transition: "all 150ms cubic-bezier(0.075, 0.82, 0.165, 1)",
 			color: "text.default",
 
 			_before: {

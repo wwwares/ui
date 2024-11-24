@@ -11,7 +11,6 @@ export const buttonRecipe = defineRecipe({
 		paddingX: "3",
 		paddingY: "1.5",
 		cursor: "pointer",
-		// transition: "all 150ms cubic-bezier(0.4, 0, 0.2, 1)",
 		transition:
 			"border, background-position 0.25s cubic-bezier(0.075, 0.82, 0.165, 1)",
 		textDecoration: "none",
@@ -24,6 +23,7 @@ export const buttonRecipe = defineRecipe({
 		backgroundPosition: "0% 40% !important",
 		fontSize: "0.8125rem",
 		fontWeight: "bold",
+		outline: "none",
 
 		_disabled: {
 			cursor: "not-allowed",
@@ -42,10 +42,9 @@ export const buttonRecipe = defineRecipe({
 			},
 		},
 
-		_focus: {
-			outlineOffset: "-1px",
-			outline: "none",
-			// outline: "dotted thin",
+		_focusVisible: {
+			outlineOffset: "1px",
+			outline: "{colors.black} dotted thin",
 		},
 
 		_pressed: {},
@@ -83,7 +82,7 @@ export const buttonRecipe = defineRecipe({
 			primary: {
 				color: "white",
 
-				_focus: {
+				_focusVisible: {
 					outlineColor: "blue.600",
 				},
 
@@ -113,7 +112,7 @@ export const buttonRecipe = defineRecipe({
 			danger: {
 				color: "white",
 
-				_focus: {
+				_focusVisible: {
 					outlineColor: "red.600",
 				},
 

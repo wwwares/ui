@@ -61,7 +61,8 @@ export const Default: Story = {
 								<TextField label="First name" isRequired />
 								<TextField label="Last name" />
 							</div>
-							<Switch label="Turn me on" />
+							<TextField label="Favourite movie" />
+							<Switch label="Activate" />
 							<Select
 								label="Preffered address"
 								value="cottage"
@@ -135,15 +136,11 @@ export const Default: Story = {
 							/>
 
 							<RadioGroup label="Select food">
-								<Radio label="Pizza" value="pizza">
-									Pizza
-								</Radio>
-								<Radio label="Wings" value="wings">
-									Wings
-								</Radio>
-								<Radio label="Hoddogs" value="hotdogs">
-									Hoddogs
-								</Radio>
+								<Radio label="Pizza" value="pizza" />
+
+								<Radio label="Wings" value="wings" />
+
+								<Radio label="Hoddogs" value="hotdogs" />
 							</RadioGroup>
 						</div>
 					</TabPanel>

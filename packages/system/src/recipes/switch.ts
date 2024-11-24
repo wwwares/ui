@@ -6,6 +6,7 @@ export const switchSlotRecipe = themeSlotRecipe({
 	base: {
 		root: {
 			display: "flex",
+			flexDirection: "row",
 			alignItems: "center",
 			width: "48px",
 			height: "24px",
@@ -13,6 +14,7 @@ export const switchSlotRecipe = themeSlotRecipe({
 			position: "relative",
 			borderRadius: "xl",
 			cursor: "pointer",
+			transition: "all 150ms cubic-bezier(0.075, 0.82, 0.165, 1)",
 			background: "bg.well.interactive.neutral.default",
 			boxShadow: "well.interactive.neutral.default",
 			border: "interactive.neutral.default",
@@ -55,7 +57,7 @@ export const switchSlotRecipe = themeSlotRecipe({
 			height: "18px",
 			width: "18px",
 			borderRadius: "xl",
-			transition: "all .15s ease-out",
+			transition: "all 150ms cubic-bezier(0.075, 0.82, 0.165, 1)",
 			background: "bg.ridge.interactive.neutral.hover",
 			border: "interactive.neutral.default",
 			boxShadow: "{shadows.ridge.interactive.neutral.default}, {shadows.md}",

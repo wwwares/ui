@@ -104,30 +104,29 @@ function Select(props: SelectProps) {
 
 	return (
 		// Full container width hack?
-		<Flex width="100%" flexDirection="column">
-			<Label isRequired={isRequired} htmlFor={selectId}>
-				{label}
-			</Label>
-			<Box position="relative">
-				<SelectEl {...rest} className={cn} id={selectId}>
-					{options.map((option) => (
-						<option key={option.value} value={option.value}>
-							{option.label}
-						</option>
-					))}
-				</SelectEl>
-				<SelectContent>
-					<SelectOption>{displayLabel}</SelectOption>
-					<SelectIcon>
-						<svg viewBox="0 0 20 20" focusable={false} aria-hidden="true">
-							<path d="M10.884 4.323a1.25 1.25 0 0 0-1.768 0l-2.646 2.647a.75.75 0 0 0 1.06 1.06l2.47-2.47 2.47 2.47a.75.75 0 1 0 1.06-1.06l-2.646-2.647Z" />
-							<path d="m13.53 13.03-2.646 2.647a1.25 1.25 0 0 1-1.768 0l-2.646-2.647a.75.75 0 0 1 1.06-1.06l2.47 2.47 2.47-2.47a.75.75 0 0 1 1.06 1.06Z" />
-						</svg>
-					</SelectIcon>
-				</SelectContent>
-				<SelectBackdrop />
-			</Box>
-		</Flex>
+		<Label isRequired={isRequired} content={label}>
+			<Flex width="100%" flexDirection="column">
+				<Box position="relative">
+					<SelectEl {...rest} className={cn} id={selectId}>
+						{options.map((option) => (
+							<option key={option.value} value={option.value}>
+								{option.label}
+							</option>
+						))}
+					</SelectEl>
+					<SelectContent>
+						<SelectOption>{displayLabel}</SelectOption>
+						<SelectIcon>
+							<svg viewBox="0 0 20 20" focusable={false} aria-hidden="true">
+								<path d="M10.884 4.323a1.25 1.25 0 0 0-1.768 0l-2.646 2.647a.75.75 0 0 0 1.06 1.06l2.47-2.47 2.47 2.47a.75.75 0 1 0 1.06-1.06l-2.646-2.647Z" />
+								<path d="m13.53 13.03-2.646 2.647a1.25 1.25 0 0 1-1.768 0l-2.646-2.647a.75.75 0 0 1 1.06-1.06l2.47 2.47 2.47-2.47a.75.75 0 0 1 1.06 1.06Z" />
+							</svg>
+						</SelectIcon>
+					</SelectContent>
+					<SelectBackdrop />
+				</Box>
+			</Flex>
+		</Label>
 	);
 }
 

@@ -25,6 +25,8 @@ export const tagsSlotRecipe = themeSlotRecipe({
 			border: "interactive.neutral.default",
 			boxShadow: "ridge.interactive.neutral.default",
 			background: "bg.ridge.interactive.neutral.default",
+			transition: "all 80ms cubic-bezier(0.075, 0.82, 0.165, 1)",
+			fontWeight: "normal",
 
 			_focusVisible: {
 				outline: "{colors.black} dotted thin",

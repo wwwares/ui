@@ -17,9 +17,9 @@ function Switch(props: SwitchProps) {
 
 	const cls = switchSlotRecipe();
 	return (
-		<RACSwitch {...props}>
-			{({ isSelected }) => (
-				<>
+		<Label labelPosition="beside" content={label}>
+			<RACSwitch {...props}>
+				{({ isSelected }) => (
 					<Flex className={cls.root}>
 						<Flex className={cls.thumb}>
 							<IconDots
@@ -36,10 +36,9 @@ function Switch(props: SwitchProps) {
 							{isSelected ? <IconCheck size="18px" /> : <IconX size="18px" />}
 						</span>
 					</Flex>
-					<Label isPlain>{label}</Label>
-				</>
-			)}
-		</RACSwitch>
+				)}
+			</RACSwitch>
+		</Label>
 	);
 }
 

@@ -1,4 +1,4 @@
-import { Flex, styled } from "@wwwares/ui-system/jsx";
+import { styled } from "@wwwares/ui-system/jsx";
 import {
 	TextField as RACTextField,
 	Input as RACInput,
@@ -9,7 +9,7 @@ import { Label } from "../label";
 const StyledInput = styled(RACInput, {
 	base: {
 		borderRadius: "sm",
-		transition: "all 60ms ease-in",
+		transition: "all 150ms cubic-bezier(0.075, 0.82, 0.165, 1)",
 		border: "interactive.neutral.default",
 		background: "bg.well.interactive.neutral.default",
 		boxShadow: "well.interactive.neutral.default",
@@ -18,6 +18,7 @@ const StyledInput = styled(RACInput, {
 		outline: "none",
 		fontSize: "sm",
 		lineHeight: "1.25rem",
+		width: "100%",
 
 		_hover: {
 			border: "interactive.neutral.hover",
@@ -30,7 +31,7 @@ const StyledInput = styled(RACInput, {
 			background: "bg.well.interactive.neutral.pressed",
 		},
 
-		_focus: {
+		_focusVisible: {
 			border: "interactive.neutral.pressed !important",
 			background: "bg.well.interactive.neutral.pressed",
 			boxShadow: "well.interactive.neutral.pressed !important",
@@ -42,14 +43,15 @@ type TextFieldProps = { label: string } & RACTextFieldProps;
 
 const TextField = (props: TextFieldProps) => {
 	return (
-		<RACTextField {...props} style={{ width: "100%" }}>
-			<Flex gap="2px" flexDirection="column">
-				{props.label && (
-					<Label isRequired={props.isRequired}>{props.label}</Label>
-				)}
+		<Label
+			isRequired={props.isRequired}
+			content={props.label}
+			style={{ width: "100%" }}
+		>
+			<RACTextField {...props} style={{ width: "100%" }}>
 				<StyledInput />
-			</Flex>
-		</RACTextField>
+			</RACTextField>
+		</Label>
 	);
 };
 
