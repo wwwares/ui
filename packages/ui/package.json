@@ -1,6 +1,6 @@
 {
 	"name": "@wwwares/ui-react",
-	"version": "0.3.0",
+	"version": "0.4.0",
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.mjs",
 	"types": "./dist/index.d.ts",
@@ -14,7 +14,9 @@
 	},
 	"sideEffects": false,
 	"license": "MIT",
-	"files": ["dist/**"],
+	"files": [
+		"dist/**"
+	],
 	"scripts": {
 		"build": "tsup src/index.ts --format esm,cjs --dts --external react,@wwwares/ui-system && pnpm build:css",
 		"dev": "tsup src/index.ts --format esm,cjs --watch --dts --external react,@wwwares/ui-system",

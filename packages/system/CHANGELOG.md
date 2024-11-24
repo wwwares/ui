@@ -1,5 +1,21 @@
 # @wwwares/ui-system
 
+## 0.4.0
+
+### Minor Changes
+
+- e2980f7: - add switch component
+  - make label semibold
+  - adjust menu spacing
+- b6130b1: feat: add Tag and TagGroup
+
+### Patch Changes
+
+- 7965881: refactor: update Label component api & usage
+  chore: update transitions
+  chore: replace \_focus with \_focusVisible
+- 6146167: style: update Tabs style- border, active state
+
 ## 0.3.0
 
 ### Minor Changes

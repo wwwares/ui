@@ -1,5 +1,25 @@
 # @wwwares/ui-react
 
+## 0.4.0
+
+### Minor Changes
+
+- e2980f7: - add switch component
+  - make label semibold
+  - adjust menu spacing
+- b6130b1: feat: add Tag and TagGroup
+
+### Patch Changes
+
+- 7965881: refactor: update Label component api & usage
+  chore: update transitions
+  chore: replace \_focus with \_focusVisible
+- Updated dependencies [7965881]
+- Updated dependencies [6146167]
+- Updated dependencies [e2980f7]
+- Updated dependencies [b6130b1]
+  - @wwwares/ui-system@0.4.0
+
 ## 0.3.0
 
 ### Minor Changes
