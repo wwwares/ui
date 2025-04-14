@@ -16,6 +16,11 @@ export default defineConfig({
 	// Where to look for your css declarations
 	include: [
 		"./src/**/*.{js,jsx,ts,tsx}",
+		// Tell panda to look for styles/code contained in the component package
+		// this allows you to use atomic or arbitrary css in the ui-react package
+		// without having to ship static css
+		"./node_modules/@wwwares/ui-react/src/**/*.tsx",
+		// alternatively, you can ship the buildinfo
 		// "./node_modules/@wwwares/ui-system/dist/panda.buildinfo.json",
 	],
 

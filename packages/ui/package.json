@@ -14,9 +14,7 @@
 	},
 	"sideEffects": false,
 	"license": "MIT",
-	"files": [
-		"dist/**"
-	],
+	"files": ["dist/**"],
 	"scripts": {
 		"build": "tsup src/index.ts --format esm,cjs --dts --external react,@wwwares/ui-system && pnpm build:css",
 		"dev": "tsup src/index.ts --format esm,cjs --watch --dts --external react,@wwwares/ui-system",
@@ -27,7 +25,7 @@
 		"prepare": "panda codegen --silent"
 	},
 	"devDependencies": {
-		"@pandacss/dev": "^0.48.0",
+		"@pandacss/dev": "^0.53.3",
 		"@types/react": "^18.3.12",
 		"@types/react-dom": "^18.3.0",
 		"postcss": "^8.4.49",

@@ -48,13 +48,21 @@ export const segmentedControlSlotRecipe = themeSlotRecipe({
 
 				_hover: {
 					base: {
-						border: "interactive.primary.hover",
-						boxShadow: "ridge.interactive.primary.hover",
-						background: "bg.ridge.interactive.primary.hover",
+						background: "bg.ridge.interactive.primary.default",
+						boxShadow: "ridge.interactive.primary.default",
+						border: "interactive.primary.default",
+						color: "zinc.100",
+						// 		border: "interactive.primary.hover",
+						// 		boxShadow: "ridge.interactive.primary.hover",
+						// 		background: "bg.ridge.interactive.primary.hover",
 					},
 					_pressed: {
-						boxShadow: "ridge.interactive.primary.pressed",
-						background: "bg.ridge.interactive.primary.pressed",
+						background: "bg.ridge.interactive.primary.default",
+						boxShadow: "ridge.interactive.primary.default",
+						border: "interactive.primary.default",
+						color: "zinc.100",
+						// 		boxShadow: "ridge.interactive.primary.pressed",
+						// 		background: "bg.ridge.interactive.primary.pressed",
 					},
 				},
 			},

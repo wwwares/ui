@@ -5,20 +5,17 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"files": [
-		"dist/**"
-	],
+	"files": ["dist/**"],
 	"scripts": {
 		"dev": "tsup src/index.ts --watch --dts",
-		"build": "pnpm ship && panda codegen && pnpm build:css && tsup src/index.ts --dts --format esm,cjs",
+		"build": "panda codegen && pnpm build:css && tsup src/index.ts --dts --format esm,cjs",
 		"build:css": "pnpm panda cssgen --outfile dist/static.css",
 		"prepare": "panda codegen",
 		"dev:css": "pnpm panda cssgen --outfile dist/static.css --watch",
 		"ship": "panda ship --outfile dist/panda.buildinfo.json"
 	},
 	"devDependencies": {
-		"@pandacss/dev": "^0.48.0",
-		"postcss": "^8.4.49",
+		"@pandacss/dev": "^0.53.3",
 		"tsup": "8.3.0"
 	},
 	"exports": {

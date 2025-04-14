@@ -47,7 +47,7 @@ export const tabsSlotRecipe = themeSlotRecipe({
 					},
 				},
 				_before: {
-					backgroundColor: "{colors.zinc.500}",
+					backgroundColor: "{colors.zinc.400}",
 				},
 			},
 		},
