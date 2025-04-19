@@ -36,7 +36,7 @@ export const switchSlotRecipe = themeSlotRecipe({
 				background: "bg.ridge.interactive.primary.default",
 				boxShadow: "ridge.interactive.primary.default",
 				border: "interactive.primary.default",
-				color: "zinc.100",
+				color: "stone.100",
 
 				_hover: {
 					base: {

@@ -35,14 +35,15 @@ export const tagsSlotRecipe = themeSlotRecipe({
 			_hover: {
 				base: {
 					boxShadow: "ridge.interactive.neutral.hover",
-					border: "interactive.neutral.hover",
+					// border: "interactive.neutral.hover",
 					background: "bg.ridge.interactive.neutral.hover",
 				},
 			},
 
 			_selected: {
 				boxShadow: "ridge.interactive.neutral.pressed !important",
-				border: "interactive.neutral.default",
+				// border: "interactive.neutral.default",
+				border: "interactive.neutral.pressed",
 
 				_hover: {
 					base: {

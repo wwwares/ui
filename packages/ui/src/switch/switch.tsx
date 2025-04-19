@@ -25,7 +25,7 @@ function Switch(props: SwitchProps) {
 							<IconDots
 								size="8"
 								className={css({
-									color: "zinc.400",
+									color: "stone.400",
 									justifySelf: "center",
 									alignSelf: "center",
 									display: "inline-grid",

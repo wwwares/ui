@@ -60,8 +60,8 @@ export const warePreset = definePreset({
 				text: {
 					label: {
 						value: {
-							base: "{colors.zinc.900}",
-							_dark: "{colors.zinc.50}",
+							base: "{colors.stone.900}",
+							_dark: "{colors.stone.50}",
 						},
 					},
 					default: {
@@ -95,17 +95,17 @@ export const warePreset = definePreset({
 							neutral: {
 								default: {
 									value: {
-										base: "linear-gradient(180deg, {colors.zinc.100}, {colors.zinc.100}, {colors.zinc.100}, {colors.zinc.100})",
+										base: "linear-gradient(180deg, {colors.stone.100}, {colors.stone.100}, {colors.stone.100}, {colors.stone.100})",
 									},
 								},
 								hover: {
 									value: {
-										base: "linear-gradient(180deg, {colors.zinc.100}, {colors.zinc.100}, {colors.zinc.100}, {colors.zinc.100})",
+										base: "linear-gradient(180deg, {colors.stone.100}, {colors.stone.100}, {colors.stone.100}, {colors.stone.100})",
 									},
 								},
 								pressed: {
 									value: {
-										base: "linear-gradient(180deg, {colors.zinc.100}, {colors.zinc.100}, {colors.zinc.100}, {colors.zinc.100})",
+										base: "linear-gradient(180deg, {colors.stone.100}, {colors.stone.100}, {colors.stone.100}, {colors.stone.100})",
 									},
 								},
 							},
@@ -133,20 +133,20 @@ export const warePreset = definePreset({
 							neutral: {
 								default: {
 									value: {
-										base: "{colors.zinc.50}",
-										_dark: "{colors.zinc.500}",
+										base: "{colors.stone.50}",
+										_dark: "{colors.stone.500}",
 									},
 								},
 								hover: {
 									value: {
 										base: "white",
-										_dark: "{colors.zinc.600}",
+										_dark: "{colors.stone.600}",
 									},
 								},
 								pressed: {
 									value: {
 										base: "white",
-										_dark: "{colors.zinc.600}",
+										_dark: "{colors.stone.600}",
 									},
 								},
 							},
@@ -156,7 +156,7 @@ export const warePreset = definePreset({
 						// surface: {
 						// 	value: {
 						// 		base: "white",
-						// 		_dark: "{colors.zinc.700}",
+						// 		_dark: "{colors.stone.700}",
 						// 	},
 						// },
 						interactive: {
@@ -181,26 +181,26 @@ export const warePreset = definePreset({
 								// situations where you need light-on-dark but still light-on-light. radio dot for example
 								reversed: {
 									value: {
-										base: "{colors.zinc.100}",
-										_dark: "{colors.zinc.100}",
+										base: "{colors.stone.100}",
+										_dark: "{colors.stone.100}",
 									},
 								},
 								default: {
 									value: {
-										base: "{colors.zinc.100}",
-										_dark: "{colors.zinc.500}",
+										base: "{colors.stone.100}",
+										_dark: "{colors.stone.500}",
 									},
 								},
 								hover: {
 									value: {
-										base: "{colors.zinc.100}",
-										_dark: "{colors.zinc.500}",
+										base: "{colors.stone.100}",
+										_dark: "{colors.stone.500}",
 									},
 								},
 								pressed: {
 									value: {
-										base: "{colors.zinc.100}",
-										_dark: "{colors.zinc.500}",
+										base: "{colors.stone.100}",
+										_dark: "{colors.stone.500}",
 									},
 								},
 							},
@@ -208,33 +208,33 @@ export const warePreset = definePreset({
 					},
 					overlay: {
 						value: {
-							base: "{colors.zinc.100/50}",
-							_dark: "{colors.zinc.800/50}",
+							base: "{colors.stone.100/50}",
+							_dark: "{colors.stone.800/50}",
 						},
 					},
 					surface: {
 						"0": {
 							value: {
-								base: "{colors.zinc.100}",
-								_dark: "{colors.zinc.700}",
+								base: "{colors.stone.100}",
+								_dark: "{colors.stone.700}",
 							},
 						},
 						"1": {
 							value: {
-								base: "{colors.zinc.50}",
-								_dark: "{colors.zinc.600}",
+								base: "{colors.stone.50}",
+								_dark: "{colors.stone.600}",
 							},
 						},
 						"2": {
 							value: {
-								base: "{colors.zinc.200}",
-								_dark: "{colors.zinc.800}",
+								base: "{colors.stone.200}",
+								_dark: "{colors.stone.800}",
 							},
 						},
 						"3": {
 							value: {
-								base: "{colors.zinc.300}",
-								_dark: "{colors.zinc.900}",
+								base: "{colors.stone.300}",
+								_dark: "{colors.stone.900}",
 							},
 						},
 					},
@@ -244,7 +244,7 @@ export const warePreset = definePreset({
 				surface: {
 					"0": {
 						value: {
-							base: "1px solid {colors.zinc.300}",
+							base: "1px solid {colors.stone.300}",
 						},
 					},
 				},
@@ -253,20 +253,20 @@ export const warePreset = definePreset({
 						neutral: {
 							default: {
 								value: {
-									base: "1px solid {colors.zinc.300}",
-									_dark: "1px solid {colors.zinc.500}",
+									base: "1px solid {colors.stone.300}",
+									_dark: "1px solid {colors.stone.500}",
 								},
 							},
 							hover: {
 								value: {
-									base: "1px solid {colors.zinc.300}",
-									_dark: "1px solid {colors.zinc.500}",
+									base: "1px solid {colors.stone.300}",
+									_dark: "1px solid {colors.stone.500}",
 								},
 							},
 							pressed: {
 								value: {
-									base: "1px solid {colors.zinc.400}",
-									_dark: "1px solid {colors.zinc.500}",
+									base: "1px solid {colors.stone.400}",
+									_dark: "1px solid {colors.stone.500}",
 								},
 							},
 						},
@@ -336,8 +336,8 @@ export const warePreset = definePreset({
 					neutral: {
 						default: {
 							value: {
-								base: "1px solid {colors.zinc.400}",
-								_dark: "1px solid {colors.zinc.400}",
+								base: "1px solid {colors.stone.400}",
+								_dark: "1px solid {colors.stone.400}",
 							},
 						},
 						hover: {
@@ -361,12 +361,12 @@ export const warePreset = definePreset({
 						neutral: {
 							default: {
 								value: {
-									base: "1px 0px 0px {colors.zinc.100} inset, -1px 0px 0px {colors.zinc.100} inset, 0px 1px 0px {colors.zinc.100} inset, 0px -1px 0px {colors.zinc.200} inset",
+									base: "1px 0px 0px {colors.stone.100} inset, -1px 0px 0px {colors.stone.100} inset, 0px 1px 0px {colors.stone.100} inset, 0px -1px 0px {colors.stone.200} inset",
 								},
 							},
 							hover: {
 								value: {
-									base: "1px 0px 0px {colors.zinc.100} inset, -1px 0px 0px {colors.zinc.100} inset, 0px 1px 0px {colors.zinc.100} inset, 0px -1px 0px {colors.zinc.100} inset",
+									base: "1px 0px 0px {colors.stone.100} inset, -1px 0px 0px {colors.stone.100} inset, 0px 1px 0px {colors.stone.100} inset, 0px -1px 0px {colors.stone.100} inset",
 								},
 							},
 							pressed: {
@@ -414,9 +414,9 @@ export const warePreset = definePreset({
 				},
 				overlay: {
 					value: {
-						base: "0px 0px 0px 1px {colors.zinc.300}, 0px 2px 1px 0px {colors.zinc.200}, 2px 0px 1px 0px {colors.zinc.200}, -2px 0px 1px 0px {colors.zinc.200}, 0px -2px 1px 0px {colors.zinc.200}",
+						base: "0px 0px 0px 1px {colors.stone.300}, 0px 2px 1px 0px {colors.stone.200}, 2px 0px 1px 0px {colors.stone.200}, -2px 0px 1px 0px {colors.stone.200}, 0px -2px 1px 0px {colors.stone.200}",
 						_dark:
-							"0px 0px 0px 1px {colors.zinc.500}, 0px 2px 1px 0px {colors.zinc.500}, 2px 0px 1px 0px {colors.zinc.500}, -2px 0px 1px 0px {colors.zinc.500}, 0px -2px 1px 0px {colors.zinc.500}",
+							"0px 0px 0px 1px {colors.stone.500}, 0px 2px 1px 0px {colors.stone.500}, 2px 0px 1px 0px {colors.stone.500}, -2px 0px 1px 0px {colors.stone.500}, 0px -2px 1px 0px {colors.stone.500}",
 					},
 				},
 				// Components with a distinct 'bubbly' appearance
@@ -447,21 +447,21 @@ export const warePreset = definePreset({
 								value: {
 									base: "0px -1px 1px rgba(0, 0, 0, 0.2) inset, 0px 1px 0px rgba(255, 255, 255, 0.5) inset",
 									_dark:
-										"0px -1px 1px {colors.zinc.700} inset, 0px 1px 0px {colors.zinc.500} inset",
+										"0px -1px 1px {colors.stone.700} inset, 0px 1px 0px {colors.stone.500} inset",
 								},
 							},
 							hover: {
 								value: {
 									base: "0px -1px 1px rgba(0, 0, 0, 0.1) inset, 0px 1px 1px rgba(255,255,255,0.5) inset",
 									_dark:
-										"0px -1px 1px {colors.zinc.500} inset, 0px 1px 1px {colors.zinc.500} inset",
+										"0px -1px 1px {colors.stone.500} inset, 0px 1px 1px {colors.stone.500} inset",
 								},
 							},
 							pressed: {
 								value: {
 									base: "0px -1px 1px rgba(0, 0, 0, 0.05) inset, 0px 1px 3px rgba(0,0,0,0.2) inset",
 									_dark:
-										"0px -1px 1px {colors.zinc.600} inset, 0px 1px 3px {colors.zinc.700} inset",
+										"0px -1px 1px {colors.stone.600} inset, 0px 1px 3px {colors.stone.700} inset",
 								},
 							},
 						},
@@ -469,9 +469,9 @@ export const warePreset = definePreset({
 					surface: {
 						default: {
 							value: {
-								base: "0px 0px 0px 1px {colors.zinc.300}, 0px 2px 1px 0px {colors.zinc.400}",
+								base: "0px 0px 0px 1px {colors.stone.300}, 0px 1px 1px 0px {colors.stone.400}",
 								_dark:
-									"0px 0px 0px 1px {colors.zinc.500}, 0px 2px 1px 0px {colors.zinc.400}",
+									"0px 0px 0px 1px {colors.stone.500}, 0px 1px 1px 0px {colors.stone.400}",
 							},
 						},
 					},
@@ -482,20 +482,20 @@ export const warePreset = definePreset({
 						neutral: {
 							default: {
 								value: {
-									base: "{colors.zinc.300} 0px 1px 2px inset",
-									_dark: "{colors.zinc.700} 0px 1px 3px inset",
+									base: "{colors.stone.300} 0px 1px 2px inset",
+									_dark: "{colors.stone.700} 0px 1px 3px inset",
 								},
 							},
 							hover: {
 								value: {
-									base: "{colors.zinc.100} 0px 1px 5px inset",
-									_dark: "{colors.zinc.600} 0px 1px 5px inset",
+									base: "{colors.stone.100} 0px 1px 5px inset",
+									_dark: "{colors.stone.600} 0px 1px 5px inset",
 								},
 							},
 							pressed: {
 								value: {
-									base: "{colors.zinc.300} 0px 1px 2px inset",
-									_dark: "{colors.zinc.700} 0px 1px 3px inset",
+									base: "{colors.stone.300} 0px 1px 2px inset",
+									_dark: "{colors.stone.700} 0px 1px 3px inset",
 								},
 							},
 						},

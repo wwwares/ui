@@ -30,13 +30,13 @@ export const segmentedControlSlotRecipe = themeSlotRecipe({
 			_hover: {
 				base: {
 					boxShadow: "ridge.interactive.neutral.hover",
-					border: "interactive.neutral.hover",
+					border: "interactive.neutral.default",
 					background: "bg.ridge.interactive.neutral.hover",
 				},
 				_pressed: {
-					boxShadow: "ridge.interactive.neutral.pressed",
-					border: "interactive.neutral.pressed",
-					background: "bg.ridge.interactive.neutral.pressed",
+					// boxShadow: "ridge.interactive.neutral.pressed",
+					// border: "interactive.neutral.pressed",
+					// background: "bg.ridge.interactive.neutral.pressed",
 				},
 			},
 
@@ -44,14 +44,14 @@ export const segmentedControlSlotRecipe = themeSlotRecipe({
 				background: "bg.ridge.interactive.primary.default",
 				boxShadow: "ridge.interactive.primary.default",
 				border: "interactive.primary.default",
-				color: "zinc.100",
+				color: "stone.100",
 
 				_hover: {
 					base: {
 						background: "bg.ridge.interactive.primary.default",
 						boxShadow: "ridge.interactive.primary.default",
 						border: "interactive.primary.default",
-						color: "zinc.100",
+						color: "stone.100",
 						// 		border: "interactive.primary.hover",
 						// 		boxShadow: "ridge.interactive.primary.hover",
 						// 		background: "bg.ridge.interactive.primary.hover",
@@ -60,7 +60,7 @@ export const segmentedControlSlotRecipe = themeSlotRecipe({
 						background: "bg.ridge.interactive.primary.default",
 						boxShadow: "ridge.interactive.primary.default",
 						border: "interactive.primary.default",
-						color: "zinc.100",
+						color: "stone.100",
 						// 		boxShadow: "ridge.interactive.primary.pressed",
 						// 		background: "bg.ridge.interactive.primary.pressed",
 					},

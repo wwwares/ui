@@ -45,7 +45,7 @@ function MenuButton<T extends object>({
 						minWidth: "150px",
 						padding: "{spacing.1.5} {spacing.2}",
 						maxWidth: "250px",
-						border: "1px solid {colors.zinc.300}",
+						border: "1px solid {colors.stone.300}",
 						boxShadow: "0rem 0.25rem 0.375rem -0.125rem rgba(26,26,26,.2)",
 						display: "flex",
 						gap: "1px",

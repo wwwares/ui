@@ -43,7 +43,7 @@ function Tag(props: RACTagProps) {
 							>
 								<IconX
 									className={css({
-										color: "zinc.500",
+										color: "stone.500",
 										height: "13px",
 									})}
 								/>

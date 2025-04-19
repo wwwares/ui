@@ -76,7 +76,7 @@ const SelectIcon = styled("div", {
 	base: {
 		height: "20px",
 		width: "20px",
-		fill: "zinc.600",
+		fill: "stone.600",
 	},
 });
 
