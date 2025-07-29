@@ -5,7 +5,7 @@ import {
 	RadioGroup as RACRadioGroup,
 	type RadioGroupProps as RACRadioGroupProps,
 } from "react-aria-components";
-import { Label } from "../label";
+import { Label, labelTextClass } from "../label";
 
 const RadioCircle = styled("div", {
 	base: {
@@ -14,8 +14,8 @@ const RadioCircle = styled("div", {
 		left: 0,
 		display: "block",
 		borderRadius: "50%",
-		height: "18px",
-		width: "18px",
+		height: "20px",
+		width: "20px",
 		justifyContent: "center",
 		alignItems: "center",
 		cursor: "pointer",
@@ -124,16 +124,15 @@ const Radio = (props: RadioProps) => {
 	return (
 		<RACRadio {...rest}>
 			{({ isDisabled, isSelected, isPressed, isFocused }) => (
-				<Label content={label} labelPosition="beside">
-					<Flex gap="8px" alignItems="flex-start" className="group">
-						<RadioCircle
-							checked={isSelected}
-							disabled={isDisabled}
-							pressed={isPressed}
-							focused={isFocused}
-						/>
-					</Flex>
-				</Label>
+				<Flex gap="8px" alignItems="flex-start" className="group">
+					<RadioCircle
+						checked={isSelected}
+						disabled={isDisabled}
+						pressed={isPressed}
+						focused={isFocused}
+					/>
+					<span className={labelTextClass}>{label}</span>
+				</Flex>
 			)}
 		</RACRadio>
 	);

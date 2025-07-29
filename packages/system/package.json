@@ -11,11 +11,12 @@
 		"build": "panda codegen && pnpm build:css && tsup src/index.ts --dts --format esm,cjs",
 		"build:css": "pnpm panda cssgen --outfile dist/static.css",
 		"prepare": "panda codegen",
-		"dev:css": "pnpm panda cssgen --outfile dist/static.css --watch",
+		"dev:css": "pnpm panda cssgen --outfile dist/static.css --watch --clean",
 		"ship": "panda ship --outfile dist/panda.buildinfo.json"
 	},
 	"devDependencies": {
-		"@pandacss/dev": "^0.53.3",
+		"@pandacss/dev": "^0.54.0",
+		"postcss": "^8.5.6",
 		"tsup": "8.3.0"
 	},
 	"exports": {

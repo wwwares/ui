@@ -18,6 +18,8 @@ import { segmentedControlSlotRecipe } from "./recipes/segmented-control";
 import { tagsSlotRecipe } from "./recipes/tag";
 import { switchSlotRecipe } from "./recipes/switch";
 import { textFieldRecipe } from "./recipes/text-field";
+import { menuSlotRecipe } from "./recipes/menu";
+import { sliderSlotRecipe } from "./recipes/slider";
 
 export function themeRecipe<T extends RecipeVariantRecord>(
 	config: CodegenRecipeConfig<T>,
@@ -54,6 +56,8 @@ export const warePreset = definePreset({
 			segmentedControlSlotRecipe,
 			tagsSlotRecipe,
 			switchSlotRecipe,
+			menuSlotRecipe,
+			sliderSlotRecipe,
 		},
 		semanticTokens: {
 			colors: {
@@ -208,7 +212,7 @@ export const warePreset = definePreset({
 					},
 					overlay: {
 						value: {
-							base: "{colors.stone.100/50}",
+							base: "{colors.stone.300/50}",
 							_dark: "{colors.stone.800/50}",
 						},
 					},

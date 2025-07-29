@@ -11,3 +11,4 @@ export * from "./segmented-control";
 export * from "./tags";
 export * from "./menu";
 export * from "./switch";
+export * from "./slider";

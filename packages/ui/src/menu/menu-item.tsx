@@ -1,30 +1,37 @@
 import {
+	type Key,
 	MenuItem as RACMenuItem,
 	type MenuItemProps as RACMenuItemProps,
 } from "react-aria-components";
-import { css } from "@wwwares/ui-system/css";
+import { menuSlotRecipe } from "@wwwares/ui-system/recipes";
+import type { ReactNode } from "react";
 
-interface MenuItemProps extends RACMenuItemProps {}
+interface MenuItemType {
+	content: string;
+	icon?: ReactNode;
+	isDisabled?: RACMenuItemProps["isDisabled"];
+	onAction?: RACMenuItemProps["onAction"];
+	id: Key;
+}
+
+interface MenuItemProps extends RACMenuItemProps {
+	item: MenuItemType;
+}
 
 function MenuItem(props: MenuItemProps) {
+	const { item } = props;
+
+	const recipeClass = menuSlotRecipe()["menu-item"];
 	return (
 		<RACMenuItem
-			className={css({
-				padding: "{spacing.1} {spacing.2}",
-				cursor: "pointer",
-				borderRadius: "sm",
-				outline: "none",
-				_hover: {
-					backgroundColor: "bg.surface.2",
-				},
-				_focus: {
-					backgroundColor: "bg.surface.2",
-				},
-			})}
+			className={recipeClass}
+			isDisabled={item.isDisabled}
+			onAction={item.onAction}
 		>
-			{props.children}
+			<span>{item.icon}</span>
+			{item.content}
 		</RACMenuItem>
 	);
 }
 
-export { MenuItem };
+export { MenuItem, type MenuItemType, type MenuItemProps };

@@ -6,7 +6,7 @@ export const buttonRecipe = defineRecipe({
 		display: "inline-flex",
 		alignItems: "center",
 		position: "relative",
-		height: "32px",
+		height: "36px",
 		borderRadius: "6px",
 		paddingX: "3",
 		paddingY: "1.5",
@@ -21,7 +21,7 @@ export const buttonRecipe = defineRecipe({
 		lineHeight: "1rem",
 		backgroundSize: "200% 200% !important",
 		backgroundPosition: "0% 40% !important",
-		fontSize: "0.8125rem",
+		fontSize: "sm",
 		fontWeight: "bold",
 		outline: "none",
 

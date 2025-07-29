@@ -1,7 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Button, Modal } from "@wwwares/ui-react";
-import { useState } from "react";
+import {
+	Button,
+	Modal,
+	ModalMarker,
+	Select,
+	TextField,
+} from "@wwwares/ui-react";
+import { Flex } from "@wwwares/ui-system/jsx";
+import { Fragment, useState } from "react";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -45,8 +52,23 @@ export const Default: Story = {
 				activator={
 					<Button onPress={() => setModalOpen(true)}>Open modal</Button>
 				}
+				primaryAction={<Button intent="primary">Submit</Button>}
+				// footer={<span>difference: 31</span>}
 			>
-				{() => <span>Hello!</span>}
+				{() => (
+					<Fragment>
+						<Select
+							label="Orb"
+							options={[{ label: "NYC-1", value: "nyc1" }]}
+							value="nyc1"
+						/>
+						<ModalMarker content={"Accounting"} />
+						<Flex gap="4">
+							<TextField label="Account name" />
+							<TextField label="Code" />
+						</Flex>
+					</Fragment>
+				)}
 			</Modal>
 		);
 	},

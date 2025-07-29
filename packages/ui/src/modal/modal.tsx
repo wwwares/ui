@@ -18,9 +18,10 @@ type ModalProps = {
 	children(renderProps: { close(): void }): ReactNode;
 	title: string;
 	titleHidden?: boolean;
+	footer?: ReactNode;
 	primaryAction?: ReactNode;
 	secondaryAction?: ReactNode;
-	tertiaryAction?: ReactNode;
+	// tertiaryAction?: ReactNode;
 } & ModalSlotRecipeVariantProps &
 	Omit<DialogTriggerProps, "children">;
 
@@ -32,7 +33,7 @@ function Modal(props: ModalProps) {
 		titleHidden = false,
 		primaryAction,
 		secondaryAction,
-		tertiaryAction,
+		footer,
 		size,
 		defaultOpen,
 		isOpen,
@@ -42,7 +43,7 @@ function Modal(props: ModalProps) {
 
 	const cls = modalSlotRecipe({ size });
 
-	const hasFooter = !!primaryAction || !!secondaryAction || !!tertiaryAction;
+	const hasFooter = !!primaryAction || !!secondaryAction || !!footer;
 
 	return (
 		<DialogTrigger
@@ -65,13 +66,12 @@ function Modal(props: ModalProps) {
 									<button
 										style={{
 											appearance: "none",
-											alignSelf: "flex-end",
 											cursor: "pointer",
 										}}
 										onClick={renderProps.close}
 										type="button"
 									>
-										<IconX />
+										<IconX size={16} />
 									</button>
 								</div>
 
@@ -80,8 +80,8 @@ function Modal(props: ModalProps) {
 								</Box>
 								{hasFooter && (
 									<Box className={cls["modal-footer"]}>
-										{tertiaryAction}
-										<Flex alignSelf="flex-end" gap="4">
+										{footer}
+										<Flex gap="4">
 											{secondaryAction}
 											{primaryAction}
 										</Flex>

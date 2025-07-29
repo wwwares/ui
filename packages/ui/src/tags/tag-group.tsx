@@ -29,17 +29,16 @@ function TagGroup<T extends object>(props: TagGroupProps<T>) {
 	const cls = tagsSlotRecipe();
 
 	return (
-		<Label content={label}>
-			<RACTagGroup {...rest} className={cls.container}>
-				<TagList
-					items={items}
-					renderEmptyState={renderEmptyState}
-					className={cls["tag-wrapper"]}
-				>
-					{children}
-				</TagList>
-			</RACTagGroup>
-		</Label>
+		<RACTagGroup {...rest} className={cls.container}>
+			<Label content={label}>{null}</Label>
+			<TagList
+				items={items}
+				renderEmptyState={renderEmptyState}
+				className={cls["tag-wrapper"]}
+			>
+				{children}
+			</TagList>
+		</RACTagGroup>
 	);
 }
 

@@ -6,9 +6,8 @@ import {
 	type MenuTriggerProps as RACMenuTriggerProps,
 } from "react-aria-components";
 import { Button } from "../button";
-import { MenuItem } from "./menu-item";
-import { css } from "@wwwares/ui-system/css";
-import type { ReactNode } from "react";
+import { MenuItem, type MenuItemType } from "./menu-item";
+import { menuSlotRecipe } from "@wwwares/ui-system/recipes";
 
 interface RACMenuButtonProps<T>
 	extends Omit<RACMenuProps<T>, "items">,
@@ -20,44 +19,20 @@ interface MenuButtonProps<T> extends RACMenuButtonProps<T> {
 	items: MenuItemType[];
 }
 
-interface MenuItemType {
-	content: string;
-	key: string;
-	isDisabled?: boolean;
-	icon?: ReactNode;
-}
-
 function MenuButton<T extends object>({
 	label,
 	children,
 	items,
 	...props
 }: MenuButtonProps<T>) {
+	const recipeClass = menuSlotRecipe()["menu-container"];
 	return (
 		<MenuTrigger {...props}>
 			<Button>{label}</Button>
 			<Popover>
-				<Menu
-					{...props}
-					className={css({
-						background: "bg.surface.1",
-						borderRadius: "md",
-						minWidth: "150px",
-						padding: "{spacing.1.5} {spacing.2}",
-						maxWidth: "250px",
-						border: "1px solid {colors.stone.300}",
-						boxShadow: "0rem 0.25rem 0.375rem -0.125rem rgba(26,26,26,.2)",
-						display: "flex",
-						gap: "1px",
-						flexDirection: "column",
-						outline: "none",
-					})}
-				>
+				<Menu {...props} className={recipeClass}>
 					{items.map((item) => (
-						<MenuItem key={item.key}>
-							{item?.icon}
-							{item.content}
-						</MenuItem>
+						<MenuItem key={item.id} item={item} />
 					))}
 				</Menu>
 			</Popover>

@@ -17,7 +17,7 @@ function Tag(props: RACTagProps) {
 
 	return (
 		<RACTag textValue={textValue} {...rest} className={cls}>
-			{({ allowsRemoving }) => (
+			{({ allowsRemoving, isSelected }) => (
 				<Box
 					style={{
 						marginRight: allowsRemoving ? "-4px" : undefined,
@@ -28,7 +28,11 @@ function Tag(props: RACTagProps) {
 					{allowsRemoving && (
 						<Box
 							display="flex"
-							borderLeft="interactive.neutral.default"
+							borderLeft={
+								isSelected
+									? "1px solid {colors.stone.100}"
+									: "1px solid {colors.stone.500}"
+							}
 							marginLeft="2"
 						>
 							<Button
@@ -43,7 +47,7 @@ function Tag(props: RACTagProps) {
 							>
 								<IconX
 									className={css({
-										color: "stone.500",
+										color: isSelected ? "stone.100" : "stone.500",
 										height: "13px",
 									})}
 								/>

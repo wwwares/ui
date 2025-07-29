@@ -20,6 +20,8 @@ type LabelProps = Omit<RACLabelProps, "children"> & {
 	isRequired?: boolean;
 	isPeer?: boolean;
 	labelPosition?: "above" | "beside" | "apart";
+	/** Secondary value shown alongside the label */
+	altContent?: string | ReactNode;
 };
 
 function Label(props: LabelProps) {
@@ -30,6 +32,7 @@ function Label(props: LabelProps) {
 		isPeer,
 		labelPosition = "above",
 		content,
+		altContent,
 		...rest
 	} = props;
 	const clsn = cx(className, labelClass, isPeer && "peer");
@@ -50,21 +53,32 @@ function Label(props: LabelProps) {
 				gap={labelPosition === "above" ? "1" : "2"}
 				alignItems="baseline"
 			>
-				<span
+				<div
 					style={{
 						order: labelPosition === "beside" ? 1 : undefined,
 						lineHeight: 1,
+						width: "100%",
+						display: "flex",
+						flexDirection: "row",
+						justifyContent: "space-between",
 					}}
 				>
-					{content}
-					{isRequired && (
-						<span className={css({ color: "red.700", ml: "0.5" })}>*</span>
-					)}
-				</span>
+					{/* <div> */}
+					<span>
+						{content}
+						{isRequired && (
+							<span className={css({ color: "red.700", ml: "0.5" })}>*</span>
+						)}
+					</span>
+
+					<span>{altContent}</span>
+
+					{/* </div> */}
+				</div>
 				{children}
 			</Flex>
 		</RACLabel>
 	);
 }
 
-export { Label, type LabelProps };
+export { Label, type LabelProps, labelClass as labelTextClass };

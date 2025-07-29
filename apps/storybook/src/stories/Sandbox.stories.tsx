@@ -17,6 +17,7 @@ import {
 	TagGroup,
 	MenuButton,
 	Switch,
+	Slider,
 } from "@wwwares/ui-react";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -63,6 +64,7 @@ export const Default: Story = {
 							</div>
 							<TextField label="Favourite movie" />
 							<Switch label="Activate" />
+							<Switch label="Turn it on" labelPosition="apart" />
 							<Select
 								label="Preffered address"
 								value="cottage"
@@ -81,6 +83,12 @@ export const Default: Story = {
 								<Tag>Popular</Tag>
 								<Tag>Latest</Tag>
 							</TagGroup>
+							<Slider
+								label={"SLIDER"}
+								defaultValue={1}
+								minValue={1}
+								maxValue={100}
+							/>
 							<div
 								style={{
 									display: "flex",
@@ -128,9 +136,9 @@ export const Default: Story = {
 							</SegmentedControlGroup>
 							<MenuButton
 								items={[
-									{ content: "Duplicate", key: "1", icon: "🙌" },
-									{ content: "Edit", key: "2", icon: "✏" },
-									{ content: "Delete", key: "3", icon: "🚮" },
+									{ content: "Duplicate", id: "1", icon: "🙌" },
+									{ content: "Edit", id: "2", icon: "✏" },
+									{ content: "Delete", id: "3", icon: "🚮" },
 								]}
 								label="Open menu"
 							/>

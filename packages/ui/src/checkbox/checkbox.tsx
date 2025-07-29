@@ -13,8 +13,8 @@ const CheckIcon = styled("div", {
 		justifyContent: "center",
 		alignItems: "center",
 		color: "black",
-		height: "18px",
-		width: "18px",
+		height: "20px",
+		width: "20px",
 
 		_focusVisible: {
 			outline: "dotted thin",
@@ -26,8 +26,8 @@ const CheckIcon = styled("div", {
 			content: "''",
 			borderRadius: "sm",
 			display: "flex",
-			height: "18px",
-			width: "18px",
+			height: "20px",
+			width: "20px",
 			border: "interactive.neutral.default",
 			boxShadow: "ridge.interactive.neutral.default",
 			background: "bg.ridge.interactive.neutral.default",

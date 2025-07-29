@@ -11,18 +11,14 @@ import { Label } from "../label";
 
 type TextFieldProps = { label: string } & RACTextFieldProps;
 
-const TextField = (props: TextFieldProps) => {
+const TextField = ({ isRequired, label, ...props }: TextFieldProps) => {
 	const cls = textFieldRecipe();
 	return (
-		<Label
-			isRequired={props.isRequired}
-			content={props.label}
-			style={{ width: "100%" }}
-		>
-			<RACTextField {...props} style={{ width: "100%" }}>
+		<RACTextField {...props} style={{ width: "100%" }}>
+			<Label isRequired={isRequired} content={label} style={{ width: "100%" }}>
 				<RACInput className={cls} />
-			</RACTextField>
-		</Label>
+			</Label>
+		</RACTextField>
 	);
 };
 

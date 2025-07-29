@@ -10,7 +10,7 @@ export const textFieldRecipe = defineRecipe({
 		// background: "black",
 		boxShadow: "well.interactive.neutral.default",
 		padding: "2px 4px 2px 12px",
-		minHeight: "32px",
+		minHeight: "36px",
 		outline: "none",
 		fontSize: "sm",
 		lineHeight: "1.25rem",

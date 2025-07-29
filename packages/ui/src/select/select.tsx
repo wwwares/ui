@@ -41,7 +41,7 @@ const SelectContent = styled("div", {
 		display: "flex",
 		alignItems: "center",
 		width: "100%",
-		minHeight: "32px",
+		minHeight: "36px",
 		padding: "2px 4px 2px 6px",
 		zIndex: 20,
 	},

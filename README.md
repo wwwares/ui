@@ -18,3 +18,5 @@
 - surface colors are limited to a global scope for cohesivness
 
 - conditions need to be added per-config? system pkg doesn't extend from its own preset
+
+18 22 26 30 34 38

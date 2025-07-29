@@ -14,8 +14,10 @@ export const tagsSlotRecipe = themeSlotRecipe({
 			gap: 3,
 		},
 		tag: {
+			height: "28px",
 			display: "flex",
-			justifyContent: "center",
+			alignItems: "center",
+			// justifyContent: "center",
 			fontSize: "sm",
 			paddingX: "2",
 			paddingY: "1",
@@ -41,18 +43,46 @@ export const tagsSlotRecipe = themeSlotRecipe({
 			},
 
 			_selected: {
-				boxShadow: "ridge.interactive.neutral.pressed !important",
-				// border: "interactive.neutral.default",
-				border: "interactive.neutral.pressed",
+				// borderColor: ""
+				background: "bg.ridge.interactive.primary.default",
+				boxShadow: "ridge.interactive.primary.default",
+				border: "interactive.primary.default",
+				color: "stone.100",
 
 				_hover: {
 					base: {
-						border: "interactive.primary.hover",
-						boxShadow: "ridge.interactive.primary.hover",
-						background: "bg.ridge.interactive.neutral.hover",
+						background: "bg.ridge.interactive.primary.default",
+						boxShadow: "ridge.interactive.primary.default",
+						border: "interactive.primary.default",
+						color: "stone.100",
+						// 		border: "interactive.primary.hover",
+						// 		boxShadow: "ridge.interactive.primary.hover",
+						// 		background: "bg.ridge.interactive.primary.hover",
+					},
+					_pressed: {
+						background: "bg.ridge.interactive.primary.default",
+						boxShadow: "ridge.interactive.primary.default",
+						border: "interactive.primary.default",
+						color: "stone.100",
+						// 		boxShadow: "ridge.interactive.primary.pressed",
+						// 		background: "bg.ridge.interactive.primary.pressed",
 					},
 				},
 			},
+
+			// _selected: {
+			// 	boxShadow: "ridge.interactive.neutral.pressed !important",
+			// 	// border: "interactive.neutral.default",
+			// 	border: "interactive.neutral.pressed",
+
+			// 	_hover: {
+			// 		base: {
+			// 			border: "interactive.primary.hover",
+			// 			boxShadow: "ridge.interactive.primary.hover",
+			// 			background: "bg.ridge.interactive.neutral.hover",
+			// 		},
+			// 	},
+			// },
 		},
 	},
 });
