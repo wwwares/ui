@@ -21,6 +21,9 @@ import { textFieldRecipe } from "./recipes/text-field";
 import { menuSlotRecipe } from "./recipes/menu";
 import { sliderSlotRecipe } from "./recipes/slider";
 
+// Vanilla Extract theme exports
+export * from "./v-e";
+
 export function themeRecipe<T extends RecipeVariantRecord>(
 	config: CodegenRecipeConfig<T>,
 ): RecipeConfig {
@@ -510,3 +513,6 @@ export const warePreset = definePreset({
 		// },
 	},
 });
+
+// Vanilla Extract theme exports
+export * from "./v-e";
