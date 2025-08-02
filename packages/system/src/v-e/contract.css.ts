@@ -3,8 +3,8 @@ import { createThemeContract } from "@vanilla-extract/css";
 export const themeContract = createThemeContract({
 	radii: {
 		none: "",
+		xs: "",
 		sm: "",
-		default: "",
 		md: "",
 		lg: "",
 		xl: "",
