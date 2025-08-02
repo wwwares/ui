@@ -1,14 +1,14 @@
-import { modalSlotRecipe } from "@wwwares/ui-system/recipes";
-import type { ReactNode } from "react";
+// import { modalSlotRecipe } from "@wwwares/ui-system/recipes";
+// import type { ReactNode } from "react";
 
-type ModalMarkerProps = {
-	content: ReactNode;
-};
+// type ModalMarkerProps = {
+// 	content: ReactNode;
+// };
 
-function ModalMarker(props: ModalMarkerProps) {
-	const cls = modalSlotRecipe()["modal-marker"];
+// function ModalMarker(props: ModalMarkerProps) {
+// 	const cls = modalSlotRecipe()["modal-marker"];
 
-	return <div className={cls}>{props.content}</div>;
-}
+// 	return <div className={cls}>{props.content}</div>;
+// }
 
-export { ModalMarker };
+// export { ModalMarker };

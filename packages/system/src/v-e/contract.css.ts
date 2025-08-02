@@ -371,10 +371,10 @@ export const themeContract = createThemeContract({
 			},
 			overlay: "",
 			surface: {
-				0: "",
-				1: "",
-				2: "",
-				3: "",
+				l0: "",
+				l1: "",
+				l2: "",
+				l3: "",
 			},
 		},
 		borders: {

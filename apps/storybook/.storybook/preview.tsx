@@ -2,10 +2,10 @@ import type { Preview } from "@storybook/react";
 
 import "../src/index.css";
 // this is annoying idk why i need to change the order here now
-import "@wwwares/ui-react/static.css";
-// import "@wwwares/ui-system/static.css";
+import "@wwwares/ui-system/css";
+import { lightTheme } from "@wwwares/ui-system";
 
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 // Custom decorator to add a data attribute based on the selected theme
 const withThemeAttribute = (Story, context) => {
@@ -13,7 +13,10 @@ const withThemeAttribute = (Story, context) => {
 		const theme = context?.globals?.theme;
 
 		document.body.setAttribute("data-color-mode", theme);
+		document.body.classList.add(lightTheme);
 	}, [context.globals.theme]);
+
+	// console.log(lightTheme);
 
 	return <Story {...context} />;
 };

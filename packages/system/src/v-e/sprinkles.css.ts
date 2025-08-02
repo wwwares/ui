@@ -1,5 +1,5 @@
 import { defineProperties, createRainbowSprinkles } from "rainbow-sprinkles";
-import { themeContract } from "./contract";
+import { themeContract } from "./contract.css";
 import { flattenedColors } from "./colors";
 
 // Type utility to recursively flatten an object into dot-notation paths
@@ -64,7 +64,15 @@ function mapSemanticTokens<
 	return result as FlattenedRecord<T, BasePath>;
 }
 
-const semanticColors = mapSemanticTokens(themeContract.semantic.bg, "bg");
+const semanticBackgroundColors = mapSemanticTokens(
+	themeContract.semantic.bg,
+	"bg",
+);
+
+const semanticTextColors = mapSemanticTokens(
+	themeContract.semantic.text,
+	"text",
+);
 
 const semanticBorders = mapSemanticTokens(
 	themeContract.semantic.borders,
@@ -76,30 +84,54 @@ const semanticShadows = mapSemanticTokens(
 	"shadows",
 );
 
+// Extracted selectors for reuse
+export const selectors = {
+	// Interactive selectors
+	hover: "&:is(:hover, [data-hover])",
+	focus: "&:is(:focus, [data-focus])",
+	focusVisible: "&:is(:focus-visible, [data-focus-visible])",
+	focusWithin: "&:focus-within",
+	active: "&:is(:active, [data-active])",
+	visited: "&:visited",
+	target: "&:target",
+
+	// State selectors
+	open: "&:is([open], [data-open], [aria-expanded=true])",
+	closed: "&:is(:not([open]), [data-closed], [aria-expanded=false])",
+	expanded: "&:is([aria-expanded=true], [data-expanded])",
+	collapsed: "&:is([aria-expanded=false], [data-collapsed])",
+	selected: "&:is([aria-selected=true], [data-selected])",
+	unselected: "&:is([aria-selected=false], [data-unselected])",
+	pressed: "&:is([aria-pressed=true], [data-pressed])",
+	unpressed: "&:is([aria-pressed=false], [data-unpressed])",
+	loading: "&:is([data-loading], [aria-busy=true])",
+	empty: "&:is(:empty, [data-empty])",
+} as const;
+
 const enhancedInteractiveProperties = defineProperties({
 	conditions: {
 		default: {},
 
 		// Match _hover: &:is(:hover, [data-hover])
-		hover: { selector: "&:is(:hover, [data-hover])" },
+		hover: { selector: selectors.hover },
 
 		// Match _focus: &:is(:focus, [data-focus])
-		focus: { selector: "&:is(:focus, [data-focus])" },
+		focus: { selector: selectors.focus },
 
 		// Match _focusVisible: &:is(:focus-visible, [data-focus-visible])
-		focusVisible: { selector: "&:is(:focus-visible, [data-focus-visible])" },
+		focusVisible: { selector: selectors.focusVisible },
 
 		// Match _focusWithin: &:focus-within
-		focusWithin: { selector: "&:focus-within" },
+		focusWithin: { selector: selectors.focusWithin },
 
 		// Match _active: &:is(:active, [data-active])
-		active: { selector: "&:is(:active, [data-active])" },
+		active: { selector: selectors.active },
 
 		// Match _visited: &:visited
-		visited: { selector: "&:visited" },
+		visited: { selector: selectors.visited },
 
 		// Match _target: &:target
-		target: { selector: "&:target" },
+		target: { selector: selectors.target },
 	},
 	defaultCondition: "default",
 	dynamicProperties: {},
@@ -110,36 +142,34 @@ const enhancedStateProperties = defineProperties({
 		default: {},
 
 		// Match _open: &:is([open], [data-open], [aria-expanded=true])
-		open: { selector: "&:is([open], [data-open], [aria-expanded=true])" },
+		open: { selector: selectors.open },
 
 		// Match _closed: &:is(:not([open]), [data-closed], [aria-expanded=false])
-		closed: {
-			selector: "&:is(:not([open]), [data-closed], [aria-expanded=false])",
-		},
+		closed: { selector: selectors.closed },
 
 		// Match _expanded: &:is([aria-expanded=true], [data-expanded])
-		expanded: { selector: "&:is([aria-expanded=true], [data-expanded])" },
+		expanded: { selector: selectors.expanded },
 
 		// Match _collapsed: &:is([aria-expanded=false], [data-collapsed])
-		collapsed: { selector: "&:is([aria-expanded=false], [data-collapsed])" },
+		collapsed: { selector: selectors.collapsed },
 
 		// Match _selected: &:is([aria-selected=true], [data-selected])
-		selected: { selector: "&:is([aria-selected=true], [data-selected])" },
+		selected: { selector: selectors.selected },
 
 		// Match _unselected: &:is([aria-selected=false], [data-unselected])
-		unselected: { selector: "&:is([aria-selected=false], [data-unselected])" },
+		unselected: { selector: selectors.unselected },
 
 		// Match _pressed: &:is([aria-pressed=true], [data-pressed])
-		pressed: { selector: "&:is([aria-pressed=true], [data-pressed])" },
+		pressed: { selector: selectors.pressed },
 
 		// Match _unpressed: &:is([aria-pressed=false], [data-unpressed])
-		unpressed: { selector: "&:is([aria-pressed=false], [data-unpressed])" },
+		unpressed: { selector: selectors.unpressed },
 
 		// Match _loading: &:is([data-loading], [aria-busy=true])
-		loading: { selector: "&:is([data-loading], [aria-busy=true])" },
+		loading: { selector: selectors.loading },
 
 		// Match _empty: &:is(:empty, [data-empty])
-		empty: { selector: "&:is(:empty, [data-empty])" },
+		empty: { selector: selectors.empty },
 	},
 	defaultCondition: "default",
 	dynamicProperties: {},
@@ -170,6 +200,7 @@ const responsiveProperties = defineProperties({
 		width: true,
 		height: true,
 		borderRadius: themeContract.radii,
+		order: true,
 	},
 	shorthands: {
 		padding: ["paddingTop", "paddingBottom", "paddingLeft", "paddingRight"],
@@ -286,11 +317,11 @@ const colorProperties = defineProperties({
 		// Semantic colors from theme contract
 		color: {
 			// Text colors
-			...themeContract.semantic.text,
 			...flattenedColors,
+			...semanticTextColors,
 		},
 		backgroundColor: {
-			...semanticColors, // All flattened bg semantic tokens
+			...semanticBackgroundColors, // All flattened bg semantic tokens
 			...flattenedColors,
 		},
 		borderColor: {

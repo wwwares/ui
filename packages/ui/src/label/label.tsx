@@ -1,16 +1,15 @@
-import { css, cx } from "@wwwares/ui-system/css";
-import { Flex } from "@wwwares/ui-system/jsx";
+import clsx from "clsx";
 import type { ReactNode } from "react";
 import {
 	Label as RACLabel,
 	type LabelProps as RACLabelProps,
 } from "react-aria-components";
+import { styled } from "../styled";
 
-const labelClass = css({
-	color: "text.label",
-	fontSize: "sm",
-	fontWeight: "semibold",
-});
+import { labelTextStyles } from "@wwwares/ui-system";
+
+const Box = styled("div");
+const Span = styled("span");
 
 type LabelProps = Omit<RACLabelProps, "children"> & {
 	/** The element that is labelled */
@@ -35,7 +34,7 @@ function Label(props: LabelProps) {
 		altContent,
 		...rest
 	} = props;
-	const clsn = cx(className, labelClass, isPeer && "peer");
+	const clsn = clsx(className, labelTextStyles, isPeer && "peer");
 
 	let flexDirection = "";
 
@@ -47,16 +46,20 @@ function Label(props: LabelProps) {
 
 	return (
 		<RACLabel {...rest} className={clsn}>
-			<Flex
-				flexDirection={flexDirection}
-				justifyContent={labelPosition === "apart" ? "space-between" : undefined}
-				gap={labelPosition === "above" ? "1" : "2"}
-				alignItems="baseline"
+			<Box
+				css={{
+					flexDirection: flexDirection as any,
+					justifyContent:
+						labelPosition === "apart" ? "space-between" : undefined,
+					gap: labelPosition === "above" ? "$1" : "$2",
+					alignItems: "baseline",
+					display: "flex",
+				}}
 			>
-				<div
-					style={{
+				<Box
+					css={{
 						order: labelPosition === "beside" ? 1 : undefined,
-						lineHeight: 1,
+						lineHeight: "$none",
 						width: "100%",
 						display: "flex",
 						flexDirection: "row",
@@ -67,18 +70,18 @@ function Label(props: LabelProps) {
 					<span>
 						{content}
 						{isRequired && (
-							<span className={css({ color: "red.700", ml: "0.5" })}>*</span>
+							<Span css={{ color: "$red700", marginLeft: "$1" }}>*</Span>
 						)}
 					</span>
 
 					<span>{altContent}</span>
 
 					{/* </div> */}
-				</div>
+				</Box>
 				{children}
-			</Flex>
+			</Box>
 		</RACLabel>
 	);
 }
 
-export { Label, type LabelProps, labelClass as labelTextClass };
+export { Label, type LabelProps };

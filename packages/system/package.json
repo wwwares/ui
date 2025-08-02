@@ -5,62 +5,25 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"files": ["dist/**"],
+	"files": [
+		"dist/**"
+	],
 	"scripts": {
-		"dev": "tsup src/index.ts --watch --dts",
-		"build": "panda codegen && pnpm build:css && tsup src/index.ts --dts --format esm,cjs",
-		"build:css": "pnpm panda cssgen --outfile dist/static.css",
-		"prepare": "panda codegen",
-		"dev:css": "pnpm panda cssgen --outfile dist/static.css --watch --clean",
-		"ship": "panda ship --outfile dist/panda.buildinfo.json"
+		"dev": "tsup src/index.ts --watch --dts --format esm,cjs",
+		"build": "tsup src/index.ts --dts --format esm,cjs"
 	},
 	"devDependencies": {
-		"@pandacss/dev": "^0.54.0",
-		"postcss": "^8.5.6",
-		"tsup": "8.3.0"
+		"@vanilla-extract/esbuild-plugin": "^2.3.18",
+		"@vanilla-extract/vite-plugin": "^5.1.1",
+		"tsup": "8.5.0"
 	},
 	"exports": {
-		"./preset": {
+		".": {
 			"types": "./dist/index.d.ts",
 			"require": "./dist/index.mjs",
 			"import": "./dist/index.mjs"
 		},
-		"./css": {
-			"types": "./dist/css/index.d.ts",
-			"require": "./dist/css/index.mjs",
-			"import": "./dist/css/index.mjs"
-		},
-		"./tokens": {
-			"types": "./dist/tokens/index.d.ts",
-			"require": "./dist/tokens/index.mjs",
-			"import": "./dist/tokens/index.mjs"
-		},
-		"./types": {
-			"types": "./dist/types/index.d.ts",
-			"require": "./dist/types/index.mjs",
-			"import": "./dist/types/index.mjs"
-		},
-		"./patterns": {
-			"types": "./dist/patterns/index.d.ts",
-			"require": "./dist/patterns/index.mjs",
-			"import": "./dist/patterns/index.mjs"
-		},
-		"./recipes": {
-			"types": "./dist/recipes/index.d.ts",
-			"require": "./dist/recipes/index.mjs",
-			"import": "./dist/recipes/index.mjs"
-		},
-		"./jsx": {
-			"types": "./dist/jsx/index.d.ts",
-			"require": "./dist/jsx/index.mjs",
-			"import": "./dist/jsx/index.mjs"
-		},
-		"./v-e": {
-			"types": "./dist/v-e/index.d.ts",
-			"require": "./dist/v-e/index.mjs",
-			"import": "./dist/v-e/index.mjs"
-		},
-		"./static.css": "./dist/static.css"
+		"./css": "./dist/index.css"
 	},
 	"dependencies": {
 		"@vanilla-extract/css": "^1.17.4",

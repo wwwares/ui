@@ -1,6 +1,6 @@
-import { themeContract } from "./contract";
-import { lightTheme } from "./light-theme";
-import { darkTheme } from "./dark-theme";
+import { themeContract } from "./contract.css";
+import { lightTheme } from "./light-theme.css";
+import { darkTheme } from "./dark-theme.css";
 
 // Theme switching utilities
 export const themes = {

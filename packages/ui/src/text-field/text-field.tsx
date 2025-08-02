@@ -1,5 +1,5 @@
 // import { styled } from "@wwwares/ui-system/jsx";
-import { textFieldRecipe } from "@wwwares/ui-system/recipes";
+import { textFieldRecipe } from "@wwwares/ui-system";
 import {
 	TextField as RACTextField,
 	Input as RACInput,

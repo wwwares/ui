@@ -1,17 +1,17 @@
 import { createTheme } from "@vanilla-extract/css";
-import { themeContract } from "./contract";
+import { themeContract } from "./contract.css";
 import { tailwindColors } from "./colors";
 import { spacing } from "./spacing";
 import { radii } from "./radii";
 
-export const darkTheme = createTheme(themeContract, {
+export const lightTheme = createTheme(themeContract, {
 	radii,
 	colors: tailwindColors,
 	spacing,
 	semantic: {
 		text: {
-			label: tailwindColors.stone[50],
-			default: tailwindColors.white,
+			label: tailwindColors.stone[900],
+			default: tailwindColors.black,
 		},
 		bg: {
 			raised: {
@@ -36,9 +36,9 @@ export const darkTheme = createTheme(themeContract, {
 			well: {
 				interactive: {
 					neutral: {
-						default: tailwindColors.stone[500],
-						hover: tailwindColors.stone[600],
-						pressed: tailwindColors.stone[600],
+						default: tailwindColors.stone[50],
+						hover: tailwindColors.white,
+						pressed: tailwindColors.white,
 					},
 				},
 			},
@@ -51,18 +51,18 @@ export const darkTheme = createTheme(themeContract, {
 					},
 					neutral: {
 						reversed: tailwindColors.stone[100],
-						default: tailwindColors.stone[500],
-						hover: tailwindColors.stone[500],
-						pressed: tailwindColors.stone[500],
+						default: tailwindColors.stone[100],
+						hover: tailwindColors.stone[100],
+						pressed: tailwindColors.stone[100],
 					},
 				},
 			},
-			overlay: "rgba(41, 37, 36, 0.5)", // stone.800 with 50% opacity
+			overlay: "rgba(214, 211, 209, 0.5)", // stone.300 with 50% opacity
 			surface: {
-				0: tailwindColors.stone[700],
-				1: tailwindColors.stone[600],
-				2: tailwindColors.stone[800],
-				3: tailwindColors.stone[900],
+				l0: tailwindColors.stone[100],
+				l1: tailwindColors.stone[50],
+				l2: tailwindColors.stone[200],
+				l3: tailwindColors.stone[300],
 			},
 		},
 		borders: {
@@ -72,9 +72,9 @@ export const darkTheme = createTheme(themeContract, {
 			raised: {
 				interactive: {
 					neutral: {
-						default: `1px solid ${tailwindColors.stone[500]}`,
-						hover: `1px solid ${tailwindColors.stone[500]}`,
-						pressed: `1px solid ${tailwindColors.stone[500]}`,
+						default: `1px solid ${tailwindColors.stone[300]}`,
+						hover: `1px solid ${tailwindColors.stone[300]}`,
+						pressed: `1px solid ${tailwindColors.stone[400]}`,
 					},
 					primary: {
 						default: `1px solid ${tailwindColors.blue[700]}`,
@@ -90,14 +90,14 @@ export const darkTheme = createTheme(themeContract, {
 			},
 			interactive: {
 				primary: {
-					default: `1px solid ${tailwindColors.blue[400]}`,
-					hover: `1px solid ${tailwindColors.blue[400]}`,
-					pressed: `1px solid ${tailwindColors.blue[400]}`,
+					default: `1px solid ${tailwindColors.blue[600]}`,
+					hover: `1px solid ${tailwindColors.blue[700]}`,
+					pressed: `1px solid ${tailwindColors.blue[700]}`,
 				},
 				neutral: {
 					default: `1px solid ${tailwindColors.stone[400]}`,
-					hover: `1px solid ${tailwindColors.blue[500]}`,
-					pressed: `1px solid ${tailwindColors.blue[500]}`,
+					hover: `1px solid ${tailwindColors.blue[600]}`,
+					pressed: `1px solid ${tailwindColors.blue[600]}`,
 				},
 			},
 		},
@@ -124,30 +124,33 @@ export const darkTheme = createTheme(themeContract, {
 					},
 				},
 			},
-			overlay: `0px 0px 0px 1px ${tailwindColors.stone[500]}, 0px 2px 1px 0px ${tailwindColors.stone[500]}, 2px 0px 1px 0px ${tailwindColors.stone[500]}, -2px 0px 1px 0px ${tailwindColors.stone[500]}, 0px -2px 1px 0px ${tailwindColors.stone[500]}`,
+			overlay: `0px 0px 0px 1px ${tailwindColors.stone[300]}, 0px 2px 1px 0px ${tailwindColors.stone[200]}, 2px 0px 1px 0px ${tailwindColors.stone[200]}, -2px 0px 1px 0px ${tailwindColors.stone[200]}, 0px -2px 1px 0px ${tailwindColors.stone[200]}`,
 			ridge: {
 				interactive: {
 					primary: {
-						default: `${tailwindColors.blue[900]} 0px 0px 1px 0px inset`,
-						hover: `${tailwindColors.blue[900]} 0px 0px 1px 0px inset`,
-						pressed: `${tailwindColors.blue[950]} 0px 0px 1px 0px inset`,
+						default: `${tailwindColors.blue[100]} 0px 0px 1px 0px inset`,
+						hover: `${tailwindColors.blue[100]} 0px 0px 1px 0px inset`,
+						pressed: `${tailwindColors.blue[500]} 0px 0px 1px 0px inset`,
 					},
 					neutral: {
-						default: `0px -1px 1px ${tailwindColors.stone[700]} inset, 0px 1px 0px ${tailwindColors.stone[500]} inset`,
-						hover: `0px -1px 1px ${tailwindColors.stone[500]} inset, 0px 1px 1px ${tailwindColors.stone[500]} inset`,
-						pressed: `0px -1px 1px ${tailwindColors.stone[600]} inset, 0px 1px 3px ${tailwindColors.stone[700]} inset`,
+						default:
+							"0px -1px 1px rgba(0, 0, 0, 0.2) inset, 0px 1px 0px rgba(255, 255, 255, 0.5) inset",
+						hover:
+							"0px -1px 1px rgba(0, 0, 0, 0.1) inset, 0px 1px 1px rgba(255,255,255,0.5) inset",
+						pressed:
+							"0px -1px 1px rgba(0, 0, 0, 0.05) inset, 0px 1px 3px rgba(0,0,0,0.2) inset",
 					},
 				},
 				surface: {
-					default: `0px 0px 0px 1px ${tailwindColors.stone[500]}, 0px 1px 1px 0px ${tailwindColors.stone[400]}`,
+					default: `0px 0px 0px 1px ${tailwindColors.stone[300]}, 0px 1px 1px 0px ${tailwindColors.stone[400]}`,
 				},
 			},
 			well: {
 				interactive: {
 					neutral: {
-						default: `${tailwindColors.stone[700]} 0px 1px 3px inset`,
-						hover: `${tailwindColors.stone[600]} 0px 1px 5px inset`,
-						pressed: `${tailwindColors.stone[700]} 0px 1px 3px inset`,
+						default: `${tailwindColors.stone[300]} 0px 1px 2px inset`,
+						hover: `${tailwindColors.stone[100]} 0px 1px 5px inset`,
+						pressed: `${tailwindColors.stone[300]} 0px 1px 2px inset`,
 					},
 				},
 			},
