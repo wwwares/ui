@@ -13,3 +13,5 @@ export {
 	type TextFieldRecipeVariants,
 } from "./recipes/text-field.recipe.css";
 export { labelTextStyles } from "./recipes/label.styles.css";
+export { sliderStyles } from "./recipes/slider.styles.css";
+export { selectStyles } from "./recipes/select.styles.css";

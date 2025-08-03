@@ -1,7 +1,6 @@
 import type { Preview } from "@storybook/react";
 
 import "../src/index.css";
-// this is annoying idk why i need to change the order here now
 import "@wwwares/ui-system/css";
 import { lightTheme } from "@wwwares/ui-system";
 

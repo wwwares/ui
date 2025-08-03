@@ -26,7 +26,13 @@ import "./v-e/reset/reset.css";
 
 // Vanilla Extract theme exports
 export { lightTheme, themeContract, sprinkles, type Sprinkles } from "./v-e";
-export { cardRecipe, textFieldRecipe, labelTextStyles } from "./v-e";
+export {
+	cardRecipe,
+	textFieldRecipe,
+	labelTextStyles,
+	sliderStyles,
+	selectStyles,
+} from "./v-e";
 
 // export function themeRecipe<T extends RecipeVariantRecord>(
 // 	config: CodegenRecipeConfig<T>,
