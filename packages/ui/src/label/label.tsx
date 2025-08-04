@@ -41,7 +41,7 @@ function Label(props: LabelProps) {
 	if (labelPosition === "above") {
 		flexDirection = "column";
 	} else if (labelPosition === "beside") {
-		flexDirection = "row-reverse";
+		flexDirection = "row";
 	}
 
 	return (
@@ -52,7 +52,7 @@ function Label(props: LabelProps) {
 					justifyContent:
 						labelPosition === "apart" ? "space-between" : undefined,
 					gap: labelPosition === "above" ? "$1" : "$2",
-					alignItems: "baseline",
+					alignItems: "end",
 					display: "flex",
 				}}
 			>
