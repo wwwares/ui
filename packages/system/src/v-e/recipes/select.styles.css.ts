@@ -16,15 +16,15 @@ const selectBackdrop = style({
 	background: themeContract.semantic.bg.ridge.interactive.neutral.default,
 
 	selectors: {
-		[selectors.hover]: {
+		[selectors.peerHover]: {
 			boxShadow: themeContract.semantic.shadows.ridge.interactive.neutral.hover,
-			borderColor: themeContract.semantic.borders.interactive.neutral.hover,
+			border: themeContract.semantic.borders.interactive.neutral.hover,
 			background: themeContract.semantic.bg.ridge.interactive.neutral.hover,
 		},
-		[selectors.focus]: {
+		[selectors.peerFocus]: {
 			boxShadow:
 				themeContract.semantic.shadows.ridge.interactive.neutral.pressed,
-			borderColor: themeContract.semantic.borders.interactive.neutral.pressed,
+			border: themeContract.semantic.borders.interactive.neutral.pressed,
 		},
 	},
 });
