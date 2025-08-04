@@ -106,6 +106,14 @@ export const selectors = {
 	unpressed: "&:is([aria-pressed=false], [data-unpressed])",
 	loading: "&:is([data-loading], [aria-busy=true])",
 	empty: "&:is(:empty, [data-empty])",
+
+	groupHover: ".group:is(:hover, [data-hover]) &",
+	groupFocus: ".peer:is(:focus, [data-focus]) ~ &",
+	groupActive: ".peer:is(:active, [data-active]) ~ &",
+
+	peerChecked: ".peer:is(:checked, [data-checked]) ~ &",
+	peerFocus: ".peer:is(:focus, [data-focus]) ~ &",
+	peerHover: ".peer:is(:hover, [data-hover]) ~ &",
 } as const;
 
 const enhancedInteractiveProperties = defineProperties({
