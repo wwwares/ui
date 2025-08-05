@@ -5,7 +5,7 @@ export * from "./card";
 // export * from "./spinner";
 export * from "./select";
 export * from "./checkbox";
-// export * from "./radio";
+export * from "./radio";
 // export * from "./card";
 export * from "./text-field";
 // export * from "./modal";

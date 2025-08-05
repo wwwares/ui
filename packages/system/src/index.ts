@@ -33,6 +33,7 @@ export {
 	sliderStyles,
 	selectStyles,
 	checkIconRecipe,
+	radioCircleRecipe,
 } from "./v-e";
 
 // export function themeRecipe<T extends RecipeVariantRecord>(

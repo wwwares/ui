@@ -1,11 +1,14 @@
-// import { Flex, styled } from "@wwwares/ui-system/jsx";
-// import {
-// 	type RadioProps as RACRadioProps,
-// 	Radio as RACRadio,
-// 	RadioGroup as RACRadioGroup,
-// 	type RadioGroupProps as RACRadioGroupProps,
-// } from "react-aria-components";
-// import { Label, labelTextClass } from "../label";
+import {
+	type RadioProps as RACRadioProps,
+	Radio as RACRadio,
+	RadioGroup as RACRadioGroup,
+	type RadioGroupProps as RACRadioGroupProps,
+} from "react-aria-components";
+import { Label } from "../label";
+import { styled } from "../styled";
+import { labelTextStyles, radioCircleRecipe } from "@wwwares/ui-system";
+
+const Box = styled("div");
 
 // const RadioCircle = styled("div", {
 // 	base: {
@@ -103,39 +106,52 @@
 // 	],
 // });
 
-// type RadioGroupProps = RACRadioGroupProps & { label: string };
-// const RadioGroup = (props: RadioGroupProps) => {
-// 	const { children, label, isRequired, ...rest } = props;
-// 	return (
-// 		<RACRadioGroup {...rest} isRequired={isRequired}>
-// 			<Flex gap="8px" flexDirection="column" alignItems="flex-start">
-// 				<Label isRequired={isRequired} content={label}>
-// 					{null}
-// 				</Label>
-// 				{children}
-// 			</Flex>
-// 		</RACRadioGroup>
-// 	);
-// };
+type RadioGroupProps = RACRadioGroupProps & { label: string };
+const RadioGroup = (props: RadioGroupProps) => {
+	const { children, label, isRequired, ...rest } = props;
+	return (
+		<RACRadioGroup {...rest} isRequired={isRequired}>
+			<Box
+				css={{
+					display: "flex",
+					gap: "$2",
+					flexDirection: "column",
+					alignItems: "flex-start",
+				}}
+			>
+				<Label isRequired={isRequired} content={label}>
+					{null}
+				</Label>
+				{children}
+			</Box>
+		</RACRadioGroup>
+	);
+};
 
-// type RadioProps = Omit<RACRadioProps, "children"> & { label: string };
-// const Radio = (props: RadioProps) => {
-// 	const { label, ...rest } = props;
-// 	return (
-// 		<RACRadio {...rest}>
-// 			{({ isDisabled, isSelected, isPressed, isFocused }) => (
-// 				<Flex gap="8px" alignItems="flex-start" className="group">
-// 					<RadioCircle
-// 						checked={isSelected}
-// 						disabled={isDisabled}
-// 						pressed={isPressed}
-// 						focused={isFocused}
-// 					/>
-// 					<span className={labelTextClass}>{label}</span>
-// 				</Flex>
-// 			)}
-// 		</RACRadio>
-// 	);
-// };
+type RadioProps = Omit<RACRadioProps, "children"> & { label: string };
+const Radio = (props: RadioProps) => {
+	const { label, ...rest } = props;
+	return (
+		<RACRadio {...rest}>
+			{({ isDisabled, isSelected, isPressed, isFocused }) => {
+				const cls = radioCircleRecipe({
+					checked: isSelected,
+					disabled: isDisabled,
+					pressed: isPressed,
+					focused: isFocused,
+				});
+				return (
+					<Box
+						css={{ display: "flex", gap: "$2", alignItems: "end" }}
+						className="group"
+					>
+						<Box className={cls} />
+						<span className={labelTextStyles}>{label}</span>
+					</Box>
+				);
+			}}
+		</RACRadio>
+	);
+};
 
-// export { Radio, type RadioProps, RadioGroup, type RadioGroupProps };
+export { Radio, type RadioProps, RadioGroup, type RadioGroupProps };
