@@ -39,6 +39,7 @@ export const Default: Story = {
 		// secondaryAction: <Button>Discard</Button>,
 		// tertiaryAction: <Button intent="danger">Delete</Button>,
 		size: "default",
+		isDismissable: true,
 	},
 	render: (args) => {
 		const [modalOpen, setModalOpen] = useState(false);

@@ -18,6 +18,7 @@ type ModalProps = {
 	primaryAction?: ReactNode;
 	secondaryAction?: ReactNode;
 	// tertiaryAction?: ReactNode;
+	isDismissable?: boolean;
 } & ModalBodyVariants &
 	Omit<DialogTriggerProps, "children">;
 
@@ -34,7 +35,7 @@ function Modal(props: ModalProps) {
 		defaultOpen,
 		isOpen,
 		onOpenChange,
-		...styledProps
+		isDismissable,
 	} = props;
 
 	const bodyRecipeClass = modalStyles.bodyRecipe({ size });
@@ -48,15 +49,14 @@ function Modal(props: ModalProps) {
 			onOpenChange={onOpenChange}
 		>
 			{activator}
-			<RACModalOverlay className={modalStyles.overlayStyles}>
-				<RACModal
-					className={bodyRecipeClass}
-					isDismissable
-					shouldCloseOnInteractOutside={() => true}
-				>
-					<Dialog aria-label={title} style={{ outline: "none" }}>
+			<RACModalOverlay
+				className={modalStyles.overlayStyles}
+				isDismissable={isDismissable}
+			>
+				<RACModal className={bodyRecipeClass}>
+					<Dialog aria-label={title}>
 						{(renderProps) => (
-							<div flexDirection="column" {...styledProps}>
+							<div>
 								<div className={modalStyles.headerStyles}>
 									{!titleHidden && <span>{title}</span>}
 									<button
@@ -77,7 +77,7 @@ function Modal(props: ModalProps) {
 								{hasFooter && (
 									<div className={modalStyles.footerStyles}>
 										{footer}
-										<div gap="4">
+										<div>
 											{secondaryAction}
 											{primaryAction}
 										</div>
