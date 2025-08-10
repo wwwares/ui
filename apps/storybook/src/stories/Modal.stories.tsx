@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import {
-	// Button,
+	Button,
 	Modal,
 	ModalMarker,
 	Select,
@@ -47,13 +47,11 @@ export const Default: Story = {
 				{...args}
 				onOpenChange={setModalOpen}
 				title="Add a new line item"
-				isOpen={true}
+				isOpen={modalOpen}
 				activator={
-					null
-					// <Button onPress={() => setModalOpen(true)}>Open modal</Button>
+					<Button onPress={() => setModalOpen(true)}>Open modal</Button>
 				}
-				primaryAction={<button>hey!</button>}
-				// primaryAction={<Button intent="primary">Submit</Button>}
+				primaryAction={<Button intent="primary">Submit</Button>}
 				footer={<span>difference: 31</span>}
 			>
 				{() => (
