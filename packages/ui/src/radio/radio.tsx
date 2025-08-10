@@ -122,7 +122,7 @@ const RadioGroup = (props: RadioGroupProps) => {
 				<Label isRequired={isRequired} content={label}>
 					{null}
 				</Label>
-				{children}
+				{typeof children !== "function" && children}
 			</Box>
 		</RACRadioGroup>
 	);
