@@ -15,7 +15,12 @@ export const textFieldRecipe = recipe({
 		outline: "none",
 		fontSize: "14px", // sm
 		lineHeight: "1.25rem",
+		fontWeight: "normal",
 		width: "100%",
+
+		"::placeholder": {
+			color: themeContract.colors.stone[400],
+		},
 
 		selectors: {
 			[selectors.hover]: {

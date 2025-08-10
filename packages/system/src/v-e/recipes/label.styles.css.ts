@@ -4,5 +4,5 @@ import { vars } from "../utils";
 export const labelTextStyles = style({
 	color: vars.semantic.text.label,
 	fontSize: "small",
-	fontWeight: "normal",
+	fontWeight: "500",
 });
