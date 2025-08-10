@@ -34,6 +34,8 @@ export {
 	selectStyles,
 	checkIconRecipe,
 	radioCircleRecipe,
+	modalStyles,
+	type ModalBodyVariants,
 } from "./v-e";
 
 // export function themeRecipe<T extends RecipeVariantRecord>(

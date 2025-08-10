@@ -17,3 +17,7 @@ export { sliderStyles } from "./recipes/slider.styles.css";
 export { selectStyles } from "./recipes/select.styles.css";
 export { checkIconRecipe } from "./recipes/checkbox.styles.css";
 export { radioCircleRecipe } from "./recipes/radio.styles.css";
+export {
+	modalStyles,
+	type ModalBodyVariants,
+} from "./recipes/modal.styles.css";
