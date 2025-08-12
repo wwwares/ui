@@ -208,6 +208,7 @@ const responsiveProperties = defineProperties({
 		width: true,
 		height: true,
 		borderRadius: themeContract.radii,
+		borderLeft: true,
 		order: true,
 	},
 	shorthands: {

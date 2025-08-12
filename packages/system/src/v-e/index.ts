@@ -26,3 +26,4 @@ export {
 	buttonContent,
 	type ButtonVariants,
 } from "./recipes/button.styles.css";
+export { tagSlots } from "./recipes/tag.styles.css";

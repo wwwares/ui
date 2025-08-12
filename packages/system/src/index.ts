@@ -39,6 +39,7 @@ export {
 	button,
 	buttonContent,
 	type ButtonVariants,
+	tagSlots,
 } from "./v-e";
 
 // export function themeRecipe<T extends RecipeVariantRecord>(
