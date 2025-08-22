@@ -35,7 +35,7 @@ const selectContent = style({
 	display: "flex",
 	alignItems: "center",
 	width: "100%",
-	minHeight: "36px",
+	height: "32px",
 	padding: "2px 4px 2px 6px",
 	zIndex: 20,
 });

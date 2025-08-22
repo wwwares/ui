@@ -18,7 +18,7 @@ export const button = recipe({
 		alignItems: "center",
 		justifyContent: "center",
 		position: "relative",
-		height: "36px",
+		height: "32px",
 		borderRadius: themeContract.radii.md, // 6
 		paddingLeft: themeContract.spacing[3],
 		paddingRight: themeContract.spacing[3],

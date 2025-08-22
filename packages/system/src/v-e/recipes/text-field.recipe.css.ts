@@ -11,7 +11,7 @@ export const textFieldRecipe = recipe({
 		boxShadow: themeContract.semantic.shadows.well.interactive.neutral.default,
 		// padding: `${themeContract.spacing[1]} ${themeContract.spacing[1]} ${themeContract.spacing[1]} ${themeContract.spacing[1]}`,
 		padding: "2px 4px 2px 12px",
-		minHeight: "36px",
+		height: "32px",
 		outline: "none",
 		fontSize: "14px", // sm
 		lineHeight: "1.25rem",
