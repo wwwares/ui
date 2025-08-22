@@ -9,6 +9,7 @@ export const tag = recipe({
 		display: "flex",
 		alignItems: "center",
 		fontSize: "14px",
+		gap: themeContract.spacing[1],
 		paddingLeft: themeContract.spacing[2],
 		paddingRight: themeContract.spacing[2],
 		paddingTop: themeContract.spacing[1],

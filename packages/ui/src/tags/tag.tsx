@@ -25,41 +25,32 @@ function Tag(props: RACTagProps) {
 					<Box
 						css={{
 							marginRight: allowsRemoving ? "-4px" : undefined,
-							display: "flex",
 						}}
 						className={cls}
 					>
 						{typeof children !== "function" && children}
 						{allowsRemoving && (
-							<Box
-								css={{
-									display: "flex",
-									borderLeft: isSelected
-										? `1px solid ${themeContract.colors.stone[100]}`
-										: `1px solid ${themeContract.colors.stone[500]}`,
-									marginLeft: "2",
-								}}
-							>
+							<>
+								<Box
+									css={{
+										borderLeft: isSelected
+											? `1px solid ${themeContract.colors.stone[100]}`
+											: `1px solid ${themeContract.colors.stone[500]}`,
+										height: "100%",
+									}}
+								/>
 								<Button
 									variant="icon"
 									slot="remove"
 									style={{
 										background: "none",
 										padding: 0,
-										border: "none",
 										height: "auto",
 									}}
 								>
-									<Box
-										css={{
-											color: isSelected ? "stone.100" : "stone.500",
-											height: "13px",
-										}}
-									>
-										<IconX />
-									</Box>
+									<IconX size="13px" display="flex" />
 								</Button>
-							</Box>
+							</>
 						)}
 					</Box>
 				);
