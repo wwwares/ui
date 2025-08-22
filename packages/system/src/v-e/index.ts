@@ -33,3 +33,4 @@ export {
 	spinnerRecipe,
 	type SpinnerVariants,
 } from "./recipes/spinner.styles.css";
+export { tabsContainer, tab } from "./recipes/tabs.styles.css";

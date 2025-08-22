@@ -44,6 +44,8 @@ export {
 	segmentedControlStyles,
 	spinnerRecipe,
 	type SpinnerVariants,
+	tab,
+	tabsContainer,
 } from "./v-e";
 
 // export function themeRecipe<T extends RecipeVariantRecord>(
