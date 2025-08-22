@@ -29,3 +29,7 @@ export {
 export { tagSlots } from "./recipes/tag.styles.css";
 export { switchSlots } from "./recipes/switch.styles.css";
 export { segmentedControlStyles } from "./recipes/segmented-control.styles.css";
+export {
+	spinnerRecipe,
+	type SpinnerVariants,
+} from "./recipes/spinner.styles.css";

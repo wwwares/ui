@@ -42,6 +42,8 @@ export {
 	tagSlots,
 	switchSlots,
 	segmentedControlStyles,
+	spinnerRecipe,
+	type SpinnerVariants,
 } from "./v-e";
 
 // export function themeRecipe<T extends RecipeVariantRecord>(

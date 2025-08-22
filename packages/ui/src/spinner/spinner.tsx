@@ -1,33 +1,17 @@
-// import { defineKeyframes } from "@pandacss/dev";
-// import { styled } from "@wwwares/ui-system/jsx";
+import React from "react";
+import { styled } from "../styled";
+import { spinnerRecipe, type SpinnerVariants } from "@wwwares/ui-system";
+import clsx from "clsx";
 
-// // todo: move to theme config
-// defineKeyframes({
-// 	spin: {
-// 		to: {
-// 			transform: "rotate(360deg)",
-// 		},
-// 	},
-// });
+const SpinnerDiv = styled("div");
 
-// const Spinner = styled("div", {
-// 	base: {
-// 		width: "28px",
-// 		height: "28px",
-// 		display: "inline-block",
-// 		borderRadius: "50%",
-// 		border: "2px solid {colors.stone.200}",
-// 		borderTopColor: "{colors.stone.900}",
-// 		animation: "spin .875s cubic-bezier(.57,.59,.59,.46) infinite",
-// 	},
-// 	variants: {
-// 		inverted: {
-// 			true: {
-// 				border: "2px solid {colors.stone.900}",
-// 				borderTopColor: "stone.200",
-// 			},
-// 		},
-// 	},
-// });
+export type SpinnerProps = SpinnerVariants & {
+	className?: string;
+};
 
-// export { Spinner };
+export const Spinner = React.forwardRef<HTMLDivElement, SpinnerProps>(
+	({ inverted, className, ...props }, ref) => {
+		const cls = clsx(spinnerRecipe({ inverted }), className);
+		return <SpinnerDiv ref={ref} {...props} className={cls} />;
+	},
+);
