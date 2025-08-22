@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { recipe } from "@vanilla-extract/recipes";
+import { recipe, type RecipeVariants } from "@vanilla-extract/recipes";
 import { themeContract } from "../contract.css";
 
 export const overlayStyles = style({
@@ -103,4 +103,4 @@ export const modalStyles = {
 	footerStyles,
 	markerStyles,
 };
-export type ModalBodyVariants = Parameters<typeof bodyRecipe>[0];
+export type ModalBodyVariants = RecipeVariants<typeof bodyRecipe>;
