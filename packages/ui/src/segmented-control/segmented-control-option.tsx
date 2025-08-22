@@ -1,20 +1,19 @@
-// import { segmentedControlSlotRecipe } from "@wwwares/ui-system/recipes";
-// import {
-// 	Radio as RACRadio,
-// 	type RadioProps as RACRadioProps,
-// } from "react-aria-components";
+import { segmentedControlStyles } from "@wwwares/ui-system";
+import {
+	Radio as RACRadio,
+	type RadioProps as RACRadioProps,
+} from "react-aria-components";
 
-// type SegmentedControlOptionProps = RACRadioProps & {
-// 	title: string;
-// };
+type SegmentedControlOptionProps = RACRadioProps & {
+	title: string;
+};
 
-// function SegmentedControlOption({ value, title }: SegmentedControlOptionProps) {
-// 	const cls = segmentedControlSlotRecipe();
-// 	return (
-// 		<RACRadio value={value} className={cls["sc-item"]}>
-// 			{title}
-// 		</RACRadio>
-// 	);
-// }
+function SegmentedControlOption({ value, title }: SegmentedControlOptionProps) {
+	return (
+		<RACRadio value={value} className={segmentedControlStyles.item}>
+			{title}
+		</RACRadio>
+	);
+}
 
-// export { SegmentedControlOption, type SegmentedControlOptionProps };
+export { SegmentedControlOption, type SegmentedControlOptionProps };
