@@ -5,4 +5,5 @@ export const labelTextStyles = style({
 	color: vars.semantic.text.label,
 	fontSize: "small",
 	fontWeight: "500",
+	lineHeight: 1,
 });
