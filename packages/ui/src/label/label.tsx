@@ -66,7 +66,6 @@ function Label(props: LabelProps) {
 						justifyContent: "space-between",
 					}}
 				>
-					{/* <div> */}
 					<span>
 						{content}
 						{isRequired && (
@@ -74,9 +73,7 @@ function Label(props: LabelProps) {
 						)}
 					</span>
 
-					<span>{altContent}</span>
-
-					{/* </div> */}
+					{altContent && <span>{altContent}</span>}
 				</Box>
 				{children}
 			</Box>

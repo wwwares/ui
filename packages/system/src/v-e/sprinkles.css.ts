@@ -87,8 +87,8 @@ const semanticShadows = mapSemanticTokens(
 // Extracted selectors for reuse
 export const selectors = {
 	// Interactive selectors
-	hover: "&:is(:hover, [data-hover])",
-	focus: "&:is(:focus, [data-focus])",
+	hover: "&:is(:hover, [data-hovered])",
+	focus: "&:is(:focus, [data-focused])",
 	focusVisible: "&:is(:focus-visible, [data-focus-visible])",
 	focusWithin: "&:focus-within",
 	active: "&:is(:active, [data-active])",
@@ -107,38 +107,33 @@ export const selectors = {
 	loading: "&:is([data-loading], [aria-busy=true])",
 	empty: "&:is(:empty, [data-empty])",
 
-	groupHover: ".group:is(:hover, [data-hover]) &",
-	groupFocus: ".peer:is(:focus, [data-focus]) ~ &",
-	groupActive: ".peer:is(:active, [data-active]) ~ &",
+	groupHover: ".group:is(:hover, [data-hovered]) &",
+	groupFocus: ".group:is(:focus, [data-focused]) &",
+	groupActive: ".group:is(:active, [data-active]) &",
+	groupPressed: ".group:is([aria-pressed=true], [data-pressed]) &",
+	groupSelected: ".group:is([aria-selected=true], [data-selected]) &",
 
 	peerChecked: ".peer:is(:checked, [data-checked]) ~ &",
-	peerFocus: ".peer:is(:focus, [data-focus]) ~ &",
-	peerHover: ".peer:is(:hover, [data-hover]) ~ &",
+	peerFocus: ".peer:is(:focus, [data-focused]) ~ &",
+	peerHover: ".peer:is(:hover, [data-hovered]) ~ &",
 } as const;
 
 const enhancedInteractiveProperties = defineProperties({
 	conditions: {
 		default: {},
 
-		// Match _hover: &:is(:hover, [data-hover])
 		hover: { selector: selectors.hover },
 
-		// Match _focus: &:is(:focus, [data-focus])
 		focus: { selector: selectors.focus },
 
-		// Match _focusVisible: &:is(:focus-visible, [data-focus-visible])
 		focusVisible: { selector: selectors.focusVisible },
 
-		// Match _focusWithin: &:focus-within
 		focusWithin: { selector: selectors.focusWithin },
 
-		// Match _active: &:is(:active, [data-active])
 		active: { selector: selectors.active },
 
-		// Match _visited: &:visited
 		visited: { selector: selectors.visited },
 
-		// Match _target: &:target
 		target: { selector: selectors.target },
 	},
 	defaultCondition: "default",
@@ -149,34 +144,24 @@ const enhancedStateProperties = defineProperties({
 	conditions: {
 		default: {},
 
-		// Match _open: &:is([open], [data-open], [aria-expanded=true])
 		open: { selector: selectors.open },
 
-		// Match _closed: &:is(:not([open]), [data-closed], [aria-expanded=false])
 		closed: { selector: selectors.closed },
 
-		// Match _expanded: &:is([aria-expanded=true], [data-expanded])
 		expanded: { selector: selectors.expanded },
 
-		// Match _collapsed: &:is([aria-expanded=false], [data-collapsed])
 		collapsed: { selector: selectors.collapsed },
 
-		// Match _selected: &:is([aria-selected=true], [data-selected])
 		selected: { selector: selectors.selected },
 
-		// Match _unselected: &:is([aria-selected=false], [data-unselected])
 		unselected: { selector: selectors.unselected },
 
-		// Match _pressed: &:is([aria-pressed=true], [data-pressed])
 		pressed: { selector: selectors.pressed },
 
-		// Match _unpressed: &:is([aria-pressed=false], [data-unpressed])
 		unpressed: { selector: selectors.unpressed },
 
-		// Match _loading: &:is([data-loading], [aria-busy=true])
 		loading: { selector: selectors.loading },
 
-		// Match _empty: &:is(:empty, [data-empty])
 		empty: { selector: selectors.empty },
 	},
 	defaultCondition: "default",
@@ -210,6 +195,8 @@ const responsiveProperties = defineProperties({
 		borderRadius: themeContract.radii,
 		borderLeft: true,
 		order: true,
+		justifySelf: true,
+		alignSelf: true,
 	},
 	shorthands: {
 		padding: ["paddingTop", "paddingBottom", "paddingLeft", "paddingRight"],

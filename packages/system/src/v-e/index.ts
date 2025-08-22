@@ -27,3 +27,5 @@ export {
 	type ButtonVariants,
 } from "./recipes/button.styles.css";
 export { tagSlots } from "./recipes/tag.styles.css";
+export { switchSlots } from "./recipes/switch.styles.css";
+export { segmentedControlStyles } from "./recipes/segmented-control.styles.css";
