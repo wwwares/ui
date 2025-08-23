@@ -1,7 +1,8 @@
-import React, { forwardRef } from "react";
+import { createElement, forwardRef } from "react";
 import { sprinkles, type Sprinkles } from "@wwwares/ui-system";
+import clsx from "clsx";
 
-type StyledProps<T extends keyof JSX.IntrinsicElements> = {
+export type StyledProps<T extends keyof JSX.IntrinsicElements> = {
 	css?: Sprinkles;
 	className?: string;
 } & JSX.IntrinsicElements[T];
@@ -32,9 +33,9 @@ export function styled<T extends keyof JSX.IntrinsicElements>(
 	>(({ css, className, ...props }, ref) => {
 		const { className: sprinklesClassName, style } = sprinkles(css || {});
 
-		const combinedClassName = `${$className} ${className} ${sprinklesClassName}`;
+		const combinedClassName = clsx(className, $className, sprinklesClassName);
 
-		return React.createElement(element, {
+		return createElement(element, {
 			...props,
 			ref,
 			className: combinedClassName,

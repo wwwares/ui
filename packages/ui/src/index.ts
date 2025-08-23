@@ -1,4 +1,6 @@
 export * from "./styled";
+export * from "./box";
+export * from "./flex";
 export * from "./card";
 
 export * from "./button";
