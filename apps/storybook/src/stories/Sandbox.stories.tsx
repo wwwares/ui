@@ -46,7 +46,7 @@ export const Default: Story = {
 	args: {},
 	render: (args) => {
 		return (
-			<Card style={{ width: "700px" }}>
+			<Card css={{ width: "700px" }}>
 				<Tabs
 					tabs={[
 						{ id: "home", content: "Home" },
