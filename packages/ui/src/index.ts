@@ -2,6 +2,7 @@ export * from "./styled";
 export * from "./box";
 export * from "./flex";
 export * from "./card";
+export * from "./alert";
 
 export * from "./button";
 export * from "./spinner";

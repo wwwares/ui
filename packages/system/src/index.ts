@@ -46,6 +46,10 @@ export {
 	type SpinnerVariants,
 	tab,
 	tabsContainer,
+	alertRecipe,
+	type AlertVariants,
+	alertDescriptionRecipe,
+	alertHeaderRecipe,
 } from "./v-e";
 
 // export function themeRecipe<T extends RecipeVariantRecord>(

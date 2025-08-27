@@ -34,3 +34,9 @@ export {
 	type SpinnerVariants,
 } from "./recipes/spinner.styles.css";
 export { tabsContainer, tab } from "./recipes/tabs.styles.css";
+export {
+	alertRecipe,
+	alertHeaderRecipe,
+	alertDescriptionRecipe,
+	type AlertVariants,
+} from "./recipes/alert.styles.css";
