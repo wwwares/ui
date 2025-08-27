@@ -1,6 +1,7 @@
 import { defineProperties, createRainbowSprinkles } from "rainbow-sprinkles";
 import { themeContract } from "./contract.css";
 import { flattenedColors } from "./colors";
+import { radii } from "./radii";
 
 // Type utility to recursively flatten an object into dot-notation paths
 type FlattenObjectPaths<
@@ -193,7 +194,11 @@ const responsiveProperties = defineProperties({
 		width: true,
 		height: true,
 		borderRadius: themeContract.radii,
-		borderLeft: true,
+		borderLeft: semanticBorders,
+		borderBottom: semanticBorders,
+		borderTop: semanticBorders,
+		borderRight: semanticBorders,
+		border: semanticBorders,
 		order: true,
 		justifySelf: true,
 		alignSelf: true,
@@ -262,17 +267,10 @@ const borderProperties = defineProperties({
 			8: "8px",
 		},
 		borderStyle: ["solid", "dashed", "dotted", "none"],
-		borderRadius: {
-			none: "0px",
-			sm: "2px",
-			default: "4px",
-			md: "6px",
-			lg: "8px",
-			xl: "12px",
-			"2xl": "16px",
-			"3xl": "24px",
-			full: "9999px",
-		},
+		borderRadius: radii,
+	},
+	dynamicProperties: {
+		borderRadius: true,
 	},
 });
 
@@ -310,6 +308,7 @@ const colorProperties = defineProperties({
 		borderColor: flattenedColors,
 	},
 	dynamicProperties: {
+		background: true,
 		// Semantic colors from theme contract
 		color: {
 			// Text colors

@@ -5,7 +5,7 @@ import { selectors } from "../sprinkles.css";
 export const segmentedControlContainer = style({
 	display: "flex",
 	gap: themeContract.spacing["1"],
-	background: `${themeContract.colors.stone["200"]}`, // 50%
+	background: themeContract.semantic.bg.surface.l2,
 	padding: themeContract.spacing["1"],
 	borderRadius: themeContract.radii.sm,
 	width: "100%",

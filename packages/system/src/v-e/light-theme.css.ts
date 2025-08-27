@@ -3,6 +3,7 @@ import { themeContract } from "./contract.css";
 import { tailwindColors } from "./colors";
 import { spacing } from "./spacing";
 import { radii } from "./radii";
+import { withLighten, withOpacity } from "./utils";
 
 export const lightTheme = createTheme(themeContract, {
 	radii,
@@ -12,8 +13,36 @@ export const lightTheme = createTheme(themeContract, {
 		text: {
 			label: tailwindColors.stone[900],
 			default: tailwindColors.black,
+			feedback: {
+				success: {
+					default: tailwindColors.green[800],
+				},
+				error: {
+					default: tailwindColors.red[800],
+				},
+				warning: {
+					default: tailwindColors.amber[800],
+				},
+				info: {
+					default: tailwindColors.blue[800],
+				},
+			},
 		},
 		bg: {
+			feedback: {
+				success: {
+					default: `linear-gradient(to bottom right, ${tailwindColors.green[50]}, ${tailwindColors.green[50]}, ${tailwindColors.green[100]})`,
+				},
+				error: {
+					default: `linear-gradient(to bottom right, ${tailwindColors.red[50]}, ${tailwindColors.red[50]}, ${tailwindColors.red[100]})`,
+				},
+				warning: {
+					default: `linear-gradient(to bottom right, ${tailwindColors.amber[50]}, ${tailwindColors.amber[50]}, ${tailwindColors.amber[100]})`,
+				},
+				info: {
+					default: `linear-gradient(to bottom right, ${tailwindColors.blue[50]}, ${tailwindColors.blue[50]}, ${tailwindColors.blue[100]})`,
+				},
+			},
 			raised: {
 				interactive: {
 					primary: {
@@ -57,17 +86,34 @@ export const lightTheme = createTheme(themeContract, {
 					},
 				},
 			},
-			overlay: "rgba(214, 211, 209, 0.5)", // stone.300 with 50% opacity
+			overlay: withOpacity(tailwindColors.stone[300], 50), // "rgba(214, 211, 209, 0.5)" stone.300 with 50% opacity
 			surface: {
 				l0: tailwindColors.stone[100],
-				l1: tailwindColors.stone[50],
-				l2: tailwindColors.stone[200],
-				l3: tailwindColors.stone[300],
+				// l1: withOpacity(tailwindColors.stone[50], 40),
+				l1: withLighten(tailwindColors.stone[50], 40),
+				// l2: withOpacity(tailwindColors.stone[50], 50),
+				l2: tailwindColors.stone[100],
+				l3: withLighten(tailwindColors.stone[200], 50),
+				// l4: tailwindColors.stone[300],
 			},
 		},
 		borders: {
 			surface: {
 				0: `1px solid ${tailwindColors.stone[300]}`,
+			},
+			feedback: {
+				success: {
+					default: `1px solid ${tailwindColors.green[200]}`,
+				},
+				error: {
+					default: `1px solid ${tailwindColors.red[200]}`,
+				},
+				warning: {
+					default: `1px solid ${tailwindColors.amber[200]}`,
+				},
+				info: {
+					default: `1px solid ${tailwindColors.blue[200]}`,
+				},
 			},
 			raised: {
 				interactive: {

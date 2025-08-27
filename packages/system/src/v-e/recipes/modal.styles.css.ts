@@ -43,7 +43,7 @@ export const headerStyles = style({
 	display: "flex",
 	flexDirection: "row",
 	justifyContent: "space-between",
-	background: themeContract.colors.stone[200],
+	background: themeContract.semantic.bg.surface.l3,
 	borderTopLeftRadius: themeContract.radii.lg,
 	borderTopRightRadius: themeContract.radii.lg,
 	borderBottom: themeContract.semantic.borders.surface[0],
@@ -73,12 +73,11 @@ export const footerStyles = style({
 	flexDirection: "row",
 	justifyContent: "space-between",
 	alignItems: "center",
-	// boxShadow: themeContract.semantic.shadows.ridge.surface.default,
 	boxShadow: `0px 7px 14px -8px ${themeContract.colors.stone[300]} inset`,
 	paddingLeft: themeContract.spacing[3],
 	paddingRight: themeContract.spacing[3],
-	paddingTop: themeContract.spacing[4],
-	paddingBottom: themeContract.spacing[4],
+	paddingTop: themeContract.spacing[3],
+	paddingBottom: themeContract.spacing[3],
 	borderTop: themeContract.semantic.borders.surface[0],
 	borderBottomLeftRadius: themeContract.radii.lg,
 	borderBottomRightRadius: themeContract.radii.lg,
@@ -91,8 +90,9 @@ export const markerStyles = style({
 	paddingTop: themeContract.spacing[4],
 	paddingBottom: themeContract.spacing[4],
 	fontSize: "14px", // sm
-	backgroundColor: themeContract.colors.stone[200],
+	background: themeContract.semantic.bg.surface.l3,
 	color: themeContract.colors.stone[800],
+	borderBottom: themeContract.semantic.borders.surface[0],
 });
 
 export const modalStyles = {

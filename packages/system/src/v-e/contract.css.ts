@@ -324,6 +324,20 @@ export const themeContract = createThemeContract({
 		text: {
 			label: "",
 			default: "",
+			feedback: {
+				success: {
+					default: "",
+				},
+				error: {
+					default: "",
+				},
+				warning: {
+					default: "",
+				},
+				info: {
+					default: "",
+				},
+			},
 		},
 		bg: {
 			raised: {
@@ -369,17 +383,49 @@ export const themeContract = createThemeContract({
 					},
 				},
 			},
+			feedback: {
+				success: {
+					default: "",
+				},
+				error: {
+					default: "",
+				},
+				warning: {
+					default: "",
+				},
+				info: {
+					default: "",
+				},
+			},
 			overlay: "",
 			surface: {
+				/** app background */
 				l0: "",
+				/** card/modal or first surface on app background */
 				l1: "",
+				/** background surfaces on l1 - slider or segmented control background */
 				l2: "",
+				/** contrasted paired with l2 - not related to a component */
 				l3: "",
 			},
 		},
 		borders: {
 			surface: {
 				0: "",
+			},
+			feedback: {
+				success: {
+					default: "",
+				},
+				error: {
+					default: "",
+				},
+				warning: {
+					default: "",
+				},
+				info: {
+					default: "",
+				},
 			},
 			raised: {
 				interactive: {
