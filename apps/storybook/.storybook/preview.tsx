@@ -2,7 +2,7 @@ import type { Preview } from "@storybook/react";
 
 import "../src/index.css";
 import "@wwwares/ui-system/css";
-import { lightTheme } from "@wwwares/ui-system";
+import { lightTheme, themeContract } from "@wwwares/ui-system";
 
 import { useEffect } from "react";
 
@@ -42,19 +42,20 @@ export const globalTypes = {
 const preview: Preview = {
 	decorators: [withThemeAttribute],
 	parameters: {
-		// backgrounds: {
-		// default: "light",
-		// values: [
-		// {
-		// name: "light",
-		// value: "var(--colors-bg-surface-0)",
-		// },
-		// {
-		// name: "dark",
-		// value: "var(--colors-bg-surface-0)", // zinc.800
-		// },
-		// ],
-		// },
+		backgrounds: {
+			default: "light",
+			values: [
+				{
+					name: "light",
+					value: themeContract.semantic.bg.surface.l0,
+				},
+				{
+					name: "dark",
+					// value: "var(--colors-bg-surface-0)", // zinc.800
+					value: themeContract.semantic.bg.surface.l0,
+				},
+			],
+		},
 		controls: {
 			matchers: {
 				color: /(background|color)$/i,

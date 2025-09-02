@@ -18,6 +18,9 @@ import {
 	// MenuButton,
 	Switch,
 	Slider,
+	DatePicker,
+	DateField,
+	Alert,
 } from "@wwwares/ui-react";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -58,6 +61,13 @@ export const Default: Story = {
 						<div
 							style={{ display: "flex", gap: "16px", flexDirection: "column" }}
 						>
+							<Alert
+								variant="info"
+								title="Welcome to the sandbox"
+								description="Here are a bunch of components"
+							/>
+							<DatePicker label="Event date" />
+							<DateField label="Which day" />
 							<div style={{ display: "flex", gap: "32px" }}>
 								<TextField label="First name" isRequired />
 								<TextField label="Last name" />
