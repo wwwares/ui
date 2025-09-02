@@ -119,9 +119,7 @@ const RadioGroup = (props: RadioGroupProps) => {
 					alignItems: "flex-start",
 				}}
 			>
-				<Label isRequired={isRequired} content={label}>
-					{null}
-				</Label>
+				<Label isRequired={isRequired} content={label} />
 				{typeof children !== "function" && children}
 			</Box>
 		</RACRadioGroup>

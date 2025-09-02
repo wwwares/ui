@@ -1,7 +1,9 @@
 import clsx from "clsx";
-import type { ReactNode } from "react";
+import { type ForwardedRef, forwardRef, type ReactNode } from "react";
 import {
+	LabelContext,
 	Label as RACLabel,
+	useContextProps,
 	type LabelProps as RACLabelProps,
 } from "react-aria-components";
 import { styled } from "../styled";
@@ -13,7 +15,7 @@ const Span = styled("span");
 
 type LabelProps = Omit<RACLabelProps, "children"> & {
 	/** The element that is labelled */
-	children: ReactNode;
+	children?: ReactNode;
 	/** The value of the label */
 	content: string;
 	isRequired?: boolean;
@@ -23,7 +25,10 @@ type LabelProps = Omit<RACLabelProps, "children"> & {
 	altContent?: string | ReactNode;
 };
 
-function Label(props: LabelProps) {
+const Label = forwardRef(function Label(
+	props: LabelProps,
+	ref: ForwardedRef<HTMLLabelElement>,
+) {
 	const {
 		children,
 		isRequired,
@@ -34,6 +39,7 @@ function Label(props: LabelProps) {
 		altContent,
 		...rest
 	} = props;
+	const [$props, $ref] = useContextProps(rest, ref, LabelContext);
 	const clsn = clsx(className, labelTextStyles, isPeer && "peer");
 
 	let flexDirection = "";
@@ -45,7 +51,7 @@ function Label(props: LabelProps) {
 	}
 
 	return (
-		<RACLabel {...rest} className={clsn}>
+		<RACLabel {...$props} className={clsn} ref={$ref}>
 			<Box
 				css={{
 					flexDirection: flexDirection as any,
@@ -79,6 +85,6 @@ function Label(props: LabelProps) {
 			</Box>
 		</RACLabel>
 	);
-}
+});
 
 export { Label, type LabelProps };

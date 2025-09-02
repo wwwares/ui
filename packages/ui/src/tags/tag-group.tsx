@@ -5,6 +5,7 @@ import {
 	TagGroup as RACTagGroup,
 	TagList,
 } from "react-aria-components";
+import { Label } from "../label";
 
 interface TagGroupProps<T>
 	extends Omit<RACTagGroupProps, "children">,
@@ -27,7 +28,7 @@ function TagGroup<T extends object>(props: TagGroupProps<T>) {
 
 	return (
 		<RACTagGroup {...rest} className={tagSlots.container}>
-			<span className={labelTextStyles}>{label}</span>
+			<Label content={label} />
 			<TagList
 				items={items}
 				renderEmptyState={renderEmptyState}
