@@ -13,6 +13,7 @@ export const lightTheme = createTheme(themeContract, {
 		text: {
 			label: tailwindColors.stone[900],
 			default: tailwindColors.black,
+			inverted: tailwindColors.stone[50],
 			feedback: {
 				success: {
 					default: tailwindColors.green[800],

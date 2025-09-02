@@ -324,6 +324,7 @@ export const themeContract = createThemeContract({
 		text: {
 			label: "",
 			default: "",
+			inverted: "",
 			feedback: {
 				success: {
 					default: "",
