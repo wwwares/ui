@@ -17,6 +17,8 @@ export const textFieldRecipe = recipe({
 		lineHeight: "1.25rem",
 		fontWeight: "normal",
 		width: "100%",
+		display: "flex",
+		alignItems: "center",
 
 		"::placeholder": {
 			color: themeContract.colors.stone[400],
@@ -36,7 +38,7 @@ export const textFieldRecipe = recipe({
 				background: themeContract.semantic.bg.well.interactive.neutral.pressed,
 			},
 
-			[selectors.focusVisible]: {
+			[selectors.focusWithin]: {
 				border: themeContract.semantic.borders.interactive.neutral.pressed,
 				background: themeContract.semantic.bg.well.interactive.neutral.pressed,
 				boxShadow:
