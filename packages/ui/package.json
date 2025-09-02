@@ -1,7 +1,7 @@
 {
 	"name": "@wwwares/ui-react",
 	"version": "0.4.0",
-	"main": "./dist/index.cjs",
+	"main": "./dist/index.js",
 	"module": "./dist/index.mjs",
 	"types": "./dist/index.d.ts",
 	"exports": {
@@ -9,8 +9,7 @@
 			"types": "./dist/index.d.ts",
 			"import": "./dist/index.mjs",
 			"require": "./dist/index.js"
-		},
-		"./static.css": "./dist/static.css"
+		}
 	},
 	"sideEffects": false,
 	"license": "MIT",
@@ -26,7 +25,7 @@
 		"@types/react": "^18.3.12",
 		"@types/react-dom": "^18.3.0",
 		"react": "^18.3.1",
-		"tsup": "8.5.0"
+		"tsup": "8.3.0"
 	},
 	"publishConfig": {
 		"access": "public"
