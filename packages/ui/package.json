@@ -31,7 +31,7 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"@tabler/icons-react": "^3.22.0",
+		"@tabler/icons-react": "^3.35.0",
 		"@wwwares/ui-system": "workspace:0.4.0",
 		"clsx": "^2.1.1",
 		"react-aria-components": "^1.12.0"

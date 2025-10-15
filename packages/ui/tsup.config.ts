@@ -5,5 +5,5 @@ export default defineConfig({
 	format: ["esm", "cjs"],
 	// dts: true,
 	external: ["react", "react-dom"],
-	watch: ["src/**/*.(ts,tsx)"],
+	// watch: ["src/**/*.(ts,tsx)"],
 });
