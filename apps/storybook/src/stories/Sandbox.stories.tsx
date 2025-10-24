@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import {
   Button,
@@ -21,6 +21,8 @@ import {
   DatePicker,
   DateField,
   Alert,
+  FilterButton,
+  Flex,
 } from "@wwwares/ui-react";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -152,6 +154,12 @@ export const Default: Story = {
                 ]}
                 label="Open menu"
               />
+              <Flex>
+                <FilterButton
+                  items={[{ id: "1", content: "Filter 1" }]}
+                  label="Stream"
+                />
+              </Flex>
 
               <RadioGroup label="Select food">
                 <Radio label="Pizza" value="pizza" />

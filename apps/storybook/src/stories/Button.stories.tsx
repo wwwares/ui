@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Icon123, IconArtboard } from "@tabler/icons-react";
 
 import { Button } from "@wwwares/ui-react";

@@ -1,4 +1,4 @@
-import type { Preview } from "@storybook/react";
+import type { Preview } from "@storybook/react-vite";
 
 import "../src/index.css";
 import "@wwwares/ui-system/css";
@@ -40,22 +40,23 @@ export const globalTypes = {
 };
 
 const preview: Preview = {
-	decorators: [withThemeAttribute],
-	parameters: {
+    decorators: [withThemeAttribute],
+
+    parameters: {
 		backgrounds: {
-			default: "light",
-			values: [
-				{
+            options: {
+                light: {
 					name: "light",
 					value: themeContract.semantic.bg.surface.l0,
 				},
-				{
+
+                dark: {
 					name: "dark",
 					// value: "var(--colors-bg-surface-0)", // zinc.800
 					value: themeContract.semantic.bg.surface.l0,
-				},
-			],
-		},
+				}
+            }
+        },
 		controls: {
 			matchers: {
 				color: /(background|color)$/i,
@@ -63,6 +64,12 @@ const preview: Preview = {
 			},
 		},
 	},
+
+    initialGlobals: {
+        backgrounds: {
+            value: "light"
+        }
+    }
 };
 
 export default preview;

@@ -21,8 +21,5 @@
     "@changesets/cli": "^2.27.7",
     "turbo": "latest",
     "typescript": "^5.9.2"
-  },
-  "engines": {
-    "node": ">=20.0.0"
   }
 }
