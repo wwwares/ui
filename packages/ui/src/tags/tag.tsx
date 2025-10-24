@@ -31,7 +31,7 @@ function Tag(props: RACTagProps) {
 						{typeof children !== "function" && children}
 						{allowsRemoving && (
 							<>
-								<Box
+								{/*<Box
 									css={{
 										borderLeft: isSelected
 											? `1px solid ${themeContract.colors.stone[100]}`
