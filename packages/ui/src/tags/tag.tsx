@@ -38,7 +38,7 @@ function Tag(props: RACTagProps) {
 											: `1px solid ${themeContract.colors.stone[500]}`,
 										height: "100%",
 									}}
-								/>
+								/>*/}
 								<Button
 									variant="icon"
 									slot="remove"

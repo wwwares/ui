@@ -1,4 +1,4 @@
-import { recipe, type RecipeVariants } from "@vanilla-extract/recipes";
+import { type RecipeVariants, recipe } from "@vanilla-extract/recipes";
 import { themeContract } from "../contract.css";
 import { withOpacity } from "../utils";
 
@@ -15,6 +15,8 @@ export const alertRecipe = recipe({
 		variant: {
 			success: {
 				background: themeContract.semantic.bg.feedback.success.default,
+				// background:
+				// 	"repeating-linear-gradient(45deg,transparent,transparent 10px,#f5f5f5 10px,#f5f5f5 20px)",
 				border: themeContract.semantic.borders.feedback.success.default,
 				color: themeContract.semantic.text.feedback.success.default,
 				// borderTopColor: themeContract.semantic.borders.feedback.success.default,

@@ -1,58 +1,40 @@
-// import {
-// 	definePreset,
-// 	type RecipeConfig,
-// 	type SlotRecipeConfig,
-// } from "@pandacss/dev";
-// import { buttonRecipe } from "./recipes/button";
-// import { cardRecipe } from "./recipes/card";
-
-// import type {
-// 	RecipeConfig as CodegenRecipeConfig,
-// 	SlotRecipeConfig as CodegenSlotRecipeConfig,
-// 	SlotRecipeVariantRecord,
-// 	RecipeVariantRecord,
-// } from "../dist/types";
-// import { modalSlotRecipe } from "./recipes/modal";
-// import { tabsSlotRecipe } from "./recipes/tabs";
-// import { segmentedControlSlotRecipe } from "./recipes/segmented-control";
-// import { tagsSlotRecipe } from "./recipes/tag";
-// import { switchSlotRecipe } from "./recipes/switch";
-// import { textFieldRecipe } from "./recipes/text-field";
-// import { menuSlotRecipe } from "./recipes/menu";
-// import { sliderSlotRecipe } from "./recipes/slider";
-
 import "./v-e/reset/reset-layers.css";
 import "./v-e/reset/reset.css";
 
 // Vanilla Extract theme exports
-export { lightTheme, themeContract, sprinkles, type Sprinkles } from "./v-e";
 export {
-  cardRecipe,
-  textFieldRecipe,
-  labelTextStyles,
-  sliderStyles,
-  selectStyles,
-  checkIconRecipe,
-  radioCircleRecipe,
-  modalStyles,
-  type ModalBodyVariants,
-  button,
-  buttonContent,
-  type ButtonVariants,
-  tagSlots,
-  switchSlots,
-  segmentedControlStyles,
-  spinnerRecipe,
-  type SpinnerVariants,
-  tab,
-  tabsContainer,
-  alertRecipe,
-  type AlertVariants,
-  alertDescriptionRecipe,
-  alertHeaderRecipe,
-  dateFieldStyles,
-  calendarStyles,
-  menuStyles,
+	type AlertVariants,
+	alertDescriptionRecipe,
+	alertHeaderRecipe,
+	alertRecipe,
+	type ButtonVariants,
+	button,
+	buttonContent,
+	calendarStyles,
+	cardRecipe,
+	checkIconRecipe,
+	chipRecipe,
+	dateFieldStyles,
+	filterButtonStyles,
+	labelTextStyles,
+	lightTheme,
+	type ModalBodyVariants,
+	menuStyles,
+	modalStyles,
+	radioCircleRecipe,
+	type SpinnerVariants,
+	type Sprinkles,
+	segmentedControlStyles,
+	selectStyles,
+	sliderStyles,
+	spinnerRecipe,
+	sprinkles,
+	switchSlots,
+	tab,
+	tabsContainer,
+	tagSlots,
+	textFieldRecipe,
+	themeContract,
 } from "./v-e";
 
 // export function themeRecipe<T extends RecipeVariantRecord>(
