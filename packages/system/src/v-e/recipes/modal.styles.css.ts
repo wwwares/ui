@@ -105,6 +105,9 @@ export const markerStyles = style({
 	background: themeContract.semantic.bg.surface.l2,
 	color: themeContract.colors.stone[800],
 	borderBottom: `1px solid ${themeContract.semantic.borders.surface[0]}`,
+	// Swap color of top border and box shadow to match the bottom border style => dark line -> light line
+	borderTop: `1px solid #fff`,
+	boxShadow: `0 1px 0 0 #fff, 0 -1px 0 0 ${themeContract.semantic.borders.surface[0]}`,
 });
 
 export const modalStyles = {
