@@ -447,16 +447,27 @@ export const themeContract = createThemeContract({
 					},
 				},
 			},
-			interactive: {
-				primary: {
-					default: "",
-					hover: "",
-					pressed: "",
+			ridge: {
+				interactive: {
+					neutral: {
+						default: "",
+						hover: "",
+						pressed: "",
+					},
+					primary: {
+						default: "",
+						hover: "",
+						pressed: "",
+					},
 				},
-				neutral: {
-					default: "",
-					hover: "",
-					pressed: "",
+			},
+			well: {
+				interactive: {
+					neutral: {
+						default: "",
+						hover: "",
+						pressed: "",
+					},
 				},
 			},
 		},

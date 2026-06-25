@@ -1,7 +1,9 @@
 import type { Preview } from "@storybook/react-vite";
 
 import "../src/index.css";
-import "@wwwares/ui-system/css";
+// No "@wwwares/ui-system/css" here: that's the prebuilt dist stylesheet. We now
+// consume the package source, so the vanilla-extract Vite plugin emits styles
+// (with HMR) from the .css.ts modules pulled in via these imports.
 import { lightTheme, themeContract } from "@wwwares/ui-system";
 
 import { useEffect } from "react";

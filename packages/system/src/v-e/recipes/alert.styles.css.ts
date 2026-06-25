@@ -17,7 +17,7 @@ export const alertRecipe = recipe({
 				background: themeContract.semantic.bg.feedback.success.default,
 				// background:
 				// 	"repeating-linear-gradient(45deg,transparent,transparent 10px,#f5f5f5 10px,#f5f5f5 20px)",
-				border: themeContract.semantic.borders.feedback.success.default,
+				border: `1px solid ${themeContract.semantic.borders.feedback.success.default}`,
 				color: themeContract.semantic.text.feedback.success.default,
 				// borderTopColor: themeContract.semantic.borders.feedback.success.default,
 				// "@media": {
@@ -31,7 +31,7 @@ export const alertRecipe = recipe({
 			},
 			error: {
 				background: themeContract.semantic.bg.feedback.error.default,
-				border: themeContract.semantic.borders.feedback.error.default,
+				border: `1px solid ${themeContract.semantic.borders.feedback.error.default}`,
 				color: themeContract.semantic.text.feedback.error.default,
 				// borderTopColor: themeContract.semantic.borders.feedback.error.default,
 				// "@media": {
@@ -45,7 +45,7 @@ export const alertRecipe = recipe({
 			},
 			warning: {
 				background: themeContract.semantic.bg.feedback.warning.default,
-				border: themeContract.semantic.borders.feedback.warning.default,
+				border: `1px solid ${themeContract.semantic.borders.feedback.warning.default}`,
 				color: themeContract.semantic.text.feedback.warning.default,
 				// borderTopColor: themeContract.semantic.borders.feedback.warning.default,
 				// "@media": {
@@ -59,7 +59,7 @@ export const alertRecipe = recipe({
 			},
 			info: {
 				background: themeContract.semantic.bg.feedback.info.default,
-				border: themeContract.semantic.borders.feedback.info.default,
+				border: `1px solid ${themeContract.semantic.borders.feedback.info.default}`,
 				color: themeContract.semantic.text.feedback.info.default,
 				// borderTopColor: themeContract.semantic.borders.feedback.info.default,
 				// 	"@media": {
@@ -187,31 +187,31 @@ export const alertButtonRecipe = recipe({
 export const alertHeaderRecipe = recipe({
 	base: {
 		borderRadius: `${themeContract.radii.md} ${themeContract.radii.md} ${themeContract.radii.lg} ${themeContract.radii.lg}`,
-		padding: `${themeContract.spacing[4]} ${themeContract.spacing[3]}`,
+		padding: `${themeContract.spacing[3]} ${themeContract.spacing[2]}`,
 	},
 	variants: {
 		variant: {
 			success: {
 				// background: `linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.4))`,
 				background: `linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5))`,
-				borderBottom: themeContract.semantic.borders.feedback.success.default,
+				borderBottom: `1px solid ${themeContract.semantic.borders.feedback.success.default}`,
 				boxShadow: `0px 1px 2px 0px ${themeContract.colors.green[100]}`,
 			},
 			error: {
 				// background: `linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.4))`,
 				background: `linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5))`,
-				borderBottom: themeContract.semantic.borders.feedback.error.default,
+				borderBottom: `1px solid ${themeContract.semantic.borders.feedback.error.default}`,
 				boxShadow: `0px 1px 2px 0px ${themeContract.colors.red[100]}`,
 			},
 			warning: {
 				// background: `linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.4))`,
 				background: `linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5))`,
-				borderBottom: themeContract.semantic.borders.feedback.warning.default,
+				borderBottom: `1px solid ${themeContract.semantic.borders.feedback.warning.default}`,
 				boxShadow: `0px 1px 2px 0px ${themeContract.colors.amber[100]}`,
 			},
 			info: {
 				background: `linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5))`,
-				borderBottom: themeContract.semantic.borders.feedback.info.default,
+				borderBottom: `1px solid ${themeContract.semantic.borders.feedback.info.default}`,
 				boxShadow: `0px 1px 2px 0px ${themeContract.colors.blue[100]}`,
 			},
 		},
@@ -223,9 +223,9 @@ export const alertHeaderRecipe = recipe({
 
 export const alertDescriptionRecipe = recipe({
 	base: {
-		paddingLeft: themeContract.spacing[3],
-		paddingBottom: themeContract.spacing[3],
-		paddingRight: themeContract.spacing[3],
+		paddingLeft: themeContract.spacing[2],
+		paddingBottom: themeContract.spacing[2],
+		paddingRight: themeContract.spacing[2],
 		fontSize: "14px",
 	},
 	variants: {

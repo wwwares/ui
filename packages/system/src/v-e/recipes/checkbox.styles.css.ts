@@ -1,6 +1,7 @@
 import { recipe } from "@vanilla-extract/recipes";
 import { themeContract } from "../contract.css";
 import { selectors } from "../sprinkles.css";
+import { edge, ringOnly } from "./_edge";
 
 export const checkIconRecipe = recipe({
 	base: {
@@ -14,17 +15,17 @@ export const checkIconRecipe = recipe({
 		width: "24px",
 
 		"::before": {
-			transition: "all 150ms cubic-bezier(0.075, 0.82, 0.165, 1)",
+			// transition only the edge visuals — NOT `all`, which would animate the
+			// dotted focus outline in/out.
+			transition:
+				"box-shadow 150ms cubic-bezier(0.075, 0.82, 0.165, 1), background-color 150ms cubic-bezier(0.075, 0.82, 0.165, 1)",
 			position: "absolute",
 			content: "''",
 			borderRadius: themeContract.radii.sm,
 			display: "flex",
 			height: "20px",
 			width: "20px",
-			border: themeContract.semantic.borders.interactive.neutral.default,
-			boxShadow:
-				themeContract.semantic.shadows.ridge.interactive.neutral.default,
-			background: themeContract.semantic.bg.ridge.interactive.neutral.default,
+			...edge("ridge", "neutral", "default"),
 		},
 
 		"::after": {
@@ -49,20 +50,9 @@ export const checkIconRecipe = recipe({
 		},
 		checked: {
 			true: {
-				"::before": {
-					border: themeContract.semantic.borders.interactive.primary.default,
-					boxShadow:
-						themeContract.semantic.shadows.ridge.interactive.primary.default,
-					background:
-						themeContract.semantic.bg.ridge.interactive.primary.default,
-				},
+				"::before": edge("ridge", "primary", "default"),
 
-				[`${selectors.groupHover}::before`]: {
-					border: themeContract.semantic.borders.interactive.primary.hover,
-					boxShadow:
-						themeContract.semantic.shadows.ridge.interactive.primary.hover,
-					background: themeContract.semantic.bg.ridge.interactive.primary.hover,
-				},
+				[`${selectors.groupHover}::before`]: edge("ridge", "primary", "hover"),
 
 				"::after": {
 					opacity: 1,
@@ -92,12 +82,7 @@ export const checkIconRecipe = recipe({
 				pressed: false,
 			},
 			style: {
-				[`${selectors.groupHover}::before`]: {
-					boxShadow:
-						themeContract.semantic.shadows.ridge.interactive.neutral.hover,
-					border: themeContract.semantic.borders.interactive.neutral.hover,
-					background: themeContract.semantic.bg.ridge.interactive.neutral.hover,
-				},
+				[`${selectors.groupHover}::before`]: edge("ridge", "neutral", "hover"),
 			},
 		},
 		{
@@ -106,13 +91,7 @@ export const checkIconRecipe = recipe({
 				pressed: true,
 			},
 			style: {
-				"::before": {
-					boxShadow:
-						themeContract.semantic.shadows.ridge.interactive.neutral.pressed,
-					border: themeContract.semantic.borders.interactive.neutral.pressed,
-					background:
-						themeContract.semantic.bg.ridge.interactive.neutral.pressed,
-				},
+				"::before": edge("ridge", "neutral", "pressed"),
 			},
 		},
 		{
@@ -122,13 +101,7 @@ export const checkIconRecipe = recipe({
 			},
 			style: {
 				selectors: {
-					"&:hover::before": {
-						border: themeContract.semantic.borders.interactive.primary.hover,
-						boxShadow:
-							themeContract.semantic.shadows.ridge.interactive.primary.hover,
-						background:
-							themeContract.semantic.bg.ridge.interactive.primary.hover,
-					},
+					"&:hover::before": edge("ridge", "primary", "hover"),
 				},
 			},
 		},
@@ -138,10 +111,11 @@ export const checkIconRecipe = recipe({
 				pressed: true,
 			},
 			style: {
-				[`${selectors.groupHover}::before`]: {
-					boxShadow:
-						themeContract.semantic.shadows.ridge.interactive.primary.pressed,
-				},
+				[`${selectors.groupHover}::before`]: ringOnly(
+					"ridge",
+					"primary",
+					"pressed",
+				),
 			},
 		},
 	],

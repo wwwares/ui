@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import {
 	Button,
+	Flex,
 	Modal,
 	ModalMarker,
 	Select,
@@ -63,10 +64,10 @@ export const Default: Story = {
 							value="nyc1"
 						/>
 						<ModalMarker content={"Accounting"} />
-						<div gap="4">
+						<Flex css={{ flexDirection: "column", gap: "$4" }}>
 							<TextField label="Account name" />
 							<TextField label="Code" />
-						</div>
+						</Flex>
 					</Fragment>
 				)}
 			</Modal>

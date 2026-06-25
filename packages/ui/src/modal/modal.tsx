@@ -1,5 +1,7 @@
-import type { ReactElement, ReactNode } from "react";
 import { IconX } from "@tabler/icons-react";
+import { type ModalBodyVariants, modalStyles } from "@wwwares/ui-system";
+import clsx from "clsx";
+import type { ReactElement, ReactNode } from "react";
 import {
 	Dialog,
 	DialogTrigger,
@@ -7,7 +9,6 @@ import {
 	Modal as RACModal,
 	ModalOverlay as RACModalOverlay,
 } from "react-aria-components";
-import { modalStyles, type ModalBodyVariants } from "@wwwares/ui-system";
 
 type ModalProps = {
 	activator: ReactElement;
@@ -43,17 +44,10 @@ function Modal(props: ModalProps) {
 	const hasFooter = !!primaryAction || !!secondaryAction || !!footer;
 
 	return (
-		<DialogTrigger
-			defaultOpen={defaultOpen}
-			isOpen={isOpen}
-			onOpenChange={onOpenChange}
-		>
+		<DialogTrigger defaultOpen={defaultOpen} isOpen={isOpen} onOpenChange={onOpenChange}>
 			{activator}
-			<RACModalOverlay
-				className={modalStyles.overlayStyles}
-				isDismissable={isDismissable}
-			>
-				<RACModal className={bodyRecipeClass}>
+			<RACModalOverlay className={modalStyles.overlayStyles} isDismissable={isDismissable}>
+				<RACModal className={clsx(bodyRecipeClass, modalStyles.contentBackgroundBlend)}>
 					<Dialog aria-label={title}>
 						{(renderProps) => (
 							<div>
@@ -71,9 +65,7 @@ function Modal(props: ModalProps) {
 									</button>
 								</div>
 
-								<div className={modalStyles.contentStyles}>
-									{children(renderProps)}
-								</div>
+								<div className={modalStyles.contentStyles}>{children(renderProps)}</div>
 								{hasFooter && (
 									<div className={modalStyles.footerStyles}>
 										{footer}

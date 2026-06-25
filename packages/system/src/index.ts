@@ -13,7 +13,6 @@ export {
 	calendarStyles,
 	cardRecipe,
 	checkIconRecipe,
-	chipRecipe,
 	dateFieldStyles,
 	filterButtonStyles,
 	labelTextStyles,

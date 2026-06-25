@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { recipe, type RecipeVariants } from "@vanilla-extract/recipes";
+import { type RecipeVariants, recipe } from "@vanilla-extract/recipes";
 import { themeContract } from "../contract.css";
 
 export const overlayStyles = style({
@@ -43,10 +43,10 @@ export const headerStyles = style({
 	display: "flex",
 	flexDirection: "row",
 	justifyContent: "space-between",
-	background: themeContract.semantic.bg.surface.l3,
+	background: themeContract.semantic.bg.surface.l0,
 	borderTopLeftRadius: themeContract.radii.lg,
 	borderTopRightRadius: themeContract.radii.lg,
-	borderBottom: themeContract.semantic.borders.surface[0],
+	// borderBottom: themeContract.semantic.borders.surface[0],
 	paddingLeft: themeContract.spacing[3],
 	paddingRight: themeContract.spacing[3],
 	paddingTop: themeContract.spacing[2],
@@ -65,6 +65,17 @@ export const contentStyles = style({
 	paddingRight: themeContract.spacing[3],
 	paddingBottom: themeContract.spacing[7], // 3.5 * 2? approximated from original
 	paddingTop: themeContract.spacing[8],
+	borderTopRightRadius: themeContract.radii.md,
+	borderTopLeftRadius: themeContract.radii.md,
+	borderTop: `1px solid ${themeContract.semantic.borders.surface[0]}`,
+	borderBottom: `1px solid ${themeContract.semantic.borders.surface[0]}`,
+	borderBottomRightRadius: themeContract.radii.md,
+	borderBottomLeftRadius: themeContract.radii.md,
+	background: themeContract.semantic.bg.surface.l3,
+});
+
+export const contentBackgroundBlend = style({
+	background: themeContract.semantic.bg.surface.l3,
 });
 
 export const footerStyles = style({
@@ -73,12 +84,13 @@ export const footerStyles = style({
 	flexDirection: "row",
 	justifyContent: "space-between",
 	alignItems: "center",
-	boxShadow: `0px 7px 14px -8px ${themeContract.colors.stone[300]} inset`,
+	// boxShadow: `0px 7px 14px -8px ${themeContract.colors.stone[300]} inset`,
 	paddingLeft: themeContract.spacing[3],
 	paddingRight: themeContract.spacing[3],
 	paddingTop: themeContract.spacing[3],
 	paddingBottom: themeContract.spacing[3],
-	borderTop: themeContract.semantic.borders.surface[0],
+	background: themeContract.semantic.bg.surface.l0,
+	// borderTop: `1px solid ${themeContract.semantic.borders.surface[0]}`,
 	borderBottomLeftRadius: themeContract.radii.lg,
 	borderBottomRightRadius: themeContract.radii.lg,
 });
@@ -87,12 +99,12 @@ export const markerStyles = style({
 	marginLeft: `calc(-1 * ${themeContract.spacing[3]})`,
 	marginRight: `calc(-1 * ${themeContract.spacing[3]})`,
 	paddingLeft: themeContract.spacing[3],
-	paddingTop: themeContract.spacing[4],
-	paddingBottom: themeContract.spacing[4],
+	paddingTop: themeContract.spacing[3],
+	paddingBottom: themeContract.spacing[3],
 	fontSize: "14px", // sm
-	background: themeContract.semantic.bg.surface.l3,
+	background: themeContract.semantic.bg.surface.l2,
 	color: themeContract.colors.stone[800],
-	borderBottom: themeContract.semantic.borders.surface[0],
+	borderBottom: `1px solid ${themeContract.semantic.borders.surface[0]}`,
 });
 
 export const modalStyles = {
@@ -102,5 +114,6 @@ export const modalStyles = {
 	contentStyles,
 	footerStyles,
 	markerStyles,
+	contentBackgroundBlend,
 };
 export type ModalBodyVariants = RecipeVariants<typeof bodyRecipe>;

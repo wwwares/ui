@@ -10,15 +10,18 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
-    "lint": "turbo run lint",
-    "format": "biome format --write \"**/*.{ts,tsx,md}\"",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "changeset:publish": "pnpm build && changeset publish"
+    "changeset:publish": "bun run build && changeset publish"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.2.2",
     "@changesets/cli": "^2.27.7",
+    "oxfmt": "^0.56.0",
+    "oxlint": "^1.71.0",
     "turbo": "latest",
     "typescript": "^5.9.2"
   }

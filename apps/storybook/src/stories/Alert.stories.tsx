@@ -41,18 +41,15 @@ export const Warning: Story = {
 	args: {
 		variant: "warning",
 		title: "You have 20k tokens remaining.",
-		description:
-			"Once this balance reaches 0 consecutive jobs will begin to fail",
+		description: "Once this balance reaches 0 consecutive jobs will begin to fail",
 	},
 };
 
-// biome-ignore lint/suspicious/noShadowRestrictedNames: Story example- no worries
 export const Error: Story = {
 	args: {
 		variant: "error",
 		title: "No more tokens remain for this session.",
-		description:
-			"ACHR-1128 could not be completed. Purchase more tokens to continue",
+		description: "ACHR-1128 could not be completed. Purchase more tokens to continue",
 	},
 };
 

@@ -194,11 +194,15 @@ const responsiveProperties = defineProperties({
 		width: true,
 		height: true,
 		borderRadius: themeContract.radii,
-		borderLeft: semanticBorders,
-		borderBottom: semanticBorders,
-		borderTop: semanticBorders,
-		borderRight: semanticBorders,
-		border: semanticBorders,
+		// Border tokens are color-only now, so map to the *-color longhands rather
+		// than the `border`/`border<Side>` shorthands (a shorthand needs `1px solid
+		// <color>`; a bare color there produces invalid CSS). The `borderColor`
+		// shorthand already lives in colorProperties below, so it's omitted here to
+		// avoid defining the same property twice.
+		borderLeftColor: semanticBorders,
+		borderBottomColor: semanticBorders,
+		borderTopColor: semanticBorders,
+		borderRightColor: semanticBorders,
 		order: true,
 		justifySelf: true,
 		alignSelf: true,
@@ -339,8 +343,6 @@ export const sprinkles = createRainbowSprinkles(
 	enhancedStateProperties,
 	colorProperties,
 );
-
-sprinkles({ backgroundColor: "$bg.raised.interactive.danger.pressed" });
 
 // Export types
 export type Sprinkles = Parameters<typeof sprinkles>[0];

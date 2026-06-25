@@ -100,51 +100,63 @@ export const lightTheme = createTheme(themeContract, {
 		},
 		borders: {
 			surface: {
-				0: `1px solid ${tailwindColors.stone[300]}`,
+				0: tailwindColors.stone[300],
 			},
 			feedback: {
 				success: {
-					default: `1px solid ${tailwindColors.green[200]}`,
+					default: tailwindColors.green[200],
 				},
 				error: {
-					default: `1px solid ${tailwindColors.red[200]}`,
+					default: tailwindColors.red[200],
 				},
 				warning: {
-					default: `1px solid ${tailwindColors.amber[200]}`,
+					default: tailwindColors.amber[200],
 				},
 				info: {
-					default: `1px solid ${tailwindColors.blue[200]}`,
+					default: tailwindColors.blue[200],
 				},
 			},
 			raised: {
 				interactive: {
 					neutral: {
-						default: `1px solid ${tailwindColors.stone[300]}`,
-						hover: `1px solid ${tailwindColors.stone[300]}`,
-						pressed: `1px solid ${tailwindColors.stone[400]}`,
+						default: tailwindColors.stone[300],
+						hover: tailwindColors.stone[300],
+						pressed: tailwindColors.stone[400],
 					},
 					primary: {
-						default: `1px solid ${tailwindColors.blue[700]}`,
-						hover: `1px solid ${tailwindColors.blue[700]}`,
-						pressed: `1px solid ${tailwindColors.blue[700]}`,
+						default: tailwindColors.blue[700],
+						hover: tailwindColors.blue[700],
+						pressed: tailwindColors.blue[700],
 					},
 					danger: {
-						default: `1px solid ${tailwindColors.red[700]}`,
-						hover: `1px solid ${tailwindColors.red[700]}`,
-						pressed: `1px solid ${tailwindColors.red[700]}`,
+						default: tailwindColors.red[700],
+						hover: tailwindColors.red[700],
+						pressed: tailwindColors.red[700],
 					},
 				},
 			},
-			interactive: {
-				primary: {
-					default: `1px solid ${tailwindColors.blue[600]}`,
-					hover: `1px solid ${tailwindColors.blue[700]}`,
-					pressed: `1px solid ${tailwindColors.blue[700]}`,
+			// Seeded from the flat `interactive` tree so the reshape is a visual no-op.
+			ridge: {
+				interactive: {
+					neutral: {
+						default: tailwindColors.stone[400],
+						hover: tailwindColors.blue[600],
+						pressed: tailwindColors.blue[600],
+					},
+					primary: {
+						default: tailwindColors.blue[600],
+						hover: tailwindColors.blue[700],
+						pressed: tailwindColors.blue[700],
+					},
 				},
-				neutral: {
-					default: `1px solid ${tailwindColors.stone[400]}`,
-					hover: `1px solid ${tailwindColors.blue[600]}`,
-					pressed: `1px solid ${tailwindColors.blue[600]}`,
+			},
+			well: {
+				interactive: {
+					neutral: {
+						default: tailwindColors.stone[400],
+						hover: tailwindColors.blue[600],
+						pressed: tailwindColors.blue[600],
+					},
 				},
 			},
 		},

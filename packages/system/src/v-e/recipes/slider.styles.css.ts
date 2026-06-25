@@ -1,6 +1,7 @@
 import { style } from "@vanilla-extract/css";
 import { themeContract } from "../contract.css";
 import { selectors } from "../sprinkles.css";
+import { edge } from "./_edge";
 
 export const sliderContainer = style({
 	width: "100%",
@@ -24,25 +25,15 @@ export const sliderTrackFill = style({
 	position: "absolute",
 	top: "50%",
 	height: themeContract.spacing[7],
-	background: themeContract.semantic.bg.ridge.interactive.neutral.default,
-	boxShadow: themeContract.semantic.shadows.ridge.interactive.neutral.default,
-	border: themeContract.semantic.borders.interactive.neutral.default,
+	...edge("ridge", "neutral", "default"),
 	transform: "translateY(-50%)",
 	borderRadius: themeContract.radii.sm,
 	display: "flex",
 	justifyContent: "flex-end",
 
 	selectors: {
-		[selectors.hover]: {
-			boxShadow: themeContract.semantic.shadows.ridge.interactive.neutral.hover,
-			border: themeContract.semantic.borders.interactive.neutral.hover,
-			background: themeContract.semantic.bg.ridge.interactive.neutral.hover,
-		},
-		[selectors.focusWithin]: {
-			boxShadow: themeContract.semantic.shadows.ridge.interactive.neutral.hover,
-			border: themeContract.semantic.borders.interactive.neutral.hover,
-			background: themeContract.semantic.bg.ridge.interactive.neutral.hover,
-		},
+		[selectors.hover]: edge("ridge", "neutral", "hover"),
+		[selectors.focusWithin]: edge("ridge", "neutral", "hover"),
 	},
 });
 

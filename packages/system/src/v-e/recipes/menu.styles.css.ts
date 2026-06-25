@@ -8,7 +8,7 @@ const menuContainer = style({
   width: "200px",
   padding: `${themeContract.spacing[1]} ${themeContract.spacing[1]}`,
   maxWidth: "450px",
-  border: themeContract.semantic.borders.surface[0],
+  border: `1px solid ${themeContract.semantic.borders.surface[0]}`,
   boxShadow: "0rem 0.25rem 0.375rem -0.125rem rgba(26,26,26,.2)",
   display: "flex",
   gap: "1px",

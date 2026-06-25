@@ -3,7 +3,6 @@ export * from "./box";
 export * from "./button";
 export * from "./card";
 export * from "./checkbox";
-export * from "./chip";
 export * from "./date-field";
 export * from "./date-picker";
 export * from "./flex";

@@ -1,7 +1,7 @@
-import { recipe, type RecipeVariants } from "@vanilla-extract/recipes";
-import { selectors } from "../sprinkles.css";
-import { themeContract } from "../contract.css";
 import { style } from "@vanilla-extract/css";
+import { type RecipeVariants, recipe } from "@vanilla-extract/recipes";
+import { themeContract } from "../contract.css";
+import { selectors } from "../sprinkles.css";
 
 export const buttonContent = style({
 	selectors: {
@@ -18,7 +18,7 @@ export const button = recipe({
 		alignItems: "center",
 		justifyContent: "center",
 		position: "relative",
-		height: "32px",
+		height: "28px",
 		borderRadius: themeContract.radii.md, // 6
 		paddingLeft: themeContract.spacing[3],
 		paddingRight: themeContract.spacing[3],
@@ -58,24 +58,21 @@ export const button = recipe({
 				textShadow: "1px 1px 1px rgba(255, 255, 255, 0.85)",
 				background:
 					themeContract.semantic.bg.raised.interactive.neutral.default,
-				border:
-					themeContract.semantic.borders.raised.interactive.neutral.default,
+				border: `1px solid ${themeContract.semantic.borders.raised.interactive.neutral.default}`,
 				boxShadow:
 					themeContract.semantic.shadows.raised.interactive.neutral.default,
 				selectors: {
 					[selectors.hover]: {
 						background:
 							themeContract.semantic.bg.raised.interactive.neutral.hover,
-						border:
-							themeContract.semantic.borders.raised.interactive.neutral.hover,
+						border: `1px solid ${themeContract.semantic.borders.raised.interactive.neutral.hover}`,
 						boxShadow:
 							themeContract.semantic.shadows.raised.interactive.neutral.hover,
 					},
 					[selectors.pressed]: {
 						background:
 							themeContract.semantic.bg.raised.interactive.neutral.pressed,
-						border:
-							themeContract.semantic.borders.raised.interactive.neutral.pressed,
+						border: `1px solid ${themeContract.semantic.borders.raised.interactive.neutral.pressed}`,
 						boxShadow:
 							themeContract.semantic.shadows.raised.interactive.neutral.pressed,
 					},
@@ -85,8 +82,7 @@ export const button = recipe({
 				color: themeContract.colors.white,
 				background:
 					themeContract.semantic.bg.raised.interactive.primary.default,
-				border:
-					themeContract.semantic.borders.raised.interactive.primary.default,
+				border: `1px solid ${themeContract.semantic.borders.raised.interactive.primary.default}`,
 				boxShadow:
 					themeContract.semantic.shadows.raised.interactive.primary.default,
 				selectors: {
@@ -96,16 +92,14 @@ export const button = recipe({
 					[selectors.hover]: {
 						background:
 							themeContract.semantic.bg.raised.interactive.primary.hover,
-						border:
-							themeContract.semantic.borders.raised.interactive.primary.hover,
+						border: `1px solid ${themeContract.semantic.borders.raised.interactive.primary.hover}`,
 						boxShadow:
 							themeContract.semantic.shadows.raised.interactive.primary.hover,
 					},
 					[selectors.pressed]: {
 						background:
 							themeContract.semantic.bg.raised.interactive.primary.pressed,
-						border:
-							themeContract.semantic.borders.raised.interactive.primary.pressed,
+						border: `1px solid ${themeContract.semantic.borders.raised.interactive.primary.pressed}`,
 						boxShadow:
 							themeContract.semantic.shadows.raised.interactive.primary.pressed,
 					},
@@ -114,8 +108,7 @@ export const button = recipe({
 			danger: {
 				color: themeContract.colors.white,
 				background: themeContract.semantic.bg.raised.interactive.danger.default,
-				border:
-					themeContract.semantic.borders.raised.interactive.danger.default,
+				border: `1px solid ${themeContract.semantic.borders.raised.interactive.danger.default}`,
 				boxShadow:
 					themeContract.semantic.shadows.raised.interactive.danger.default,
 				selectors: {
@@ -125,16 +118,14 @@ export const button = recipe({
 					[selectors.hover]: {
 						background:
 							themeContract.semantic.bg.raised.interactive.danger.hover,
-						border:
-							themeContract.semantic.borders.raised.interactive.danger.hover,
+						border: `1px solid ${themeContract.semantic.borders.raised.interactive.danger.hover}`,
 						boxShadow:
 							themeContract.semantic.shadows.raised.interactive.danger.hover,
 					},
 					[selectors.pressed]: {
 						background:
 							themeContract.semantic.bg.raised.interactive.danger.pressed,
-						border:
-							themeContract.semantic.borders.raised.interactive.danger.pressed,
+						border: `1px solid ${themeContract.semantic.borders.raised.interactive.danger.pressed}`,
 						boxShadow:
 							themeContract.semantic.shadows.raised.interactive.danger.pressed,
 					},

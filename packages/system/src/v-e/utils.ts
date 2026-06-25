@@ -1,22 +1,13 @@
 import { themeContract } from "./contract.css";
-import { lightTheme } from "./light-theme.css";
-import { darkTheme } from "./dark-theme.css";
 
-// Theme switching utilities
-export const themes = {
-	light: lightTheme,
-	dark: darkTheme,
-} as const;
-
-export type ThemeName = keyof typeof themes;
-
-// CSS class name generators for theme switching
-export const themeClassNames = {
-	light: lightTheme,
-	dark: darkTheme,
-};
-
-// CSS-in-JS style object using contract
+// CSS-in-JS style object using contract.
+//
+// NOTE: this module must NOT import the theme files (light-theme.css /
+// dark-theme.css). Those files import withOpacity/withLighten from here, so
+// importing them back creates a cycle. tsup bundles+hoists and tolerates it,
+// but the vanilla-extract Vite plugin evaluates modules separately and the
+// cycle resolves to `undefined` ("withOpacity is not a function"). contract.css
+// has no back-import, so depending on it alone is safe.
 export const vars = themeContract;
 
 /**

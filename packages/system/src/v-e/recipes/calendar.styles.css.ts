@@ -21,8 +21,8 @@ const headerStyles = style({
 
 const weekdayStyles = style({
 	background: themeContract.semantic.bg.surface.l3,
-	borderTop: themeContract.semantic.borders.surface[0],
-	borderBottom: themeContract.semantic.borders.surface[0],
+	borderTop: `1px solid ${themeContract.semantic.borders.surface[0]}`,
+	borderBottom: `1px solid ${themeContract.semantic.borders.surface[0]}`,
 });
 
 const cellStyles = style({

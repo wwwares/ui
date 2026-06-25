@@ -1,6 +1,7 @@
 import { style } from "@vanilla-extract/css";
 import { themeContract } from "../contract.css";
 import { selectors } from "../sprinkles.css";
+import { edge } from "./_edge";
 
 export const switchRoot = style({
 	flexShrink: 0,
@@ -14,43 +15,30 @@ export const switchRoot = style({
 	borderRadius: themeContract.radii.xl,
 	cursor: "pointer",
 	transition: "all 150ms cubic-bezier(0.075, 0.82, 0.165, 1)",
-	background: themeContract.semantic.bg.well.interactive.neutral.default,
-	boxShadow: themeContract.semantic.shadows.well.interactive.neutral.default,
-	border: themeContract.semantic.borders.interactive.neutral.default,
+	...edge("well", "neutral", "default"),
 	justifyContent: "flex-end",
 
 	selectors: {
-		[`${selectors.groupHover}`]: {
-			border: themeContract.semantic.borders.interactive.neutral.hover,
-			background: themeContract.semantic.bg.ridge.interactive.neutral.hover,
-		},
-		[`[data-selected]${selectors.groupHover}`]: {
-			border: themeContract.semantic.borders.interactive.primary.hover,
-			boxShadow: themeContract.semantic.shadows.ridge.interactive.primary.hover,
-			background: themeContract.semantic.bg.ridge.interactive.primary.hover,
-		},
+		[`${selectors.groupHover}`]: edge("ridge", "neutral", "hover"),
+		[`[data-selected]${selectors.groupHover}`]: edge(
+			"ridge",
+			"primary",
+			"hover",
+		),
 
-		[selectors.groupPressed]: {
-			boxShadow:
-				themeContract.semantic.shadows.ridge.interactive.neutral.pressed,
-			border: themeContract.semantic.borders.interactive.neutral.pressed,
-			background: themeContract.semantic.bg.ridge.interactive.neutral.pressed,
-		},
+		[selectors.groupPressed]: edge("ridge", "neutral", "pressed"),
 
 		[selectors.groupSelected]: {
+			...edge("ridge", "primary", "default"),
 			justifyContent: "flex-start",
-			background: themeContract.semantic.bg.ridge.interactive.primary.default,
-			boxShadow:
-				themeContract.semantic.shadows.ridge.interactive.primary.default,
-			border: themeContract.semantic.borders.interactive.primary.default,
 			color: themeContract.colors.stone["100"],
 		},
 
-		[`[data-selected][data-pressed]${selectors.groupHover}`]: {
-			boxShadow:
-				themeContract.semantic.shadows.ridge.interactive.primary.pressed,
-			background: themeContract.semantic.bg.ridge.interactive.primary.pressed,
-		},
+		[`[data-selected][data-pressed]${selectors.groupHover}`]: edge(
+			"ridge",
+			"primary",
+			"pressed",
+		),
 	},
 });
 
@@ -62,7 +50,7 @@ export const switchThumb = style({
 	borderRadius: themeContract.radii.xl,
 	transition: "all 150ms cubic-bezier(0.075, 0.82, 0.165, 1)",
 	background: themeContract.semantic.bg.ridge.interactive.neutral.hover,
-	border: themeContract.semantic.borders.interactive.neutral.default,
+	border: `1px solid ${themeContract.semantic.borders.ridge.interactive.neutral.default}`,
 	boxShadow: `${themeContract.semantic.shadows.ridge.interactive.neutral.default}, 0 4px 6px -1px rgb(0 0 0 / 0.1)`,
 	left: "0.25rem",
 	transform: "translateX(0px)",
@@ -75,7 +63,7 @@ export const switchThumb = style({
 		"[data-selected] &": {
 			left: "calc(100% - 0.25rem - 21px)",
 			transform: "translateX(3px)",
-			border: themeContract.semantic.borders.interactive.neutral.pressed,
+			border: `1px solid ${themeContract.semantic.borders.ridge.interactive.neutral.pressed}`,
 		},
 		"[data-selected][data-pressed] &": {
 			transform: "translateX(calc(100% - 21px))",

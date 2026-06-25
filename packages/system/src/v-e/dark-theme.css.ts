@@ -68,37 +68,48 @@ export const darkTheme = "";
 // 		},
 // 		borders: {
 // 			surface: {
-// 				0: `1px solid ${tailwindColors.stone[300]}`,
+// 				0: tailwindColors.stone[300],
 // 			},
 // 			raised: {
 // 				interactive: {
 // 					neutral: {
-// 						default: `1px solid ${tailwindColors.stone[500]}`,
-// 						hover: `1px solid ${tailwindColors.stone[500]}`,
-// 						pressed: `1px solid ${tailwindColors.stone[500]}`,
+// 						default: tailwindColors.stone[500],
+// 						hover: tailwindColors.stone[500],
+// 						pressed: tailwindColors.stone[500],
 // 					},
 // 					primary: {
-// 						default: `1px solid ${tailwindColors.blue[700]}`,
-// 						hover: `1px solid ${tailwindColors.blue[700]}`,
-// 						pressed: `1px solid ${tailwindColors.blue[700]}`,
+// 						default: tailwindColors.blue[700],
+// 						hover: tailwindColors.blue[700],
+// 						pressed: tailwindColors.blue[700],
 // 					},
 // 					danger: {
-// 						default: `1px solid ${tailwindColors.red[700]}`,
-// 						hover: `1px solid ${tailwindColors.red[700]}`,
-// 						pressed: `1px solid ${tailwindColors.red[700]}`,
+// 						default: tailwindColors.red[700],
+// 						hover: tailwindColors.red[700],
+// 						pressed: tailwindColors.red[700],
 // 					},
 // 				},
 // 			},
-// 			interactive: {
-// 				primary: {
-// 					default: `1px solid ${tailwindColors.blue[400]}`,
-// 					hover: `1px solid ${tailwindColors.blue[400]}`,
-// 					pressed: `1px solid ${tailwindColors.blue[400]}`,
+// 			ridge: {
+// 				interactive: {
+// 					neutral: {
+// 						default: tailwindColors.stone[400],
+// 						hover: tailwindColors.blue[500],
+// 						pressed: tailwindColors.blue[500],
+// 					},
+// 					primary: {
+// 						default: tailwindColors.blue[400],
+// 						hover: tailwindColors.blue[400],
+// 						pressed: tailwindColors.blue[400],
+// 					},
 // 				},
-// 				neutral: {
-// 					default: `1px solid ${tailwindColors.stone[400]}`,
-// 					hover: `1px solid ${tailwindColors.blue[500]}`,
-// 					pressed: `1px solid ${tailwindColors.blue[500]}`,
+// 			},
+// 			well: {
+// 				interactive: {
+// 					neutral: {
+// 						default: tailwindColors.stone[400],
+// 						hover: tailwindColors.blue[500],
+// 						pressed: tailwindColors.blue[500],
+// 					},
 // 				},
 // 			},
 // 		},

@@ -1,10 +1,10 @@
-import {
-	type TagProps as RACTagProps,
-	Tag as RACTag,
-} from "react-aria-components";
-import { tagSlots, themeContract } from "@wwwares/ui-system";
-import { Button } from "../button";
 import { IconX } from "@tabler/icons-react";
+import { tagSlots } from "@wwwares/ui-system";
+import {
+	Tag as RACTag,
+	type TagProps as RACTagProps,
+} from "react-aria-components";
+import { Button } from "../button";
 import { styled } from "../styled";
 
 const Box = styled("div");
@@ -59,4 +59,4 @@ function Tag(props: RACTagProps) {
 	);
 }
 
-export { Tag, type RACTagProps as TagProps };
+export { type RACTagProps as TagProps, Tag };

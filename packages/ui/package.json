@@ -17,15 +17,15 @@
 		"dist/**"
 	],
 	"scripts": {
-		"build": "tsup src/index.ts --format esm,cjs --dts --external react,@wwwares/ui-system",
-		"dev": "tsup src/index.ts --format esm,cjs --watch --dts --external react,@wwwares/ui-system",
+		"build": "tsdown",
+		"dev": "tsdown --watch",
 		"clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
 	},
 	"devDependencies": {
 		"@types/react": "^18.3.12",
 		"@types/react-dom": "^18.3.0",
 		"react": "^18.3.1",
-		"tsup": "8.3.0"
+		"tsdown": "^0.22.3"
 	},
 	"publishConfig": {
 		"access": "public"

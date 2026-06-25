@@ -1,10 +1,13 @@
 import { recipe } from "@vanilla-extract/recipes";
 import { themeContract } from "../contract.css";
 import { selectors } from "../sprinkles.css";
+import { edge, ringOnly } from "./_edge";
 
 export const radioCircleRecipe = recipe({
 	base: {
-		transition: "all 150ms cubic-bezier(0.075, 0.82, 0.165, 1)",
+		// transition only the edge visuals
+		transition:
+			"box-shadow 150ms cubic-bezier(0.075, 0.82, 0.165, 1), background-color 150ms cubic-bezier(0.075, 0.82, 0.165, 1)",
 		top: 0,
 		left: 0,
 		display: "block",
@@ -15,9 +18,7 @@ export const radioCircleRecipe = recipe({
 		alignItems: "center",
 		cursor: "pointer",
 		position: "relative",
-		border: themeContract.semantic.borders.interactive.neutral.default,
-		boxShadow: themeContract.semantic.shadows.ridge.interactive.neutral.default,
-		background: themeContract.semantic.bg.ridge.interactive.neutral.default,
+		...edge("ridge", "neutral", "default"),
 
 		"::before": {
 			transition: "all 150ms cubic-bezier(0.075, 0.82, 0.165, 1)",
@@ -40,17 +41,9 @@ export const radioCircleRecipe = recipe({
 		},
 		checked: {
 			true: {
-				border: themeContract.semantic.borders.interactive.primary.default,
-				boxShadow:
-					themeContract.semantic.shadows.ridge.interactive.primary.default,
-				background: themeContract.semantic.bg.ridge.interactive.primary.default,
+				...edge("ridge", "primary", "default"),
 
-				[`${selectors.groupHover}`]: {
-					border: themeContract.semantic.borders.interactive.primary.hover,
-					boxShadow:
-						themeContract.semantic.shadows.ridge.interactive.primary.hover,
-					background: themeContract.semantic.bg.ridge.interactive.primary.hover,
-				},
+				[`${selectors.groupHover}`]: edge("ridge", "primary", "hover"),
 
 				"::before": {
 					opacity: 1,
@@ -77,12 +70,7 @@ export const radioCircleRecipe = recipe({
 				pressed: false,
 			},
 			style: {
-				[`${selectors.groupHover}`]: {
-					boxShadow:
-						themeContract.semantic.shadows.ridge.interactive.neutral.hover,
-					border: themeContract.semantic.borders.interactive.neutral.hover,
-					background: themeContract.semantic.bg.ridge.interactive.neutral.hover,
-				},
+				[`${selectors.groupHover}`]: edge("ridge", "neutral", "hover"),
 			},
 		},
 		{
@@ -90,12 +78,7 @@ export const radioCircleRecipe = recipe({
 				checked: false,
 				pressed: true,
 			},
-			style: {
-				boxShadow:
-					themeContract.semantic.shadows.ridge.interactive.neutral.pressed,
-				border: themeContract.semantic.borders.interactive.primary.default,
-				background: themeContract.semantic.bg.ridge.interactive.neutral.pressed,
-			},
+			style: edge("ridge", "neutral", "pressed"),
 		},
 		{
 			variants: {
@@ -103,10 +86,7 @@ export const radioCircleRecipe = recipe({
 				pressed: true,
 			},
 			style: {
-				[`${selectors.groupHover}`]: {
-					boxShadow:
-						themeContract.semantic.shadows.ridge.interactive.primary.pressed,
-				},
+				[`${selectors.groupHover}`]: ringOnly("ridge", "primary", "pressed"),
 			},
 		},
 	],

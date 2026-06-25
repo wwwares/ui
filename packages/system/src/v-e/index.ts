@@ -16,7 +16,6 @@ export {
 export { calendarStyles } from "./recipes/calendar.styles.css";
 export { type CardRecipeVariants, cardRecipe } from "./recipes/card.recipe.css";
 export { checkIconRecipe } from "./recipes/checkbox.styles.css";
-export { chipRecipe } from "./recipes/chip.styles.css";
 export { dateFieldStyles } from "./recipes/date-field.styles.css";
 export { filterButtonStyles } from "./recipes/filter-button.styles.css";
 export { labelTextStyles } from "./recipes/label.styles.css";

@@ -1,6 +1,7 @@
 import { style } from "@vanilla-extract/css";
 import { themeContract } from "../contract.css";
 import { selectors } from "../sprinkles.css";
+import { edge } from "./_edge";
 
 export const segmentedControlContainer = style({
 	display: "flex",
@@ -15,6 +16,8 @@ export const segmentedControlContainer = style({
 export const segmentedControlItem = style({
 	flex: 1,
 	borderRadius: themeContract.radii.sm,
+	// reserve the border box so the filter-family edge
+	// doesn't shift layout between states. Mirrors the Tag's edge treatment.
 	border: "1px solid transparent",
 	cursor: "pointer",
 	justifyContent: "center",
@@ -26,41 +29,25 @@ export const segmentedControlItem = style({
 			outline: `${themeContract.colors.black} dotted thin`,
 		},
 
-		[selectors.hover]: {
-			boxShadow: themeContract.semantic.shadows.ridge.interactive.neutral.hover,
-			border: themeContract.semantic.borders.interactive.neutral.default,
-			background: themeContract.semantic.bg.ridge.interactive.neutral.hover,
-		},
+		[selectors.hover]: edge("filter", "neutral", "hover"),
 
-		"&:is(:hover, [data-hovered]):is([aria-pressed=true], [data-pressed])": {
-			boxShadow:
-				themeContract.semantic.shadows.ridge.interactive.neutral.pressed,
-			border: themeContract.semantic.borders.interactive.neutral.pressed,
-			background: themeContract.semantic.bg.ridge.interactive.neutral.pressed,
-		},
+		"&:is(:hover, [data-hovered]):is([aria-pressed=true], [data-pressed])":
+			edge("filter", "neutral", "pressed"),
 
+		// selected matches the Tag: SOLID border via the borderStyle override.
 		"&:is([aria-selected=true], [data-selected])": {
-			background: themeContract.semantic.bg.ridge.interactive.primary.default,
-			boxShadow:
-				themeContract.semantic.shadows.ridge.interactive.primary.default,
-			border: themeContract.semantic.borders.interactive.primary.default,
+			...edge("filter", "primary", "default", { borderStyle: "solid" }),
 			color: themeContract.colors.stone["100"],
 		},
 
 		"&:is([aria-selected=true], [data-selected]):is(:hover, [data-hovered])": {
-			background: themeContract.semantic.bg.ridge.interactive.primary.default,
-			boxShadow:
-				themeContract.semantic.shadows.ridge.interactive.primary.default,
-			border: themeContract.semantic.borders.interactive.primary.default,
+			...edge("filter", "primary", "default", { borderStyle: "solid" }),
 			color: themeContract.colors.stone["100"],
 		},
 
 		"&:is([aria-selected=true], [data-selected]):is([aria-pressed=true], [data-pressed]):is(:hover, [data-hovered])":
 			{
-				background: themeContract.semantic.bg.ridge.interactive.primary.default,
-				boxShadow:
-					themeContract.semantic.shadows.ridge.interactive.primary.default,
-				border: themeContract.semantic.borders.interactive.primary.default,
+				...edge("filter", "primary", "default", { borderStyle: "solid" }),
 				color: themeContract.colors.stone["100"],
 			},
 	},

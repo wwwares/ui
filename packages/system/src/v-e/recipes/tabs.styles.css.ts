@@ -9,7 +9,8 @@ export const tabsContainer = style({
 	gap: themeContract.spacing[3],
 	borderRadius: 0,
 	width: "100%",
-	borderBottom: `1px solid ${themeContract.semantic.borders.interactive.neutral.default}`,
+	borderBottom: `1px solid ${themeContract.semantic.borders.surface[0]}`,
+	paddingBottom: "4px",
 });
 
 // Tab style with pseudo-elements and interactive states
@@ -19,8 +20,9 @@ export const tab = style({
 	paddingRight: themeContract.spacing[3],
 	paddingTop: themeContract.spacing[1],
 	paddingBottom: themeContract.spacing[1],
-	fontWeight: "normal",
+	fontWeight: 600,
 	position: "relative",
+	borderRadius: themeContract.radii.md,
 	transition: "all 150ms cubic-bezier(0.075, 0.82, 0.165, 1)",
 	color: themeContract.semantic.text.default,
 	outline: "none",
@@ -34,13 +36,16 @@ export const tab = style({
 		content: "''",
 		height: "2px",
 		zIndex: 5,
-		bottom: "-1px",
+		bottom: "-5px",
 		backgroundColor: "transparent",
 	},
 
 	selectors: {
-		[`${selectors.hover}::before`]: {
-			backgroundColor: themeContract.colors.stone[400],
+		[selectors.hover]: {
+			backgroundColor: themeContract.semantic.bg.surface.l0,
+		},
+		[selectors.selected]: {
+			background: themeContract.colors.blue[50],
 		},
 		[`${selectors.selected}::before`]: {
 			backgroundColor: themeContract.colors.blue[600],

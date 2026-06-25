@@ -1,7 +1,4 @@
-import {
-	Button as RACButton,
-	type ButtonProps as RACButtonProps,
-} from "react-aria-components";
+import { Button as RACButton, type ButtonProps as RACButtonProps } from "react-aria-components";
 import { button, buttonContent, type ButtonVariants } from "@wwwares/ui-system";
 import clsx from "clsx";
 
