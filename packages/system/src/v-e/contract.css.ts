@@ -412,7 +412,10 @@ export const themeContract = createThemeContract({
 		},
 		borders: {
 			surface: {
-				0: "",
+				hairline: "",
+				divider: "",
+				ring: "",
+				highlight: "",
 			},
 			feedback: {
 				success: {
@@ -492,6 +495,14 @@ export const themeContract = createThemeContract({
 				},
 			},
 			overlay: "",
+			surface: {
+				fold: "",
+				floating: {
+					sm: "",
+					md: "",
+					lg: "",
+				},
+			},
 			ridge: {
 				interactive: {
 					primary: {

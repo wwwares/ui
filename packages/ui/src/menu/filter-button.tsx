@@ -1,5 +1,5 @@
 import { IconCheck, IconCirclePlus, IconCircleX } from "@tabler/icons-react";
-import { filterButtonStyles } from "@wwwares/ui-system";
+import { filterButtonStyles, popoverStyles } from "@wwwares/ui-system";
 import clsx from "clsx";
 import { useMemo, useRef, useState } from "react";
 import {
@@ -95,7 +95,7 @@ function FilterButton({
 					{label}
 					{selected && (
 						<>
-							<span className={s.filterButtonDivider} aria-hidden />
+							<span className={popoverStyles.divider()} aria-hidden />
 							<span className={s.filterButtonValue}>{valueLabel}</span>
 						</>
 					)}
@@ -108,9 +108,9 @@ function FilterButton({
 				onOpenChange={setIsOpen}
 				placement="bottom start"
 			>
-				<Dialog className={s.filterPopover} aria-label={`${label} options`}>
+				<Dialog className={popoverStyles.popover} aria-label={`${label} options`}>
 					<ListBox
-						className={s.filterList}
+						className={popoverStyles.list}
 						selectionMode="multiple"
 						selectedKeys={staged}
 						onSelectionChange={(keys) => setStaged(toSet(keys, items))}
@@ -122,7 +122,7 @@ function FilterButton({
 								id={item.id}
 								textValue={item.content}
 								isDisabled={item.isDisabled}
-								className={s.filterOption}
+								className={popoverStyles.item}
 							>
 								{({ isSelected }) => (
 									<>
@@ -137,6 +137,7 @@ function FilterButton({
 						)}
 					</ListBox>
 
+					<div className={popoverStyles.divider({ orientation: "horizontal" })} />
 					<div className={s.filterFooter}>
 						<Button intent="primary" onPress={apply}>
 							Apply

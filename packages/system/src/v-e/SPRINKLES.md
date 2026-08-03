@@ -23,17 +23,17 @@ This directory contains a complete rainbow-sprinkles setup integrated with vanil
 ### Basic Sprinkles Usage
 
 ```typescript
-import { sprinkles } from '@wwwares/ui-system/v-e';
+import { sprinkles } from "@wwwares/ui-system/v-e";
 
 // Apply utility classes
 const className = sprinkles({
-  display: 'flex',
-  flexDirection: 'column',
-  gap: 4,
-  padding: 4,
-  backgroundColor: 'blue.500',
-  color: 'white',
-  borderRadius: 'md',
+	display: "flex",
+	flexDirection: "column",
+	gap: 4,
+	padding: 4,
+	backgroundColor: "blue.500",
+	color: "white",
+	borderRadius: "md",
 });
 ```
 
@@ -41,9 +41,9 @@ const className = sprinkles({
 
 ```typescript
 const responsiveClassName = sprinkles({
-  display: { mobile: 'block', tablet: 'flex' },
-  flexDirection: { mobile: 'column', desktop: 'row' },
-  padding: { mobile: 2, tablet: 4, desktop: 6 },
+	display: { mobile: "block", tablet: "flex" },
+	flexDirection: { mobile: "column", desktop: "row" },
+	padding: { mobile: 2, tablet: 4, desktop: 6 },
 });
 ```
 
@@ -75,33 +75,33 @@ function MyComponent() {
 ```typescript
 // Use semantic background colors
 const className = sprinkles({
-  backgroundColor: 'primary-default', // Uses theme.semantic.bg.raised.interactive.primary.default
-  boxShadow: 'raised-primary-default', // Uses theme.semantic.shadows.raised.interactive.primary.default
+	backgroundColor: "primary-default", // Uses theme.semantic.bg.raised.interactive.primary.default
+	boxShadow: "raised-primary-default", // Uses theme.semantic.shadows.raised.interactive.primary.default
 });
 ```
 
 ### Custom Recipes
 
 ```typescript
-import { style } from '@vanilla-extract/css';
-import { recipe } from '@vanilla-extract/recipes';
-import { themeContract } from '@wwwares/ui-system/v-e';
+import { style } from "@vanilla-extract/css";
+import { recipe } from "@vanilla-extract/recipes";
+import { themeContract } from "@wwwares/ui-system/v-e";
 
 const customButton = recipe({
-  base: {
-    padding: themeContract.spacing[3],
-    borderRadius: '8px',
-    border: 'none',
-    cursor: 'pointer',
-  },
-  variants: {
-    variant: {
-      custom: {
-        background: `linear-gradient(45deg, ${themeContract.colors.purple[500]}, ${themeContract.colors.pink[500]})`,
-        color: themeContract.colors.white,
-      },
-    },
-  },
+	base: {
+		padding: themeContract.spacing[3],
+		borderRadius: "8px",
+		border: "none",
+		cursor: "pointer",
+	},
+	variants: {
+		variant: {
+			custom: {
+				background: `linear-gradient(45deg, ${themeContract.colors.purple[500]}, ${themeContract.colors.pink[500]})`,
+				color: themeContract.colors.white,
+			},
+		},
+	},
 });
 ```
 
@@ -123,29 +123,36 @@ function MyStyledComponent() {
 ## Available Properties
 
 ### Layout
+
 - `display`, `position`, `top`, `right`, `bottom`, `left`
 - `width`, `height`, `overflow`, `zIndex`
 
 ### Flexbox
+
 - `flexDirection`, `justifyContent`, `alignItems`, `gap`
 
 ### Spacing
+
 - `padding`, `paddingX`, `paddingY`, `paddingTop`, etc.
 - `margin`, `marginX`, `marginY`, `marginTop`, etc.
 
 ### Colors
+
 - All Tailwind colors: `blue.500`, `red.300`, etc.
 - Semantic colors: `primary-default`, `surface-0`, etc.
 
 ### Typography
+
 - `fontSize`, `fontWeight`, `lineHeight`, `textAlign`
 - `textTransform`, `fontStyle`
 
 ### Borders & Shadows
+
 - `borderWidth`, `borderStyle`, `borderRadius`, `borderColor`
 - `boxShadow` (including semantic shadows)
 
 ### Responsive Breakpoints
+
 - `mobile`: default (no media query)
 - `tablet`: `@media screen and (min-width: 768px)`
 - `desktop`: `@media screen and (min-width: 1024px)`
@@ -157,9 +164,9 @@ The sprinkles system automatically uses your theme tokens:
 ```typescript
 // This will use the correct color for the current theme (light/dark)
 const themeAwareStyle = sprinkles({
-  backgroundColor: 'surface-1',
-  color: 'text-default',
-  borderColor: 'neutral-default',
+	backgroundColor: "surface-1",
+	color: "text-default",
+	borderColor: "neutral-default",
 });
 ```
 

@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 import { themeContract } from "../contract.css";
-import { selectors } from "../sprinkles.css";
+import { selectors } from "../selectors";
 import { edge, ringOnly } from "./_edge";
 
 const selectBackdrop = style({

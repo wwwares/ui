@@ -1,10 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import {
-	Card,
-	SegmentedControlGroup,
-	SegmentedControlOption,
-} from "@wwwares/ui-react";
+import { Card, SegmentedControlGroup, SegmentedControlOption } from "@wwwares/ui-react";
 
 const meta = {
 	title: "Example/SegmentedControl",

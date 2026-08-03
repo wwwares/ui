@@ -27,10 +27,7 @@ function MyDateField<T extends DateValue>({
 			<Label content={label}>
 				<DateInput className={cls}>
 					{(segment) => (
-						<DateSegment
-							segment={segment}
-							className={dateFieldStyles.dateSegmentStyles}
-						/>
+						<DateSegment segment={segment} className={dateFieldStyles.dateSegmentStyles} />
 					)}
 				</DateInput>
 			</Label>

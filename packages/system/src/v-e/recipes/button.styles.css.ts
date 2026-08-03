@@ -1,11 +1,11 @@
 import { style } from "@vanilla-extract/css";
 import { type RecipeVariants, recipe } from "@vanilla-extract/recipes";
 import { themeContract } from "../contract.css";
-import { selectors } from "../sprinkles.css";
+import { is, selectors } from "../selectors";
 
 export const buttonContent = style({
 	selectors: {
-		".wwware-button:is([aria-pressed=true], [data-pressed]) &": {
+		[`.wwware-button${is.pressed} &`]: {
 			transform: "translateY(1px)",
 		},
 	},
@@ -25,8 +25,7 @@ export const button = recipe({
 		paddingTop: themeContract.spacing[1],
 		paddingBottom: themeContract.spacing[1],
 		cursor: "pointer",
-		transition:
-			"border, background-position 0.25s cubic-bezier(0.075, 0.82, 0.165, 1)",
+		transition: "border, background-position 0.25s cubic-bezier(0.075, 0.82, 0.165, 1)",
 		textDecoration: "none",
 		textAlign: "center",
 		fontSize: "14px", // maps to sm
@@ -45,7 +44,7 @@ export const button = recipe({
 				outlineOffset: "1px",
 				outline: `dotted thin ${themeContract.colors.black}`,
 			},
-			"&:is(:disabled, [data-disabled])": {
+			[selectors.disabled]: {
 				cursor: "not-allowed",
 				opacity: 0.5,
 			},
@@ -56,52 +55,40 @@ export const button = recipe({
 			neutral: {
 				color: themeContract.colors.black,
 				textShadow: "1px 1px 1px rgba(255, 255, 255, 0.85)",
-				background:
-					themeContract.semantic.bg.raised.interactive.neutral.default,
+				background: themeContract.semantic.bg.raised.interactive.neutral.default,
 				border: `1px solid ${themeContract.semantic.borders.raised.interactive.neutral.default}`,
-				boxShadow:
-					themeContract.semantic.shadows.raised.interactive.neutral.default,
+				boxShadow: themeContract.semantic.shadows.raised.interactive.neutral.default,
 				selectors: {
 					[selectors.hover]: {
-						background:
-							themeContract.semantic.bg.raised.interactive.neutral.hover,
+						background: themeContract.semantic.bg.raised.interactive.neutral.hover,
 						border: `1px solid ${themeContract.semantic.borders.raised.interactive.neutral.hover}`,
-						boxShadow:
-							themeContract.semantic.shadows.raised.interactive.neutral.hover,
+						boxShadow: themeContract.semantic.shadows.raised.interactive.neutral.hover,
 					},
 					[selectors.pressed]: {
-						background:
-							themeContract.semantic.bg.raised.interactive.neutral.pressed,
+						background: themeContract.semantic.bg.raised.interactive.neutral.pressed,
 						border: `1px solid ${themeContract.semantic.borders.raised.interactive.neutral.pressed}`,
-						boxShadow:
-							themeContract.semantic.shadows.raised.interactive.neutral.pressed,
+						boxShadow: themeContract.semantic.shadows.raised.interactive.neutral.pressed,
 					},
 				},
 			},
 			primary: {
 				color: themeContract.colors.white,
-				background:
-					themeContract.semantic.bg.raised.interactive.primary.default,
+				background: themeContract.semantic.bg.raised.interactive.primary.default,
 				border: `1px solid ${themeContract.semantic.borders.raised.interactive.primary.default}`,
-				boxShadow:
-					themeContract.semantic.shadows.raised.interactive.primary.default,
+				boxShadow: themeContract.semantic.shadows.raised.interactive.primary.default,
 				selectors: {
 					[selectors.focusVisible]: {
 						outlineColor: themeContract.colors.blue[600],
 					},
 					[selectors.hover]: {
-						background:
-							themeContract.semantic.bg.raised.interactive.primary.hover,
+						background: themeContract.semantic.bg.raised.interactive.primary.hover,
 						border: `1px solid ${themeContract.semantic.borders.raised.interactive.primary.hover}`,
-						boxShadow:
-							themeContract.semantic.shadows.raised.interactive.primary.hover,
+						boxShadow: themeContract.semantic.shadows.raised.interactive.primary.hover,
 					},
 					[selectors.pressed]: {
-						background:
-							themeContract.semantic.bg.raised.interactive.primary.pressed,
+						background: themeContract.semantic.bg.raised.interactive.primary.pressed,
 						border: `1px solid ${themeContract.semantic.borders.raised.interactive.primary.pressed}`,
-						boxShadow:
-							themeContract.semantic.shadows.raised.interactive.primary.pressed,
+						boxShadow: themeContract.semantic.shadows.raised.interactive.primary.pressed,
 					},
 				},
 			},
@@ -109,25 +96,20 @@ export const button = recipe({
 				color: themeContract.colors.white,
 				background: themeContract.semantic.bg.raised.interactive.danger.default,
 				border: `1px solid ${themeContract.semantic.borders.raised.interactive.danger.default}`,
-				boxShadow:
-					themeContract.semantic.shadows.raised.interactive.danger.default,
+				boxShadow: themeContract.semantic.shadows.raised.interactive.danger.default,
 				selectors: {
 					[selectors.focusVisible]: {
 						outlineColor: themeContract.colors.red[600],
 					},
 					[selectors.hover]: {
-						background:
-							themeContract.semantic.bg.raised.interactive.danger.hover,
+						background: themeContract.semantic.bg.raised.interactive.danger.hover,
 						border: `1px solid ${themeContract.semantic.borders.raised.interactive.danger.hover}`,
-						boxShadow:
-							themeContract.semantic.shadows.raised.interactive.danger.hover,
+						boxShadow: themeContract.semantic.shadows.raised.interactive.danger.hover,
 					},
 					[selectors.pressed]: {
-						background:
-							themeContract.semantic.bg.raised.interactive.danger.pressed,
+						background: themeContract.semantic.bg.raised.interactive.danger.pressed,
 						border: `1px solid ${themeContract.semantic.borders.raised.interactive.danger.pressed}`,
-						boxShadow:
-							themeContract.semantic.shadows.raised.interactive.danger.pressed,
+						boxShadow: themeContract.semantic.shadows.raised.interactive.danger.pressed,
 					},
 				},
 			},

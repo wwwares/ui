@@ -1,9 +1,9 @@
 import { style } from "@vanilla-extract/css";
 import { themeContract } from "../contract.css";
-import { selectors } from "../sprinkles.css";
+import { selectors } from "../selectors";
 
 const containerStyles = style({
-	background: themeContract.semantic.bg.surface.l1,
+	background: themeContract.semantic.bg.surface.l0,
 	boxShadow: themeContract.semantic.shadows.overlay,
 	borderRadius: themeContract.radii.md,
 	width: "fit-content",
@@ -21,8 +21,8 @@ const headerStyles = style({
 
 const weekdayStyles = style({
 	background: themeContract.semantic.bg.surface.l3,
-	borderTop: `1px solid ${themeContract.semantic.borders.surface[0]}`,
-	borderBottom: `1px solid ${themeContract.semantic.borders.surface[0]}`,
+	borderTop: `1px solid ${themeContract.semantic.borders.surface.divider}`,
+	borderBottom: `1px solid ${themeContract.semantic.borders.surface.divider}`,
 });
 
 const cellStyles = style({
@@ -46,11 +46,7 @@ const cellStyles = style({
 			background: themeContract.semantic.bg.ridge.interactive.neutral.default,
 			outline: "dotted thin",
 		},
-		[selectors.selected]: {
-			background: themeContract.semantic.bg.ridge.interactive.primary.default,
-			color: themeContract.semantic.text.inverted,
-		},
-		[selectors.pressed]: {
+		[`${selectors.selected}, ${selectors.pressed}`]: {
 			background: themeContract.semantic.bg.ridge.interactive.primary.default,
 			color: themeContract.semantic.text.inverted,
 		},

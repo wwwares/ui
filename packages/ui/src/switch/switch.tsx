@@ -1,8 +1,5 @@
 import { IconCheck, IconDots, IconX } from "@tabler/icons-react";
-import {
-	type SwitchProps as RACSwitchProps,
-	Switch as RACSwitch,
-} from "react-aria-components";
+import { type SwitchProps as RACSwitchProps, Switch as RACSwitch } from "react-aria-components";
 import { Label, type LabelProps } from "../label";
 import { switchSlots } from "@wwwares/ui-system";
 import { styled } from "../styled";
@@ -21,11 +18,7 @@ function Switch(props: SwitchProps) {
 		<RACSwitch {...props} className="group">
 			{({ isSelected }) => (
 				<>
-					<Label
-						labelPosition={labelPosition}
-						content={label}
-						elementType="div"
-					>
+					<Label labelPosition={labelPosition} content={label} elementType="div">
 						<Box className={switchSlots.switchRoot}>
 							<Box className={switchSlots.switchThumb}>
 								<Box

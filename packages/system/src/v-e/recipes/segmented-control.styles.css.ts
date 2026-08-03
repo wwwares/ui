@@ -1,16 +1,16 @@
 import { style } from "@vanilla-extract/css";
 import { themeContract } from "../contract.css";
-import { selectors } from "../sprinkles.css";
+import { is, selectors } from "../selectors";
 import { edge } from "./_edge";
 
 export const segmentedControlContainer = style({
 	display: "flex",
-	gap: themeContract.spacing["1"],
+	// gap: themeContract.spacing["1"],
 	background: themeContract.semantic.bg.surface.l2,
-	padding: themeContract.spacing["1"],
+	// padding: themeContract.spacing["1"],
 	borderRadius: themeContract.radii.sm,
 	width: "100%",
-	height: "32px",
+	height: "28px",
 });
 
 export const segmentedControlItem = style({
@@ -29,27 +29,10 @@ export const segmentedControlItem = style({
 			outline: `${themeContract.colors.black} dotted thin`,
 		},
 
-		[selectors.hover]: edge("filter", "neutral", "hover"),
-
-		"&:is(:hover, [data-hovered]):is([aria-pressed=true], [data-pressed])":
-			edge("filter", "neutral", "pressed"),
-
-		// selected matches the Tag: SOLID border via the borderStyle override.
-		"&:is([aria-selected=true], [data-selected])": {
+		[selectors.selected]: {
 			...edge("filter", "primary", "default", { borderStyle: "solid" }),
 			color: themeContract.colors.stone["100"],
 		},
-
-		"&:is([aria-selected=true], [data-selected]):is(:hover, [data-hovered])": {
-			...edge("filter", "primary", "default", { borderStyle: "solid" }),
-			color: themeContract.colors.stone["100"],
-		},
-
-		"&:is([aria-selected=true], [data-selected]):is([aria-pressed=true], [data-pressed]):is(:hover, [data-hovered])":
-			{
-				...edge("filter", "primary", "default", { borderStyle: "solid" }),
-				color: themeContract.colors.stone["100"],
-			},
 	},
 });
 

@@ -25,10 +25,7 @@ type LabelProps = Omit<RACLabelProps, "children"> & {
 	altContent?: string | ReactNode;
 };
 
-const Label = forwardRef(function Label(
-	props: LabelProps,
-	ref: ForwardedRef<HTMLLabelElement>,
-) {
+const Label = forwardRef(function Label(props: LabelProps, ref: ForwardedRef<HTMLLabelElement>) {
 	const {
 		children,
 		isRequired,
@@ -55,8 +52,7 @@ const Label = forwardRef(function Label(
 			<Box
 				css={{
 					flexDirection: flexDirection as any,
-					justifyContent:
-						labelPosition === "apart" ? "space-between" : undefined,
+					justifyContent: labelPosition === "apart" ? "space-between" : undefined,
 					gap: labelPosition === "above" ? "$1" : "$2",
 					alignItems: "end",
 					display: "flex",
@@ -74,9 +70,7 @@ const Label = forwardRef(function Label(
 				>
 					<span>
 						{content}
-						{isRequired && (
-							<Span css={{ color: "$red700", marginLeft: "$1" }}>*</Span>
-						)}
+						{isRequired && <Span css={{ color: "$red700", marginLeft: "$1" }}>*</Span>}
 					</span>
 
 					{altContent && <span>{altContent}</span>}

@@ -8,7 +8,7 @@ export const cardRecipe = recipe({
 		borderRadius: vars.radii.lg,
 		padding: `${vars.spacing[4]} ${vars.spacing[6]}`,
 		color: vars.semantic.text.default,
-		backgroundColor: vars.semantic.bg.surface.l1,
+		backgroundColor: vars.semantic.bg.surface.l0,
 		boxShadow: vars.semantic.shadows.ridge.surface.default,
 	},
 	variants: {},

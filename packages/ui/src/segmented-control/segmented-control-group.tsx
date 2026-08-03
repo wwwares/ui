@@ -6,10 +6,7 @@ import {
 
 type SegmentedControlGroupProps = RACRadioGroupProps;
 
-function SegmentedControlGroup({
-	children,
-	...props
-}: SegmentedControlGroupProps) {
+function SegmentedControlGroup({ children, ...props }: SegmentedControlGroupProps) {
 	return (
 		<RACRadioGroup className={segmentedControlStyles.container} {...props}>
 			{children}

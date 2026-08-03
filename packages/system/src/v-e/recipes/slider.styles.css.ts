@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 import { themeContract } from "../contract.css";
-import { selectors } from "../sprinkles.css";
+import { is, selectors } from "../selectors";
 import { edge } from "./_edge";
 
 export const sliderContainer = style({
@@ -32,8 +32,11 @@ export const sliderTrackFill = style({
 	justifyContent: "flex-end",
 
 	selectors: {
-		[selectors.hover]: edge("ridge", "neutral", "hover"),
-		[selectors.focusWithin]: edge("ridge", "neutral", "hover"),
+		// state lives on the `.group` container (slider.tsx): the fill itself is an
+		// empty sibling of the RAC track/thumb, so `&:focus-within` could never match
+		// and self-hover only covered the filled portion of the control.
+		[selectors.groupHover]: edge("ridge", "neutral", "hover"),
+		[selectors.groupFocusWithin]: edge("ridge", "neutral", "hover"),
 	},
 });
 
@@ -46,19 +49,11 @@ export const sliderThumb = style({
 	width: themeContract.spacing[6],
 	marginLeft: "-8px",
 	position: "absolute",
-});
-
-export const sliderThumbBar = style({
-	height: "55%",
-	background: themeContract.colors.stone[600],
-	width: "3px",
-	borderRadius: themeContract.radii.lg,
-
-	selectors: {
-		[selectors.hover]: {
-			background: themeContract.colors.stone[800],
-		},
-	},
+	color: themeContract.colors.stone[400],
+	// hover state comes from the RAC thumb (16px hit area), not the 3px bar
+	// [`${sliderThumb}${is.hover} &`]: {
+	// 	background: themeContract.colors.stone[800],
+	// },
 });
 
 export const sliderStyles = {
@@ -66,5 +61,4 @@ export const sliderStyles = {
 	track: sliderTrack,
 	trackFill: sliderTrackFill,
 	thumb: sliderThumb,
-	thumbBar: sliderThumbBar,
 };

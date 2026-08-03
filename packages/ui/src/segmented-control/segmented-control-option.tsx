@@ -1,8 +1,5 @@
 import { segmentedControlStyles } from "@wwwares/ui-system";
-import {
-	Radio as RACRadio,
-	type RadioProps as RACRadioProps,
-} from "react-aria-components";
+import { Radio as RACRadio, type RadioProps as RACRadioProps } from "react-aria-components";
 
 type SegmentedControlOptionProps = RACRadioProps & {
 	title: string;

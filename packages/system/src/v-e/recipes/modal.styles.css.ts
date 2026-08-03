@@ -17,12 +17,11 @@ export const overlayStyles = style({
 
 export const bodyRecipe = recipe({
 	base: {
-		background: themeContract.semantic.bg.surface.l1,
-		// boxShadow: themeContract.semantic.shadows.overlay,
-		boxShadow: `0px 7px 14px -8px ${themeContract.colors.stone[400]}`,
+		background: themeContract.semantic.bg.surface.l0,
+		boxShadow: themeContract.semantic.shadows.surface.floating.lg,
 		borderRadius: themeContract.radii.lg,
 		color: themeContract.semantic.text.default,
-		border: `1px solid ${themeContract.colors.stone[300]}`,
+		border: `1px solid ${themeContract.semantic.borders.surface.ring}`,
 		display: "flex",
 		flexDirection: "column",
 		maxHeight: "90vh",
@@ -43,10 +42,9 @@ export const headerStyles = style({
 	display: "flex",
 	flexDirection: "row",
 	justifyContent: "space-between",
-	background: themeContract.semantic.bg.surface.l0,
+	background: themeContract.semantic.bg.surface.l2,
 	borderTopLeftRadius: themeContract.radii.lg,
 	borderTopRightRadius: themeContract.radii.lg,
-	// borderBottom: themeContract.semantic.borders.surface[0],
 	paddingLeft: themeContract.spacing[3],
 	paddingRight: themeContract.spacing[3],
 	paddingTop: themeContract.spacing[2],
@@ -67,15 +65,19 @@ export const contentStyles = style({
 	paddingTop: themeContract.spacing[8],
 	borderTopRightRadius: themeContract.radii.md,
 	borderTopLeftRadius: themeContract.radii.md,
-	borderTop: `1px solid ${themeContract.semantic.borders.surface[0]}`,
-	borderBottom: `1px solid ${themeContract.semantic.borders.surface[0]}`,
+	borderTop: `1px solid ${themeContract.semantic.borders.surface.divider}`,
+	borderBottom: `1px solid ${themeContract.semantic.borders.surface.divider}`,
 	borderBottomRightRadius: themeContract.radii.md,
 	borderBottomLeftRadius: themeContract.radii.md,
-	background: themeContract.semantic.bg.surface.l3,
+	background: themeContract.semantic.bg.surface.l0,
+	// Give top and bottom of content some depth that blends in to the header and footer folds
+	position: "relative",
+	zIndex: 1,
+	boxShadow: themeContract.semantic.shadows.surface.fold,
 });
 
 export const contentBackgroundBlend = style({
-	background: themeContract.semantic.bg.surface.l3,
+	background: themeContract.semantic.bg.surface.l2,
 });
 
 export const footerStyles = style({
@@ -84,13 +86,11 @@ export const footerStyles = style({
 	flexDirection: "row",
 	justifyContent: "space-between",
 	alignItems: "center",
-	// boxShadow: `0px 7px 14px -8px ${themeContract.colors.stone[300]} inset`,
 	paddingLeft: themeContract.spacing[3],
 	paddingRight: themeContract.spacing[3],
 	paddingTop: themeContract.spacing[3],
 	paddingBottom: themeContract.spacing[3],
-	background: themeContract.semantic.bg.surface.l0,
-	// borderTop: `1px solid ${themeContract.semantic.borders.surface[0]}`,
+	background: themeContract.semantic.bg.surface.l2,
 	borderBottomLeftRadius: themeContract.radii.lg,
 	borderBottomRightRadius: themeContract.radii.lg,
 });
@@ -104,10 +104,10 @@ export const markerStyles = style({
 	fontSize: "14px", // sm
 	background: themeContract.semantic.bg.surface.l2,
 	color: themeContract.colors.stone[800],
-	borderBottom: `1px solid ${themeContract.semantic.borders.surface[0]}`,
+	borderBottom: `1px solid ${themeContract.semantic.borders.surface.divider}`,
 	// Swap color of top border and box shadow to match the bottom border style => dark line -> light line
-	borderTop: `1px solid #fff`,
-	boxShadow: `0 1px 0 0 #fff, 0 -1px 0 0 ${themeContract.semantic.borders.surface[0]}`,
+	borderTop: `1px solid ${themeContract.semantic.borders.surface.highlight}`,
+	boxShadow: `0 1px 0 0 ${themeContract.semantic.borders.surface.highlight}, 0 -1px 0 0 ${themeContract.semantic.borders.surface.divider}`,
 });
 
 export const modalStyles = {

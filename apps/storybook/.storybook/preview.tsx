@@ -42,23 +42,23 @@ export const globalTypes = {
 };
 
 const preview: Preview = {
-    decorators: [withThemeAttribute],
+	decorators: [withThemeAttribute],
 
-    parameters: {
+	parameters: {
 		backgrounds: {
-            options: {
-                light: {
+			options: {
+				light: {
 					name: "light",
 					value: themeContract.semantic.bg.surface.l0,
 				},
 
-                dark: {
+				dark: {
 					name: "dark",
 					// value: "var(--colors-bg-surface-0)", // zinc.800
 					value: themeContract.semantic.bg.surface.l0,
-				}
-            }
-        },
+				},
+			},
+		},
 		controls: {
 			matchers: {
 				color: /(background|color)$/i,
@@ -67,11 +67,11 @@ const preview: Preview = {
 		},
 	},
 
-    initialGlobals: {
-        backgrounds: {
-            value: "light"
-        }
-    }
+	initialGlobals: {
+		backgrounds: {
+			value: "light",
+		},
+	},
 };
 
 export default preview;

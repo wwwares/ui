@@ -2,33 +2,34 @@
 	"name": "@wwwares/ui-system",
 	"version": "0.4.0",
 	"description": "",
-	"publishConfig": {
-		"access": "public"
-	},
 	"files": [
 		"dist/**"
 	],
+	"type": "module",
+	"sideEffects": [
+		"**/*.css"
+	],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.mts",
+			"default": "./dist/index.mjs"
+		}
+	},
+	"publishConfig": {
+		"access": "public"
+	},
 	"scripts": {
 		"dev": "tsdown --watch",
 		"build": "tsdown"
 	},
-	"devDependencies": {
-		"@vanilla-extract/rollup-plugin": "^1.5.3",
-		"@vanilla-extract/vite-plugin": "^5.1.1",
-		"tsdown": "^0.22.3"
-	},
-	"exports": {
-		".": {
-			"types": "./dist/index.d.ts",
-			"require": "./dist/index.js",
-			"import": "./dist/index.mjs"
-		},
-		"./css": "./dist/index.css"
-	},
 	"dependencies": {
-		"@vanilla-extract/css": "^1.17.4",
+		"@vanilla-extract/css": "^1.21.2",
 		"@vanilla-extract/dynamic": "^2.1.5",
 		"@vanilla-extract/recipes": "^0.5.7",
 		"rainbow-sprinkles": "^1.0.0"
+	},
+	"devDependencies": {
+		"@vanilla-extract/rollup-plugin": "^1.5.4",
+		"tsdown": "^0.22.14"
 	}
 }

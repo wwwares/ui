@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 import { themeContract } from "../contract.css";
-import { selectors } from "../sprinkles.css";
+import { selectors } from "../selectors";
 
 // Tabs container style
 export const tabsContainer = style({
@@ -9,7 +9,7 @@ export const tabsContainer = style({
 	gap: themeContract.spacing[3],
 	borderRadius: 0,
 	width: "100%",
-	borderBottom: `1px solid ${themeContract.semantic.borders.surface[0]}`,
+	borderBottom: `1px solid ${themeContract.semantic.borders.surface.divider}`,
 	paddingBottom: "4px",
 });
 
@@ -42,7 +42,7 @@ export const tab = style({
 
 	selectors: {
 		[selectors.hover]: {
-			backgroundColor: themeContract.semantic.bg.surface.l0,
+			backgroundColor: themeContract.semantic.bg.surface.l2,
 		},
 		[selectors.selected]: {
 			background: themeContract.colors.blue[50],

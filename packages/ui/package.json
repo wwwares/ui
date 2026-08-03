@@ -1,39 +1,43 @@
 {
 	"name": "@wwwares/ui-react",
 	"version": "0.4.0",
-	"main": "./dist/index.js",
-	"module": "./dist/index.mjs",
-	"types": "./dist/index.d.ts",
-	"exports": {
-		".": {
-			"types": "./dist/index.d.ts",
-			"import": "./dist/index.mjs",
-			"require": "./dist/index.js"
-		}
-	},
-	"sideEffects": false,
 	"license": "MIT",
 	"files": [
 		"dist/**"
 	],
+	"type": "module",
+	"sideEffects": false,
+	"main": "./dist/index.mjs",
+	"types": "./dist/index.d.mts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.mts",
+			"default": "./dist/index.mjs"
+		}
+	},
+	"publishConfig": {
+		"access": "public"
+	},
 	"scripts": {
 		"build": "tsdown",
 		"dev": "tsdown --watch",
 		"clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
-	},
-	"devDependencies": {
-		"@types/react": "^18.3.12",
-		"@types/react-dom": "^18.3.0",
-		"react": "^18.3.1",
-		"tsdown": "^0.22.3"
-	},
-	"publishConfig": {
-		"access": "public"
 	},
 	"dependencies": {
 		"@tabler/icons-react": "^3.35.0",
 		"@wwwares/ui-system": "workspace:0.4.0",
 		"clsx": "^2.1.1",
 		"react-aria-components": "^1.12.0"
+	},
+	"devDependencies": {
+		"@types/react": "^18.3.12",
+		"@types/react-dom": "^18.3.0",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"tsdown": "^0.22.14"
+	},
+	"peerDependencies": {
+		"react": "^18.3.1 || ^19.0.0",
+		"react-dom": "^18.3.1 || ^19.0.0"
 	}
 }

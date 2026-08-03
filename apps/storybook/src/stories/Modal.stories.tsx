@@ -1,13 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import {
-	Button,
-	Flex,
-	Modal,
-	ModalMarker,
-	Select,
-	TextField,
-} from "@wwwares/ui-react";
+import { Button, Flex, Modal, ModalMarker, Select, TextField } from "@wwwares/ui-react";
 import { Fragment, useState } from "react";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -50,19 +43,13 @@ export const Default: Story = {
 				onOpenChange={setModalOpen}
 				title="Add a new line item"
 				isOpen={modalOpen}
-				activator={
-					<Button onPress={() => setModalOpen(true)}>Open modal</Button>
-				}
+				activator={<Button onPress={() => setModalOpen(true)}>Open modal</Button>}
 				primaryAction={<Button intent="primary">Submit</Button>}
 				footer={<span>difference: 31</span>}
 			>
 				{() => (
 					<Fragment>
-						<Select
-							label="Orb"
-							options={[{ label: "NYC-1", value: "nyc1" }]}
-							value="nyc1"
-						/>
+						<Select label="Orb" options={[{ label: "NYC-1", value: "nyc1" }]} value="nyc1" />
 						<ModalMarker content={"Accounting"} />
 						<Flex css={{ flexDirection: "column", gap: "$4" }}>
 							<TextField label="Account name" />

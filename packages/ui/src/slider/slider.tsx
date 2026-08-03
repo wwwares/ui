@@ -9,9 +9,7 @@ import { Label } from "../label";
 import { useRef, useState, useLayoutEffect } from "react";
 import { sliderStyles as cls } from "@wwwares/ui-system";
 import clsx from "clsx";
-import { styled } from "../styled";
-
-const Flex = styled("div");
+import { IconGripVertical } from "@tabler/icons-react";
 
 interface SliderProps extends Omit<RACSliderProps, "children"> {
 	label: string;
@@ -40,8 +38,7 @@ function Slider({ label, ...props }: SliderProps) {
 				const minWidthPercent = (15 / sliderWidth) * 100;
 				const effectiveDeadZone = Math.max(deadZonePercent, minWidthPercent);
 
-				const trackFillWidth =
-					effectiveDeadZone + thumbPercent * (100 - effectiveDeadZone);
+				const trackFillWidth = effectiveDeadZone + thumbPercent * (100 - effectiveDeadZone);
 
 				return (
 					<Label content={label} altContent={<RACSliderOutput />}>
@@ -65,7 +62,7 @@ function Slider({ label, ...props }: SliderProps) {
 										left: `${state.getThumbPercent(0) * 100}%`,
 									}}
 								>
-									<Flex className={cls.thumbBar} />
+									<IconGripVertical size={12} />
 								</RACSliderThumb>
 							</RACSliderTrack>
 						</div>

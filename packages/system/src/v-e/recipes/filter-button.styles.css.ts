@@ -1,7 +1,7 @@
 import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
 import { themeContract } from "../contract.css";
-import { selectors } from "../sprinkles.css";
+import { selectors } from "../selectors";
 import { edge } from "./_edge";
 
 const filterButton = recipe({
@@ -85,55 +85,8 @@ const filterButtonLabel = style({
 	},
 });
 
-const filterButtonDivider = style({
-	width: "1px",
-	alignSelf: "stretch",
-	background: themeContract.semantic.borders.ridge.interactive.neutral.default,
-	opacity: 0.6,
-});
-
 const filterButtonValue = style({
 	opacity: 0.7,
-});
-
-// Popover panel — same surface treatment as the menu container.
-const filterPopover = style({
-	background: themeContract.semantic.bg.surface.l1,
-	borderRadius: themeContract.radii.md,
-	minWidth: "200px",
-	maxWidth: "320px",
-	padding: themeContract.spacing[1],
-	border: `1px solid ${themeContract.semantic.borders.surface[0]}`,
-	boxShadow: "0rem 0.25rem 0.375rem -0.125rem rgba(26,26,26,.2)",
-	display: "flex",
-	flexDirection: "column",
-	gap: themeContract.spacing[1],
-	outline: "none",
-});
-
-const filterList = style({
-	display: "flex",
-	flexDirection: "column",
-	gap: "1px",
-	outline: "none",
-});
-
-const filterOption = style({
-	display: "flex",
-	alignItems: "center",
-	gap: themeContract.spacing[2],
-	padding: `${themeContract.spacing[1]} ${themeContract.spacing[2]}`,
-	cursor: "pointer",
-	borderRadius: themeContract.radii.sm,
-	outline: "none",
-	selectors: {
-		[selectors.hover]: {
-			backgroundColor: themeContract.semantic.bg.surface.l2,
-		},
-		[selectors.focus]: {
-			backgroundColor: themeContract.semantic.bg.surface.l2,
-		},
-	},
 });
 
 const filterCheck = style({
@@ -162,7 +115,7 @@ const filterFooter = style({
 	gap: themeContract.spacing[1],
 	paddingTop: themeContract.spacing[1],
 	marginTop: themeContract.spacing[1],
-	borderTop: `1px solid ${themeContract.semantic.borders.surface[0]}`,
+	// borderTop: `1px solid ${themeContract.semantic.borders.surface.divider}`,
 });
 
 export const filterButtonStyles = {
@@ -170,11 +123,7 @@ export const filterButtonStyles = {
 	filterButtonIcon,
 	filterButtonClear,
 	filterButtonLabel,
-	filterButtonDivider,
 	filterButtonValue,
-	filterPopover,
-	filterList,
-	filterOption,
 	filterCheck,
 	filterCheckChecked,
 	filterCheckIcon,

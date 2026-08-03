@@ -17,9 +17,7 @@ type FlattenObjectPaths<
 			? {
 					[K in keyof T]: FlattenObjectPaths<
 						T[K],
-						BasePath extends ""
-							? `${string & K}`
-							: `${BasePath}${Separator}${string & K}`,
+						BasePath extends "" ? `${string & K}` : `${BasePath}${Separator}${string & K}`,
 						Separator,
 						[...Depth, unknown]
 					>;
@@ -37,21 +35,17 @@ type FlattenedRecord<T, BasePath extends string> = {
  * @param basePath - The base path string (e.g., 'themeContract.semantic.bg')
  * @returns Record with full object paths as keys and theme contract values
  */
-function mapSemanticTokens<
-	T extends Record<string, unknown>,
-	BasePath extends string,
->(obj: T, basePath: BasePath): FlattenedRecord<T, BasePath> {
+function mapSemanticTokens<T extends Record<string, unknown>, BasePath extends string>(
+	obj: T,
+	basePath: BasePath,
+): FlattenedRecord<T, BasePath> {
 	const result: Record<string, string> = {};
 
 	function traverse(current: Record<string, unknown>, currentPath: string) {
 		for (const [key, value] of Object.entries(current)) {
 			const newPath = `${currentPath}.${key}`;
 
-			if (
-				typeof value === "object" &&
-				value !== null &&
-				typeof value !== "string"
-			) {
+			if (typeof value === "object" && value !== null && typeof value !== "string") {
 				// Continue traversing nested objects
 				traverse(value as Record<string, unknown>, newPath);
 			} else {
@@ -65,59 +59,17 @@ function mapSemanticTokens<
 	return result as FlattenedRecord<T, BasePath>;
 }
 
-const semanticBackgroundColors = mapSemanticTokens(
-	themeContract.semantic.bg,
-	"bg",
-);
+const semanticBackgroundColors = mapSemanticTokens(themeContract.semantic.bg, "bg");
 
-const semanticTextColors = mapSemanticTokens(
-	themeContract.semantic.text,
-	"text",
-);
+const semanticTextColors = mapSemanticTokens(themeContract.semantic.text, "text");
 
-const semanticBorders = mapSemanticTokens(
-	themeContract.semantic.borders,
-	"borders",
-);
+const semanticBorders = mapSemanticTokens(themeContract.semantic.borders, "borders");
 
-const semanticShadows = mapSemanticTokens(
-	themeContract.semantic.shadows,
-	"shadows",
-);
+const semanticShadows = mapSemanticTokens(themeContract.semantic.shadows, "shadows");
 
-// Extracted selectors for reuse
-export const selectors = {
-	// Interactive selectors
-	hover: "&:is(:hover, [data-hovered])",
-	focus: "&:is(:focus, [data-focused])",
-	focusVisible: "&:is(:focus-visible, [data-focus-visible])",
-	focusWithin: "&:focus-within",
-	active: "&:is(:active, [data-active])",
-	visited: "&:visited",
-	target: "&:target",
-
-	// State selectors
-	open: "&:is([open], [data-open], [aria-expanded=true])",
-	closed: "&:is(:not([open]), [data-closed], [aria-expanded=false])",
-	expanded: "&:is([aria-expanded=true], [data-expanded])",
-	collapsed: "&:is([aria-expanded=false], [data-collapsed])",
-	selected: "&:is([aria-selected=true], [data-selected])",
-	unselected: "&:is([aria-selected=false], [data-unselected])",
-	pressed: "&:is([aria-pressed=true], [data-pressed])",
-	unpressed: "&:is([aria-pressed=false], [data-unpressed])",
-	loading: "&:is([data-loading], [aria-busy=true])",
-	empty: "&:is(:empty, [data-empty])",
-
-	groupHover: ".group:is(:hover, [data-hovered]) &",
-	groupFocus: ".group:is(:focus, [data-focused]) &",
-	groupActive: ".group:is(:active, [data-active]) &",
-	groupPressed: ".group:is([aria-pressed=true], [data-pressed]) &",
-	groupSelected: ".group:is([aria-selected=true], [data-selected]) &",
-
-	peerChecked: ".peer:is(:checked, [data-checked]) ~ &",
-	peerFocus: ".peer:is(:focus, [data-focused]) ~ &",
-	peerHover: ".peer:is(:hover, [data-hovered]) ~ &",
-} as const;
+// The state-selector kit (selectors/is/group/peer) lives in ./selectors — a
+// plain TS module, since .css.ts files may only export serializable values.
+import { selectors } from "./selectors";
 
 const enhancedInteractiveProperties = defineProperties({
 	conditions: {

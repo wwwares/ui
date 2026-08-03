@@ -2,7 +2,11 @@ import { defineConfig } from "tsdown";
 
 export default defineConfig({
 	entry: ["./src/index.ts"],
-	format: ["esm", "cjs"],
+	format: ["esm"],
 	dts: true,
-	external: ["react", "react-dom", "@wwwares/ui-system"],
+	deps: {
+		// Regexes so subpaths are covered too — a bare "react" leaves
+		// react/jsx-runtime to be inlined.
+		neverBundle: [/^react($|\/)/, /^react-dom($|\/)/, "@wwwares/ui-system"],
+	},
 });

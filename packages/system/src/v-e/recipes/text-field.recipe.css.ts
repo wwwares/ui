@@ -1,6 +1,6 @@
 import { recipe } from "@vanilla-extract/recipes";
 import { themeContract } from "../contract.css";
-import { selectors } from "../sprinkles.css";
+import { selectors } from "../selectors";
 import { edge } from "./_edge";
 
 export const textFieldRecipe = recipe({

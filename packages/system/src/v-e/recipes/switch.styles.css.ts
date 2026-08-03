@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 import { themeContract } from "../contract.css";
-import { selectors } from "../sprinkles.css";
+import { group, is, selectors } from "../selectors";
 import { edge } from "./_edge";
 
 export const switchRoot = style({
@@ -19,13 +19,9 @@ export const switchRoot = style({
 	justifyContent: "flex-end",
 
 	selectors: {
-		[`${selectors.groupHover}`]: edge("ridge", "neutral", "hover"),
-		[`[data-selected]${selectors.groupHover}`]: edge(
-			"ridge",
-			"primary",
-			"hover",
-		),
-
+		// source order = precedence (equal-specificity ties): selected beats the
+		// neutral states, and the two-state combos below beat plain selected.
+		[selectors.groupHover]: edge("ridge", "neutral", "hover"),
 		[selectors.groupPressed]: edge("ridge", "neutral", "pressed"),
 
 		[selectors.groupSelected]: {
@@ -33,12 +29,9 @@ export const switchRoot = style({
 			justifyContent: "flex-start",
 			color: themeContract.colors.stone["100"],
 		},
-
-		[`[data-selected][data-pressed]${selectors.groupHover}`]: edge(
-			"ridge",
-			"primary",
-			"pressed",
-		),
+		[group(is.selected, is.hover)]: edge("ridge", "primary", "hover"),
+		// no hover gate — keyboard presses get pressed feedback too
+		[group(is.selected, is.pressed)]: edge("ridge", "primary", "pressed"),
 	},
 });
 
@@ -51,7 +44,7 @@ export const switchThumb = style({
 	transition: "all 150ms cubic-bezier(0.075, 0.82, 0.165, 1)",
 	background: themeContract.semantic.bg.ridge.interactive.neutral.hover,
 	border: `1px solid ${themeContract.semantic.borders.ridge.interactive.neutral.default}`,
-	boxShadow: `${themeContract.semantic.shadows.ridge.interactive.neutral.default}, 0 4px 6px -1px rgb(0 0 0 / 0.1)`,
+	boxShadow: `${themeContract.semantic.shadows.ridge.interactive.neutral.default}, ${themeContract.semantic.shadows.surface.floating.sm}`,
 	left: "0.25rem",
 	transform: "translateX(0px)",
 

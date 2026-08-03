@@ -36,9 +36,7 @@ function Select(props: SelectProps) {
 
 	const cn = clsx(rest.className, "peer");
 
-	const displayLabel = options.find(
-		(option) => option.value === props.value,
-	)?.label;
+	const displayLabel = options.find((option) => option.value === props.value)?.label;
 
 	return (
 		// Full container width hack?

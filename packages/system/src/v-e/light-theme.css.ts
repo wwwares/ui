@@ -87,20 +87,28 @@ export const lightTheme = createTheme(themeContract, {
 					},
 				},
 			},
-			overlay: withOpacity(tailwindColors.stone[300], 50), // "rgba(214, 211, 209, 0.5)" stone.300 with 50% opacity
+			overlay: withOpacity(tailwindColors.stone[300], 50),
 			surface: {
-				l0: tailwindColors.stone[100],
-				// l1: withOpacity(tailwindColors.stone[50], 40),
-				l1: withLighten(tailwindColors.stone[50], 40),
-				// l2: withOpacity(tailwindColors.stone[50], 50),
-				l2: tailwindColors.stone[100],
-				l3: withLighten(tailwindColors.stone[200], 50),
-				// l4: tailwindColors.stone[300],
+				// top plane: card, popover, modal body
+				l0: withLighten(tailwindColors.stone[200], 92),
+				// gentler chrome
+				l1: withLighten(tailwindColors.stone[200], 75),
+				// chrome + recessed: header/footer, tracks
+				l2: withLighten(tailwindColors.stone[200], 58),
+				// deepest / contrast
+				l3: withLighten(tailwindColors.stone[200], 41),
 			},
 		},
 		borders: {
 			surface: {
-				0: tailwindColors.stone[300],
+				/** Edge inside a surface plane */
+				hairline: tailwindColors.stone[200],
+				/** Seperates two planes */
+				divider: tailwindColors.stone[300],
+				/** Encloses floating surface over app background */
+				ring: tailwindColors.stone[300],
+				/** Paired with divider border to create recessed edge */
+				highlight: tailwindColors.white,
 			},
 			feedback: {
 				success: {
@@ -184,6 +192,18 @@ export const lightTheme = createTheme(themeContract, {
 				},
 			},
 			overlay: `0px 0px 0px 1px ${tailwindColors.stone[300]}, 0px 2px 1px 0px ${tailwindColors.stone[200]}, 2px 0px 1px 0px ${tailwindColors.stone[200]}, -2px 0px 1px 0px ${tailwindColors.stone[200]}, 0px -2px 1px 0px ${tailwindColors.stone[200]}`,
+			surface: {
+				/** Top/bottom fold where a surface meets recessed chrome. e.g. Modal body content meeting header/footer */
+				fold: "0 1px #e9e9e9, 0 -1px #e9e9e9",
+				floating: {
+					/** Switch thumb (maybe i should remove this) */
+					sm: "0 4px 6px -1px rgb(0 0 0 / 0.1)",
+					/** Popover/menu */
+					md: "0rem 0.25rem 0.375rem -0.125rem rgba(26,26,26,.2)",
+					/**  Modal body */
+					lg: `0px 7px 14px -8px ${tailwindColors.stone[400]}`,
+				},
+			},
 			ridge: {
 				interactive: {
 					primary: {
@@ -194,14 +214,12 @@ export const lightTheme = createTheme(themeContract, {
 					neutral: {
 						default:
 							"0px -1px 1px rgba(0, 0, 0, 0.2) inset, 0px 1px 0px rgba(255, 255, 255, 0.5) inset",
-						hover:
-							"0px -1px 1px rgba(0, 0, 0, 0.1) inset, 0px 1px 1px rgba(255,255,255,0.5) inset",
-						pressed:
-							"0px -1px 1px rgba(0, 0, 0, 0.05) inset, 0px 1px 3px rgba(0,0,0,0.2) inset",
+						hover: "0px -1px 1px rgba(0, 0, 0, 0.1) inset, 0px 1px 1px rgba(255,255,255,0.5) inset",
+						pressed: "0px -1px 1px rgba(0, 0, 0, 0.05) inset, 0px 1px 3px rgba(0,0,0,0.2) inset",
 					},
 				},
 				surface: {
-					default: `0px 0px 0px 1px ${tailwindColors.stone[300]}, 0px 1px 1px 0px ${tailwindColors.stone[400]}`,
+					default: `0px 0px 0px 1px ${tailwindColors.stone[300]}, 0px 2px 1px 0px ${tailwindColors.stone[200]}`,
 				},
 			},
 			well: {

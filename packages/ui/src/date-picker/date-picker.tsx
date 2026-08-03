@@ -21,11 +21,7 @@ import {
 } from "react-aria-components";
 import { Label } from "../label";
 import { Button } from "../button";
-import {
-	IconCalendar,
-	IconChevronLeft,
-	IconChevronRight,
-} from "@tabler/icons-react";
+import { IconCalendar, IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 import {
 	calendarStyles,
 	dateFieldStyles,
@@ -47,10 +43,7 @@ function MyDatePicker<T extends DateValue>({
 	...props
 }: MyDatePickerProps<T>) {
 	return (
-		<DatePicker
-			{...props}
-			style={{ display: "flex", gap: "4px", flexDirection: "column" }}
-		>
+		<DatePicker {...props} style={{ display: "flex", gap: "4px", flexDirection: "column" }}>
 			<Label content={label} />
 			<Group
 				style={{
@@ -63,10 +56,7 @@ function MyDatePicker<T extends DateValue>({
 				{/* don't re-use DateField component based on examples */}
 				<DateInput>
 					{(segment) => (
-						<DateSegment
-							segment={segment}
-							className={dateFieldStyles.dateSegmentStyles}
-						/>
+						<DateSegment segment={segment} className={dateFieldStyles.dateSegmentStyles} />
 					)}
 				</DateInput>
 				{/* vanilla button for now */}
@@ -78,10 +68,7 @@ function MyDatePicker<T extends DateValue>({
 			<FieldError>{errorMessage}</FieldError>
 			<Popover>
 				<Dialog>
-					<Calendar
-						firstDayOfWeek={firstDayOfWeek}
-						className={calendarStyles.containerStyles}
-					>
+					<Calendar firstDayOfWeek={firstDayOfWeek} className={calendarStyles.containerStyles}>
 						<header className={calendarStyles.headerStyles}>
 							<Button slot="previous">
 								<IconChevronLeft size={20} />
@@ -100,12 +87,7 @@ function MyDatePicker<T extends DateValue>({
 								)}
 							</CalendarGridHeader>
 							<CalendarGridBody>
-								{(date) => (
-									<CalendarCell
-										className={calendarStyles.cellStyles}
-										date={date}
-									/>
-								)}
+								{(date) => <CalendarCell className={calendarStyles.cellStyles} date={date} />}
 							</CalendarGridBody>
 						</CalendarGrid>
 					</Calendar>
