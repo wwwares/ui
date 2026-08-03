@@ -18,7 +18,7 @@
 		"changeset:publish": "bun run build && changeset publish"
 	},
 	"devDependencies": {
-		"@changesets/cli": "^2.27.7",
+		"@changesets/cli": "^2.31.1",
 		"oxfmt": "^0.61.0",
 		"oxlint": "^1.76.0",
 		"turbo": "latest",
