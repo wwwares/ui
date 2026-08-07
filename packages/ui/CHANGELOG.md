@@ -1,5 +1,11 @@
 # @wwwares/ui-react
 
+## 0.5.1
+
+### Patch Changes
+
+- Fix unresolvable `@wwwares/ui-system` dependency in the published package
+
 ## 0.5.0
 
 ### Minor Changes

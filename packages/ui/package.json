@@ -1,6 +1,6 @@
 {
 	"name": "@wwwares/ui-react",
-	"version": "0.5.0",
+	"version": "0.5.1",
 	"license": "MIT",
 	"files": [
 		"dist/**"
@@ -25,7 +25,7 @@
 	},
 	"dependencies": {
 		"@tabler/icons-react": "^3.35.0",
-		"@wwwares/ui-system": "workspace:0.5.0",
+		"@wwwares/ui-system": "^0.5.0",
 		"clsx": "^2.1.1",
 		"react-aria-components": "^1.12.0"
 	},
