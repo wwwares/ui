@@ -1,19 +1,21 @@
 {
 	"name": "@wwwares/ui-system",
-	"version": "0.5.0",
+	"version": "0.6.0",
 	"description": "",
 	"files": [
 		"dist/**"
 	],
 	"type": "module",
 	"sideEffects": [
-		"**/*.css"
+		"**/*.css",
+		"**/*.css.ts"
 	],
 	"exports": {
 		".": {
 			"types": "./dist/index.d.mts",
 			"default": "./dist/index.mjs"
-		}
+		},
+		"./styles.css": "./dist/styles.css"
 	},
 	"publishConfig": {
 		"access": "public"

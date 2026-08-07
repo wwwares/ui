@@ -1,5 +1,16 @@
 # @wwwares/ui-react
 
+## 0.6.0
+
+### Minor Changes
+
+- fix
+
+### Patch Changes
+
+- Updated dependencies
+  - @wwwares/ui-system@0.6.0
+
 ## 0.5.1
 
 ### Patch Changes

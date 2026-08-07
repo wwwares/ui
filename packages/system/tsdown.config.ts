@@ -5,5 +5,8 @@ export default defineConfig({
 	entry: ["./src/index.ts"],
 	format: ["esm"],
 	dts: true,
-	plugins: [vanillaExtractPlugin()],
+	plugins: [vanillaExtractPlugin({ extract: { name: "styles.css" } })],
+	outputOptions: {
+		assetFileNames: "[name][extname]",
+	},
 });

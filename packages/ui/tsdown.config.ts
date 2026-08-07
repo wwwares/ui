@@ -5,8 +5,8 @@ export default defineConfig({
 	format: ["esm"],
 	dts: true,
 	deps: {
-		// Regexes so subpaths are covered too — a bare "react" leaves
+		// Regex so subpaths are covered too — a bare "react" leaves
 		// react/jsx-runtime to be inlined.
-		neverBundle: [/^react($|\/)/, /^react-dom($|\/)/, "@wwwares/ui-system"],
+		neverBundle: [/^react($|\/)/, "@wwwares/ui-system"],
 	},
 });

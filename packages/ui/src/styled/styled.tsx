@@ -1,4 +1,5 @@
 import { createElement, forwardRef } from "react";
+import type { ForwardRefExoticComponent, JSX, RefAttributes } from "react";
 import { sprinkles, type Sprinkles } from "@wwwares/ui-system";
 import clsx from "clsx";
 
@@ -7,17 +8,16 @@ export type StyledProps<T extends keyof JSX.IntrinsicElements> = {
 	className?: string;
 } & JSX.IntrinsicElements[T];
 
-export type StyledComponent<T extends keyof JSX.IntrinsicElements> =
-	React.ForwardRefExoticComponent<
-		StyledProps<T> &
-			React.RefAttributes<
-				T extends keyof HTMLElementTagNameMap
-					? HTMLElementTagNameMap[T]
-					: T extends keyof SVGElementTagNameMap
-						? SVGElementTagNameMap[T]
-						: HTMLElement
-			>
-	>;
+export type StyledComponent<T extends keyof JSX.IntrinsicElements> = ForwardRefExoticComponent<
+	StyledProps<T> &
+		RefAttributes<
+			T extends keyof HTMLElementTagNameMap
+				? HTMLElementTagNameMap[T]
+				: T extends keyof SVGElementTagNameMap
+					? SVGElementTagNameMap[T]
+					: HTMLElement
+		>
+>;
 
 export function styled<T extends keyof JSX.IntrinsicElements>(
 	element: T,

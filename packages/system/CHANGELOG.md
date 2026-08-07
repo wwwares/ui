@@ -1,5 +1,11 @@
 # @wwwares/ui-system
 
+## 0.6.0
+
+### Minor Changes
+
+- fix
+
 ## 0.5.0
 
 ### Minor Changes
