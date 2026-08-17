@@ -1,7 +1,7 @@
 /**
- * The new CSS resetを参考に、Vanilla ExtractでCSSリセットを行います。 詳しくは
- * https://github.com/elad2412/the-new-css-reset/blob/main/css/reset.css
- * を参照して下さい。
+ * CSS reset ported from Tailwind Preflight (v4) to Vanilla Extract.
+ *
+ * https://github.com/tailwindlabs/tailwindcss/blob/main/packages/tailwindcss/preflight.css
  */
 
 import { globalStyle } from "@vanilla-extract/css";
@@ -9,62 +9,232 @@ import { globalStyle } from "@vanilla-extract/css";
 import * as layers from "./reset-layers.css";
 
 /**
- * Remove all the styles of the "User-Agent-Stylesheet", except for the
- * 'display' property
- *
- * - The "symbol *" part is to solve Firefox SVG sprite bug
- * - The "html" element is excluded, otherwise a bug in Chrome breaks the CSS
- *   hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
+ * 1. Prevent padding and border from affecting element width.
+ * 2. Remove default margins and padding.
+ * 3. Reset all borders.
  */
-globalStyle("*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *))", {
-	"@layer": {
-		[layers.reset]: {
-			all: "unset",
-			display: "revert",
-		},
-	},
-});
-
-/**
- * Preferred box-sizing value
- */
-globalStyle("*, *::before, *::after", {
+globalStyle("*, ::after, ::before, ::backdrop, ::file-selector-button", {
 	"@layer": {
 		[layers.reset]: {
 			boxSizing: "border-box",
-			fontFamily: "Inter",
+			margin: 0,
+			padding: 0,
+			border: "0 solid",
 		},
 	},
 });
 
 /**
- * Fix mobile Safari increase font-size on landscape mode
+ * 1. Use a consistent sensible line-height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ * 3. Use a more readable tab size.
+ * 4. Set the product typeface once at the root and let it inherit.
+ * 5. Disable tap highlights on iOS.
  */
-globalStyle("html", {
+globalStyle("html, :host", {
 	"@layer": {
 		[layers.reset]: {
-			MozTextSizeAdjust: "none",
-			WebkitTextSizeAdjust: "none",
-			textSizeAdjust: "none",
+			lineHeight: 1.5,
+			WebkitTextSizeAdjust: "100%",
+			tabSize: 4,
+			fontFamily: [
+				"Inter",
+				"-apple-system",
+				"BlinkMacSystemFont",
+				"Segoe UI",
+				"Roboto",
+				"Helvetica Neue",
+				"Noto Sans",
+				"Arial",
+				"sans-serif",
+				"Apple Color Emoji",
+				"Segoe UI Emoji",
+				"Segoe UI Symbol",
+				"Noto Color Emoji",
+			].join(", "),
+			WebkitTapHighlightColor: "transparent",
 		},
 	},
 });
 
 /**
- * Reapply the pointer cursor for anchor tags
+ * 1. Add the correct height in Firefox.
+ * 2. Correct the inheritance of border color in Firefox.
+ * 3. Reset the default border style to a 1px solid border.
  */
-globalStyle("a, button", {
+globalStyle("hr", {
 	"@layer": {
 		[layers.reset]: {
-			cursor: "pointer",
+			height: 0,
+			color: "inherit",
+			borderTopWidth: "1px",
 		},
 	},
 });
 
 /**
- * Remove list styles (bullets/numbers)
+ * Add the correct text decoration in Chrome, Edge, and Safari.
  */
-globalStyle("ol, ul, menu, summary", {
+globalStyle("abbr:where([title])", {
+	"@layer": {
+		[layers.reset]: {
+			// WebkitTextDecoration: "underline dotted",
+			textDecoration: "underline dotted",
+		},
+	},
+});
+
+/**
+ * Remove the default font size and weight for headings.
+ */
+globalStyle("h1, h2, h3, h4, h5, h6", {
+	"@layer": {
+		[layers.reset]: {
+			fontSize: "inherit",
+			fontWeight: "inherit",
+		},
+	},
+});
+
+/**
+ * Reset links to optimize for opt-in styling instead of opt-out.
+ */
+globalStyle("a", {
+	"@layer": {
+		[layers.reset]: {
+			color: "inherit",
+			// WebkitTextDecoration: "inherit",
+			textDecoration: "inherit",
+		},
+	},
+});
+
+/**
+ * Add the correct font weight in Edge and Safari.
+ */
+globalStyle("b, strong", {
+	"@layer": {
+		[layers.reset]: {
+			fontWeight: "bolder",
+		},
+	},
+});
+
+/**
+ * 1. Use a monospace stack for code.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+globalStyle("code, kbd, samp, pre", {
+	"@layer": {
+		[layers.reset]: {
+			fontFamily: [
+				"ui-monospace",
+				"SFMono-Regular",
+				"Menlo",
+				"Monaco",
+				"Consolas",
+				"Liberation Mono",
+				"Courier New",
+				"monospace",
+			].join(", "),
+			fontSize: "1em",
+		},
+	},
+});
+
+/**
+ * Add the correct font size in all browsers.
+ */
+globalStyle("small", {
+	"@layer": {
+		[layers.reset]: {
+			fontSize: "80%",
+		},
+	},
+});
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+ */
+globalStyle("sub, sup", {
+	"@layer": {
+		[layers.reset]: {
+			fontSize: "75%",
+			lineHeight: 0,
+			position: "relative",
+			verticalAlign: "baseline",
+		},
+	},
+});
+
+globalStyle("sub", {
+	"@layer": {
+		[layers.reset]: {
+			bottom: "-0.25em",
+		},
+	},
+});
+
+globalStyle("sup", {
+	"@layer": {
+		[layers.reset]: {
+			top: "-0.5em",
+		},
+	},
+});
+
+/**
+ * 1. Remove text indentation from table contents in Chrome and Safari.
+ * 2. Correct table border color inheritance in Chrome and Safari.
+ * 3. Remove gaps between table borders by default.
+ */
+globalStyle("table", {
+	"@layer": {
+		[layers.reset]: {
+			textIndent: 0,
+			borderColor: "inherit",
+			borderCollapse: "collapse",
+		},
+	},
+});
+
+/**
+ * Use the modern Firefox focus style for all focusable elements.
+ */
+globalStyle(":-moz-focusring:where(:not(iframe))", {
+	"@layer": {
+		[layers.reset]: {
+			outline: "auto",
+		},
+	},
+});
+
+/**
+ * Add the correct vertical alignment in Chrome and Firefox.
+ */
+globalStyle("progress", {
+	"@layer": {
+		[layers.reset]: {
+			verticalAlign: "baseline",
+		},
+	},
+});
+
+/**
+ * Add the correct display in Chrome and Safari.
+ */
+globalStyle("summary", {
+	"@layer": {
+		[layers.reset]: {
+			display: "list-item",
+		},
+	},
+});
+
+/**
+ * Make lists unstyled by default.
+ */
+globalStyle("ol, ul, menu", {
 	"@layer": {
 		[layers.reset]: {
 			listStyle: "none",
@@ -73,138 +243,248 @@ globalStyle("ol, ul, menu, summary", {
 });
 
 /**
- * For images to not be able to exceed their container
+ * 1. Make replaced elements `display: block` by default.
+ * 2. Add `vertical-align: middle` to align replaced elements more sensibly.
  */
-globalStyle("img", {
+globalStyle("img, svg, video, canvas, audio, iframe, embed, object", {
 	"@layer": {
 		[layers.reset]: {
-			maxInlineSize: "100%",
-			maxBlockSize: "100%",
+			display: "block",
+			verticalAlign: "middle",
 		},
 	},
 });
 
 /**
- * Removes spacing between cells in tables
+ * Constrain images and videos to the parent width and preserve their intrinsic
+ * aspect ratio.
  */
-globalStyle("table", {
+globalStyle("img, video", {
 	"@layer": {
 		[layers.reset]: {
-			borderCollapse: "collapse",
+			maxWidth: "100%",
+			height: "auto",
 		},
 	},
 });
 
 /**
- * Safari - solving issue when using user-select:none on the <body> text input
- * doesn't working
+ * 1. Inherit font styles in all browsers.
+ * 2. Remove border radius in all browsers.
+ * 3. Remove background color in all browsers.
+ * 4. Ensure consistent opacity for disabled states in all browsers.
  */
-globalStyle("input, textarea", {
+globalStyle("button, input, select, optgroup, textarea, ::file-selector-button", {
 	"@layer": {
 		[layers.reset]: {
-			WebkitUserSelect: "auto",
+			font: "inherit",
+			fontFeatureSettings: "inherit",
+			fontVariationSettings: "inherit",
+			letterSpacing: "inherit",
+			color: "inherit",
+			borderRadius: 0,
+			backgroundColor: "transparent",
+			opacity: 1,
 		},
 	},
 });
 
 /**
- * Revert the 'white-space' property for textarea elements on Safari
+ * Restore default font weight.
  */
-globalStyle("textarea", {
+globalStyle(":where(select:is([multiple], [size])) optgroup", {
 	"@layer": {
 		[layers.reset]: {
-			whiteSpace: "revert",
+			fontWeight: "bolder",
 		},
 	},
 });
 
 /**
- * Minimum style to allow to style meter element
+ * Restore indentation.
  */
-globalStyle("meter", {
+globalStyle(":where(select:is([multiple], [size])) optgroup option", {
 	"@layer": {
 		[layers.reset]: {
-			WebkitAppearance: "revert",
-			appearance: "revert",
+			paddingInlineStart: "20px",
 		},
 	},
 });
 
 /**
- * Preformatted text - use only for this feature
+ * Restore space after button.
  */
-globalStyle(":where(pre)", {
+globalStyle("::file-selector-button", {
 	"@layer": {
 		[layers.reset]: {
-			all: "revert",
-			boxSizing: "border-box",
+			marginInlineEnd: "4px",
 		},
 	},
 });
 
 /**
- * Reset default text opacity of input placeholder
+ * Reset the default placeholder opacity in Firefox, then set the placeholder
+ * color to a semi-transparent version of the current text color in browsers
+ * that do not crash when using `color-mix(…)` with `currentcolor`.
  */
 globalStyle("::placeholder", {
 	"@layer": {
 		[layers.reset]: {
-			color: "unset",
+			opacity: 1,
+			"@supports": {
+				"(not (-webkit-appearance: -apple-pay-button)) or (contain-intrinsic-size: 1px)": {
+					color: "color-mix(in oklab, currentcolor 50%, transparent)",
+				},
+			},
 		},
 	},
 });
 
 /**
- * Fix the feature of 'hidden' attribute. display:revert; revert to element
- * instead of attribute
+ * Prevent resizing textareas horizontally by default.
  */
-globalStyle(":where([hidden])", {
+globalStyle("textarea", {
 	"@layer": {
 		[layers.reset]: {
-			display: "none",
+			resize: "vertical",
 		},
 	},
 });
 
 /**
- * Revert for bug in Chromium browsers
- *
- * - Fix for the content editable attribute will work properly.
- * - Webkit-user-select: auto; added for Safari in case of using user-select:none
- *   on wrapper element
+ * Remove the inner padding in Chrome and Safari on macOS.
  */
-globalStyle(':where([contenteditable]:not([contenteditable="false"]))', {
-	// @ts-expect-error: -webkit-line-break is a non-standard property
+globalStyle("::-webkit-search-decoration", {
 	"@layer": {
 		[layers.reset]: {
-			MozUserModify: "read-write",
-			WebkitUserModify: "read-write",
-			overflowWrap: "break-word",
-			WebkitLineBreak: "after-white-space",
-			WebkitUserSelect: "auto",
+			WebkitAppearance: "none",
 		},
 	},
 });
 
 /**
- * Apply back the draggable feature - exist only in Chromium and Safari
+ * 1. Ensure date/time inputs have the same height when empty in iOS Safari.
+ * 2. Ensure text alignment can be changed on date/time inputs in iOS Safari.
  */
-globalStyle(':where([draggable="true"])', {
+globalStyle("::-webkit-date-and-time-value", {
 	"@layer": {
 		[layers.reset]: {
-			// @ts-expect-error: -webkit-user-drag is a non-standard property
-			WebkitUserDrag: "element",
+			minHeight: "1lh",
+			textAlign: "inherit",
 		},
 	},
 });
 
 /**
- * Revert Modal native behavior
+ * Prevent height from changing on date/time inputs in macOS Safari when the
+ * input is set to `display: block`.
  */
-globalStyle(":where(dialog:modal)", {
+globalStyle("::-webkit-datetime-edit", {
 	"@layer": {
 		[layers.reset]: {
-			all: "revert",
-			boxSizing: "border-box",
+			display: "inline-flex",
+		},
+	},
+});
+
+/**
+ * Remove excess padding from pseudo-elements in date/time inputs to ensure
+ * consistent height across browsers.
+ */
+globalStyle("::-webkit-datetime-edit-fields-wrapper", {
+	"@layer": {
+		[layers.reset]: {
+			padding: 0,
+		},
+	},
+});
+
+globalStyle(
+	[
+		"::-webkit-datetime-edit",
+		"::-webkit-datetime-edit-year-field",
+		"::-webkit-datetime-edit-month-field",
+		"::-webkit-datetime-edit-day-field",
+		"::-webkit-datetime-edit-hour-field",
+		"::-webkit-datetime-edit-minute-field",
+		"::-webkit-datetime-edit-second-field",
+		"::-webkit-datetime-edit-millisecond-field",
+		"::-webkit-datetime-edit-meridiem-field",
+	].join(", "),
+	{
+		"@layer": {
+			[layers.reset]: {
+				paddingBlock: 0,
+			},
+		},
+	},
+);
+
+/**
+ * Center dropdown marker shown on inputs with paired `<datalist>`s in Chrome.
+ */
+globalStyle("::-webkit-calendar-picker-indicator", {
+	"@layer": {
+		[layers.reset]: {
+			lineHeight: 1,
+		},
+	},
+});
+
+/**
+ * Remove the additional `:invalid` styles in Firefox.
+ */
+globalStyle(":-moz-ui-invalid", {
+	"@layer": {
+		[layers.reset]: {
+			boxShadow: "none",
+		},
+	},
+});
+
+/**
+ * Correct the inability to style the border radius in iOS Safari.
+ */
+globalStyle(
+	"button, input:where([type='button'], [type='reset'], [type='submit']), ::file-selector-button",
+	{
+		"@layer": {
+			[layers.reset]: {
+				appearance: "button",
+			},
+		},
+	},
+);
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Safari.
+ */
+globalStyle("::-webkit-inner-spin-button, ::-webkit-outer-spin-button", {
+	"@layer": {
+		[layers.reset]: {
+			height: "auto",
+		},
+	},
+});
+
+/**
+ * Make elements with the HTML hidden attribute stay hidden by default.
+ */
+globalStyle("[hidden]:where(:not([hidden='until-found']))", {
+	"@layer": {
+		[layers.reset]: {
+			display: "none !important",
+		},
+	},
+});
+
+/**
+ * Signal interactivity on the elements that carry it.
+ */
+globalStyle("a, button", {
+	"@layer": {
+		[layers.reset]: {
+			cursor: "pointer",
 		},
 	},
 });
