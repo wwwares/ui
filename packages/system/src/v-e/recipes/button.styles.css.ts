@@ -14,6 +14,11 @@ export const buttonContent = style({
 // Button recipe migrated from the former Panda recipe in button.ts
 export const button = recipe({
 	base: {
+		// Firefox rendering hacks
+		backgroundClip: "padding-box !important", // fuzzy corners on hover
+		willChange: "transform", // white line on hover
+		// ----
+		overflow: "hidden",
 		display: "inline-flex",
 		alignItems: "center",
 		justifyContent: "center",
