@@ -8,10 +8,11 @@ import { checkIconStyles } from "@wwwares/ui-system";
 
 const CheckIcon = styled("div");
 
-type CheckboxProps = RACCheckboxProps & { label: string };
+type CheckboxProps = RACCheckboxProps &
+	({ label: string; noLabel?: never } | { label?: never; noLabel: true });
 
 const Checkbox = (props: CheckboxProps) => {
-	const { label, isRequired } = props;
+	const { label = "", isRequired } = props;
 
 	return (
 		// `.group` sits on the RAC root so its data-* state attributes drive every
