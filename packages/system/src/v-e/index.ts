@@ -23,3 +23,4 @@ export { tagSlots } from "./recipes/tag.styles.css";
 export { type TextFieldRecipeVariants, textFieldRecipe } from "./recipes/text-field.recipe.css";
 export { spacing } from "./spacing";
 export { type Sprinkles, sprinkles } from "./sprinkles.css";
+export { tableStyles } from "./recipes/table.styles.css";

@@ -18,3 +18,4 @@ export * from "./switch";
 export * from "./tabs";
 export * from "./tags";
 export * from "./text-field";
+export * from "./table";

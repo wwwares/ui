@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import {
+	Table,
 	Button,
 	Card,
 	Checkbox,
@@ -66,6 +67,19 @@ export const Default: Story = {
 								title="Welcome to the sandbox"
 								description="Here are a bunch of components"
 								striped
+							/>
+							<Table
+								columns={[
+									{ id: "name", name: "Name" },
+									{ id: "gp", name: "Price" },
+								]}
+								items={[
+									{ id: 1, name: "User 2", gp: 100 },
+									{ id: 3, name: "User 3", gp: 1000 },
+									{ id: 2, name: "User 1", gp: 2000 },
+								]}
+								selectionMode="multiple"
+								selectionBehavior="toggle"
 							/>
 							<DatePicker label="Event date" />
 							<DateField label="Which day" />

@@ -49,7 +49,7 @@ export const headerStyles = style({
 	paddingRight: themeContract.spacing[3],
 	paddingTop: themeContract.spacing[2],
 	paddingBottom: themeContract.spacing[2],
-	height: "48px",
+	// height: "48px",
 	fontWeight: 700,
 	color: themeContract.semantic.text.label,
 	alignItems: "center",
@@ -81,15 +81,15 @@ export const contentBackgroundBlend = style({
 });
 
 export const footerStyles = style({
-	minHeight: "58px",
+	// minHeight: "58px",
 	display: "flex",
 	flexDirection: "row",
 	justifyContent: "space-between",
 	alignItems: "center",
 	paddingLeft: themeContract.spacing[3],
 	paddingRight: themeContract.spacing[3],
-	paddingTop: themeContract.spacing[3],
-	paddingBottom: themeContract.spacing[3],
+	paddingTop: themeContract.spacing[2],
+	paddingBottom: themeContract.spacing[2],
 	background: themeContract.semantic.bg.surface.l2,
 	borderBottomLeftRadius: themeContract.radii.lg,
 	borderBottomRightRadius: themeContract.radii.lg,
@@ -99,10 +99,10 @@ export const markerStyles = style({
 	marginLeft: `calc(-1 * ${themeContract.spacing[3]})`,
 	marginRight: `calc(-1 * ${themeContract.spacing[3]})`,
 	paddingLeft: themeContract.spacing[3],
-	paddingTop: themeContract.spacing[3],
-	paddingBottom: themeContract.spacing[3],
+	paddingTop: themeContract.spacing[2],
+	paddingBottom: themeContract.spacing[2],
 	fontSize: "14px", // sm
-	background: themeContract.semantic.bg.surface.l2,
+	background: themeContract.semantic.bg.surface.l1,
 	color: themeContract.colors.stone[800],
 	borderBottom: `1px solid ${themeContract.semantic.borders.surface.divider}`,
 	// Swap color of top border and box shadow to match the bottom border style => dark line -> light line

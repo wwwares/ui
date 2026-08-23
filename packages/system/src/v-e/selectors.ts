@@ -1,6 +1,3 @@
-// Plain TS module (NOT .css.ts): vanilla-extract files may only export
-// serializable values, and this kit includes the group()/peer() helpers.
-
 // Composable state fragments (no `&`). Each matches both the native CSS state
 // and the react-aria-components data attribute, so they work on plain DOM and
 // RAC elements alike. Concatenate them onto any subject to combine states:

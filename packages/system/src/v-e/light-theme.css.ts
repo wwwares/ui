@@ -101,9 +101,9 @@ export const lightTheme = createTheme(themeContract, {
 		},
 		borders: {
 			surface: {
-				/** Edge inside a surface plane */
+				/** Edge inside a surface */
 				hairline: tailwindColors.stone[200],
-				/** Seperates two planes */
+				/** Seperates */
 				divider: tailwindColors.stone[300],
 				/** Encloses floating surface over app background */
 				ring: tailwindColors.stone[300],

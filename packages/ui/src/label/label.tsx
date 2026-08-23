@@ -39,6 +39,8 @@ const Label = forwardRef(function Label(props: LabelProps, ref: ForwardedRef<HTM
 	const [$props, $ref] = useContextProps(rest, ref, LabelContext);
 	const clsn = clsx(className, labelTextStyles, isPeer && "peer");
 
+	if (content === "") return children;
+
 	let flexDirection = "";
 
 	if (labelPosition === "above") {

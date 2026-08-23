@@ -31,4 +31,5 @@ export {
 	tagSlots,
 	textFieldRecipe,
 	themeContract,
+	tableStyles,
 } from "./v-e";
