@@ -1,38 +1,44 @@
 import { tableStyles } from "@wwwares/ui-system";
-import { useMemo } from "react";
 import {
 	Table as RACTable,
 	TableHeader as RACTableHeader,
 	TableBody as RACTableBody,
 	Row as RACRow,
 	Cell as RACCell,
-	ColumnProps,
 	Column as RACColumn,
 	TableProps as RACTableProps,
 	Collection,
+	Key,
 } from "react-aria-components";
 import { Flex } from "../flex";
 import { Checkbox } from "../checkbox";
 import { Box } from "../box";
 
-type Column = {
-	id: ColumnProps["id"];
+type Column<T> = {
+	id: keyof T & Key;
 	name: string;
+	isRowHeader?: boolean;
 };
 
-type TableProps = {
-	items: unknown[];
-	columns: Column[];
+type TableProps<T extends { id: Key }> = {
+	items: T[];
+	columns: Column<T>[];
 	selectionMode?: RACTableProps["selectionMode"];
 	selectionBehavior?: RACTableProps["selectionBehavior"];
 	onSelectionChange?: RACTableProps["onSelectionChange"];
 	selectedKeys?: RACTableProps["selectedKeys"];
+	onRowAction?: RACTableProps["onRowAction"];
 };
-function Table(props: TableProps) {
-	const { items, columns, selectionMode, selectionBehavior, onSelectionChange, selectedKeys } =
-		props;
-
-	const cols = useMemo(() => columns, []);
+function Table<T extends { id: Key }>(props: TableProps<T>) {
+	const {
+		items,
+		columns,
+		selectionMode,
+		selectionBehavior,
+		onSelectionChange,
+		selectedKeys,
+		onRowAction,
+	} = props;
 
 	return (
 		<Flex className={tableStyles.tableContainerStyles}>
@@ -42,9 +48,9 @@ function Table(props: TableProps) {
 				selectionBehavior={selectionBehavior}
 				onSelectionChange={onSelectionChange}
 				selectedKeys={selectedKeys}
-				onRowAction={() => alert("yo")}
+				onRowAction={onRowAction}
 			>
-				<RACTableHeader columns={cols}>
+				<RACTableHeader columns={columns}>
 					{selectionBehavior === "toggle" && (
 						<RACColumn
 							width={32}
@@ -57,7 +63,7 @@ function Table(props: TableProps) {
 						</RACColumn>
 					)}
 					{/* use Collection to render dynamic header cols alongside the checkbox */}
-					<Collection items={cols}>
+					<Collection items={columns}>
 						{(column) => (
 							<RACColumn {...column} className={tableStyles.tableHeaderStyles}>
 								{column.name}
