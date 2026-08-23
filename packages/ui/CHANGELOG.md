@@ -1,5 +1,11 @@
 # @wwwares/ui-react
 
+## 0.7.1
+
+### Patch Changes
+
+- fix table props and columns
+
 ## 0.7.0
 
 ### Minor Changes
