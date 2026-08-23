@@ -1,5 +1,11 @@
 # @wwwares/ui-system
 
+## 0.7.0
+
+### Minor Changes
+
+- add table and other things
+
 ## 0.6.0
 
 ### Minor Changes
