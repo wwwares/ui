@@ -3,7 +3,7 @@ import { themeContract } from "../contract.css";
 import { selectors } from "../selectors";
 
 const containerStyles = style({
-	background: themeContract.semantic.bg.surface.l0,
+	background: themeContract.semantic.bg.surface.floating,
 	boxShadow: themeContract.semantic.shadows.overlay,
 	borderRadius: themeContract.radii.md,
 	width: "fit-content",
@@ -12,7 +12,7 @@ const containerStyles = style({
 const headerStyles = style({
 	display: "flex",
 	alignItems: "center",
-	background: themeContract.semantic.bg.surface.l2,
+	background: themeContract.semantic.bg.fill.chrome,
 	borderRadius: `${themeContract.radii.md} ${themeContract.radii.md} 0 0`,
 	padding: themeContract.spacing[1],
 	fontWeight: "bold",
@@ -20,7 +20,7 @@ const headerStyles = style({
 });
 
 const weekdayStyles = style({
-	background: themeContract.semantic.bg.surface.l3,
+	background: themeContract.semantic.bg.fill.band,
 	borderTop: `1px solid ${themeContract.semantic.borders.surface.divider}`,
 	borderBottom: `1px solid ${themeContract.semantic.borders.surface.divider}`,
 });

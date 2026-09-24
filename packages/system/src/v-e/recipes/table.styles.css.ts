@@ -5,7 +5,7 @@ import { selectors } from "../selectors";
 const hairline = `1px solid ${themeContract.semantic.borders.surface.ring}`;
 
 const tableContainerStyles = style({
-	background: themeContract.semantic.bg.surface.l2,
+	background: themeContract.semantic.bg.fill.tray,
 	borderRadius: themeContract.radii.md,
 	padding: themeContract.spacing[1],
 });
@@ -31,11 +31,14 @@ const tableBodyStyles = style({});
 const rowBg = createVar();
 const tableRowStyles = style({
 	vars: {
-		[rowBg]: themeContract.semantic.bg.surface.l0,
+		[rowBg]: themeContract.semantic.bg.surface.card,
 	},
 	selectors: {
 		[selectors.hover]: {
-			vars: { [rowBg]: themeContract.semantic.bg.surface.l1 },
+			// hover is translucent, so it layers over the card to keep the tray from showing through
+			vars: {
+				[rowBg]: `linear-gradient(${themeContract.semantic.bg.fill.hover}, ${themeContract.semantic.bg.fill.hover}), ${themeContract.semantic.bg.surface.card}`,
+			},
 		},
 		[selectors.selected]: {
 			vars: { [rowBg]: themeContract.semantic.bg.feedback.info.default },

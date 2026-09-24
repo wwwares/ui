@@ -47,7 +47,7 @@ export const button = recipe({
 			},
 			[selectors.focusVisible]: {
 				outlineOffset: "1px",
-				outline: `dotted thin ${themeContract.colors.black}`,
+				outline: `dotted thin ${themeContract.semantic.text.default}`,
 			},
 			[selectors.disabled]: {
 				cursor: "not-allowed",
@@ -58,8 +58,8 @@ export const button = recipe({
 	variants: {
 		intent: {
 			neutral: {
-				color: themeContract.colors.black,
-				textShadow: "1px 1px 1px rgba(255, 255, 255, 0.85)",
+				color: themeContract.semantic.text.default,
+				textShadow: `1px 1px 1px ${themeContract.semantic.bg.surface.page}`,
 				background: themeContract.semantic.bg.raised.interactive.neutral.default,
 				border: `1px solid ${themeContract.semantic.borders.raised.interactive.neutral.default}`,
 				boxShadow: themeContract.semantic.shadows.raised.interactive.neutral.default,
@@ -131,10 +131,10 @@ export const button = recipe({
 					[selectors.hover]: {
 						boxShadow: "none",
 						border: "1px solid transparent",
-						background: themeContract.semantic.bg.surface.l2,
+						background: themeContract.semantic.bg.fill.hover,
 					},
 					[selectors.pressed]: {
-						background: themeContract.semantic.bg.surface.l3,
+						background: themeContract.semantic.bg.fill.pressed,
 						border: "1px solid transparent",
 						boxShadow: "none",
 					},

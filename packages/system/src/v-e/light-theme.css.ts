@@ -5,6 +5,8 @@ import { spacing } from "./spacing";
 import { radii } from "./radii";
 import { withLighten, withOpacity } from "./utils";
 
+const tint = (amount: number) => withLighten(tailwindColors.stone[200], amount);
+
 export const lightTheme = createTheme(themeContract, {
 	radii,
 	colors: tailwindColors,
@@ -88,15 +90,23 @@ export const lightTheme = createTheme(themeContract, {
 				},
 			},
 			overlay: withOpacity(tailwindColors.stone[300], 50),
+			// Floating surfaces and modals stay white; rings and shadows carry their depth.
 			surface: {
-				// top plane: card, popover, modal body
-				l0: withLighten(tailwindColors.stone[200], 92),
-				// gentler chrome
-				l1: withLighten(tailwindColors.stone[200], 75),
-				// chrome + recessed: header/footer, tracks
-				l2: withLighten(tailwindColors.stone[200], 58),
-				// deepest / contrast
-				l3: withLighten(tailwindColors.stone[200], 41),
+				page: tailwindColors.white,
+				nav: withLighten(tailwindColors.zinc[200], 40), // ~#efeff0
+				card: tailwindColors.neutral[50], // ~#fbfbfb
+				floating: tailwindColors.white,
+				modal: tailwindColors.white,
+			},
+			fill: {
+				chrome: tint(58),
+				band: tint(75),
+				tray: tint(58),
+				hover: withOpacity(tailwindColors.stone[900], 4),
+				pressed: withOpacity(tailwindColors.stone[900], 7),
+			},
+			item: {
+				highlighted: `linear-gradient(180deg, ${tint(75)} 75%, ${tint(41)} 100%)`,
 			},
 		},
 		borders: {
@@ -109,6 +119,9 @@ export const lightTheme = createTheme(themeContract, {
 				ring: tailwindColors.stone[300],
 				/** Paired with divider border to create recessed edge */
 				highlight: tailwindColors.white,
+			},
+			item: {
+				highlighted: tailwindColors.stone[200],
 			},
 			feedback: {
 				success: {
@@ -192,6 +205,9 @@ export const lightTheme = createTheme(themeContract, {
 				},
 			},
 			overlay: `0px 0px 0px 1px ${tailwindColors.stone[300]}, 0px 2px 1px 0px ${tailwindColors.stone[200]}, 2px 0px 1px 0px ${tailwindColors.stone[200]}, -2px 0px 1px 0px ${tailwindColors.stone[200]}, 0px -2px 1px 0px ${tailwindColors.stone[200]}`,
+			item: {
+				highlighted: `0px 1px 1px 0px ${tint(41)}`,
+			},
 			surface: {
 				/** Top/bottom fold where a surface meets recessed chrome. e.g. Modal body content meeting header/footer */
 				fold: "0 1px #e9e9e9, 0 -1px #e9e9e9",

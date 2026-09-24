@@ -42,7 +42,7 @@ export const tab = style({
 
 	selectors: {
 		[selectors.hover]: {
-			backgroundColor: themeContract.semantic.bg.surface.l2,
+			backgroundColor: themeContract.semantic.bg.fill.hover,
 		},
 		[selectors.selected]: {
 			background: themeContract.colors.blue[50],

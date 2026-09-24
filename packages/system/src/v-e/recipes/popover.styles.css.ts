@@ -5,7 +5,7 @@ import { selectors } from "../selectors";
 
 // Floating surface shared by menu-family components (menu, filter popover).
 const popover = style({
-	background: themeContract.semantic.bg.surface.l0,
+	background: themeContract.semantic.bg.surface.floating,
 	borderRadius: themeContract.radii.md,
 	minWidth: "200px",
 	maxWidth: "320px",
@@ -36,9 +36,9 @@ const item = style({
 	outline: "none",
 	selectors: {
 		[`${selectors.hover}, ${selectors.focus}`]: {
-			border: `1px solid ${themeContract.semantic.borders.surface.hairline}`,
-			boxShadow: `0px 1px 1px 0px ${themeContract.semantic.bg.surface.l3}`, // , 0px 1px 0px 0px inset ${themeContract.semantic.bg.surface.l3}
-			background: `linear-gradient(180deg, ${themeContract.semantic.bg.surface.l1} 75%, ${themeContract.semantic.bg.surface.l3} 100%)`,
+			border: `1px solid ${themeContract.semantic.borders.item.highlighted}`,
+			boxShadow: themeContract.semantic.shadows.item.highlighted,
+			background: themeContract.semantic.bg.item.highlighted,
 		},
 	},
 });

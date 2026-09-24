@@ -17,7 +17,7 @@ export const overlayStyles = style({
 
 export const bodyRecipe = recipe({
 	base: {
-		background: themeContract.semantic.bg.surface.l0,
+		background: themeContract.semantic.bg.surface.modal,
 		boxShadow: themeContract.semantic.shadows.surface.floating.lg,
 		borderRadius: themeContract.radii.lg,
 		color: themeContract.semantic.text.default,
@@ -42,7 +42,7 @@ export const headerStyles = style({
 	display: "flex",
 	flexDirection: "row",
 	justifyContent: "space-between",
-	background: themeContract.semantic.bg.surface.l2,
+	background: themeContract.semantic.bg.fill.chrome,
 	borderTopLeftRadius: themeContract.radii.lg,
 	borderTopRightRadius: themeContract.radii.lg,
 	paddingLeft: themeContract.spacing[3],
@@ -69,7 +69,7 @@ export const contentStyles = style({
 	borderBottom: `1px solid ${themeContract.semantic.borders.surface.divider}`,
 	borderBottomRightRadius: themeContract.radii.md,
 	borderBottomLeftRadius: themeContract.radii.md,
-	background: themeContract.semantic.bg.surface.l0,
+	background: themeContract.semantic.bg.surface.modal,
 	// Give top and bottom of content some depth that blends in to the header and footer folds
 	position: "relative",
 	zIndex: 1,
@@ -77,7 +77,7 @@ export const contentStyles = style({
 });
 
 export const contentBackgroundBlend = style({
-	background: themeContract.semantic.bg.surface.l2,
+	background: themeContract.semantic.bg.fill.chrome,
 });
 
 export const footerStyles = style({
@@ -90,7 +90,7 @@ export const footerStyles = style({
 	paddingRight: themeContract.spacing[3],
 	paddingTop: themeContract.spacing[2],
 	paddingBottom: themeContract.spacing[2],
-	background: themeContract.semantic.bg.surface.l2,
+	background: themeContract.semantic.bg.fill.chrome,
 	borderBottomLeftRadius: themeContract.radii.lg,
 	borderBottomRightRadius: themeContract.radii.lg,
 });
@@ -102,7 +102,7 @@ export const markerStyles = style({
 	paddingTop: themeContract.spacing[2],
 	paddingBottom: themeContract.spacing[2],
 	fontSize: "14px", // sm
-	background: themeContract.semantic.bg.surface.l1,
+	background: themeContract.semantic.bg.fill.band,
 	color: themeContract.colors.stone[800],
 	borderBottom: `1px solid ${themeContract.semantic.borders.surface.divider}`,
 	// Swap color of top border and box shadow to match the bottom border style => dark line -> light line

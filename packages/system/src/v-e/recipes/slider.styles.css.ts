@@ -14,7 +14,7 @@ export const sliderContainer = style({
 export const sliderTrack = style({
 	height: themeContract.spacing[7],
 	top: "50%",
-	background: themeContract.semantic.bg.surface.l2,
+	background: themeContract.semantic.bg.fill.tray,
 	position: "absolute",
 	transform: "translateY(-50%)",
 	width: "100%",

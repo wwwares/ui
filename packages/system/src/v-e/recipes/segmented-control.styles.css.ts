@@ -6,7 +6,7 @@ import { edge } from "./_edge";
 export const segmentedControlContainer = style({
 	display: "flex",
 	// gap: themeContract.spacing["1"],
-	background: themeContract.semantic.bg.surface.l2,
+	background: themeContract.semantic.bg.fill.tray,
 	// padding: themeContract.spacing["1"],
 	borderRadius: themeContract.radii.sm,
 	width: "100%",

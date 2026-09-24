@@ -399,15 +399,39 @@ export const themeContract = createThemeContract({
 				},
 			},
 			overlay: "",
+			/**
+			 * Planes named by role. Each theme orders them independently, so a
+			 * light-mode nav can recess below the page while the dark-mode nav rises to card level.
+			 */
 			surface: {
-				/** app background */
-				l0: "",
-				/** card/modal or first surface on app background */
-				l1: "",
-				/** background surfaces on l1 - slider or segmented control background */
-				l2: "",
-				/** contrasted paired with l2 - not related to a component */
-				l3: "",
+				/** App background */
+				page: "",
+				/** Left nav and side panels */
+				nav: "",
+				/** Cards and table rows */
+				card: "",
+				/** Popovers, menus, calendars */
+				floating: "",
+				/** Modal content */
+				modal: "",
+			},
+			/**
+			 * Solid fills for structure within a known surface, named by role.
+			 * `hover` and `pressed` are translucent so they read on whatever they sit over.
+			 */
+			fill: {
+				/** Header and footer of modals and calendars */
+				chrome: "",
+				/** Strip that divides a surface into sections: modal markers, calendar weekdays */
+				band: "",
+				/** Recessed container holding controls or rows: slider track, segmented control, table */
+				tray: "",
+				hover: "",
+				pressed: "",
+			},
+			/** Hovered or focused item in a menu or listbox */
+			item: {
+				highlighted: "",
 			},
 		},
 		borders: {
@@ -416,6 +440,9 @@ export const themeContract = createThemeContract({
 				divider: "",
 				ring: "",
 				highlight: "",
+			},
+			item: {
+				highlighted: "",
 			},
 			feedback: {
 				success: {
@@ -495,6 +522,9 @@ export const themeContract = createThemeContract({
 				},
 			},
 			overlay: "",
+			item: {
+				highlighted: "",
+			},
 			surface: {
 				fold: "",
 				floating: {

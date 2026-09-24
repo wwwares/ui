@@ -14,6 +14,7 @@ export {
 	filterButtonStyles,
 	labelTextStyles,
 	lightTheme,
+	darkTheme,
 	type ModalBodyVariants,
 	modalStyles,
 	popoverStyles,

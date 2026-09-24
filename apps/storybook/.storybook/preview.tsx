@@ -1,10 +1,7 @@
 import type { Preview } from "@storybook/react-vite";
 
 import "../src/index.css";
-// No "@wwwares/ui-system/css" here: that's the prebuilt dist stylesheet. We now
-// consume the package source, so the vanilla-extract Vite plugin emits styles
-// (with HMR) from the .css.ts modules pulled in via these imports.
-import { lightTheme, themeContract } from "@wwwares/ui-system";
+import { lightTheme, darkTheme, themeContract } from "@wwwares/ui-system";
 
 import { useEffect } from "react";
 
@@ -14,7 +11,13 @@ const withThemeAttribute = (Story, context) => {
 		const theme = context?.globals?.theme;
 
 		document.body.setAttribute("data-color-mode", theme);
-		document.body.classList.add(lightTheme);
+		if (theme === "light") {
+			document.body.classList.remove(darkTheme);
+			document.body.classList.add(lightTheme);
+		} else {
+			document.body.classList.remove(lightTheme);
+			document.body.classList.add(darkTheme);
+		}
 	}, [context.globals.theme]);
 
 	// console.log(lightTheme);
@@ -49,13 +52,12 @@ const preview: Preview = {
 			options: {
 				light: {
 					name: "light",
-					value: themeContract.semantic.bg.surface.l0,
+					value: themeContract.semantic.bg.surface.page,
 				},
 
 				dark: {
 					name: "dark",
-					// value: "var(--colors-bg-surface-0)", // zinc.800
-					value: themeContract.semantic.bg.surface.l0,
+					value: themeContract.semantic.bg.surface.page,
 				},
 			},
 		},
