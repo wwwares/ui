@@ -1,5 +1,13 @@
 # @wwwares/ui-react
 
+## 0.7.2
+
+### Patch Changes
+
+- workbench and dark mode?
+- Updated dependencies
+  - @wwwares/ui-system@0.7.1
+
 ## 0.7.1
 
 ### Patch Changes

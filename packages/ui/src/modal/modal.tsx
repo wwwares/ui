@@ -1,83 +1,32 @@
-import { IconX } from "@tabler/icons-react";
 import { type ModalBodyVariants, modalStyles } from "@wwwares/ui-system";
 import clsx from "clsx";
-import type { ReactElement, ReactNode } from "react";
+import type { ReactElement } from "react";
 import {
-	Dialog,
 	DialogTrigger,
 	type DialogTriggerProps,
 	Modal as RACModal,
 	ModalOverlay as RACModalOverlay,
 } from "react-aria-components";
+import { ModalFrame, type ModalFrameProps } from "./modal-frame";
 
-type ModalProps = {
+type ModalProps = ModalFrameProps & {
 	activator: ReactElement;
-	children(renderProps: { close(): void }): ReactNode;
-	title: string;
-	titleHidden?: boolean;
-	footer?: ReactNode;
-	primaryAction?: ReactNode;
-	secondaryAction?: ReactNode;
-	// tertiaryAction?: ReactNode;
 	isDismissable?: boolean;
 } & ModalBodyVariants &
 	Omit<DialogTriggerProps, "children">;
 
 function Modal(props: ModalProps) {
-	const {
-		activator,
-		children,
-		title,
-		titleHidden = false,
-		primaryAction,
-		secondaryAction,
-		footer,
-		size,
-		defaultOpen,
-		isOpen,
-		onOpenChange,
-		isDismissable,
-	} = props;
+	const { activator, size, defaultOpen, isOpen, onOpenChange, isDismissable, ...frameProps } =
+		props;
 
 	const bodyRecipeClass = modalStyles.bodyRecipe({ size });
-
-	const hasFooter = !!primaryAction || !!secondaryAction || !!footer;
 
 	return (
 		<DialogTrigger defaultOpen={defaultOpen} isOpen={isOpen} onOpenChange={onOpenChange}>
 			{activator}
 			<RACModalOverlay className={modalStyles.overlayStyles} isDismissable={isDismissable}>
 				<RACModal className={clsx(bodyRecipeClass, modalStyles.contentBackgroundBlend)}>
-					<Dialog aria-label={title}>
-						{(renderProps) => (
-							<div>
-								<div className={modalStyles.headerStyles}>
-									{!titleHidden && <span>{title}</span>}
-									<button
-										style={{
-											appearance: "none",
-											cursor: "pointer",
-										}}
-										onClick={renderProps.close}
-										type="button"
-									>
-										<IconX size={16} />
-									</button>
-								</div>
-
-								<div className={modalStyles.contentStyles}>{children(renderProps)}</div>
-								{hasFooter && (
-									<div className={modalStyles.footerStyles}>
-										{footer}
-										<div>
-											{secondaryAction}
-											{primaryAction}
-										</div>
-									</div>
-								)}
-							</div>
-						)}
-					</Dialog>
+					<ModalFrame {...frameProps} />
 				</RACModal>
 			</RACModalOverlay>
 		</DialogTrigger>

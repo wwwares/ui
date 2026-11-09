@@ -38,6 +38,13 @@ export const bodyRecipe = recipe({
 	},
 });
 
+export const frameStyles = style({
+	display: "flex",
+	flexDirection: "column",
+	flex: "1 1 auto",
+	minHeight: 0,
+});
+
 export const headerStyles = style({
 	display: "flex",
 	flexDirection: "row",
@@ -58,6 +65,9 @@ export const headerStyles = style({
 export const contentStyles = style({
 	display: "flex",
 	flexDirection: "column",
+	flex: "1 1 auto",
+	minHeight: 0,
+	overflowY: "auto",
 	gap: themeContract.spacing[8],
 	paddingLeft: themeContract.spacing[3],
 	paddingRight: themeContract.spacing[3],
@@ -113,6 +123,7 @@ export const markerStyles = style({
 export const modalStyles = {
 	overlayStyles,
 	bodyRecipe,
+	frameStyles,
 	headerStyles,
 	contentStyles,
 	footerStyles,

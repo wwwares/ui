@@ -21,6 +21,8 @@ export const is = {
 	disabled: ":is(:disabled, [data-disabled])",
 	loading: ":is([data-loading], [aria-busy=true])",
 	empty: ":is(:empty, [data-empty])",
+	entering: "[data-entering]",
+	exiting: "[data-exiting]",
 } as const;
 
 /** States on a `.group` ancestor: `group(is.selected, is.hover)` → `.group…[…] &` */
@@ -52,6 +54,8 @@ export const selectors = {
 	disabled: `&${is.disabled}`,
 	loading: `&${is.loading}`,
 	empty: `&${is.empty}`,
+	entering: `&${is.entering}`,
+	exiting: `&${is.exiting}`,
 
 	groupHover: group(is.hover),
 	groupFocus: group(is.focus),

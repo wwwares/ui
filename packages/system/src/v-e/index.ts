@@ -8,6 +8,7 @@ export { calendarStyles } from "./recipes/calendar.styles.css";
 export { type CardRecipeVariants, cardRecipe } from "./recipes/card.recipe.css";
 export { checkIconStyles } from "./recipes/checkbox.styles.css";
 export { dateFieldStyles } from "./recipes/date-field.styles.css";
+export { type DrawerVariants, drawerStyles } from "./recipes/drawer.styles.css";
 export { filterButtonStyles } from "./recipes/filter-button.styles.css";
 export { labelTextStyles } from "./recipes/label.styles.css";
 export { type ModalBodyVariants, modalStyles } from "./recipes/modal.styles.css";
@@ -24,3 +25,4 @@ export { type TextFieldRecipeVariants, textFieldRecipe } from "./recipes/text-fi
 export { spacing } from "./spacing";
 export { type Sprinkles, sprinkles } from "./sprinkles.css";
 export { tableStyles } from "./recipes/table.styles.css";
+export { workbenchStyles } from "./recipes/workbench.styles.css";

@@ -11,6 +11,8 @@ export {
 	cardRecipe,
 	checkIconStyles,
 	dateFieldStyles,
+	type DrawerVariants,
+	drawerStyles,
 	filterButtonStyles,
 	labelTextStyles,
 	lightTheme,
@@ -33,4 +35,5 @@ export {
 	textFieldRecipe,
 	themeContract,
 	tableStyles,
+	workbenchStyles,
 } from "./v-e";
