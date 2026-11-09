@@ -328,15 +328,20 @@ export const themeContract = createThemeContract({
 			feedback: {
 				success: {
 					default: "",
+					/** Body copy under the title */
+					muted: "",
 				},
 				error: {
 					default: "",
+					muted: "",
 				},
 				warning: {
 					default: "",
+					muted: "",
 				},
 				info: {
 					default: "",
+					muted: "",
 				},
 			},
 		},
@@ -397,6 +402,10 @@ export const themeContract = createThemeContract({
 				info: {
 					default: "",
 				},
+				/** Glaze over the alert header */
+				header: "",
+				/** Diagonal stripe pattern color in the alert body */
+				stripe: "",
 			},
 			overlay: "",
 			/**
@@ -447,15 +456,20 @@ export const themeContract = createThemeContract({
 			feedback: {
 				success: {
 					default: "",
+					/** Top edge that catches light */
+					highlight: "",
 				},
 				error: {
 					default: "",
+					highlight: "",
 				},
 				warning: {
 					default: "",
+					highlight: "",
 				},
 				info: {
 					default: "",
+					highlight: "",
 				},
 			},
 			raised: {
@@ -524,6 +538,20 @@ export const themeContract = createThemeContract({
 			overlay: "",
 			item: {
 				highlighted: "",
+			},
+			feedback: {
+				success: {
+					header: "",
+				},
+				error: {
+					header: "",
+				},
+				warning: {
+					header: "",
+				},
+				info: {
+					header: "",
+				},
 			},
 			surface: {
 				fold: "",

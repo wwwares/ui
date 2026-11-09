@@ -45,7 +45,8 @@ export const tab = style({
 			backgroundColor: themeContract.semantic.bg.fill.hover,
 		},
 		[selectors.selected]: {
-			background: themeContract.colors.blue[50],
+			// background: themeContract.colors.blue[50],
+			background: themeContract.semantic.bg.fill.tray,
 		},
 		[`${selectors.selected}::before`]: {
 			backgroundColor: themeContract.colors.blue[600],

@@ -2,6 +2,8 @@ import { type RecipeVariants, recipe } from "@vanilla-extract/recipes";
 import { themeContract } from "../contract.css";
 import { style } from "@vanilla-extract/css";
 
+const { semantic } = themeContract;
+
 export const alertRecipe = recipe({
 	base: {
 		borderRadius: themeContract.radii.md,
@@ -13,56 +15,28 @@ export const alertRecipe = recipe({
 	variants: {
 		variant: {
 			success: {
-				background: themeContract.semantic.bg.feedback.success.default,
-				border: `1px solid ${themeContract.semantic.borders.feedback.success.default}`,
-				color: themeContract.semantic.text.feedback.success.default,
-				// "@media": {
-				// 	"(prefers-color-scheme: dark)": {
-				// 		background: `linear-gradient(to bottom right, ${withOpacity(themeContract.colors.green[950], 80)}, ${withOpacity(themeContract.colors.green[900], 60)}, ${withOpacity(themeContract.colors.green[800], 40)})`,
-				// 		borderColor: withOpacity(themeContract.colors.green[700], 50),
-				// 		color: themeContract.colors.green[100],
-				// 		borderTopColor: withOpacity(themeContract.colors.green[600], 30),
-				// 	},
-				// },
+				background: semantic.bg.feedback.success.default,
+				border: `1px solid ${semantic.borders.feedback.success.default}`,
+				borderTopColor: semantic.borders.feedback.success.highlight,
+				color: semantic.text.feedback.success.default,
 			},
 			error: {
-				background: themeContract.semantic.bg.feedback.error.default,
-				border: `1px solid ${themeContract.semantic.borders.feedback.error.default}`,
-				color: themeContract.semantic.text.feedback.error.default,
-				// "@media": {
-				// 	"(prefers-color-scheme: dark)": {
-				// 		background: `linear-gradient(to bottom right, ${withOpacity(themeContract.colors.red[950], 80)}, ${withOpacity(themeContract.colors.red[900], 60)}, ${withOpacity(themeContract.colors.red[800], 40)})`,
-				// 		borderColor: withOpacity(themeContract.colors.red[700], 50),
-				// 		color: themeContract.colors.red[100],
-				// 		borderTopColor: withOpacity(themeContract.colors.red[600], 30),
-				// 	},
-				// },
+				background: semantic.bg.feedback.error.default,
+				border: `1px solid ${semantic.borders.feedback.error.default}`,
+				borderTopColor: semantic.borders.feedback.error.highlight,
+				color: semantic.text.feedback.error.default,
 			},
 			warning: {
-				background: themeContract.semantic.bg.feedback.warning.default,
-				border: `1px solid ${themeContract.semantic.borders.feedback.warning.default}`,
-				color: themeContract.semantic.text.feedback.warning.default,
-				// "@media": {
-				// 	"(prefers-color-scheme: dark)": {
-				// 		background: `linear-gradient(to bottom right, ${withOpacity(themeContract.colors.amber[950], 80)}, ${withOpacity(themeContract.colors.amber[900], 60)}, ${withOpacity(themeContract.colors.amber[800], 40)})`,
-				// 		borderColor: withOpacity(themeContract.colors.amber[700], 50),
-				// 		color: themeContract.colors.amber[100],
-				// 		borderTopColor: withOpacity(themeContract.colors.amber[600], 30),
-				// 	},
-				// },
+				background: semantic.bg.feedback.warning.default,
+				border: `1px solid ${semantic.borders.feedback.warning.default}`,
+				borderTopColor: semantic.borders.feedback.warning.highlight,
+				color: semantic.text.feedback.warning.default,
 			},
 			info: {
-				background: themeContract.semantic.bg.feedback.info.default,
-				border: `1px solid ${themeContract.semantic.borders.feedback.info.default}`,
-				color: themeContract.semantic.text.feedback.info.default,
-				// 	"@media": {
-				// 		"(prefers-color-scheme: dark)": {
-				// 			background: `linear-gradient(to bottom right, ${withOpacity(themeContract.colors.blue[950], 80)}, ${withOpacity(themeContract.colors.blue[900], 60)}, ${withOpacity(themeContract.colors.blue[800], 40)})`,
-				// 			borderColor: withOpacity(themeContract.colors.blue[700], 50),
-				// 			color: themeContract.colors.blue[100],
-				// 			borderTopColor: withOpacity(themeContract.colors.blue[600], 30),
-				// 		},
-				// 	},
+				background: semantic.bg.feedback.info.default,
+				border: `1px solid ${semantic.borders.feedback.info.default}`,
+				borderTopColor: semantic.borders.feedback.info.highlight,
+				color: semantic.text.feedback.info.default,
 			},
 		},
 	},
@@ -75,28 +49,25 @@ export const alertHeaderRecipe = recipe({
 	base: {
 		borderRadius: `${themeContract.radii.md} ${themeContract.radii.md} ${themeContract.radii.lg} ${themeContract.radii.lg}`,
 		padding: `${themeContract.spacing[3]} ${themeContract.spacing[2]}`,
+		background: semantic.bg.feedback.header,
 	},
 	variants: {
 		variant: {
 			success: {
-				background: `linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5))`,
-				borderBottom: `1px solid ${themeContract.semantic.borders.feedback.success.default}`,
-				boxShadow: `0px 1px 2px 0px ${themeContract.colors.green[100]}`,
+				borderBottom: `1px solid ${semantic.borders.feedback.success.default}`,
+				boxShadow: semantic.shadows.feedback.success.header,
 			},
 			error: {
-				background: `linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5))`,
-				borderBottom: `1px solid ${themeContract.semantic.borders.feedback.error.default}`,
-				boxShadow: `0px 1px 2px 0px ${themeContract.colors.red[100]}`,
+				borderBottom: `1px solid ${semantic.borders.feedback.error.default}`,
+				boxShadow: semantic.shadows.feedback.error.header,
 			},
 			warning: {
-				background: `linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5))`,
-				borderBottom: `1px solid ${themeContract.semantic.borders.feedback.warning.default}`,
-				boxShadow: `0px 1px 2px 0px ${themeContract.colors.amber[100]}`,
+				borderBottom: `1px solid ${semantic.borders.feedback.warning.default}`,
+				boxShadow: semantic.shadows.feedback.warning.header,
 			},
 			info: {
-				background: `linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5))`,
-				borderBottom: `1px solid ${themeContract.semantic.borders.feedback.info.default}`,
-				boxShadow: `0px 1px 2px 0px ${themeContract.colors.blue[100]}`,
+				borderBottom: `1px solid ${semantic.borders.feedback.info.default}`,
+				boxShadow: semantic.shadows.feedback.info.header,
 			},
 		},
 	},
@@ -111,8 +82,7 @@ const alertStripe = style({
 	top: 0,
 	left: 0,
 	position: "absolute",
-	background:
-		"repeating-linear-gradient(45deg,transparent,transparent 10px,#ffffffbf 10px,#ffffffbf 20px)",
+	background: `repeating-linear-gradient(45deg, transparent, transparent 10px, ${semantic.bg.feedback.stripe} 10px, ${semantic.bg.feedback.stripe} 20px)`,
 	borderRadius: themeContract.radii.md,
 	maskImage: "linear-gradient(to right, transparent 50%, #000 100%)",
 	zIndex: 1,
@@ -130,16 +100,16 @@ export const alertDescriptionRecipe = recipe({
 	variants: {
 		variant: {
 			success: {
-				color: themeContract.colors.green[900],
+				color: semantic.text.feedback.success.muted,
 			},
 			error: {
-				color: themeContract.colors.red[900],
+				color: semantic.text.feedback.error.muted,
 			},
 			warning: {
-				color: themeContract.colors.amber[900],
+				color: semantic.text.feedback.warning.muted,
 			},
 			info: {
-				color: themeContract.colors.blue[900],
+				color: semantic.text.feedback.info.muted,
 			},
 		},
 	},

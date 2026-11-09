@@ -2,7 +2,7 @@ import { createVar, style } from "@vanilla-extract/css";
 import { themeContract } from "../contract.css";
 import { selectors } from "../selectors";
 
-const hairline = `1px solid ${themeContract.semantic.borders.surface.ring}`;
+const cellBorder = `1px solid ${themeContract.semantic.borders.surface.ring}`;
 
 const tableContainerStyles = style({
 	background: themeContract.semantic.bg.fill.tray,
@@ -55,17 +55,17 @@ const tableCellStyles = style({
 	fontSize: "14px",
 	// doubles as the top of the perimeter on the first row and as the row
 	// separator on every row after it
-	borderBlockStart: hairline,
+	borderBlockStart: cellBorder,
 	padding: themeContract.spacing[2],
 	selectors: {
 		"&:first-child": {
-			borderInlineStart: hairline,
+			borderInlineStart: cellBorder,
 		},
 		"&:last-child": {
-			borderInlineEnd: hairline,
+			borderInlineEnd: cellBorder,
 		},
 		[`${tableRowStyles}:last-child &`]: {
-			borderBlockEnd: hairline,
+			borderBlockEnd: cellBorder,
 		},
 		[`${tableRowStyles}:first-child &:first-child`]: {
 			borderStartStartRadius: themeContract.radii.md,

@@ -56,7 +56,7 @@ const Label = forwardRef(function Label(props: LabelProps, ref: ForwardedRef<HTM
 					flexDirection: flexDirection as any,
 					justifyContent: labelPosition === "apart" ? "space-between" : undefined,
 					gap: labelPosition === "above" ? "$1" : "$2",
-					alignItems: "end",
+					alignItems: "center",
 					display: "flex",
 				}}
 			>

@@ -152,7 +152,7 @@ export const Default: Story = {
 								items={[
 									{ content: "Duplicate", id: "1", icon: "🙌" },
 									{ content: "Edit", id: "2", icon: "✏" },
-									{ content: "Delete", id: "3", icon: "🚮" },
+									{ content: "Delete", id: "3", icon: "🚮", keyCode: "K" },
 								]}
 								label="Open menu"
 							/>

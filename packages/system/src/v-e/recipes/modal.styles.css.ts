@@ -103,7 +103,7 @@ export const markerStyles = style({
 	paddingBottom: themeContract.spacing[2],
 	fontSize: "14px", // sm
 	background: themeContract.semantic.bg.fill.band,
-	color: themeContract.colors.stone[800],
+	color: themeContract.semantic.text.default,
 	borderBottom: `1px solid ${themeContract.semantic.borders.surface.divider}`,
 	// Swap color of top border and box shadow to match the bottom border style => dark line -> light line
 	borderTop: `1px solid ${themeContract.semantic.borders.surface.highlight}`,

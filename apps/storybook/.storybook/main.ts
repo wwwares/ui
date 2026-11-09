@@ -15,8 +15,11 @@ function getAbsolutePath(value: string): any {
 // Consuming source (instead of the prebuilt dist/) lets Vite own these modules,
 // which is what makes React Fast Refresh + vanilla-extract HMR work. Without
 // this, edits land in dist/ (a dependency) and Storybook does a full reload.
-const uiSrc = join(getAbsolutePath("@wwwares/ui-react"), "src/index.ts");
-const systemSrc = join(getAbsolutePath("@wwwares/ui-system"), "src/index.ts");
+// Point at the workspace folders directly: the packages don't export
+// "./package.json", so getAbsolutePath() can't resolve them.
+const packagesDir = join(__dirname, "../../../packages");
+const uiSrc = join(packagesDir, "ui/src/index.ts");
+const systemSrc = join(packagesDir, "system/src/index.ts");
 
 const config: StorybookConfig = {
 	stories: ["../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],

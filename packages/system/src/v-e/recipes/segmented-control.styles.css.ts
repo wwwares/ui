@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 import { themeContract } from "../contract.css";
-import { is, selectors } from "../selectors";
+import { selectors } from "../selectors";
 import { edge } from "./_edge";
 
 export const segmentedControlContainer = style({

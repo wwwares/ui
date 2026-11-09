@@ -19,15 +19,19 @@ export const lightTheme = createTheme(themeContract, {
 			feedback: {
 				success: {
 					default: tailwindColors.green[800],
+					muted: tailwindColors.green[900],
 				},
 				error: {
 					default: tailwindColors.red[800],
+					muted: tailwindColors.red[900],
 				},
 				warning: {
 					default: tailwindColors.amber[800],
+					muted: tailwindColors.amber[900],
 				},
 				info: {
 					default: tailwindColors.blue[800],
+					muted: tailwindColors.blue[900],
 				},
 			},
 		},
@@ -45,6 +49,8 @@ export const lightTheme = createTheme(themeContract, {
 				info: {
 					default: `linear-gradient(to bottom right, ${tailwindColors.blue[50]}, ${tailwindColors.blue[50]}, ${tailwindColors.blue[100]})`,
 				},
+				header: `linear-gradient(to bottom right, ${withOpacity(tailwindColors.white, 70)}, ${withOpacity(tailwindColors.white, 50)}, ${withOpacity(tailwindColors.white, 50)})`,
+				stripe: withOpacity(tailwindColors.white, 75),
 			},
 			raised: {
 				interactive: {
@@ -126,15 +132,19 @@ export const lightTheme = createTheme(themeContract, {
 			feedback: {
 				success: {
 					default: tailwindColors.green[200],
+					highlight: tailwindColors.green[200],
 				},
 				error: {
 					default: tailwindColors.red[200],
+					highlight: tailwindColors.red[200],
 				},
 				warning: {
 					default: tailwindColors.amber[200],
+					highlight: tailwindColors.amber[200],
 				},
 				info: {
 					default: tailwindColors.blue[200],
+					highlight: tailwindColors.blue[200],
 				},
 			},
 			raised: {
@@ -207,6 +217,12 @@ export const lightTheme = createTheme(themeContract, {
 			overlay: `0px 0px 0px 1px ${tailwindColors.stone[300]}, 0px 2px 1px 0px ${tailwindColors.stone[200]}, 2px 0px 1px 0px ${tailwindColors.stone[200]}, -2px 0px 1px 0px ${tailwindColors.stone[200]}, 0px -2px 1px 0px ${tailwindColors.stone[200]}`,
 			item: {
 				highlighted: `0px 1px 1px 0px ${tint(41)}`,
+			},
+			feedback: {
+				success: { header: `0px 1px 2px 0px ${tailwindColors.green[100]}` },
+				error: { header: `0px 1px 2px 0px ${tailwindColors.red[100]}` },
+				warning: { header: `0px 1px 2px 0px ${tailwindColors.amber[100]}` },
+				info: { header: `0px 1px 2px 0px ${tailwindColors.blue[100]}` },
 			},
 			surface: {
 				/** Top/bottom fold where a surface meets recessed chrome. e.g. Modal body content meeting header/footer */

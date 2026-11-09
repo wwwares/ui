@@ -16,33 +16,39 @@ export const darkTheme = createTheme(themeContract, {
 			inverted: tailwindColors.stone[50],
 			feedback: {
 				success: {
-					default: tailwindColors.green[800],
+					default: tailwindColors.green[100],
+					muted: tailwindColors.green[200],
 				},
 				error: {
-					default: tailwindColors.red[800],
+					default: tailwindColors.red[100],
+					muted: tailwindColors.red[200],
 				},
 				warning: {
-					default: tailwindColors.amber[800],
+					default: tailwindColors.amber[100],
+					muted: tailwindColors.amber[200],
 				},
 				info: {
-					default: tailwindColors.blue[800],
+					default: tailwindColors.blue[100],
+					muted: tailwindColors.blue[200],
 				},
 			},
 		},
 		bg: {
 			feedback: {
 				success: {
-					default: `linear-gradient(to bottom right, ${tailwindColors.green[50]}, ${tailwindColors.green[50]}, ${tailwindColors.green[100]})`,
+					default: `linear-gradient(to bottom right, ${withOpacity(tailwindColors.green[950], 80)}, ${withOpacity(tailwindColors.green[900], 60)}, ${withOpacity(tailwindColors.green[800], 40)})`,
 				},
 				error: {
-					default: `linear-gradient(to bottom right, ${tailwindColors.red[50]}, ${tailwindColors.red[50]}, ${tailwindColors.red[100]})`,
+					default: `linear-gradient(to bottom right, ${withOpacity(tailwindColors.red[950], 80)}, ${withOpacity(tailwindColors.red[900], 60)}, ${withOpacity(tailwindColors.red[800], 40)})`,
 				},
 				warning: {
-					default: `linear-gradient(to bottom right, ${tailwindColors.amber[50]}, ${tailwindColors.amber[50]}, ${tailwindColors.amber[100]})`,
+					default: `linear-gradient(to bottom right, ${withOpacity(tailwindColors.amber[950], 80)}, ${withOpacity(tailwindColors.amber[900], 60)}, ${withOpacity(tailwindColors.amber[800], 40)})`,
 				},
 				info: {
-					default: `linear-gradient(to bottom right, ${tailwindColors.blue[50]}, ${tailwindColors.blue[50]}, ${tailwindColors.blue[100]})`,
+					default: `linear-gradient(to bottom right, ${withOpacity(tailwindColors.blue[950], 80)}, ${withOpacity(tailwindColors.blue[900], 60)}, ${withOpacity(tailwindColors.blue[800], 40)})`,
 				},
+				header: `linear-gradient(to bottom right, ${withOpacity(tailwindColors.white, 8)}, ${withOpacity(tailwindColors.white, 4)}, ${withOpacity(tailwindColors.white, 4)})`,
+				stripe: withOpacity(tailwindColors.white, 5),
 			},
 			raised: {
 				interactive: {
@@ -111,25 +117,29 @@ export const darkTheme = createTheme(themeContract, {
 		borders: {
 			surface: {
 				hairline: withOpacity(tailwindColors.white, 6),
-				divider: tailwindColors.neutral[950],
+				divider: tailwindColors.neutral[700],
 				ring: tailwindColors.neutral[950],
-				highlight: withOpacity(tailwindColors.white, 8),
+				highlight: tailwindColors.neutral[900],
 			},
 			item: {
 				highlighted: withOpacity(tailwindColors.white, 6),
 			},
 			feedback: {
 				success: {
-					default: tailwindColors.green[200],
+					default: withOpacity(tailwindColors.green[700], 50),
+					highlight: withOpacity(tailwindColors.green[600], 30),
 				},
 				error: {
-					default: tailwindColors.red[200],
+					default: withOpacity(tailwindColors.red[700], 50),
+					highlight: withOpacity(tailwindColors.red[600], 30),
 				},
 				warning: {
-					default: tailwindColors.amber[200],
+					default: withOpacity(tailwindColors.amber[700], 50),
+					highlight: withOpacity(tailwindColors.amber[600], 30),
 				},
 				info: {
-					default: tailwindColors.blue[200],
+					default: withOpacity(tailwindColors.blue[700], 50),
+					highlight: withOpacity(tailwindColors.blue[600], 30),
 				},
 			},
 			raised: {
@@ -199,6 +209,12 @@ export const darkTheme = createTheme(themeContract, {
 			item: {
 				highlighted: `0 1px 0 ${withOpacity(tailwindColors.white, 8)} inset, 0 1px 2px ${withOpacity(tailwindColors.black, 40)}`,
 			},
+			feedback: {
+				success: { header: `0 1px 2px ${withOpacity(tailwindColors.black, 30)}` },
+				error: { header: `0 1px 2px ${withOpacity(tailwindColors.black, 30)}` },
+				warning: { header: `0 1px 2px ${withOpacity(tailwindColors.black, 30)}` },
+				info: { header: `0 1px 2px ${withOpacity(tailwindColors.black, 30)}` },
+			},
 			surface: {
 				// Light catches the upper fold while the lower edge casts a shadow.
 				fold: `0 -1px ${withOpacity(tailwindColors.white, 8)}, 0 1px ${withOpacity(tailwindColors.black, 50)}`,
@@ -216,8 +232,8 @@ export const darkTheme = createTheme(themeContract, {
 						pressed: `${tailwindColors.blue[500]} 0px 0px 1px 0px inset`,
 					},
 					neutral: {
-						default: `0 1px 0 ${withOpacity(tailwindColors.white, 20)} inset, 0 -1px 1px ${withOpacity(tailwindColors.black, 31)} inset, 0 1px 2px ${withOpacity(tailwindColors.black, 31)}`,
-						hover: `0 1px 0 ${withOpacity(tailwindColors.white, 23)} inset, 0 -1px 1px ${withOpacity(tailwindColors.black, 31)} inset, 0 2px 3px ${withOpacity(tailwindColors.black, 31)}`,
+						default: `0 1px 0 ${withLighten(tailwindColors.neutral[600], 15)} inset, 0 -1px 1px ${withOpacity(tailwindColors.black, 31)} inset, 0 1px 2px ${withOpacity(tailwindColors.black, 31)}`,
+						hover: `0 1px 0 ${withLighten(tailwindColors.neutral[700], 9)} inset, 0 -1px 1px ${withOpacity(tailwindColors.black, 31)} inset, 0 2px 3px ${withOpacity(tailwindColors.black, 31)}`,
 						pressed: `0 1px 1px ${withOpacity(tailwindColors.white, 8)}, 0 2px 4px ${withOpacity(tailwindColors.black, 50)} inset`,
 					},
 				},

@@ -2,6 +2,7 @@ import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
 import { themeContract } from "../contract.css";
 import { selectors } from "../selectors";
+import { edge } from "./_edge";
 
 // Floating surface shared by menu-family components (menu, filter popover).
 const popover = style({
@@ -33,7 +34,9 @@ const item = style({
 	cursor: "pointer",
 	border: "1px solid transparent",
 	borderRadius: themeContract.radii.sm,
+	color: themeContract.semantic.text.label,
 	outline: "none",
+	position: "relative",
 	selectors: {
 		[`${selectors.hover}, ${selectors.focus}`]: {
 			border: `1px solid ${themeContract.semantic.borders.item.highlighted}`,
@@ -41,6 +44,16 @@ const item = style({
 			background: themeContract.semantic.bg.item.highlighted,
 		},
 	},
+});
+
+const keycode = style({
+	border: `1px solid ${themeContract.semantic.borders.surface.hairline}`,
+	padding: `0 ${themeContract.spacing[1]}`,
+	fontSize: "12px",
+	fontFamily: "monospace",
+	height: "50%",
+	borderRadius: themeContract.radii.sm,
+	background: themeContract.semantic.bg.fill.tray,
 });
 
 const divider = recipe({
@@ -74,4 +87,5 @@ export const popoverStyles = {
 	list,
 	item,
 	divider,
+	keycode,
 };

@@ -12,6 +12,7 @@ interface MenuItemType {
 	isDisabled?: RACMenuItemProps["isDisabled"];
 	onAction?: RACMenuItemProps["onAction"];
 	id: Key;
+	keyCode?: string;
 }
 
 interface MenuItemProps extends RACMenuItemProps {
@@ -29,6 +30,7 @@ function MenuItem(props: MenuItemProps) {
 		>
 			{item.icon && <span>{item.icon}</span>}
 			{item.content}
+			<span className={popoverStyles.keycode}>{item?.keyCode}</span>
 		</RACMenuItem>
 	);
 }
